@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QuickCheck Teacher Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#eef4f2; --surface:#ffffff; --surface-2:#f4f8f7;
+    --ink:#1e2b2a; --ink-soft:#556760; --line:#e2ebe8;
+    --accent:#0e8b7d; --accent-strong:#0f4b47;
+    --mint-bg:#e2f6ee; --mint-ink:#0c7550; --mint-line:#bfe9d6;
+    --cream-bg:#fbf1d6; --cream-ink:#8a6410; --cream-line:#ecd9a2;
+    --pill-bg:#0f4b47; --pill-ink:#ffffff;
+    --shadow:0 10px 30px rgba(15,50,60,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1614; --surface:#15211e; --surface-2:#101a18;
+      --ink:#e9f1ee; --ink-soft:#9fb2ab; --line:#24322e;
+      --accent:#2fd6bf; --accent-strong:#8bece0;
+      --mint-bg:#15302a; --mint-ink:#83e2bb; --mint-line:#245043;
+      --cream-bg:#2c2716; --cream-ink:#e6c877; --cream-line:#4a4227;
+      --pill-bg:#0e8b7d; --pill-ink:#ffffff;
+      --shadow:0 12px 34px rgba(0,0,0,.34);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1614; --surface:#15211e; --surface-2:#101a18;
+    --ink:#e9f1ee; --ink-soft:#9fb2ab; --line:#24322e;
+    --accent:#2fd6bf; --accent-strong:#8bece0;
+    --mint-bg:#15302a; --mint-ink:#83e2bb; --mint-line:#245043;
+    --cream-bg:#2c2716; --cream-ink:#e6c877; --cream-line:#4a4227;
+    --pill-bg:#0e8b7d; --pill-ink:#ffffff;
+    --shadow:0 12px 34px rgba(0,0,0,.34);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    font-size:18px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:730px; margin:0 auto; padding:38px 20px 80px;}
+
+  /* Header */
+  .eyebrow{font-size:14px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent);}
+  h1{font-size:38px; line-height:1.15; margin:10px 0 12px; text-wrap:balance; letter-spacing:-.01em;}
+  .lead{font-size:19px; color:var(--ink-soft); margin:0;}
+
+  /* Reassurance banner */
+  .big-idea{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--accent-strong); color:#fff;
+    border-radius:18px; padding:20px 22px; margin:28px 0 6px; box-shadow:var(--shadow);
+  }
+  .big-idea .ic{font-size:26px; line-height:1;}
+  .big-idea b{color:#fff;}
+  .big-idea p{margin:0; font-size:17px; color:#dff2ee;}
+
+  /* Table of contents */
+  .toc{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:18px 22px; margin:26px 0;}
+  .toc h2{font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft);
+    margin:0 0 12px;}
+  .toc ol{margin:0; padding-left:0; list-style:none; counter-reset:toc;}
+  .toc li{counter-increment:toc; margin:0;}
+  .toc a{display:flex; gap:12px; align-items:baseline; padding:7px 0; color:var(--ink);
+    text-decoration:none; border-bottom:1px solid var(--line); font-weight:600;}
+  .toc li:last-child a{border-bottom:none;}
+  .toc a::before{content:counter(toc); flex:0 0 26px; text-align:center; font-weight:800;
+    color:var(--accent); font-variant-numeric:tabular-nums;}
+  .toc a:hover{color:var(--accent);}
+
+  /* Part cards */
+  .part{background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    padding:26px 26px 24px; margin:20px 0; box-shadow:var(--shadow);}
+  .part-head{display:flex; gap:16px; align-items:center; margin-bottom:6px;}
+  .num{flex:0 0 auto; width:44px; height:44px; border-radius:50%;
+    background:var(--accent-strong); color:#fff; font-weight:800; font-size:20px;
+    display:grid; place-items:center;}
+  .part h2{font-size:25px; margin:0; line-height:1.2; text-wrap:balance;}
+  .part .sub{color:var(--ink-soft); font-size:16px; margin:2px 0 0;}
+
+  /* "Click this tab" pill */
+  .where{margin:16px 0 6px; font-size:16px; color:var(--ink-soft);}
+  .tab{display:inline-flex; align-items:center; gap:7px; background:var(--pill-bg);
+    color:var(--pill-ink); font-weight:700; font-size:15px; padding:6px 13px;
+    border-radius:999px; vertical-align:middle; white-space:nowrap;}
+  .tab svg{width:15px; height:15px;}
+
+  /* Step lists */
+  ol.steps{list-style:none; counter-reset:step; margin:14px 0 0; padding:0;}
+  ol.steps>li{counter-increment:step; position:relative; padding:4px 0 16px 46px; margin:0;}
+  ol.steps>li::before{content:counter(step); position:absolute; left:0; top:2px;
+    width:30px; height:30px; border-radius:50%; background:var(--surface-2);
+    border:2px solid var(--accent); color:var(--accent); font-weight:800; font-size:15px;
+    display:grid; place-items:center; font-variant-numeric:tabular-nums;}
+  ol.steps>li:last-child{padding-bottom:0;}
+  ol.steps b{color:var(--ink);}
+  .btnname{background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:1px 8px; font-weight:700; font-size:16px; white-space:nowrap;}
+
+  /* Callouts */
+  .note{border-radius:14px; padding:15px 18px; margin:16px 0 0; font-size:16.5px;}
+  .note b{display:block; margin-bottom:3px;}
+  .tip{background:var(--mint-bg); color:var(--mint-ink); border:1px solid var(--mint-line);}
+  .tip b, .important b{color:inherit;}
+  .important{background:var(--cream-bg); color:var(--cream-ink); border:1px solid var(--cream-line);}
+
+  .choice-h{font-weight:800; font-size:17px; margin:20px 0 2px; color:var(--accent-strong);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .choice-h{color:var(--accent);}}
+  :root[data-theme="dark"] .choice-h{color:var(--accent);}
+
+  /* Footer */
+  footer{margin-top:34px; text-align:center; color:var(--ink-soft); font-size:15.5px;}
+  footer a{color:var(--accent); font-weight:700;}
+  .contact{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-top:26px; box-shadow:var(--shadow);}
+  .contact h2{margin:0 0 8px; font-size:19px; color:var(--ink);}
+
+  a{color:var(--accent);}
+  a:focus-visible, .toc a:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:6px;}
+  @media (max-width:520px){
+    h1{font-size:30px;} .wrap{padding:26px 16px 60px;}
+    .part{padding:22px 18px;} .part h2{font-size:22px;}
+  }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <a href="./" style="display:inline-block; margin-bottom:20px; color:var(--accent); font-weight:700; text-decoration:none;">← Back to QuickCheck home</a>
+  
+
+  <header>
+    <div class="eyebrow">Step-by-step guide</div>
+    <h1>How to use QuickCheck</h1>
+    <p class="lead">A simple, click-by-click guide. Do the parts in order the first time — after that,
+      checking a set of papers takes only a minute.</p>
+  </header>
+
+  <div class="big-idea">
+    <div class="ic">💡</div>
+    <p><b>You can't get lost.</b> QuickCheck always shows you the <b>next button</b> to press, usually a
+      dark or highlighted button. Whenever you're unsure what to do — look for that button and click it.</p>
+  </div>
+
+  <nav class="toc">
+    <h2>What's in this guide</h2>
+    <ol>
+      <li><a href="#p1">Open QuickCheck &amp; put in your key</a></li>
+      <li><a href="#p2">Make your class list</a></li>
+      <li><a href="#p3">Make a test</a></li>
+      <li><a href="#p4">Type the answer key</a></li>
+      <li><a href="#p5">Print the answer sheets</a></li>
+      <li><a href="#p6">Check the papers (take photos)</a></li>
+      <li><a href="#p7">See the results</a></li>
+    </ol>
+  </nav>
+
+  <!-- PART 1 -->
+  <section class="part" id="p1">
+    <div class="part-head">
+      <div class="num">1</div>
+      <div><h2>Open QuickCheck &amp; put in your key</h2>
+        <p class="sub">You only do this the very first time.</p></div>
+    </div>
+    <ol class="steps">
+      <li>Double-click <b>QuickCheck</b>. If a blue box says <i>"Windows protected your PC,"</i> click
+        <span class="btnname">More info</span> then <span class="btnname">Run anyway</span> — this is normal and safe.</li>
+      <li>The QuickCheck window opens. <b>Keep it open</b> while you work; closing it stops the app.</li>
+      <li>It asks for your license key. Choose your <b>.qckey</b> file and click <span class="btnname">Activate</span>.
+        <br>(Tip: if the .qckey file is in the same folder as QuickCheck, a one-click Activate button appears.)</li>
+      <li>Go to the <span class="tab">Settings</span> tab on the left and type your <b>name</b> and <b>school</b>, then click <span class="btnname">Save</span>.</li>
+    </ol>
+    <div class="note tip"><b>No key yet?</b> Email <b>azmarketingservicesbicol@gmail.com</b> with your full name to get a free 1-month trial key.</div>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="part" id="p2">
+    <div class="part-head">
+      <div class="num">2</div>
+      <div><h2>Make your class list</h2>
+        <p class="sub">So QuickCheck knows the names of your students.</p></div>
+    </div>
+    <p class="where">In the left menu, click
+      <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg> Class Lists</span></p>
+    <ol class="steps">
+      <li>Click <span class="btnname">Add a class list</span> (or <span class="btnname">Create</span>).</li>
+      <li>Choose the kind of list:
+        <br>• <b>Simple scorebook</b> — the easiest. Just a list of names. Pick this if you only want to record scores.
+        <br>• <b>DepEd e-class record</b> — records straight into the official DepEd Excel format.</li>
+      <li>Type the <b>Grade</b> and <b>Section</b>, and a <b>name</b> for the list (example: "Grade 8 Mabini — Science").</li>
+      <li>Click <span class="btnname">Next: add students</span>.</li>
+      <li>Type your students' <b>names, one per line</b> (for a Simple scorebook). Then click <span class="btnname">Next: review</span>.</li>
+      <li>Check the details, then click <span class="btnname">Create class record(s)</span>. Your class list is ready.</li>
+    </ol>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="part" id="p3">
+    <div class="part-head">
+      <div class="num">3</div>
+      <div><h2>Make a test</h2>
+        <p class="sub">One test = one quiz or exam.</p></div>
+    </div>
+    <p class="where">In the left menu, click
+      <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg> Check Papers</span></p>
+    <ol class="steps">
+      <li>Click <span class="btnname">Create test</span>.</li>
+      <li>Give the test a <b>name</b> (example: "Quiz 1 — Science").</li>
+      <li>Choose the <b>class</b> you just made from the list.</li>
+      <li>Type how many <b>questions</b> there are (example: 20), and the choices (example: <b>A–D</b>).</li>
+      <li>Click <span class="btnname">Save</span>.</li>
+    </ol>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="part" id="p4">
+    <div class="part-head">
+      <div class="num">4</div>
+      <div><h2>Type the answer key</h2>
+        <p class="sub">Tell QuickCheck the correct answers.</p></div>
+    </div>
+    <ol class="steps">
+      <li>On your test, click <span class="btnname">Set the answer key</span>.</li>
+      <li>For each question number, <b>tap the correct letter</b> (A, B, C, or D).</li>
+      <li>Click <span class="btnname">Save</span>.</li>
+    </ol>
+    <div class="note tip"><b>Watch the button change.</b> Once the key is saved, the test's button changes to
+      <span class="btnname">Check papers</span> — that's your next step. Just follow it.</div>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="part" id="p5">
+    <div class="part-head">
+      <div class="num">5</div>
+      <div><h2>Print the answer sheets</h2>
+        <p class="sub">The special sheets students shade their answers on.</p></div>
+    </div>
+    <p class="where">In the left menu, click
+      <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/></svg> Print Sheets</span></p>
+    <ol class="steps">
+      <li>Choose your <b>test</b>.</li>
+      <li>Print the sheets — either one <b>blank</b> sheet to photocopy, or a <b>named</b> sheet for each student.</li>
+      <li>Give them to your students. They shade the circle for each answer.</li>
+    </ol>
+    <div class="note important"><b>Tell students:</b> shade the circles <b>darkly and fully</b> with pencil. Light or half-shaded marks are harder to read.</div>
+  </section>
+
+  <!-- PART 6 -->
+  <section class="part" id="p6">
+    <div class="part-head">
+      <div class="num">6</div>
+      <div><h2>Check the papers</h2>
+        <p class="sub">This is the part that saves you hours. There are two ways — pick one.</p></div>
+    </div>
+
+    <div class="choice-h">Way A — using your phone (best for taking photos)</div>
+    <p class="where">On the computer, click
+      <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/></svg> Phone Access</span></p>
+    <ol class="steps">
+      <li>It shows an <b>address</b> and a <b>PIN</b>. Make sure your phone and computer are on the <b>same Wi-Fi</b>.</li>
+      <li>On your phone's browser, type that address, then enter the PIN.</li>
+      <li>On the phone, open <b>Check Papers</b> → your test → tap <span class="btnname">📷 Take a photo</span> and snap each sheet.</li>
+    </ol>
+
+    <div class="choice-h">Way B — using the computer</div>
+    <ol class="steps">
+      <li>Click <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg> Check Papers</span> → your test → <span class="btnname">Check papers</span>.</li>
+      <li>Click to <b>upload the photos</b> you already have on your computer.</li>
+    </ol>
+
+    <div class="choice-h">Then — review each paper (same on phone or computer)</div>
+    <ol class="steps">
+      <li>You'll see the <b>photo</b> and the answers QuickCheck read. Fix any wrong ones by tapping the correct letter.</li>
+      <li>Choose the <b>student's name</b> from the list.</li>
+      <li>Click <span class="btnname">Confirm &amp; next</span>. Repeat for every paper.</li>
+      <li>When all papers are done, click <span class="btnname">Save all</span>.</li>
+    </ol>
+    <div class="note important"><b>Safety check:</b> if a student already has a saved score, QuickCheck <b>warns you before replacing it</b>
+      (it shows the old and new score). Read it, then confirm — so no score is ever changed by accident.</div>
+  </section>
+
+  <!-- PART 7 -->
+  <section class="part" id="p7">
+    <div class="part-head">
+      <div class="num">7</div>
+      <div><h2>See the results</h2>
+        <p class="sub">Scores, the class average, and which questions were hardest.</p></div>
+    </div>
+    <p class="where">In the left menu, click
+      <span class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><rect x="7" y="10" width="3" height="7"/><rect x="12" y="6" width="3" height="11"/><rect x="17" y="13" width="3" height="4"/></svg> Results</span></p>
+    <ol class="steps">
+      <li>Pick your <b>test</b>.</li>
+      <li>See each student's <b>score</b>, the <b>class average</b>, and the hardest questions.</li>
+      <li>Use the buttons to <b>download</b> the scores (Excel) or a <b>report</b> (PDF).</li>
+    </ol>
+    <div class="note tip"><b>That's the whole cycle:</b> class list → test → answer key → print → check → results.
+      Next time, you skip straight to printing and checking.</div>
+  </section>
+
+  <div class="contact">
+    <h2>Need help?</h2>
+    <p style="margin:0; color:var(--ink-soft)">Message the owner anytime — happy to guide you.</p>
+    <p style="margin:8px 0 0">📧 <a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a>
+      &nbsp;·&nbsp; 💬 <a href="https://www.facebook.com/HomeArvin">facebook.com/HomeArvin</a></p>
+  </div>
+
+  <footer>
+    <p>QuickCheck — made to save teachers hours of checking. Works on your own computer, offline.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

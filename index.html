@@ -233,6 +233,39 @@
   .plan .was{font-size:11.5px; font-weight:600; color:var(--muted); margin-top:5px;}
   .plan p{color:var(--muted); font-size:13px; margin-top:8px;}
 
+  /* Single promo offer */
+  .offer{position:relative; max-width:520px; margin:40px auto 0; padding:34px 28px 28px;
+    text-align:center; border:2px solid var(--teal); box-shadow:var(--shadow-h);}
+  .offer .flag{position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--teal); color:#fff; font-size:12px; font-weight:800; letter-spacing:.04em;
+    padding:5px 15px; border-radius:999px; white-space:nowrap;}
+  .offer-price{display:flex; align-items:baseline; justify-content:center; gap:12px; flex-wrap:wrap;}
+  .offer-price s{font-size:24px; color:var(--muted); font-weight:700;}
+  .offer-price b{font-size:60px; font-weight:850; color:var(--teal-d); letter-spacing:-.03em;
+    line-height:1; font-variant-numeric:tabular-nums;}
+  .offer-price span{width:100%; color:var(--muted); font-size:14.5px; font-weight:600; margin-top:4px;}
+  .guarantee{margin-top:22px; border-radius:14px; padding:15px 18px; font-size:14px;
+    text-align:left; color:var(--text);
+    background:color-mix(in srgb, var(--good) 13%, transparent);
+    border:1px solid color-mix(in srgb, var(--good) 42%, transparent);}
+  .guarantee b{display:block; margin-bottom:4px; font-size:15px;}
+  @media(max-width:560px){ .offer-price b{font-size:48px;} .offer{padding:30px 20px 24px;} }
+
+  /* "What to expect" before downloading — kills the install drop-off */
+  .expect{max-width:560px; margin:22px auto 4px; text-align:left; border-radius:14px;
+    padding:16px 20px; font-size:14px; color:var(--text);
+    background:color-mix(in srgb, var(--warn, #d7a10a) 12%, transparent);
+    border:1px solid color-mix(in srgb, var(--warn, #d7a10a) 38%, transparent);}
+  .expect b{display:block; margin-bottom:6px;}
+  .expect ol{margin:0; padding-left:20px;}
+  .expect li{margin:5px 0;}
+
+  /* Real teacher quotes (fill in when you have them) */
+  .quotes{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:28px;}
+  .quote{padding:22px;}
+  .quote p{font-size:15.5px; line-height:1.6; margin:0 0 12px;}
+  .quote .who{font-size:13.5px; color:var(--muted); font-weight:600;}
+
   /* how to buy */
   .buy-grid{display:grid; grid-template-columns:.95fr 1.05fr; gap:22px; margin-top:34px; align-items:start;}
   .pay-list{display:flex; flex-direction:column; gap:12px;}
@@ -287,15 +320,14 @@
   <!-- HERO -->
   <section class="hero" style="padding-top:8px;">
     <div>
-      <p class="eyebrow">Stop checking by hand</p>
-      <h1>Check a whole class of paper exams in <span class="hl">minutes</span> — with your phone.</h1>
-      <p class="lead">QuickCheck reads your students' bubble answer sheets from a phone photo, scores them instantly, and writes the marks straight into your class record. No internet. No manual tallying.</p>
+      <p class="eyebrow">Automatic exam checker for teachers</p>
+      <h1>Stop checking papers by hand. QuickCheck marks them <span class="hl">automatically</span>.</h1>
+      <p class="lead">Snap a photo of your students' answer sheets and QuickCheck scores every paper for you — then writes the marks straight into your class record. A whole class in minutes instead of a whole evening. Works offline, on your own computer.</p>
       <div class="cta-row">
-        <a class="btn primary" href="https://drive.google.com/drive/folders/1rwQPpxIKfPX0qk3BfhbVbJZ3YL5gvd_d?usp=sharing" target="_blank" rel="noopener">⬇ Download QuickCheck</a>
-        <a class="btn ghost" href="guide.html">See how to set it up</a>
-        <a class="btn ghost" href="#features">What it does</a>
+        <a class="btn primary" href="#pricing">Get it — ₱499 lifetime</a>
+        <a class="btn ghost" href="guide.html">See how it works</a>
       </div>
-      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Free 1-month trial · then a simple paid key to continue</p>
+      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Promo:</b> <s>₱1,299</s> → <b>₱499 one-time</b> · lifetime access · 7-day money-back guarantee</p>
     </div>
 
     <!-- Phone mockup: the "snap → graded" moment -->
@@ -506,42 +538,70 @@
     </div>
   </section>
 
+  <!-- ===================================================================
+       TEACHER QUOTES + REAL SCREENSHOTS   (CURRENTLY HIDDEN)
+
+       Nothing in this block appears on the site while it stays inside this
+       comment. Do NOT invent quotes; one genuine line from a real teacher
+       is worth more than ten invented ones.
+
+       TO TURN IT ON: replace the placeholder text with real words, then
+       remove the comment markers that wrap this whole block (the opening
+       marker above this paragraph and the closing marker at the bottom).
+       Send the real quote to Arvin's developer and it can be switched on.
+       ===================================================================
+
+  <section id="proof">
+    <div class="section-head">
+      <p class="eyebrow">From teachers using it</p>
+      <h2>What it changed for them.</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote card">
+        <p>“PUT THE TEACHER'S REAL WORDS HERE.”</p>
+        <div class="who">— TEACHER NAME, SCHOOL</div>
+      </div>
+      <div class="quote card">
+        <p>“SECOND REAL QUOTE HERE.”</p>
+        <div class="who">— TEACHER NAME, SCHOOL</div>
+      </div>
+    </div>
+    <div class="shots" style="margin-top:22px">
+      <img src="screenshot-checked.png" alt="A checked answer sheet with green and red marks"
+           style="width:100%; border-radius:16px; border:1px solid var(--line)">
+    </div>
+  </section>
+
+       =================================================================== -->
+
   <!-- PRICING -->
   <section id="pricing">
     <div class="section-head">
-      <p class="eyebrow">Simple pricing</p>
-      <h2>Try it free for a month. Continue with a key.</h2>
-      <p class="lead">One activation key per computer. No accounts, no online billing — you just get a key and you're in.</p>
+      <p class="eyebrow">One price. No subscription.</p>
+      <h2>Pay once. Use it for as long as you teach.</h2>
+      <p class="lead">No monthly fees, no accounts, no online billing. You get an activation key and you're in.</p>
     </div>
-    <div class="plans">
-      <div class="plan card">
-        <span class="flag">Start here</span>
-        <h3>Free trial</h3>
-        <div class="dur">₱0</div>
-        <p>The full app, free for 1 month from the day you activate.</p>
+
+    <div class="offer card">
+      <span class="flag">Promo — limited time</span>
+      <div class="offer-price">
+        <s>₱1,299</s>
+        <b>₱499</b>
+        <span>one-time · lifetime access</span>
       </div>
-      <div class="plan card">
-        <h3>Monthly</h3>
-        <div class="dur">₱99<span class="per">/mo</span></div>
-        <p>Month to month, if you're not ready to commit yet.</p>
-      </div>
-      <div class="plan card hot">
-        <span class="flag">Best value ⭐</span>
-        <h3>1 year</h3>
-        <div class="dur">₱499<span class="per">/yr</span></div>
-        <p>A full school year of unlimited checking.</p>
-      </div>
-      <div class="plan card">
-        <h3>Lifetime</h3>
-        <div class="dur">₱1,299</div>
-        <p>Pay once, use it for as long as you teach.</p>
+      <ul class="checklist" style="margin:18px auto 0; max-width:430px; text-align:left;">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Every feature unlocked</b> — nothing held back.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Yours forever</b> — no renewals, no expiry.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Free updates and support.</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> One key works on one computer.</li>
+      </ul>
+      <a class="btn primary" style="margin-top:22px" href="#buy">Get my key — ₱499</a>
+      <div class="guarantee">
+        <b>🛡 7-day money-back guarantee</b>
+        Try it on a real class. If it doesn't save you time, message me within 7 days
+        and I'll refund you in full — no questions asked.
       </div>
     </div>
-    <ul class="checklist" style="max-width:560px;margin-top:26px;">
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Full features during the trial — nothing locked.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Your countdown starts when <b>you</b> activate, not before.</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> One key works on one computer.</li>
-    </ul>
   </section>
 
   <!-- HOW TO BUY -->
@@ -553,7 +613,7 @@
     </div>
     <div class="buy-grid">
       <ol class="steps-list">
-        <li><b>Pick a plan</b> from the prices above.</li>
+        <li><b>Send ₱499</b> — one payment, lifetime access.</li>
         <li><b>Send your payment</b> to any option on the right — GCash, Maya, or bank transfer.</li>
         <li><b>Email or message Arvin</b> with your <b>name</b> and a <b>screenshot of your payment</b>. You'll get your <i>.qckey</i> file to activate — and you're in.</li>
       </ol>
@@ -579,7 +639,7 @@
           <div>📧 <b>Email (best):</b> <a href="mailto:azmarketingservicesbicol@gmail.com" style="color:inherit"><b>azmarketingservicesbicol@gmail.com</b></a></div>
           <div>💬 <b>Facebook:</b> <a href="https://www.facebook.com/HomeArvin" target="_blank" rel="noopener" style="color:inherit"><b>facebook.com/HomeArvin</b></a></div>
           <div>📱 <b>GCash / message:</b> <span class="big" style="font-size:16px">0912 068 8399</span></div>
-          <div style="font-size:12.5px; opacity:.85; margin-top:2px">Want the <b>FREE 1-month trial</b>? Just email your full name — no payment needed.</div>
+          <div style="font-size:12.5px; opacity:.85; margin-top:2px">Keys are sent by email, usually within a few hours. Covered by the 7-day money-back guarantee.</div>
         </div>
       </div>
     </div>
@@ -589,7 +649,18 @@
   <section>
     <div class="card final">
       <h2>Give your evenings back.</h2>
-      <p>Start with the free 1-month trial and check your next exam from your phone.</p>
+      <p><s>₱1,299</s> <b>₱499 one-time</b> — lifetime access, with a 7-day money-back guarantee.</p>
+
+      <div class="expect">
+        <b>Before you download — what to expect (30 seconds)</b>
+        <ol>
+          <li>Google Drive may say <i>"can't scan this file for viruses"</i> — that's just because the file is large. Click <b>Download anyway</b>.</li>
+          <li><b>Right-click the .zip → Extract All</b> into a normal folder (e.g. Documents). Don't run it from inside the zip, or your work won't be saved.</li>
+          <li>Windows may show a blue <i>"Windows protected your PC"</i> box. Click <b>More info → Run anyway</b>. This is normal for a new app.</li>
+          <li>Activate with the <b>.qckey</b> file emailed to you — done.</li>
+        </ol>
+      </div>
+
       <div class="cta-row" style="justify-content:center;">
         <a class="btn primary" href="https://drive.google.com/drive/folders/1rwQPpxIKfPX0qk3BfhbVbJZ3YL5gvd_d?usp=sharing" target="_blank" rel="noopener">⬇ Download QuickCheck</a>
         <a class="btn ghost" href="guide.html">Read the setup guide</a>

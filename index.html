@@ -251,6 +251,19 @@
   .guarantee b{display:block; margin-bottom:4px; font-size:15px;}
   @media(max-width:560px){ .offer-price b{font-size:48px;} .offer{padding:30px 20px 24px;} }
 
+  /* Two editions side by side */
+  .two-offers{display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:860px;
+    margin:40px auto 0; align-items:stretch;}
+  .two-offers .offer{margin:0; max-width:none; display:flex; flex-direction:column; text-align:center;}
+  .two-offers .offer.basic{border:1px solid var(--line); box-shadow:var(--shadow);}
+  .two-offers .offer.pro{border:2px solid var(--teal);}
+  .ed{font-size:15px; font-weight:600; color:var(--muted); margin-bottom:10px;}
+  .ed b{color:var(--ink); font-weight:850;}
+  .two-offers .checklist li{font-size:14px;}
+  .offer-actions{display:flex; flex-direction:column; gap:9px; margin-top:auto; padding-top:20px;}
+  .offer-actions .btn{justify-content:center;}
+  @media(max-width:760px){ .two-offers{grid-template-columns:1fr;} }
+
   /* QuickCheck Pro — TOS + competency gap section */
   .pro-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:32px;}
   .pro-box h3{font-size:17px; margin-bottom:8px;}
@@ -348,11 +361,11 @@
       <h1>Stop checking papers by hand. QuickCheck marks them <span class="hl">automatically</span>.</h1>
       <p class="lead">Snap a photo of your students' answer sheets and QuickCheck scores every paper for you — then writes the marks straight into your class record. <b>Pro also shows which competencies your class has not yet mastered.</b> Works offline, on your own computer.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#pricing">Get it — ₱499 lifetime</a>
+        <a class="btn primary" href="#pricing">See prices — from ₱499</a>
         <a class="btn ghost" href="#competency">See the competency report</a>
         <a class="btn ghost" href="guide.html">How it works</a>
       </div>
-      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Promo:</b> <s>₱1,299</s> → <b>₱499 one-time</b> · lifetime access · 7-day money-back guarantee</p>
+      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Basic ₱499</b> · <b>Pro ₱999</b> (adds TOS &amp; competency tracking) · lifetime · 7-day money-back guarantee</p>
     </div>
 
     <!-- Phone mockup: the "snap → graded" moment -->
@@ -658,27 +671,60 @@
   <!-- PRICING -->
   <section id="pricing">
     <div class="section-head">
-      <p class="eyebrow">One price. No subscription.</p>
+      <p class="eyebrow">Two editions. No subscription.</p>
       <h2>Pay once. Use it for as long as you teach.</h2>
       <p class="lead">No monthly fees, no accounts, no online billing. You get an activation key and you're in.</p>
     </div>
 
-    <div class="offer card">
-      <span class="flag">Promo — limited time</span>
-      <div style="font-size:13px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--teal-d); margin-bottom:6px">QuickCheck Pro</div>
-      <div class="offer-price">
-        <s>₱1,299</s>
-        <b>₱499</b>
-        <span>one-time · lifetime access</span>
+    <div class="two-offers">
+      <!-- BASIC -->
+      <div class="offer card basic">
+        <div class="ed">QuickCheck <b>Basic</b></div>
+        <div class="offer-price">
+          <s>₱1,299</s>
+          <b>₱499</b>
+          <span>one-time · lifetime access</span>
+        </div>
+        <ul class="checklist" style="margin:16px 0 0; text-align:left;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Automatic checking</b> — snap the sheets, get every score.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Scores written into your class record.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Item analysis &amp; printable answer sheets.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Yours forever — no renewals.</li>
+        </ul>
+        <div class="offer-actions">
+          <a class="btn primary" href="#buy">Get Basic — ₱499</a>
+          <a class="btn ghost" href="https://drive.google.com/drive/folders/1rwQPpxIKfPX0qk3BfhbVbJZ3YL5gvd_d?usp=sharing" target="_blank" rel="noopener">⬇ Download Basic</a>
+        </div>
       </div>
-      <ul class="checklist" style="margin:18px auto 0; max-width:430px; text-align:left;">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Automatic checking</b> — snap the answer sheets, get every score.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Table of Specifications builder</b> — type the days you taught each competency; the item counts are computed the DepEd way.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Least-learned competencies</b> — see exactly which ones your class did not master, ranked weakest first.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Yours forever</b> — no renewals, no expiry, free updates.</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> One key works on one computer.</li>
-      </ul>
-      <a class="btn primary" style="margin-top:22px" href="#buy">Get my key — ₱499</a>
+
+      <!-- PRO -->
+      <div class="offer card pro">
+        <span class="flag">Most complete</span>
+        <div class="ed">QuickCheck <b>Pro</b></div>
+        <div class="offer-price">
+          <b>₱999</b>
+          <span>one-time · lifetime access</span>
+        </div>
+        <ul class="checklist" style="margin:16px 0 0; text-align:left;">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Everything in Basic</b>, plus:</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Table of Specifications builder</b> — days taught → item counts, the DepEd way.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Least-learned competencies</b>, ranked weakest first.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Each learner's own list of learning gaps.</li>
+        </ul>
+        <div class="offer-actions">
+          <a class="btn primary" href="#buy">Get Pro — ₱999</a>
+          <a class="btn ghost" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">⬇ Download Pro</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="offer card" style="max-width:560px; margin-top:18px; text-align:left; padding:20px 24px">
+      <b>Which download do I need?</b>
+      <p style="color:var(--muted); font-size:14px; margin:6px 0 0">
+        Basic and Pro are separate downloads, and <b>your key only opens the one you bought</b>.
+        A Basic key won't open Pro — the app will tell you and point you to the right version,
+        so nothing is lost if you download the wrong one. Already have Basic and want the
+        competency features? Just message us to upgrade your key.</p>
       <div class="guarantee">
         <b>🛡 7-day money-back guarantee</b>
         Try it on a real class. If it doesn't save you time, message me within 7 days
@@ -696,7 +742,7 @@
     </div>
     <div class="buy-grid">
       <ol class="steps-list">
-        <li><b>Send ₱499</b> — one payment, lifetime access.</li>
+        <li><b>Send ₱499 (Basic) or ₱999 (Pro)</b> — one payment, lifetime access. Tell us which edition.</li>
         <li><b>Send your payment</b> to any option on the right — GCash, Maya, or bank transfer.</li>
         <li><b>Email or message Arvin</b> with your <b>name</b> and a <b>screenshot of your payment</b>. You'll get your <i>.qckey</i> file to activate — and you're in.</li>
       </ol>
@@ -732,7 +778,7 @@
   <section>
     <div class="card final">
       <h2>Give your evenings back.</h2>
-      <p><s>₱1,299</s> <b>₱499 one-time</b> — lifetime access, with a 7-day money-back guarantee.</p>
+      <p><b>Basic ₱499</b> or <b>Pro ₱999</b> — one-time, lifetime access, with a 7-day money-back guarantee.</p>
 
       <div class="expect">
         <b>Before you download — what to expect (30 seconds)</b>

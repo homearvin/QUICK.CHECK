@@ -251,18 +251,10 @@
   .guarantee b{display:block; margin-bottom:4px; font-size:15px;}
   @media(max-width:560px){ .offer-price b{font-size:48px;} .offer{padding:30px 20px 24px;} }
 
-  /* Two editions side by side */
-  .two-offers{display:grid; grid-template-columns:1fr 1fr; gap:18px; max-width:860px;
-    margin:40px auto 0; align-items:stretch;}
-  .two-offers .offer{margin:0; max-width:none; display:flex; flex-direction:column; text-align:center;}
-  .two-offers .offer.basic{border:1px solid var(--line); box-shadow:var(--shadow);}
-  .two-offers .offer.pro{border:2px solid var(--teal);}
   .ed{font-size:15px; font-weight:600; color:var(--muted); margin-bottom:10px;}
   .ed b{color:var(--ink); font-weight:850;}
-  .two-offers .checklist li{font-size:14px;}
-  .offer-actions{display:flex; flex-direction:column; gap:9px; margin-top:auto; padding-top:20px;}
+  .offer-actions{display:flex; flex-direction:column; gap:9px; padding-top:20px;}
   .offer-actions .btn{justify-content:center;}
-  @media(max-width:760px){ .two-offers{grid-template-columns:1fr;} }
 
   /* QuickCheck Pro — TOS + competency gap section */
   .pro-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:32px;}
@@ -324,6 +316,19 @@
   .final h2{font-size:clamp(26px,3vw,40px); font-weight:850; letter-spacing:-.025em; max-width:18ch; margin:0 auto;}
   .final p{color:var(--muted); margin-top:14px;}
 
+  /* ---- tutorial video (plays on this page; see data-youtube on #tutorial) ---- */
+  /* A grid, so the "coming soon" message stretches to 16:9 but can still grow taller on a phone. */
+  .video{position:relative; display:grid; aspect-ratio:16/9; margin-top:30px; background:var(--surface-2);}
+  .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:inherit;}
+  .video-soon{display:grid; place-content:center; justify-items:center; gap:10px;
+    text-align:center; padding:28px 22px; color:var(--muted); font-size:14.5px;}
+  .video-soon b{color:var(--ink); font-size:clamp(18px,1.6vw + 10px,22px);}
+  .video-soon a{color:var(--teal-d); font-weight:700;}
+  .video-soon .play{width:72px; height:72px; border-radius:50%; display:grid; place-items:center;
+    background:var(--teal-soft); color:var(--teal-d); margin-bottom:4px;}
+  .video-soon .play svg{width:30px; height:30px; margin-left:4px;}
+  .offer-note{color:var(--muted); font-size:13.5px; margin-top:14px;}
+
   footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--muted); font-size:13px;
     display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;}
 
@@ -359,14 +364,14 @@
     <div>
       <p class="eyebrow">Automatic exam checker for teachers</p>
       <h1>Stop checking papers by hand. QuickCheck marks them <span class="hl">automatically</span>.</h1>
-      <p class="lead">Snap a photo of your students' answer sheets and QuickCheck scores every paper for you — then writes the marks straight into your class record. <b>Pro also shows which competencies your class has not yet mastered.</b> Works offline, on your own computer.</p>
+      <p class="lead">Snap a photo of your students' answer sheets and QuickCheck scores every paper for you — then writes the marks straight into your class record. <b>It also shows which competencies your class has not yet mastered.</b> Works offline, on your own computer.</p>
       <div class="cta-row">
         <a class="btn primary" href="#pricing">Try it free for 7 days</a>
-        <a class="btn ghost" href="#pricing">See prices — from ₱499</a>
-        <a class="btn ghost" href="guide.html">How it works</a>
+        <a class="btn ghost" href="#tutorial">▶ Watch the tutorial</a>
+        <a class="btn ghost" href="#pricing">See the price — ₱299</a>
       </div>
       <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Free for 7 days</b> — download and use it now, no key needed.</span></p>
-      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Basic ₱499</b> · <b>Pro ₱999</b> (adds TOS &amp; competency tracking) · lifetime · 7-day money-back guarantee</p>
+      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>QuickCheck Pro ₱299</b> launch price · lifetime access · 7-day money-back guarantee</span></p>
     </div>
 
     <!-- Phone mockup: the "snap → graded" moment -->
@@ -386,6 +391,25 @@
           </div>
           <div class="score-chip">✓ Scored 23 / 25 — saved to record</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTORIAL VIDEO
+       To show your video: paste its YouTube link between the quotes of data-youtube="" below.
+       A normal youtube.com link, a youtu.be link or a Shorts link all work. Leave it empty and the
+       page shows "coming soon". The video plays right here — visitors never leave for YouTube. -->
+  <section id="tutorial">
+    <div class="section-head">
+      <p class="eyebrow">Video tutorial</p>
+      <h2>Watch how QuickCheck works.</h2>
+      <p class="lead">From your class list to scores in your record — follow along, step by step.</p>
+    </div>
+    <div class="video card" data-youtube="">
+      <div class="video-soon">
+        <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span>
+        <b>Tutorial video coming soon</b>
+        <span>Meanwhile, the <a href="guide.html">step-by-step guide</a> walks you through everything.</span>
       </div>
     </div>
   </section>
@@ -536,7 +560,7 @@
         <h3><span class="gi b-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> Install it (one time)</h3>
         <ol class="steps-list">
           <li><b>Unzip the file</b> you were given (<i>QuickCheck-portable.zip</i>) into any folder — for example your Desktop.</li>
-          <li><b>Double-click <i>QuickCheck.exe</i>.</b><span class="sub">The first open can take up to a minute, then the QuickCheck window opens.</span></li>
+          <li><b>Double-click <i>QuickCheckPro.exe</i>.</b><span class="sub">The first open can take up to a minute, then the QuickCheck window opens.</span></li>
           <li>If Windows shows <b>“Windows protected your PC,”</b> click <b>More info → Run anyway</b>.<span class="sub">This is normal for a new app — it is safe.</span></li>
           <li><b>Use it free for 7 days.</b> No key is needed — the trial starts by itself and a bar shows the days left.<span class="sub">When you buy, click <b>Buy or enter a key</b> and choose your <i>.qckey</i> file. Everything you made stays.</span></li>
         </ol>
@@ -672,66 +696,33 @@
   <!-- PRICING -->
   <section id="pricing">
     <div class="section-head">
-      <p class="eyebrow">Two editions. No subscription.</p>
+      <p class="eyebrow">One price. No subscription.</p>
       <h2>Pay once. Use it for as long as you teach.</h2>
       <p class="lead">No monthly fees, no accounts, no online billing. You get an activation key and you're in.</p>
     </div>
 
-    <div class="two-offers">
-      <!-- BASIC -->
-      <div class="offer card basic">
-        <div class="ed">QuickCheck <b>Basic</b></div>
-        <div class="offer-price">
-          <s>₱1,299</s>
-          <b>₱499</b>
-          <span>one-time · lifetime access</span>
-        </div>
-        <ul class="checklist" style="margin:16px 0 0; text-align:left;">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Automatic checking</b> — snap the sheets, get every score.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Scores written into your class record.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Formal test reports</b> — MPS, proficiency levels, score distribution and item analysis, as PDF or Excel.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Printable answer sheets.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> True/False, A–C, A–D, A–E and <b>matching type</b> sheets.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Yours forever — no renewals.</li>
-        </ul>
-        <div class="offer-actions">
-          <a class="btn primary" href="#buy">Get Basic — ₱499</a>
-          <a class="btn ghost" href="https://drive.google.com/drive/folders/1rwQPpxIKfPX0qk3BfhbVbJZ3YL5gvd_d?usp=sharing" target="_blank" rel="noopener">⬇ Try Basic free for 7 days</a>
-        </div>
+    <div class="offer card">
+      <span class="flag">Launch price</span>
+      <div class="ed">QuickCheck <b>Pro</b></div>
+      <div class="offer-price">
+        <s>₱999</s>
+        <b>₱299</b>
+        <span>one-time · lifetime access</span>
       </div>
-
-      <!-- PRO -->
-      <div class="offer card pro">
-        <span class="flag">Most complete</span>
-        <div class="ed">QuickCheck <b>Pro</b></div>
-        <div class="offer-price">
-          <b>₱999</b>
-          <span>one-time · lifetime access</span>
-        </div>
-        <ul class="checklist" style="margin:16px 0 0; text-align:left;">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Everything in Basic</b>, plus:</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Table of Specifications builder</b> — days taught → item counts, the DepEd way.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>Least-learned competencies</b>, ranked weakest first.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> Each learner's own list of learning gaps.</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <b>One complete report</b> — every Basic report plus least mastered competencies, the TOS and a learner-by-competency matrix, as PDF or Excel.</li>
-        </ul>
-        <div class="offer-actions">
-          <a class="btn primary" href="#buy">Get Pro — ₱999</a>
-          <a class="btn ghost" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">⬇ Try Pro free for 7 days</a>
-        </div>
+      <ul class="checklist" style="margin:18px 0 0; text-align:left;">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Automatic checking</b> — snap the sheets, get every score.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span>Scores written into your class record.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Table of Specifications builder</b> — days taught → item counts, the DepEd way.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Least-learned competencies</b>, ranked weakest first, and each learner's own list of gaps.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Formal test reports</b> — MPS, proficiency levels, item analysis, competencies, the TOS and a learner-by-competency matrix, as PDF or Excel.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span>Printable answer sheets — True/False, A–C, A–D, A–E and <b>matching type</b>.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Lifetime access</b> — yours forever, no renewals.</span></li>
+      </ul>
+      <div class="offer-actions">
+        <a class="btn primary" href="#buy">Get QuickCheck Pro — ₱299</a>
+        <a class="btn ghost" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">⬇ Try it free for 7 days</a>
       </div>
-    </div>
-
-    <div class="offer card" style="max-width:560px; margin-top:18px; text-align:left; padding:20px 24px">
-      <b>Which download do I need?</b>
-      <p style="color:var(--muted); font-size:14px; margin:6px 0 0">
-        <b>Both downloads start with a free 7-day trial</b> of that edition — no key needed. When you buy,
-        enter your key in the same app; there's nothing to download again and your work stays.</p>
-      <p style="color:var(--muted); font-size:14px; margin:10px 0 0">
-        Basic and Pro are separate downloads, and <b>your key only opens the one you bought</b>.
-        A Basic key won't open Pro — the app will tell you and point you to the right version,
-        so nothing is lost if you download the wrong one. Already have Basic and want the
-        competency features? Just message us to upgrade your key.</p>
+      <p class="offer-note">The download starts a free 7-day trial — no key needed. When you buy, enter your key in the same app; there's nothing to download again and your work stays.</p>
       <div class="guarantee">
         <b>🛡 7-day money-back guarantee</b>
         Try it on a real class. If it doesn't save you time, message me within 7 days
@@ -749,7 +740,7 @@
     </div>
     <div class="buy-grid">
       <ol class="steps-list">
-        <li><b>Send ₱499 (Basic) or ₱999 (Pro)</b> — one payment, lifetime access. Tell us which edition.</li>
+        <li><b>Send ₱299</b> — one payment, lifetime access to QuickCheck Pro.</li>
         <li><b>Send your payment</b> to any option on the right — GCash, Maya, or bank transfer.</li>
         <li><b>Email or message Arvin</b> with your <b>name</b> and a <b>screenshot of your payment</b>. You'll get your <i>.qckey</i> file. In QuickCheck, click <b>Buy or enter a key</b>, choose the file — and you're in. Everything from your trial stays.</li>
       </ol>
@@ -785,7 +776,7 @@
   <section>
     <div class="card final">
       <h2>Give your evenings back.</h2>
-      <p><b>Start free for 7 days — no key needed.</b> Then <b>Basic ₱499</b> or <b>Pro ₱999</b> — one-time, lifetime access, with a 7-day money-back guarantee.</p>
+      <p><b>Start free for 7 days — no key needed.</b> Then <b>QuickCheck Pro for ₱299</b> (launch price) — one-time, lifetime access, with a 7-day money-back guarantee.</p>
 
       <div class="expect">
         <b>Before you download — what to expect (30 seconds)</b>
@@ -809,5 +800,25 @@
     <span>Email azmarketingservicesbicol@gmail.com · Message 0912 068 8399 · Runs on Windows</span>
   </footer>
 </div>
+<script>
+  // Tutorial video: turns the YouTube link in data-youtube into a player on this page.
+  // With no link it leaves the "coming soon" box in place.
+  (function () {
+    var box = document.querySelector('.video[data-youtube]');
+    if (!box) return;
+    var link = box.getAttribute('data-youtube').trim();
+    var match = link.match(/(?:youtu\.be\/|[?&]v=|\/embed\/|\/shorts\/|\/live\/)([\w-]{11})/) ||
+                link.match(/^([\w-]{11})$/);
+    if (!match) return;
+    var frame = document.createElement('iframe');
+    frame.src = 'https://www.youtube-nocookie.com/embed/' + match[1] + '?rel=0';
+    frame.title = 'QuickCheck video tutorial';
+    frame.allow = 'accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.referrerPolicy = 'strict-origin-when-cross-origin';   // YouTube refuses to play without it
+    frame.allowFullscreen = true;
+    frame.loading = 'lazy';
+    box.replaceChildren(frame);
+  }());
+</script>
 </body>
 </html>

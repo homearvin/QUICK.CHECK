@@ -1,0 +1,15 @@
+{
+  "latest": "2.0.0",
+  "released": "2026-09-16",
+  "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
+  "changes": [
+    "Updating keeps your work: open a newer QuickCheck from any folder and your classes, tests, scores and key are already there.",
+    "QuickCheck tells you when a newer version is available.",
+    "Exam parts on one answer sheet: Part I multiple choice, Part II true or false, Part III matching type.",
+    "Progress across tests for each class and each learner.",
+    "Pro: interventions and reassessment, with before and after results and a printable report.",
+    "Import a class list from an Excel or CSV file, a DepEd class record, or cells copied from Excel.",
+    "Class records made in QuickCheck can be edited: learners, terms and score columns.",
+    "Formal DepEd-style test reports on screen, as PDF and as Excel."
+  ]
+}

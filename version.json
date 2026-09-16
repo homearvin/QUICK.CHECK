@@ -1,8 +1,9 @@
 ﻿{
-  "latest": "2.0.2",
+  "latest": "2.0.3",
   "released": "2026-09-16",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed: opening QuickCheck while another QuickCheck was still running showed the old window, so a new version looked like it had not been installed. It now tells you it is already open.",
     "Fixed: QuickCheck could save your work in a different folder from the one it read next time, so classes and tests looked cleared. It now proves the folder works, always tells you which folder it uses, and warns if the program is opened from inside the zip.",
     "Updating keeps your work: open a newer QuickCheck from any folder and your classes, tests, scores and key are already there.",
     "QuickCheck tells you when a newer version is available.",

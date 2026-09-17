@@ -1,8 +1,12 @@
 {
-  "latest": "2.1.0",
+  "latest": "2.2.0",
   "released": "2026-09-17",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Update in one click: when a new version is out, press Update now, then Restart QuickCheck. No more downloading, unzipping or deleting the old copy.",
+    "Every update is checked before it is installed: it must be complete and signed by QuickCheck. Your classes, tests and scores are never touched.",
+    "Fixed: the update notice could not read the website's version file, so it never appeared.",
+    "Fixed: the Results list showed a line of computer text instead of each test's number of items.",
     "A new look everywhere: a dashboard that shows what to do next, class and item charts, and the same clear layout on every page.",
     "Points per item: on the answer key page, make some items worth more (for example items 1 to 5 worth 5 points each). Scores, the class record and reports use the points.",
     "Answer sheets and Make a test are now numbered steps with a picture of the sheet, so you always know what to do next.",
@@ -10,10 +14,14 @@
     "Unreviewed papers stay in the review queue after a partial save. Adding photos cannot overwrite another paper after one is removed.",
     "Safer saving: interrupted saves can be recovered, simultaneous phone uploads are kept, and invalid learner or score entries are explained.",
     "Backups include Excel class records. Restore checks the backup first and keeps a safety copy of your current work.",
-    "Damaged results show a recovery message while other tests remain available. Phone links use the app's actual address.",
-    "Fixed: opening QuickCheck while another QuickCheck was still running showed the OLD window, so a newly downloaded version looked like it had not been installed. QuickCheck now tells you that it is already open, so you can close the other window first.",
-    "Fixed: in some cases QuickCheck could save your work in a different folder from the one it read at the next start, so classes and tests looked like they had been cleared. It now proves the folder works before using it, always tells you which folder it is using, and warns you if the program is opened from inside the zip (Windows deletes those folders).",
-    "QuickCheck keeps a short record of each start, so a problem can be traced instead of guessed.",
-    "Restoring a backup now saves your current work first."
-  ]
+    "Damaged results show a recovery message while other tests remain available. Phone links use the app's actual address."
+  ],
+  "packages": {
+    "pro": {
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip",
+      "sha256": "5a2fb60e0b7be8734452d99bf908aed5c5ccf74654227c09c0546a0c843f9e58",
+      "signature": "NQrBj0hL35bp3BGh9DME23OFf/3VB8iPMTAwlnTMcpphXvD1t57qO6sfcBQY/6EsKk+V1cF6bTVZQxpMfRUDBw==",
+      "exe": "QuickCheckPro.exe"
+    }
+  }
 }

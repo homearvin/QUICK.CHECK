@@ -81,7 +81,12 @@
   .lead{color:var(--muted); font-size:clamp(16px,1.2vw+12px,19px);}
 
   /* ---- Top brand bar ---- */
-  .topbar{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 0;}
+  .topbar{display:flex; align-items:center; justify-content:space-between; gap:14px;
+    position:sticky; top:10px; z-index:60; margin:14px 0 0; padding:11px 11px 11px 16px;
+    background:color-mix(in srgb, var(--surface) 88%, transparent);
+    -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+    border:1px solid var(--line); border-radius:999px; box-shadow:var(--shadow);}
+  .topbar-right{display:flex; align-items:center; gap:12px;}
   .brand{display:flex; align-items:center; gap:11px; font-weight:800; letter-spacing:-.01em;}
   .logo{width:40px; height:40px; border-radius:12px; flex:0 0 auto;
     background:linear-gradient(135deg,#2fe0c4,#12a594); color:#06302c;
@@ -107,6 +112,22 @@
   .btn.ghost{background:var(--surface); color:var(--ink); border-color:var(--line); box-shadow:var(--shadow);}
   .hero-note{margin-top:16px; font-size:13px; color:var(--muted); display:flex; align-items:center; gap:8px;}
   .hero-note svg{width:16px;height:16px;color:var(--good);}
+
+  /* ---- Download button (the one thing every visitor must find) ---- */
+  .btn.big{font-size:17px; padding:17px 26px;}
+  .btn.sm{font-size:14px; padding:11px 16px; border-radius:12px;}
+  .btn.dl svg{width:19px; height:19px; flex:0 0 auto;}
+  .btn.sm.dl svg{width:17px; height:17px;}
+  .dl-facts{margin-top:10px; font-size:13px; color:var(--muted);}
+  .dl-facts b{color:var(--ink);}
+  .dl-after{margin-top:20px; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius-sm); box-shadow:var(--shadow); padding:16px 18px; max-width:520px;}
+  .dl-after b{font-size:14px;}
+  .dl-after ol{margin:8px 0 0; padding-left:20px; color:var(--muted); font-size:14px;}
+  .dl-after li{margin-top:5px;}
+  .dl-after li b{color:var(--ink); font-size:inherit;}
+  .dl-alt{margin-top:12px; font-size:12.5px; color:var(--faint);}
+  .dl-alt a{color:var(--muted);}
 
   /* ---- Phone mock ---- */
   .phone{width:100%; max-width:300px; margin:0 auto; aspect-ratio:9/18.5; border-radius:34px;
@@ -344,7 +365,10 @@
     .band{padding:30px;}
     section{padding:48px 0;}
   }
-  @media (max-width:520px){ .features,.pain{grid-template-columns:1fr;} .band .grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:860px){ .topbar .tag{display:none;} }
+  @media (max-width:520px){ .features,.pain{grid-template-columns:1fr;} .band .grid{grid-template-columns:1fr 1fr;}
+    .topbar{padding-left:13px;} .brand small{display:none;} .btn.big{font-size:15.5px; padding:15px 20px;}
+    .cta-row .btn{width:100%; justify-content:center;} }
   @media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
 
   </style>
@@ -356,7 +380,13 @@
       <span class="logo" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span>
       <span>QuickCheck<small>Paper-exam checker for teachers</small></span>
     </div>
-    <span class="tag">Runs on your Windows PC · Works offline</span>
+    <div class="topbar-right">
+      <span class="tag">Runs on your Windows PC · Works offline</span>
+      <a class="btn primary sm dl js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        Download free
+      </a>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -366,12 +396,25 @@
       <h1>Stop checking papers by hand. QuickCheck marks them <span class="hl">automatically</span>.</h1>
       <p class="lead">Snap a photo of your students' answer sheets and QuickCheck scores every paper for you — then writes the marks straight into your class record. <b>It also shows which competencies your class has not yet mastered.</b> Works offline, on your own computer.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#pricing">Try it free for 7 days</a>
+        <a class="btn primary big dl js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download QuickCheck — free for 7 days
+        </a>
+        <a class="btn ghost" href="guide.html">How to install it</a>
         <a class="btn ghost" href="#tutorial">▶ Watch the tutorial</a>
-        <a class="btn ghost" href="#pricing">See the price — ₱299</a>
       </div>
-      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Free for 7 days</b> — download and use it now, no key needed.</span></p>
-      <p class="hero-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>QuickCheck Pro ₱299</b> launch price · lifetime access · 7-day money-back guarantee</span></p>
+      <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.2.0</b> · <b class="js-dl-size">87 MB</b> zip file ·
+        <b>no key needed</b> for the first 7 days · then ₱299 once, lifetime.</p>
+
+      <div class="dl-after">
+        <b>What happens after you press that button</b>
+        <ol>
+          <li>Your browser saves <b>QuickCheckPro-portable.zip</b> to your <b>Downloads</b> folder. If it asks, choose <b>Keep</b>.</li>
+          <li><b>Right-click the zip → Extract All</b> into a normal folder, for example Documents.</li>
+          <li>Open that folder and double-click <b>QuickCheckPro.exe</b>. If Windows shows a blue box, click <b>More info → Run anyway</b>.</li>
+        </ol>
+        <p class="dl-alt">Download not starting? <a class="js-download-mirror" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">Use the Google Drive copy instead</a> · <a href="guide.html">Full teacher guide</a></p>
+      </div>
     </div>
 
     <!-- Phone mockup: the "snap → graded" moment -->
@@ -559,7 +602,8 @@
       <div class="guide card">
         <h3><span class="gi b-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></span> Install it (one time)</h3>
         <ol class="steps-list">
-          <li><b>Unzip the file</b> you were given (<i>QuickCheck-portable.zip</i>) into any folder — for example your Desktop.</li>
+          <li><b>Press the green Download button</b> at the top of this page. It saves <i>QuickCheckPro-portable.zip</i> to your Downloads folder.</li>
+          <li><b>Right-click the zip → Extract All</b> into a normal folder — for example Documents. Don't work inside the zip.</li>
           <li><b>Double-click <i>QuickCheckPro.exe</i>.</b><span class="sub">The first open can take up to a minute, then the QuickCheck window opens.</span></li>
           <li>If Windows shows <b>“Windows protected your PC,”</b> click <b>More info → Run anyway</b>.<span class="sub">This is normal for a new app — it is safe.</span></li>
           <li><b>Use it free for 7 days.</b> No key is needed — the trial starts by itself and a bar shows the days left.<span class="sub">When you buy, click <b>Buy or enter a key</b> and choose your <i>.qckey</i> file. Everything you made stays.</span></li>
@@ -586,17 +630,20 @@
       <h3><span class="gi b-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></span> Check your first exam</h3>
       <div class="guide-grid" style="margin-top:20px;">
         <ol class="steps-list">
-          <li><b>Add your class.</b> Open <i>Classes</i> → upload your class-record Excel file, or type in the class list.</li>
-          <li><b>Create a test.</b> Give it a name, pick the class, set the number of items and the choices (A–D, etc.), and which score column it goes to.</li>
-          <li><b>Set the answer key.</b> Tap in the correct answers.</li>
-          <li><b>Print the answer sheets.</b> Open <i>Answer Sheets</i> → print one per student.</li>
+          <li><b>Add your class.</b> Open <i>My classes</i> → <b>Add a class</b>: build a DepEd record here, copy your existing e-class record, or just type the names.</li>
+          <li><b>Create a test.</b> Open <i>Check papers</i> → <b>Create test</b>: name it, pick the class, set the items and choices (A–D, matching, or mixed parts), and the score column it fills.</li>
+          <li><b>Set the answer key.</b> Tap in the correct answers, then say how many <b>points</b> each item is worth — 1 point each, or ranges like items 1–5 worth 5 points.</li>
+          <li><b>Print the answer sheets.</b> Open <i>Answer sheets</i> → named or blank, 1–4 per A4 page → print at <b>100%</b>.</li>
         </ol>
         <ol class="steps-list" start="5">
-          <li><b>On your phone, open the test → Check papers → Take a photo</b> of each sheet.</li>
-          <li><b>Review each paper</b> — see the photo and what was read, fix anything, pick the student, confirm.</li>
-          <li><b>Save all.</b> The scores go into your class record, and a backup is kept.</li>
-          <li><b>Open <i>Results</i></b> to see the class average, ranking, hard questions, and the printable report.</li>
+          <li><b>On your phone, open the test → Take a photo</b> of each sheet.</li>
+          <li><b>Review each paper</b> — see the marked photo and what was read, fix anything, check the learner's name, confirm.</li>
+          <li><b>Save all.</b> The scores go into your class record, and a backup of that file is kept.</li>
+          <li><b>Open <i>Results</i></b> for the class average, item analysis, least-learned competencies and the reports you can submit.</li>
         </ol>
+      </div>
+      <div class="cta-row" style="margin-top:6px;">
+        <a class="btn ghost" href="guide.html">Open the full step-by-step teacher guide</a>
       </div>
     </div>
   </section>
@@ -720,7 +767,10 @@
       </ul>
       <div class="offer-actions">
         <a class="btn primary" href="#buy">Get QuickCheck Pro — ₱299</a>
-        <a class="btn ghost" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">⬇ Try it free for 7 days</a>
+        <a class="btn ghost dl js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download and try it free for 7 days
+        </a>
       </div>
       <p class="offer-note">The download starts a free 7-day trial — no key needed. When you buy, enter your key in the same app; there's nothing to download again and your work stays.</p>
       <div class="guarantee">
@@ -764,7 +814,7 @@
         </div>
         <div class="contact" style="flex-direction:column; align-items:flex-start; gap:6px">
           <div>📧 <b>Email (best):</b> <a href="mailto:azmarketingservicesbicol@gmail.com" style="color:inherit"><b>azmarketingservicesbicol@gmail.com</b></a></div>
-          <div>💬 <b>Facebook:</b> <a href="https://www.facebook.com/HomeArvin" target="_blank" rel="noopener" style="color:inherit"><b>facebook.com/HomeArvin</b></a></div>
+          <div>💬 <b>Facebook:</b> <a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener" style="color:inherit"><b>AZ Digital Marketing</b></a></div>
           <div>📱 <b>GCash / message:</b> <span class="big" style="font-size:16px">0912 068 8399</span></div>
           <div style="font-size:12.5px; opacity:.85; margin-top:2px">Keys are sent by email, usually within a few hours. Covered by the 7-day money-back guarantee.</div>
         </div>
@@ -781,15 +831,18 @@
       <div class="expect">
         <b>Before you download — what to expect (30 seconds)</b>
         <ol>
-          <li>Google Drive may say <i>"can't scan this file for viruses"</i> — that's just because the file is large. Click <b>Download anyway</b>.</li>
+          <li>Pressing the button saves a <b>.zip file</b> to your <b>Downloads</b> folder. Your browser may ask first — choose <b>Keep</b>. It is about <b class="js-dl-size">87 MB</b>, so give it a minute.</li>
           <li><b>Right-click the .zip → Extract All</b> into a normal folder (e.g. Documents). Don't run it from inside the zip, or your work won't be saved.</li>
-          <li>Windows may show a blue <i>"Windows protected your PC"</i> box. Click <b>More info → Run anyway</b>. This is normal for a new app.</li>
+          <li>Open the folder and double-click <b>QuickCheckPro.exe</b>. Windows may show a blue <i>"Windows protected your PC"</i> box — click <b>More info → Run anyway</b>. This is normal for a new app.</li>
           <li>QuickCheck opens straight away with a <b>7-day free trial</b>. When you buy, enter the <b>.qckey</b> file emailed to you — no need to download again.</li>
         </ol>
       </div>
 
       <div class="cta-row" style="justify-content:center;">
-        <a class="btn primary" href="https://drive.google.com/drive/folders/1bJS8483H8WdtexUi1LpiZ_Mx7_SC5V6z?usp=drive_link" target="_blank" rel="noopener">⬇ Try QuickCheck Pro free</a>
+        <a class="btn primary big dl js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          Download QuickCheck Pro — free for 7 days
+        </a>
         <a class="btn ghost" href="guide.html">Read the setup guide</a>
       </div>
     </div>
@@ -797,7 +850,9 @@
 
   <footer>
     <span>QuickCheck · by Arvin Gallinera</span>
-    <span>Email azmarketingservicesbicol@gmail.com · Message 0912 068 8399 · Runs on Windows</span>
+    <span>Email azmarketingservicesbicol@gmail.com ·
+      <a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener" style="color:inherit">AZ Digital Marketing on Facebook</a> ·
+      Message 0912 068 8399 · Runs on Windows</span>
   </footer>
 </div>
 <script>
@@ -818,6 +873,29 @@
     frame.allowFullscreen = true;
     frame.loading = 'lazy';
     box.replaceChildren(frame);
+  }());
+
+  // Download buttons: keep them pointing at the newest release.
+  // version.json (the same file the app reads to offer updates) is the single source of
+  // truth, so a new release only has to be published there. If it can't be read, the
+  // links keep the version written into the page.
+  (function () {
+    var links = document.querySelectorAll('a.js-download');
+    if (!links.length || !window.fetch) return;
+    fetch('version.json', {cache: 'no-cache'}).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (data) {
+      var pack = data && data.packages && data.packages.pro;
+      if (!pack || !pack.url || pack.url.indexOf('https://') !== 0) return;
+      links.forEach(function (a) { a.href = pack.url; });
+      if (data.latest) {
+        document.querySelectorAll('.js-dl-version').forEach(function (el) { el.textContent = data.latest; });
+      }
+      if (pack.size) {
+        var mb = Math.round(pack.size / 1048576) + ' MB';
+        document.querySelectorAll('.js-dl-size').forEach(function (el) { el.textContent = mb; });
+      }
+    }).catch(function () { /* keep the links already in the page */ });
   }());
 </script>
 </body>

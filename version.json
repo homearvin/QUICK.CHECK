@@ -21,7 +21,8 @@
       "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip",
       "sha256": "5a2fb60e0b7be8734452d99bf908aed5c5ccf74654227c09c0546a0c843f9e58",
       "signature": "NQrBj0hL35bp3BGh9DME23OFf/3VB8iPMTAwlnTMcpphXvD1t57qO6sfcBQY/6EsKk+V1cF6bTVZQxpMfRUDBw==",
-      "exe": "QuickCheckPro.exe"
+      "exe": "QuickCheckPro.exe",
+      "size": 91318948
     }
   }
 }

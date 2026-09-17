@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>QuickCheck Teacher Guide</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Download QuickCheck and follow the complete step-by-step guide: install it, add your class, make a test, print answer sheets, check papers from your phone, and get your reports.">
 <style>
   :root{
     --bg:#eef4f2; --surface:#ffffff; --surface-2:#f4f8f7;
@@ -49,6 +50,20 @@
     color:var(--accent);}
   h1{font-size:38px; line-height:1.15; margin:10px 0 12px; text-wrap:balance; letter-spacing:-.01em;}
   .lead{font-size:19px; color:var(--ink-soft); margin:0;}
+
+  /* Download card — the first thing on the page */
+  .dl{background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    padding:22px 24px; margin:24px 0 6px; box-shadow:var(--shadow);}
+  .dl h2{margin:0 0 4px; font-size:21px;}
+  .dl p{margin:0; color:var(--ink-soft); font-size:16px;}
+  .dlbtn{display:inline-flex; align-items:center; gap:10px; margin:14px 0 0;
+    background:var(--accent-strong); color:#fff; text-decoration:none; font-weight:800; font-size:17px;
+    padding:15px 24px; border-radius:14px; box-shadow:0 10px 24px rgba(15,75,71,.28);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dlbtn{background:var(--accent); color:#06302c;}}
+  :root[data-theme="dark"] .dlbtn{background:var(--accent); color:#06302c;}
+  .dlbtn svg{width:20px; height:20px;}
+  .dl .facts{margin-top:10px; font-size:14.5px;}
+  .dl .facts b{color:var(--ink);}
 
   /* Reassurance banner */
   .big-idea{
@@ -100,6 +115,7 @@
     display:grid; place-items:center; font-variant-numeric:tabular-nums;}
   ol.steps>li:last-child{padding-bottom:0;}
   ol.steps b{color:var(--ink);}
+  ol.steps ul{margin:8px 0 0; padding-left:20px; color:var(--ink-soft); font-size:16.5px;}
   .btnname{background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
     padding:1px 8px; font-weight:700; font-size:16px; white-space:nowrap;}
 
@@ -114,6 +130,14 @@
   @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .choice-h{color:var(--accent);}}
   :root[data-theme="dark"] .choice-h{color:var(--accent);}
 
+  /* Screen map */
+  .map{margin:16px 0 0; padding:0; list-style:none;}
+  .map li{display:flex; gap:12px; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line);
+    font-size:16.5px; color:var(--ink-soft);}
+  .map li:last-child{border-bottom:none;}
+  .map .nm{flex:0 0 150px; font-weight:800; color:var(--ink);}
+  @media (max-width:520px){ .map li{flex-direction:column; gap:2px;} .map .nm{flex:none;} }
+
   /* Footer */
   footer{margin-top:34px; text-align:center; color:var(--ink-soft); font-size:15.5px;}
   footer a{color:var(--accent); font-weight:700;}
@@ -126,6 +150,7 @@
   @media (max-width:520px){
     h1{font-size:30px;} .wrap{padding:26px 16px 60px;}
     .part{padding:22px 18px;} .part h2{font-size:22px;}
+    .dlbtn{width:100%; justify-content:center;}
   }
 </style>
 </head>
@@ -141,27 +166,44 @@
       bottom. After that, checking a whole class takes a few minutes.</p>
   </header>
 
+  <!-- DOWNLOAD -->
+  <div class="dl">
+    <h2>Don't have QuickCheck yet?</h2>
+    <p>This button downloads the app to your Windows computer. Nothing to sign up for.</p>
+    <a class="dlbtn js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Download QuickCheck — free for 7 days
+    </a>
+    <p class="facts">Windows 10 or 11 · version <b class="js-dl-version">2.2.0</b> ·
+      <b class="js-dl-size">87 MB</b> zip file · no key needed for the first 7 days.
+      Part 1 below explains exactly what to do with the file.</p>
+  </div>
+
   <div class="big-idea">
     <div class="ic">💡</div>
-    <p><b>You can't get lost.</b> QuickCheck always shows the <b>next button</b> to press — the green
-      one. If you are ever unsure what to do, look for the green button and press it.</p>
+    <p><b>You can't get lost.</b> Every page is a list of numbered steps, and the step you are on is
+      the one that is open. The <b>dark green button</b> is always the next thing to press. The
+      <b>Home</b> page also tells you, in one line, what to do next.</p>
   </div>
 
   <nav class="toc">
     <h2>What's in this guide</h2>
     <ol>
-      <li><a href="#p1">Install QuickCheck on your computer</a></li>
+      <li><a href="#p1">Download and install QuickCheck</a></li>
       <li><a href="#p2">Your free trial, and entering your key</a></li>
-      <li><a href="#p3">Add your class list</a></li>
-      <li><a href="#p4">Create a test</a></li>
-      <li><a href="#p5">Build a Table of Specifications <em>(optional)</em></a></li>
-      <li><a href="#p6">Type the answer key</a></li>
-      <li><a href="#p7">Print the answer sheets</a></li>
-      <li><a href="#p8">Give the test</a></li>
-      <li><a href="#p9">Check the papers</a></li>
-      <li><a href="#p10">Review each paper and save</a></li>
-      <li><a href="#p11">See the results and download your reports</a></li>
-      <li><a href="#p12">Keep your work safe</a></li>
+      <li><a href="#p3">A quick tour of the screen</a></li>
+      <li><a href="#p4">Add your class</a></li>
+      <li><a href="#p5">Make a test</a></li>
+      <li><a href="#p6">Build a Table of Specifications <em>(optional)</em></a></li>
+      <li><a href="#p7">Type the answer key — and set the points</a></li>
+      <li><a href="#p8">Print the answer sheets</a></li>
+      <li><a href="#p9">Give the test</a></li>
+      <li><a href="#p10">Connect your phone</a></li>
+      <li><a href="#p11">Check the papers</a></li>
+      <li><a href="#p12">Review each paper, then save</a></li>
+      <li><a href="#p13">See the results and download your reports</a></li>
+      <li><a href="#p14">Keep your work safe</a></li>
+      <li><a href="#p15">Updating QuickCheck</a></li>
       <li><a href="#help">If something goes wrong</a></li>
     </ol>
   </nav>
@@ -169,23 +211,31 @@
   <!-- 1 -->
   <section class="part" id="p1">
     <div class="part-head"><div class="num">1</div>
-      <div><h2>Install QuickCheck on your computer</h2>
-        <p class="sub">You only do this once. About two minutes.</p></div></div>
+      <div><h2>Download and install QuickCheck</h2>
+        <p class="sub">You only do this once. About three minutes.</p></div></div>
     <ol class="steps">
-      <li>Download the <b>.zip</b> file from the link you were given.</li>
-      <li>Google Drive may say <i>"can't scan this file for viruses"</i> — that is only because the
-        file is large. Click <span class="btnname">Download anyway</span>.</li>
-      <li><b>Right-click the .zip → Extract All</b>, and put the folder somewhere normal like
-        <b>Documents</b>.</li>
-      <li>Open the folder and double-click <span class="btnname">QuickCheckPro.exe</span>.</li>
+      <li>Press the green <span class="btnname">Download QuickCheck</span> button — the one above, or
+        the one at the top of the <a href="./">home page</a>.</li>
+      <li>Your browser saves a <b>.zip file</b> into your <b>Downloads</b> folder. It is about
+        <b class="js-dl-size">87 MB</b>, so give it a minute. If the browser asks whether to keep it,
+        choose <span class="btnname">Keep</span>.</li>
+      <li>Open your <b>Downloads</b> folder, <b>right-click the .zip file → Extract All…</b>, and
+        choose a normal folder such as <b>Documents</b>. Press <span class="btnname">Extract</span>.</li>
+      <li>Open the folder that appears and double-click <span class="btnname">QuickCheckPro.exe</span>.</li>
       <li>Windows may show a blue box saying <i>"Windows protected your PC"</i>. Click
         <span class="btnname">More info</span>, then <span class="btnname">Run anyway</span>.</li>
+      <li>The first start takes up to a minute. Then the QuickCheck window opens — that is the app.</li>
     </ol>
     <div class="note important"><b>Extract the zip first — this matters.</b>
-      If you run QuickCheck from inside the zip, Windows throws your work away when you close it.
-      Extract to a real folder and everything is saved properly.</div>
+      If you double-click the .exe while it is still <i>inside</i> the zip, Windows throws your work
+      away when you close it. Extract to a real folder and everything is saved properly.</div>
     <div class="note tip"><b>The blue warning is normal.</b>
-      Windows shows it for any new app that hasn't paid for a certificate. It is not a virus warning.</div>
+      Windows shows it for any new app that has not paid for a certificate. It is not a virus warning.
+      QuickCheck runs entirely on your computer and does not need the internet to work.</div>
+    <div class="note tip"><b>Keep the QuickCheck window open while you work.</b>
+      Closing that window is how you close QuickCheck for the day. To open it again tomorrow,
+      double-click <b>QuickCheckPro.exe</b> in the same folder — or right-click it once and choose
+      <b>Pin to Start</b> so it is always one click away.</div>
   </section>
 
   <!-- 2 -->
@@ -196,253 +246,391 @@
     <ol class="steps">
       <li>The first time you open QuickCheck, a <b>7-day free trial</b> starts by itself. A bar at the
         top shows how many days are left.</li>
-      <li>When you buy, you receive a small file ending in <b>.qckey</b>. Click
-        <span class="btnname">Buy or enter a key</span> on that bar.</li>
-      <li>Put the <b>.qckey</b> file in the same folder as QuickCheck, and a one-click
-        <span class="btnname">Activate</span> button appears. Otherwise click
-        <span class="btnname">Choose a file</span> and pick it.</li>
-      <li>Press <span class="btnname">Activate</span>. That's it — you won't be asked again, and
-        everything you made during the trial stays.</li>
+      <li>When you buy, you receive a small file ending in <b>.qckey</b> by email. Save it into the
+        same folder as <b>QuickCheckPro.exe</b>.</li>
+      <li>Click <span class="btnname">Buy or enter a key</span> on the trial bar. If the key file is
+        next to the app, a one-click <span class="btnname">Activate "yourname.qckey"</span> button is
+        already there — press it. Otherwise click <span class="btnname">Click to choose your .qckey
+        license file</span> and pick it, then press <span class="btnname">Activate</span>.</li>
+      <li>That's it. You won't be asked again, and everything you made during the trial stays.</li>
     </ol>
     <div class="note tip"><b>When the trial ends.</b>
       QuickCheck becomes view-only: you can still open and download your results, but you can't check
       new papers until you enter a key. The free trial is once per computer.</div>
     <div class="note important"><b>One key, one computer.</b>
       Your key locks to the computer you activate it on. If you change computers, ask for a new key.
-      A key with a time limit starts counting from the day you <strong>activate</strong> it, not the day it was made.</div>
+      A key with a time limit starts counting from the day you <strong>activate</strong> it, not the
+      day it was made.</div>
   </section>
 
   <!-- 3 -->
   <section class="part" id="p3">
     <div class="part-head"><div class="num">3</div>
-      <div><h2>Add your class list</h2>
-        <p class="sub">QuickCheck needs to know your learners' names so it can match each paper.</p></div></div>
-    <p class="where">Go to <span class="tab">Class Lists</span></p>
-
-    <p class="choice-h">Option A — use your DepEd class record (recommended)</p>
-    <ol class="steps">
-      <li>Click <span class="btnname">Upload class record</span> and choose your
-        <b>.xlsx</b> e-class record.</li>
-      <li>QuickCheck reads the learner names from it.</li>
-      <li>When you save scores later, they go <b>straight into that same file</b>, in the right
-        column — so you don't retype anything.</li>
-    </ol>
-
-    <p class="choice-h">Option B — just type the names</p>
-    <ol class="steps">
-      <li>Click <span class="btnname">New simple class</span>.</li>
-      <li>Type or paste the names, one per line, and save.</li>
-    </ol>
-    <div class="note important"><b>Which should you pick?</b>
-      Use your <strong>DepEd record</strong> if you have one — scores land in the file you already submit.
-      A <strong>simple class</strong> is fine for quizzes, but its scores live inside QuickCheck, so
-      download them if you need them elsewhere.</div>
+      <div><h2>A quick tour of the screen</h2>
+        <p class="sub">Read this once and the rest of the guide is easy to follow.</p></div></div>
+    <p class="where">Everything is in the <b>left sidebar</b>. On a phone it is the
+      <span class="tab">☰ Menu</span> button at the top.</p>
+    <ul class="map">
+      <li><span class="nm">Home</span><span>Your dashboard. It shows <b>what to do next</b>, how your
+        classes are doing, the hardest questions, competency mastery, and the learners to follow up.</span></li>
+      <li><span class="nm">Check papers</span><span>Your list of tests. This is where you make a test,
+        photograph the papers and review them.</span></li>
+      <li><span class="nm">Results</span><span>Every test you have checked, with the reports you can
+        print or download.</span></li>
+      <li><span class="nm">My classes</span><span>Your class lists and class records.</span></li>
+      <li><span class="nm">Answer sheets</span><span>Print the sheets your learners shade.</span></li>
+      <li><span class="nm">Phone access</span><span>The QR code and PIN that connect your phone.</span></li>
+      <li><span class="nm">Settings</span><span>Your name, the folder for class records, report
+        wording, backups, and the QuickCheck version.</span></li>
+    </ul>
+    <div class="note tip"><b>The whole cycle, in order:</b> class → test → answer key → print sheets →
+      give the test → photograph the papers → review → save → results. Parts 4 to 13 below are exactly
+      that order.</div>
   </section>
 
   <!-- 4 -->
   <section class="part" id="p4">
     <div class="part-head"><div class="num">4</div>
-      <div><h2>Create a test</h2>
-        <p class="sub">One test = one exam or quiz.</p></div></div>
-    <p class="where">Go to <span class="tab">Check Papers</span> → <span class="btnname">Create test</span></p>
+      <div><h2>Add your class</h2>
+        <p class="sub">QuickCheck needs your learners' names so it can match each paper to a learner.</p></div></div>
+    <p class="where">Go to <span class="tab">My classes</span> → <span class="btnname">Add a class</span></p>
+    <p>Step 1 asks what kind of record you want. There are three:</p>
+
+    <p class="choice-h">DepEd format — build it here <em>(recommended)</em></p>
     <ol class="steps">
-      <li><b>Name</b> it the way you'd say it out loud, e.g. "First Term Exam — Math 8".</li>
-      <li>Pick the <b>class</b> it belongs to.</li>
-      <li>Type how many <b>items</b> it has.</li>
-      <li>Choose the <b>answer type</b>:
-        <ul style="margin:8px 0 0; padding-left:20px; color:var(--ink-soft)">
-          <li><b>True/False</b>, <b>A–C</b>, <b>A–D</b>, <b>A–E</b> — ordinary multiple choice.</li>
-          <li><b>Matching type</b> — A–F up to A–N. Every question gets one bubble per option, so a
-            10-item matching set gives each row A to J.</li>
-        </ul>
-      </li>
-      <li>Choose the <b>term</b> and which column the score belongs in (e.g. Written Works 1).</li>
-      <li>Press <span class="btnname">Create test</span>.</li>
+      <li>No file needed. Type your <b>school</b>, <b>grade and section</b> and your <b>subjects</b>.</li>
+      <li>Set the <b>terms</b> (quarters) and the <b>categories</b> with their percentages — Written
+        Works, Performance Tasks, Quarterly Assessment.</li>
+      <li>QuickCheck builds the Excel class record for you, and scores go straight into it.</li>
     </ol>
-    <div class="note tip"><b>Matching type:</b> fewer options are easier for learners to shade
-      accurately. If your matching set has more than about 10 answers, consider splitting it into
-      two shorter sets.</div>
+
+    <p class="choice-h">Copy an existing e-class record</p>
+    <ol class="steps">
+      <li>Choose this if you already have a DepEd <b>.xlsx</b> e-class record.</li>
+      <li>Upload it, and QuickCheck uses it as the template — your own columns, your own format.</li>
+      <li>When you save scores later they go <b>into that same file</b>, in the right column, so you
+        don't retype anything.</li>
+    </ol>
+
+    <p class="choice-h">Simple scorebook</p>
+    <ol class="steps">
+      <li>Just a list of learners — good for quizzes.</li>
+      <li>Scores stay inside QuickCheck and download as a plain Excel file.</li>
+    </ol>
+
+    <p>Then <b>Step 2 — Add students</b>: type the names, or paste a whole list at once (one name per
+      line) and press <span class="btnname">Add these names</span>. <b>Step 3 — Review &amp; create</b>
+      shows you everything before it is saved.</p>
+    <div class="note important"><b>Which should you pick?</b>
+      Use a <strong>DepEd record</strong> if your scores have to land in the file you submit.
+      A <strong>simple scorebook</strong> is fine for quizzes — just download the scores if you need
+      them elsewhere. You can have as many classes as you like.</div>
   </section>
 
   <!-- 5 -->
   <section class="part" id="p5">
     <div class="part-head"><div class="num">5</div>
+      <div><h2>Make a test</h2>
+        <p class="sub">One test = one exam or quiz. Four numbered steps.</p></div></div>
+    <p class="where">Go to <span class="tab">Check papers</span> → <span class="btnname">Create test</span></p>
+    <ol class="steps">
+      <li><b>Name the test.</b> Name it the way you would say it out loud, e.g. "First Term Exam —
+        Math 8".</li>
+      <li><b>Which class takes this test?</b> Pick it from your list. Its learners are the ones matched
+        to the papers, and their scores are saved in that class record.</li>
+      <li><b>What does the answer sheet look like?</b> Type how many <b>items</b>, then choose the
+        answer choices:
+        <ul>
+          <li><b>True/False</b>, <b>A–C</b>, <b>A–D</b>, <b>A–E</b> — ordinary multiple choice.</li>
+          <li><b>Matching type</b> — A–F up to A–N. Every question gets one bubble per option, so a
+            10-item matching set gives each row A to J.</li>
+          <li><b>Parts</b> — for an exam that mixes types, add a part for each one (for example Part I,
+            items 1–20, A–D; Part II, items 21–30, matching A–J).</li>
+        </ul>
+      </li>
+      <li><b>Where do the scores go?</b> Pick the term and the column of your class record this test
+        fills in — for example Written Works 1.</li>
+      <li>Press <span class="btnname">Save and continue</span>. The page then shows you
+        <b>what happens next</b>.</li>
+    </ol>
+    <div class="note tip"><b>A picture of the sheet is shown as you choose.</b>
+      The preview on the right updates while you pick the items and choices, so you can see exactly
+      what your learners will get before you print anything.</div>
+  </section>
+
+  <!-- 6 -->
+  <section class="part" id="p6">
+    <div class="part-head"><div class="num">6</div>
       <div><h2>Build a Table of Specifications <span style="font-size:16px; color:var(--ink-soft)">(optional)</span></h2>
         <p class="sub">Do this if you want to know which competencies your learners did not master.</p></div></div>
-    <p class="where">Right after you create a test, QuickCheck asks: <b>build a TOS, or skip?</b></p>
+    <p class="where">Right after you make a test, QuickCheck asks: <b>build a TOS first, or skip
+      straight to the answer key?</b></p>
     <ol class="steps">
       <li>Type each <b>competency</b> you taught, and how many <b>days</b> you spent on it.</li>
       <li>QuickCheck works out the rest the DepEd way —
         <b>days ÷ total days × total items</b> — and the item counts always add up
         <b>exactly</b> to your test.</li>
       <li>Each competency is given its own <b>item numbers</b> (for example, items 39–50).</li>
-      <li>Press <span class="btnname">Save Table of Specifications</span>. You go straight on to
-        the answer key.</li>
+      <li>Press <span class="btnname">Save Table of Specifications</span>. You go straight on to the
+        answer key.</li>
     </ol>
     <div class="note tip"><b>Why this is worth five minutes.</b>
       Because each competency owns specific item numbers, after you check the papers QuickCheck can
-      tell you <strong>which competencies the class failed</strong> and <strong>which learners need help in each
-      one</strong> — with no extra typing. You can also print the TOS itself, which many schools ask for.</div>
+      tell you <strong>which competencies the class failed</strong> and <strong>which learners need
+      help in each one</strong> — with no extra typing. You can also print the TOS itself, which many
+      schools ask for.</div>
     <div class="note important"><b>You can skip it.</b>
-      Skipping is completely fine — you still get scores and item analysis. You can also add a TOS
-      later from the test's <span class="btnname">TOS</span> button.</div>
-  </section>
-
-  <!-- 6 -->
-  <section class="part" id="p6">
-    <div class="part-head"><div class="num">6</div>
-      <div><h2>Type the answer key</h2>
-        <p class="sub">The correct answers. Without this, nothing can be scored.</p></div></div>
-    <ol class="steps">
-      <li>You land on the answer key screen automatically.</li>
-      <li>Click the correct letter for each item — 1, 2, 3, and so on.</li>
-      <li>It saves as you go. The test shows <b>Key ready</b> when every item is filled.</li>
-    </ol>
-    <div class="note tip"><b>Made a mistake?</b> Open the test any time and press
-      <span class="btnname">Edit answer key</span>. If you already checked papers, fix the key and
-      check them again — the corrected scores replace the old ones.</div>
+      Skipping is completely fine — you still get scores and item analysis. You can add a TOS later
+      from the test's <span class="btnname">TOS</span> button.</div>
   </section>
 
   <!-- 7 -->
   <section class="part" id="p7">
     <div class="part-head"><div class="num">7</div>
-      <div><h2>Print the answer sheets</h2>
-        <p class="sub">Learners must use QuickCheck's sheet — that's what the camera reads.</p></div></div>
-    <p class="where">Go to <span class="tab">Print Sheets</span></p>
+      <div><h2>Type the answer key — and set the points</h2>
+        <p class="sub">The correct answers. Without this, nothing can be scored.</p></div></div>
     <ol class="steps">
-      <li>Pick your test. QuickCheck makes the sheet in the right format automatically.</li>
-      <li>Choose <b>blank sheets</b> (learners write their own name) or <b>named sheets</b>
-        (one per learner, name already printed).</li>
-      <li>Download the PDF and print it on <b>plain A4 paper</b>.</li>
+      <li><b>Tap the correct answer for each item.</b> Go down each column — the counter on the right
+        shows how many are still empty.</li>
+      <li><b>How many points is each item worth?</b> Choose one of the two:
+        <ul>
+          <li><b>Every item is worth 1 point</b> — what most tests use.</li>
+          <li><b>Some items are worth more</b> — set a range and its points, for example
+            <i>items 1 to 5, 5 points each</i>. Press <span class="btnname">Add another range</span>
+            for more. Items you don't list stay at 1 point.</li>
+        </ul>
+      </li>
+      <li>The card on the right shows the <b>highest possible score</b> as you type, so you can check
+        it matches your paper.</li>
+      <li>Press <span class="btnname">Save key &amp; continue</span>.</li>
     </ol>
-    <div class="note important"><b>Print at 100% — do not "fit to page".</b>
-      The four black corner marks are how the camera finds and straightens the sheet. If the page is
-      shrunk, or the corners are cut off, the paper cannot be read. Photocopies are fine as long as
-      they are clear and not skewed.</div>
+    <div class="note tip"><b>Points are used everywhere.</b>
+      Scores, your class record and every report use the points you set. A learner who gets a 5-point
+      item right gains 5 marks, not 1.</div>
+    <div class="note important"><b>Made a mistake?</b> Open the test any time and press
+      <span class="btnname">Edit answer key</span>. Once papers have been uploaded or saved the key is
+      <b>locked</b> so scores can't change under you — to correct it, remove those papers first, fix
+      the key, and check them again.</div>
   </section>
 
   <!-- 8 -->
   <section class="part" id="p8">
     <div class="part-head"><div class="num">8</div>
-      <div><h2>Give the test</h2>
-        <p class="sub">Nothing to do in the app — just two things to tell your class.</p></div></div>
+      <div><h2>Print the answer sheets</h2>
+        <p class="sub">Learners must shade QuickCheck's own sheet — that is what the camera reads.</p></div></div>
+    <p class="where">Go to <span class="tab">Answer sheets</span></p>
     <ol class="steps">
-      <li><b>Shade the bubble fully</b>, with a dark pen or pencil.</li>
-      <li><b>One bubble per question.</b> Two marks on the same question can't be counted.</li>
-      <li>Write the name clearly if you printed blank sheets.</li>
+      <li><b>What are you printing sheets for?</b> Choose <b>a test I already made</b> (the usual
+        one), or <b>a quick quiz with no test yet</b> if you only want blank sheets to keep on hand.</li>
+      <li><b>Pick the test.</b> The sheet is built from it — its items, answer choices and name. Use
+        the search box if you have many tests.</li>
+      <li><b>Named sheets or blank sheets?</b>
+        <ul>
+          <li><b>One named sheet per learner</b> — each learner's name is printed on their sheet.
+            Faster to hand out, and when you check the papers the printed name tells you at a glance
+            whose paper it is.</li>
+          <li><b>Blank sheets</b> — learners write their own name.</li>
+        </ul>
+      </li>
+      <li><b>How many sheets on one A4 page?</b> 1 is the recommended setting. 2 or 4 per page saves
+        paper — you cut them apart after printing, and each piece scans like a full sheet. QuickCheck
+        warns you if the test has too many items for 4 per page.</li>
+      <li><b>Download, then print.</b> You get a PDF. Print it with <b>Actual size</b> or <b>100%</b> —
+        <b>not</b> "Fit to page" — on <b>A4</b>, one side only. If you chose more than one per page,
+        cut along the dashed lines.</li>
     </ol>
+    <div class="note important"><b>Print at 100% — this is the one setting that matters.</b>
+      The black corner squares are how the camera finds and straightens the sheet. If the page is
+      shrunk, or a corner is cut off, the paper cannot be read. Photocopies are fine as long as they
+      are clear and not crooked.</div>
+    <div class="note tip"><b>Shorter sheets for new tests.</b>
+      A test you make now prints a <b>compact sheet</b> that ends just below the last question instead
+      of running to the bottom of the page — less paper, and the same reading accuracy. Sheets you
+      already printed for older tests keep working exactly as before.</div>
   </section>
 
   <!-- 9 -->
   <section class="part" id="p9">
     <div class="part-head"><div class="num">9</div>
-      <div><h2>Check the papers</h2>
-        <p class="sub">The part that used to take your evening.</p></div></div>
-    <p class="where">Go to <span class="tab">Check Papers</span> → open your test →
-      <span class="btnname">Take a photo</span></p>
-
-    <p class="choice-h">Option A — check from your phone (fastest)</p>
+      <div><h2>Give the test</h2>
+        <p class="sub">Nothing to do in the app — just three things to tell your class.</p></div></div>
     <ol class="steps">
-      <li>On the computer, open <span class="tab">Phone Access</span>.</li>
-      <li><b>Point your phone camera at the QR code</b> on the screen and tap the link that pops up.
-        No typing.</li>
-      <li>Type the <b>PIN</b> shown on that same page. You only do this once per phone.</li>
-      <li>On the phone, open your test and press <span class="btnname">Take a photo</span>.</li>
-      <li>Snap each paper. Photos upload straight to the computer.</li>
+      <li><b>Shade the bubble fully</b>, with a dark pen or pencil.</li>
+      <li><b>One bubble per question.</b> Two marks on the same question can't be counted.</li>
+      <li><b>Don't fold or tear the corners.</b> The four black squares must stay on the paper.</li>
     </ol>
-    <div class="note important"><b>Two things must be true</b>
-      The phone and the computer must be on the <strong>same Wi-Fi</strong>, and QuickCheck
-      must be <strong>open on the computer</strong>. No Wi-Fi? Turn on your phone's hotspot
-      and connect the <strong>computer</strong> to it — that works anywhere and uses no mobile
-      data. The address changes on every network, so just scan the QR code each time.</div>
-
-    <p class="choice-h">Option B — check from the computer</p>
-    <ol class="steps">
-      <li>Open the test and press <span class="btnname">Choose files instead</span>.</li>
-      <li>Pick your photos, a scanned PDF (each page = one paper), or a .zip.</li>
-      <li>Press <span class="btnname">Upload &amp; review</span>.</li>
-    </ol>
-    <div class="note tip"><b>A whole class takes a moment to read.</b> That is normal — wait for the
-      review page. Your progress is saved, so you can stop and come back later.</div>
+    <div class="note tip"><b>Collect the papers face up</b> in one pile. Photographing them goes much
+      faster when they are all the same way round.</div>
   </section>
 
   <!-- 10 -->
   <section class="part" id="p10">
     <div class="part-head"><div class="num">10</div>
-      <div><h2>Review each paper, then save</h2>
-        <p class="sub">You always see and approve every paper before anything is recorded.</p></div></div>
+      <div><h2>Connect your phone</h2>
+        <p class="sub">Your phone becomes the scanner. You only set this up once per phone.</p></div></div>
+    <p class="where">Go to <span class="tab">Phone access</span> on the computer</p>
     <ol class="steps">
-      <li>For each paper you see the <b>photo with green and red marks</b> and the answers it read.</li>
-      <li>Check the <b>name</b> is the right learner. Change it from the list if not.</li>
-      <li>If a bubble was misread, change that answer from the dropdown. The score updates.</li>
-      <li>Press <span class="btnname">Confirm</span> and move to the next paper.</li>
-      <li>When you're done, press <span class="btnname">Save all</span> — it's at the top
-        <b>and</b> at the bottom of the page.</li>
+      <li><b>Put the phone on the same Wi-Fi as this computer.</b> A school Wi-Fi, a home Wi-Fi, or
+        this computer's phone hotspot all work. It does not need internet.</li>
+      <li><b>Point the phone's camera at the square</b> (the QR code) on the screen, and tap the link
+        that pops up. No app to install, no typing.</li>
+      <li><b>Type the PIN</b> shown on that same page. The phone asks for it once, so only you can
+        send papers to this computer.</li>
+      <li>If Windows asks about the <b>firewall</b>, click <span class="btnname">Allow</span> for
+        private networks.</li>
     </ol>
-    <div class="note tip"><b>Nothing is written until you press Save all.</b>
-      Before that you can change anything. If you accidentally check the same learner twice,
-      QuickCheck warns you before replacing their score.</div>
+    <div class="note important"><b>Two things must be true.</b>
+      QuickCheck must be <strong>open on the computer</strong>, and both devices on the
+      <strong>same Wi-Fi</strong>. No Wi-Fi at school? Turn on your phone's hotspot and connect the
+      <strong>computer</strong> to it — that works anywhere and uses no mobile data. The address
+      changes on each network, so just scan the QR code again.</div>
+    <div class="note tip"><b>Prefer to work on the computer?</b> You can skip this part entirely and
+      upload photos, a scanned PDF or a .zip from the computer instead — see the next part.</div>
   </section>
 
   <!-- 11 -->
   <section class="part" id="p11">
     <div class="part-head"><div class="num">11</div>
+      <div><h2>Check the papers</h2>
+        <p class="sub">The part that used to take your evening.</p></div></div>
+    <p class="where">Go to <span class="tab">Check papers</span> → open your test</p>
+
+    <p class="choice-h">Option A — from your phone (fastest)</p>
+    <ol class="steps">
+      <li>On the phone, open QuickCheck (the link you scanned in part 10) and open the same test.</li>
+      <li>Press <span class="btnname">Take a photo</span> and snap each paper — the whole sheet in
+        frame, including the four black corners.</li>
+      <li>The photos upload straight to the computer as you go.</li>
+    </ol>
+
+    <p class="choice-h">Option B — from the computer</p>
+    <ol class="steps">
+      <li>Open the test and choose the files: photos, a scanned <b>PDF</b> (each page is one paper),
+        or a <b>.zip</b> of photos.</li>
+      <li>Press <span class="btnname">Read and review them</span>.</li>
+    </ol>
+
+    <div class="note tip"><b>A whole class takes a moment to read.</b> That is normal — wait for the
+      review page. Your progress is saved, so you can stop and come back later. The page also lists
+      <b>Already checked</b> papers and tips for clean photos.</div>
+    <div class="note important"><b>"One more step before you can check".</b>
+      If you see that message, the test isn't ready yet — usually the answer key is missing. Press the
+      dark green button on that card and QuickCheck takes you to the step that is missing.</div>
+  </section>
+
+  <!-- 12 -->
+  <section class="part" id="p12">
+    <div class="part-head"><div class="num">12</div>
+      <div><h2>Review each paper, then save</h2>
+        <p class="sub">You see and approve every paper before anything is recorded.</p></div></div>
+    <ol class="steps">
+      <li>For each paper you see the <b>marked photo</b> — green for correct, red for wrong — and the
+        answers QuickCheck read. <span class="btnname">Show original photo</span> switches back to the
+        plain picture.</li>
+      <li><b>Whose paper, and is it right?</b> Check the learner's name and change it from the list if
+        it isn't the right one.</li>
+      <li>If a bubble was misread, change that answer. The score updates as you do.</li>
+      <li>Press <span class="btnname">Confirm &amp; next</span> and move to the next paper.</li>
+      <li>Missed a paper? Use <span class="btnname">Add another paper</span> at the bottom — it joins
+        the same batch.</li>
+      <li>When every paper is confirmed, press <span class="btnname">Save all</span> — it is at the
+        top <b>and</b> at the bottom of the page.</li>
+    </ol>
+    <div class="note tip"><b>Nothing is written until you press Save all.</b>
+      Before that you can change anything. If you accidentally check the same learner twice,
+      QuickCheck warns you before replacing their score. Papers you have not reviewed stay in the
+      queue, so a partial save never loses them.</div>
+  </section>
+
+  <!-- 13 -->
+  <section class="part" id="p13">
+    <div class="part-head"><div class="num">13</div>
       <div><h2>See the results and download your reports</h2>
         <p class="sub">Everything about the exam, in one place.</p></div></div>
     <p class="where">Go to <span class="tab">Results</span></p>
     <ol class="steps">
       <li>Pick the test you want. You'll see the <b>class average</b> and how the class spread out.</li>
       <li>Then choose what you want to look at:
-        <ul style="margin:8px 0 0; padding-left:20px; color:var(--ink-soft)">
-          <li><b>Item analysis</b> — which questions were hardest.</li>
-          <li><b>Competencies</b> — which competencies were not mastered, weakest
-            first, and who needs help in each.</li>
+        <ul>
+          <li><b>Item analysis</b> — which questions were hardest, and how each choice was picked.</li>
+          <li><b>Competencies</b> — which competencies were not mastered, weakest first, and who needs
+            help in each. (Needs a TOS — part 6.)</li>
           <li><b>Scores (Excel)</b> — the score sheet.</li>
-          <li><b>Formal report</b> — a formal test report you can read on screen or download as
+          <li><b>Formal report</b> — a full test report you can read on screen or download as
             <b>PDF</b> or <b>Excel</b>: results summary (mean, SD, MPS and proficiency levels, by sex),
             learner proficiency list, score distribution and item analysis, least mastered
             competencies, the Table of Specifications and a learner-by-competency matrix. The
             interpretation and recommendations are written for you, and you can edit them.</li>
           <li><b>Complete report</b> — <b>every part in one Excel file</b>. This is the one to download
             when you're asked to submit documents.</li>
-          <li><b>Marked papers</b> — the photos with the ticks, if you need to show a learner.</li>
+          <li><b>Marked papers</b> — the photos with the ticks, if you need to show a learner or a parent.</li>
         </ul>
       </li>
       <li>Use the tabs at the top of any of those pages to move between them without going back.</li>
     </ol>
-    <div class="note tip"><b>That's the whole cycle:</b> class list → test → answer key → print →
-      check → results. Next time you skip straight to printing and checking.</div>
+    <div class="note tip"><b>That's the whole cycle:</b> class → test → answer key → print → check →
+      results. Next time you skip straight to making the test and checking.</div>
   </section>
 
-  <!-- 12 -->
-  <section class="part" id="p12">
-    <div class="part-head"><div class="num">12</div>
+  <!-- 14 -->
+  <section class="part" id="p14">
+    <div class="part-head"><div class="num">14</div>
       <div><h2>Keep your work safe</h2>
         <p class="sub">Worth two minutes now, saves a bad day later.</p></div></div>
     <ol class="steps">
       <li>QuickCheck keeps everything in two folders next to the app:
-        <b>data</b> (tests, keys, results) and <b>output</b> (sheets, reports, backups).</li>
-      <li>To back up, copy those two folders to a USB drive or cloud folder.</li>
-      <li>Or go to <span class="tab">Settings</span> → <span class="btnname">Download a backup</span>
-        for one zip of everything.</li>
+        <b>data</b> (classes, tests, keys, results) and <b>output</b> (sheets, reports, backups).</li>
+      <li>To back up, copy those two folders to a USB drive or a cloud folder.</li>
+      <li>Or go to <span class="tab">Settings</span> → <b>Backup &amp; restore</b> →
+        <span class="btnname">Export everything (.zip)</span> for one file with everything in it,
+        including your Excel class records. <span class="btnname">Restore from .zip</span> checks the
+        backup first and saves your current work before it adds anything.</li>
       <li>Before every save into your class record, QuickCheck keeps a dated copy of that file — so a
         bad save can always be undone.</li>
     </ol>
     <div class="note important"><b>Saved photos take the most space.</b>
       Once you no longer need to look at the papers, go to <span class="tab">Results</span> →
-      <strong>Storage and saved paper photos</strong> → delete them. <strong>All scores and answers are kept</strong> —
-      you just can't view the marked photo afterwards.</div>
+      <b>Saved paper photos</b> → delete them. <strong>All scores and answers are kept</strong> — you
+      just can't view the marked photo afterwards.</div>
+    <div class="note tip"><b>Moving to another computer?</b> Settings has a
+      <b>Moving to another computer</b> section that tells you exactly what to copy — and remember the
+      key is tied to one computer, so ask for a new one.</div>
+  </section>
+
+  <!-- 15 -->
+  <section class="part" id="p15">
+    <div class="part-head"><div class="num">15</div>
+      <div><h2>Updating QuickCheck</h2>
+        <p class="sub">From version 2.2.0 onwards, updates install with one click.</p></div></div>
+    <ol class="steps">
+      <li>When a new version is out, a line appears at the top of the app:
+        <b>QuickCheck 2.3.0 is available — Update now</b>. (You can also check any time in
+        <span class="tab">Settings</span> → <b>About QuickCheck</b>.)</li>
+      <li>Press <span class="btnname">Update now</span>. It downloads in the background — keep
+        working. QuickCheck checks the update is genuine and complete before it uses it.</li>
+      <li>Press <span class="btnname">Restart QuickCheck</span>. The window closes and opens again by
+        itself a few seconds later, on the new version.</li>
+    </ol>
+    <div class="note tip"><b>Nothing to download or delete by hand.</b>
+      Your classes, tests, scores and reports are never touched by an update, and the old copy is
+      cleaned up for you. If your computer has no internet, just download the new zip on the website
+      when you can — your <b>data</b> and <b>output</b> folders carry everything across.</div>
   </section>
 
   <!-- Troubleshooting -->
   <section class="part" id="help">
     <div class="part-head"><div class="num">?</div>
       <div><h2>If something goes wrong</h2>
-        <p class="sub">The five things teachers ask about most.</p></div></div>
+        <p class="sub">The things teachers ask about most.</p></div></div>
 
     <p class="choice-h">Windows says "Windows protected your PC"</p>
     <p style="margin:0 0 14px; color:var(--ink-soft)">Normal for a new app. Click
       <span class="btnname">More info</span> → <span class="btnname">Run anyway</span>.</p>
+
+    <p class="choice-h">The app opens, but my work disappears</p>
+    <p style="margin:0 0 14px; color:var(--ink-soft)">You are running it from inside the zip.
+      Close QuickCheck, <b>extract</b> the zip to a normal folder (part 1), and run the .exe from
+      there.</p>
 
     <p class="choice-h">My phone won't connect</p>
     <p style="margin:0 0 14px; color:var(--ink-soft)">Check three things: QuickCheck is
@@ -452,13 +640,18 @@
 
     <p class="choice-h">A paper wouldn't read</p>
     <p style="margin:0 0 14px; color:var(--ink-soft)">Retake the photo with the
-      <b>whole sheet in frame</b>, including all four black corner marks, in good light and roughly
+      <b>whole sheet in frame</b>, including all four black corner squares, in good light and roughly
       straight on. Avoid shadows across the page. If it still fails, check the sheet was printed at
       100% and not shrunk.</p>
 
     <p class="choice-h">"The class record is open in Excel"</p>
     <p style="margin:0 0 14px; color:var(--ink-soft)">Close the file in Excel and press save again.
       QuickCheck cannot write into a file while Excel has it open.</p>
+
+    <p class="choice-h">I can't edit the answer key any more</p>
+    <p style="margin:0 0 14px; color:var(--ink-soft)">The key locks once papers have been uploaded or
+      saved with it, so scores can't change behind your back. Remove those papers, fix the key, then
+      check them again.</p>
 
     <p class="choice-h">I need it on another computer</p>
     <p style="margin:0; color:var(--ink-soft)">Your key works on one computer. Message us for a key
@@ -469,14 +662,37 @@
     <h2>Need help?</h2>
     <p style="margin:0; color:var(--ink-soft)">Message us any time — we're happy to walk you through it.</p>
     <p style="margin:8px 0 0">📧 <a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a>
-      &nbsp;·&nbsp; 💬 <a href="https://www.facebook.com/HomeArvin">facebook.com/HomeArvin</a></p>
+      &nbsp;·&nbsp; 💬 <a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">AZ Digital Marketing on Facebook</a></p>
   </div>
 
   <footer>
-    <p>QuickCheck — made to save teachers hours of checking. Runs on your own computer, offline.</p>
+    <p>QuickCheck — made to save teachers hours of checking. Runs on your own computer, offline.<br>
+      <a href="./">Back to the QuickCheck home page</a></p>
   </footer>
 
 </div>
 
+<script>
+  // Keeps the download button pointing at the newest release listed in version.json.
+  // If it can't be read, the link written into the page is used as it is.
+  (function () {
+    var links = document.querySelectorAll('a.js-download');
+    if (!links.length || !window.fetch) return;
+    fetch('version.json', {cache: 'no-cache'}).then(function (r) {
+      return r.ok ? r.json() : null;
+    }).then(function (data) {
+      var pack = data && data.packages && data.packages.pro;
+      if (!pack || !pack.url || pack.url.indexOf('https://') !== 0) return;
+      links.forEach(function (a) { a.href = pack.url; });
+      if (data.latest) {
+        document.querySelectorAll('.js-dl-version').forEach(function (el) { el.textContent = data.latest; });
+      }
+      if (pack.size) {
+        var mb = Math.round(pack.size / 1048576) + ' MB';
+        document.querySelectorAll('.js-dl-size').forEach(function (el) { el.textContent = mb; });
+      }
+    }).catch(function () { /* keep the link already in the page */ });
+  }());
+</script>
 </body>
 </html>

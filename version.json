@@ -1,17 +1,19 @@
-﻿{
-  "latest": "2.0.3",
-  "released": "2026-09-16",
+{
+  "latest": "2.1.0",
+  "released": "2026-09-17",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
-    "Fixed: opening QuickCheck while another QuickCheck was still running showed the old window, so a new version looked like it had not been installed. It now tells you it is already open.",
-    "Fixed: QuickCheck could save your work in a different folder from the one it read next time, so classes and tests looked cleared. It now proves the folder works, always tells you which folder it uses, and warns if the program is opened from inside the zip.",
-    "Updating keeps your work: open a newer QuickCheck from any folder and your classes, tests, scores and key are already there.",
-    "QuickCheck tells you when a newer version is available.",
-    "Exam parts on one answer sheet: Part I multiple choice, Part II true or false, Part III matching type.",
-    "Progress across tests for each class and each learner.",
-    "Pro: interventions and reassessment, with before and after results and a printable report.",
-    "Import a class list from an Excel or CSV file, a DepEd class record, or cells copied from Excel.",
-    "Class records made in QuickCheck can be edited: learners, terms and score columns.",
-    "Formal DepEd-style test reports on screen, as PDF and as Excel."
+    "A new look everywhere: a dashboard that shows what to do next, class and item charts, and the same clear layout on every page.",
+    "Points per item: on the answer key page, make some items worth more (for example items 1 to 5 worth 5 points each). Scores, the class record and reports use the points.",
+    "Answer sheets and Make a test are now numbered steps with a picture of the sheet, so you always know what to do next.",
+    "New tests print a compact answer sheet that ends just below the last question. Sheets you already printed for older tests still read as before.",
+    "Unreviewed papers stay in the review queue after a partial save. Adding photos cannot overwrite another paper after one is removed.",
+    "Safer saving: interrupted saves can be recovered, simultaneous phone uploads are kept, and invalid learner or score entries are explained.",
+    "Backups include Excel class records. Restore checks the backup first and keeps a safety copy of your current work.",
+    "Damaged results show a recovery message while other tests remain available. Phone links use the app's actual address.",
+    "Fixed: opening QuickCheck while another QuickCheck was still running showed the OLD window, so a newly downloaded version looked like it had not been installed. QuickCheck now tells you that it is already open, so you can close the other window first.",
+    "Fixed: in some cases QuickCheck could save your work in a different folder from the one it read at the next start, so classes and tests looked like they had been cleared. It now proves the folder works before using it, always tells you which folder it is using, and warns you if the program is opened from inside the zip (Windows deletes those folders).",
+    "QuickCheck keeps a short record of each start, so a problem can be traced instead of guessed.",
+    "Restoring a backup now saves your current work first."
   ]
 }

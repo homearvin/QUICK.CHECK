@@ -1,8 +1,11 @@
 {
-  "latest": "2.2.0",
-  "released": "2026-09-17",
+  "latest": "2.2.1",
+  "released": "2026-09-18",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed: QuickCheck could close itself the moment it opened, leaving the window saying \"This site can't be reached. 127.0.0.1 refused to connect.\" It happened when a browser window from an earlier QuickCheck was still on the computer. QuickCheck now stays open for as long as its window is on screen, whichever browser opened it.",
+    "QuickCheck also closes properly when you close its window, so it no longer keeps its folder locked in the background.",
+    "The rest of the screens now have the same new look as the dashboard.",
     "Update in one click: when a new version is out, press Update now, then Restart QuickCheck. No more downloading, unzipping or deleting the old copy.",
     "Every update is checked before it is installed: it must be complete and signed by QuickCheck. Your classes, tests and scores are never touched.",
     "Fixed: the update notice could not read the website's version file, so it never appeared.",
@@ -11,18 +14,15 @@
     "Points per item: on the answer key page, make some items worth more (for example items 1 to 5 worth 5 points each). Scores, the class record and reports use the points.",
     "Answer sheets and Make a test are now numbered steps with a picture of the sheet, so you always know what to do next.",
     "New tests print a compact answer sheet that ends just below the last question. Sheets you already printed for older tests still read as before.",
-    "Unreviewed papers stay in the review queue after a partial save. Adding photos cannot overwrite another paper after one is removed.",
-    "Safer saving: interrupted saves can be recovered, simultaneous phone uploads are kept, and invalid learner or score entries are explained.",
-    "Backups include Excel class records. Restore checks the backup first and keeps a safety copy of your current work.",
-    "Damaged results show a recovery message while other tests remain available. Phone links use the app's actual address."
+    "Unreviewed papers stay in the review queue after a partial save. Adding photos cannot overwrite another paper after one is removed."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.0/QuickCheckPro-2.2.0-portable.zip",
-      "sha256": "5a2fb60e0b7be8734452d99bf908aed5c5ccf74654227c09c0546a0c843f9e58",
-      "signature": "NQrBj0hL35bp3BGh9DME23OFf/3VB8iPMTAwlnTMcpphXvD1t57qO6sfcBQY/6EsKk+V1cF6bTVZQxpMfRUDBw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.1/QuickCheckPro-2.2.1-portable.zip",
+      "sha256": "4619bfd581f16bc2a3d9cf06b955609946506a57e266510e8edb491356839fd8",
+      "signature": "BggZ5ocRqiTFymlfqJlPx+jVdnWtfmE9X3DDINTALloThn82mrOh3icOjgYQPqEAJPmtMz8sjUQ0RLEvuzyUCg==",
       "exe": "QuickCheckPro.exe",
-      "size": 91318948
+      "size": 91380418
     }
   }
 }

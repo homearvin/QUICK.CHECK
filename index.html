@@ -404,7 +404,7 @@
         <a class="btn ghost" href="#tutorial">▶ Watch the tutorial</a>
       </div>
       <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.2.1</b> · <b class="js-dl-size">87 MB</b> zip file ·
-        <b>no key needed</b> for the first 7 days · then ₱299 once, lifetime.</p>
+        <b>no key needed</b> for the first 7 days · then <span data-price>₱299</span> once, lifetime.</p>
 
       <div class="dl-after">
         <b>What happens after you press that button</b>
@@ -749,11 +749,11 @@
     </div>
 
     <div class="offer card">
-      <span class="flag">Launch price</span>
+      <span class="flag" data-promo-only>Launch price</span>
       <div class="ed">QuickCheck <b>Pro</b></div>
       <div class="offer-price">
-        <s>₱999</s>
-        <b>₱299</b>
+        <s data-promo-only>₱999</s>
+        <b data-price>₱299</b>
         <span>one-time · lifetime access</span>
       </div>
       <ul class="checklist" style="margin:18px 0 0; text-align:left;">
@@ -766,7 +766,7 @@
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg> <span><b>Lifetime access</b> — yours forever, no renewals.</span></li>
       </ul>
       <div class="offer-actions">
-        <a class="btn primary" href="#buy">Get QuickCheck Pro — ₱299</a>
+        <a class="btn primary" href="#buy">Get QuickCheck Pro — <span data-price>₱299</span></a>
         <a class="btn ghost dl js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.1/QuickCheckPro-2.2.1-portable.zip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
           Download and try it free for 7 days
@@ -790,7 +790,7 @@
     </div>
     <div class="buy-grid">
       <ol class="steps-list">
-        <li><b>Send ₱299</b> — one payment, lifetime access to QuickCheck Pro.</li>
+        <li><b>Send <span data-price>₱299</span></b> — one payment, lifetime access to QuickCheck Pro.</li>
         <li><b>Send your payment</b> to any option on the right — GCash, Maya, or bank transfer.</li>
         <li><b>Email or message Arvin</b> with your <b>name</b> and a <b>screenshot of your payment</b>. You'll get your <i>.qckey</i> file. In QuickCheck, click <b>Buy or enter a key</b>, choose the file — and you're in. Everything from your trial stays.</li>
       </ol>
@@ -826,7 +826,7 @@
   <section>
     <div class="card final">
       <h2>Give your evenings back.</h2>
-      <p><b>Start free for 7 days — no key needed.</b> Then <b>QuickCheck Pro for ₱299</b> (launch price) — one-time, lifetime access, with a 7-day money-back guarantee.</p>
+      <p><b>Start free for 7 days — no key needed.</b> Then <b>QuickCheck Pro for <span data-price>₱299</span></b><span data-promo-only> (launch price)</span> — one-time, lifetime access, with a 7-day money-back guarantee.</p>
 
       <div class="expect">
         <b>Before you download — what to expect (30 seconds)</b>
@@ -898,5 +898,6 @@
     }).catch(function () { /* keep the links already in the page */ });
   }());
 </script>
+<script src="promo.js"></script>
 </body>
 </html>

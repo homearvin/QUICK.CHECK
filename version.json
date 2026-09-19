@@ -1,28 +1,28 @@
 {
-  "latest": "2.2.1",
-  "released": "2026-09-18",
+  "latest": "2.3.0",
+  "released": "2026-09-20",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest.",
+    "Only papers QuickCheck is sure of are marked Ready: every answer read clearly, and it knows whose paper it is. A blank, a double shade or a light mark is shown to you, never guessed.",
+    "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save.",
+    "Straight after each photo the screen turns green (good), amber (check it) or red (take it again), and shows which of the four black corner squares the photo missed. Take it again puts the new photo in the old one's place.",
+    "A whole batch no longer fails when the Wi-Fi drops: each photo is sent on its own and tried again by itself.",
+    "Answer sheets printed before 27 August 2026 are now stopped with \"wrong sheet?\" instead of being read wrongly. Print new sheets for those tests.",
+    "On a computer, the Scan page is for photo files: drop them in, choose them, or choose a whole folder. A QR code beside it opens the camera for this test on your phone, and papers from the phone appear on the computer as they arrive.",
+    "No internet on a computer? Settings -> Install an update file installs an update file you were sent (from the next version on).",
+    "Less to read: explanations now sit behind a small ? you can press.",
+    "The key screen shows today's price: the launch price until 25 September 2026, then the regular price.",
     "Fixed: QuickCheck could close itself the moment it opened, leaving the window saying \"This site can't be reached. 127.0.0.1 refused to connect.\" It happened when a browser window from an earlier QuickCheck was still on the computer. QuickCheck now stays open for as long as its window is on screen, whichever browser opened it.",
-    "QuickCheck also closes properly when you close its window, so it no longer keeps its folder locked in the background.",
-    "The rest of the screens now have the same new look as the dashboard.",
-    "Update in one click: when a new version is out, press Update now, then Restart QuickCheck. No more downloading, unzipping or deleting the old copy.",
-    "Every update is checked before it is installed: it must be complete and signed by QuickCheck. Your classes, tests and scores are never touched.",
-    "Fixed: the update notice could not read the website's version file, so it never appeared.",
-    "Fixed: the Results list showed a line of computer text instead of each test's number of items.",
-    "A new look everywhere: a dashboard that shows what to do next, class and item charts, and the same clear layout on every page.",
-    "Points per item: on the answer key page, make some items worth more (for example items 1 to 5 worth 5 points each). Scores, the class record and reports use the points.",
-    "Answer sheets and Make a test are now numbered steps with a picture of the sheet, so you always know what to do next.",
-    "New tests print a compact answer sheet that ends just below the last question. Sheets you already printed for older tests still read as before.",
-    "Unreviewed papers stay in the review queue after a partial save. Adding photos cannot overwrite another paper after one is removed."
+    "QuickCheck also closes properly when you close its window, so it no longer keeps its folder locked in the background."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.2.1/QuickCheckPro-2.2.1-portable.zip",
-      "sha256": "4619bfd581f16bc2a3d9cf06b955609946506a57e266510e8edb491356839fd8",
-      "signature": "BggZ5ocRqiTFymlfqJlPx+jVdnWtfmE9X3DDINTALloThn82mrOh3icOjgYQPqEAJPmtMz8sjUQ0RLEvuzyUCg==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.3.0/QuickCheckPro-2.3.0-portable.zip",
+      "sha256": "30f25cc3090f64aa860c89c4745e57bd334dfe5da79d8ee4f585fa5b0d6b2f86",
+      "signature": "g5cYqvqbr1hgl5brHS+jH5WnzCTkW/Dg48cvAfmDNAFgNX3fOpq2QTTUS3lmTsRkg2Tb/C1njp97RQREfef6DA==",
       "exe": "QuickCheckPro.exe",
-      "size": 91380418
+      "size": 91495884
     }
   }
 }

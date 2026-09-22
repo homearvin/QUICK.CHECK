@@ -1,8 +1,10 @@
 {
-  "latest": "2.3.0",
-  "released": "2026-09-20",
+  "latest": "2.3.1",
+  "released": "2026-09-21",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards.",
+    "Computers already activated keep working exactly as before. They tell the list about themselves once, quietly, the first time they run this version.",
     "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest.",
     "Only papers QuickCheck is sure of are marked Ready: every answer read clearly, and it knows whose paper it is. A blank, a double shade or a light mark is shown to you, never guessed.",
     "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save.",
@@ -12,17 +14,15 @@
     "On a computer, the Scan page is for photo files: drop them in, choose them, or choose a whole folder. A QR code beside it opens the camera for this test on your phone, and papers from the phone appear on the computer as they arrive.",
     "No internet on a computer? Settings -> Install an update file installs an update file you were sent (from the next version on).",
     "Less to read: explanations now sit behind a small ? you can press.",
-    "The key screen shows today's price: the launch price until 25 September 2026, then the regular price.",
-    "Fixed: QuickCheck could close itself the moment it opened, leaving the window saying \"This site can't be reached. 127.0.0.1 refused to connect.\" It happened when a browser window from an earlier QuickCheck was still on the computer. QuickCheck now stays open for as long as its window is on screen, whichever browser opened it.",
-    "QuickCheck also closes properly when you close its window, so it no longer keeps its folder locked in the background."
+    "The key screen shows today's price: the launch price until 25 September 2026, then the regular price."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.3.0/QuickCheckPro-2.3.0-portable.zip",
-      "sha256": "30f25cc3090f64aa860c89c4745e57bd334dfe5da79d8ee4f585fa5b0d6b2f86",
-      "signature": "g5cYqvqbr1hgl5brHS+jH5WnzCTkW/Dg48cvAfmDNAFgNX3fOpq2QTTUS3lmTsRkg2Tb/C1njp97RQREfef6DA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.3.1/QuickCheckPro-2.3.1-portable.zip",
+      "sha256": "43efbfdcf71d7737efa969b2a7b88fccd327658ea9bfa16d0bfa940071af77c2",
+      "signature": "w04ogaQ2RrmN7MDctbRJG3LF8QoQDyWJ5gxym+Bp4/1b8pucb0YkKnnyrmuf1UztqCvnun7K8Hm3zAS19mH5DA==",
       "exe": "QuickCheckPro.exe",
-      "size": 91495884
+      "size": 91440725
     }
   }
 }

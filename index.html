@@ -210,6 +210,13 @@
   .pay .info{flex:1; min-width:0;} .pay .info b{display:block; font-size:14.5px;}
   .pay .info small{color:var(--muted);}
   .pay .num{font-weight:800; font-variant-numeric:tabular-nums;}
+  .qr-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:12px;}
+  .qr-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:18px;
+    box-shadow:var(--shadow-s); display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;}
+  .qr-card img{width:100%; max-width:190px; border-radius:12px; background:#fff; padding:6px; border:1px solid var(--line-2);}
+  .qr-card .num{font-weight:800; font-variant-numeric:tabular-nums; font-size:15px;}
+  .qr-card small{color:var(--muted); font-size:12.5px;}
+  @media (max-width:520px){ .qr-row{grid-template-columns:1fr;} }
   .contact-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:22px; box-shadow:var(--shadow-s);}
   .contact-card div{margin-bottom:12px; font-size:15px;}
   @media (max-width:900px){ .pay-grid{grid-template-columns:1fr; gap:22px;} }
@@ -508,9 +515,23 @@
       </div>
       <div class="pay-grid">
         <div>
-          <div class="pay"><span class="pm gcash">GCash</span><span class="info"><b>Arvin Gallinera</b><small>GCash</small></span><span class="num">0912 068 8399</span></div>
-          <div class="pay"><span class="pm maya">Maya</span><span class="info"><b>Arvin Gallinera</b><small>PayMaya</small></span><span class="num">0912 541 6934</span></div>
-          <div class="pay"><span class="pm bank">Bank</span><span class="info"><b>ARVIN GALLINERA</b><small>Bank transfer</small></span><span class="num">2469270049</span></div>
+          <!-- Scan-to-pay. Each QR picture is dropped into images/ with these names and it
+               appears by itself; until then the number below it is what teachers use. -->
+          <div class="qr-row">
+            <div class="qr-card">
+              <span class="pm gcash">GCash</span>
+              <img src="images/gcash-qr.png" alt="GCash QR code for QuickCheck payments" loading="lazy" onerror="this.remove()">
+              <b class="num">0912 068 8399</b>
+              <small>Scan in the GCash app, or send to this number</small>
+            </div>
+            <div class="qr-card">
+              <span class="pm maya">Maya</span>
+              <img src="images/maya-qr.png" alt="Maya QR code for QuickCheck payments" loading="lazy" onerror="this.remove()">
+              <b class="num">0912 541 6934</b>
+              <small>Scan in the Maya app, or send to this number</small>
+            </div>
+          </div>
+          <div class="pay"><span class="pm bank">Bank</span><span class="info"><b>Bank transfer</b><small>BPI · AZ Digital Marketing</small></span><span class="num">2469270049</span></div>
         </div>
         <div class="contact-card">
           <div>📧 <b>Email (best)</b><br><a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a></div>
@@ -569,7 +590,7 @@
 
 <footer>
   <div class="wrap">
-    <span>QuickCheck · by Arvin Gallinera · AZ Digital Marketing</span>
+    <span>QuickCheck · by AZ Digital Marketing</span>
     <span>
       <a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a> ·
       <a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">Facebook</a> ·

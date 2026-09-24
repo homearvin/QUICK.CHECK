@@ -1,8 +1,10 @@
 {
-  "latest": "2.4.0",
+  "latest": "2.4.1",
   "released": "2026-09-24",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed: on a weak connection, an update that stopped part-way threw away everything it had downloaded and said to check your internet — when the internet was fine. QuickCheck now carries on from where it stopped, and tries again by itself a few times.",
+    "If it still can't finish, what already arrived is kept: press Update now again later and it picks up from there instead of starting the whole download again.",
     "Named answer sheets now say whose paper they are. Print one sheet per learner and QuickCheck reads the name from the sheet itself when you photograph it — no list of names to check before saving. Print new sheets for a test to use this; sheets you printed before, and blank sheets, work exactly as they did.",
     "QuickCheck never guesses from a code it cannot read perfectly. A fold, a shadow or a sheet printed for another class is handed back to you instead, as before.",
     "Paste your Table of Specifications instead of typing it row by row: copy the competencies from Excel, from Word or from the curriculum guide, paste them in one go, and QuickCheck works out which column is the competency, the code, the week, the days taught or the item numbers. You check every row before anything is saved.",
@@ -12,17 +14,15 @@
     "Computers already activated keep working exactly as before. They tell the list about themselves once, quietly, the first time they run this version.",
     "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest.",
     "Only papers QuickCheck is sure of are marked Ready: every answer read clearly, and it knows whose paper it is. A blank, a double shade or a light mark is shown to you, never guessed.",
-    "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save.",
-    "Straight after each photo the screen turns green (good), amber (check it) or red (take it again), and shows which of the four black corner squares the photo missed. Take it again puts the new photo in the old one's place.",
-    "A whole batch no longer fails when the Wi-Fi drops: each photo is sent on its own and tried again by itself."
+    "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.0/QuickCheckPro-2.4.0-portable.zip",
-      "sha256": "1c043f1e0a5dfb88e14e9ad51fc61b80f42a2dd4b105623a0962a11d7c27b048",
-      "signature": "KabIQEQZrf80hvTlkDtR+zaXV4iE5fnFthglbt9WZgtPTgoH1OA47XAyUBet46nMDILSM/+sNYEJU+52AAbhBQ==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.1/QuickCheckPro-2.4.1-portable.zip",
+      "sha256": "74d1091ff6efb62ad7faa8b318d565806dc333d85a4f4f5b73d478bedd24b1c5",
+      "signature": "FW7RhlxkcFZXMjH5ck3OMWKc9x3Ip6FkptsJqNkP+Z0k8r3jGEEU1UCM83Q65zyG04sPyRNSzLGsJRCrV5SQBQ==",
       "exe": "QuickCheckPro.exe",
-      "size": 91467471
+      "size": 91469270
     }
   }
 }

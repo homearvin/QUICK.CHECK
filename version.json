@@ -1,28 +1,28 @@
 {
-  "latest": "2.3.1",
-  "released": "2026-09-21",
+  "latest": "2.4.0",
+  "released": "2026-09-24",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Named answer sheets now say whose paper they are. Print one sheet per learner and QuickCheck reads the name from the sheet itself when you photograph it — no list of names to check before saving. Print new sheets for a test to use this; sheets you printed before, and blank sheets, work exactly as they did.",
+    "QuickCheck never guesses from a code it cannot read perfectly. A fold, a shadow or a sheet printed for another class is handed back to you instead, as before.",
+    "Paste your Table of Specifications instead of typing it row by row: copy the competencies from Excel, from Word or from the curriculum guide, paste them in one go, and QuickCheck works out which column is the competency, the code, the week, the days taught or the item numbers. You check every row before anything is saved.",
+    "A test's results now open with where it stands — papers checked, class MPS, items mastered, competencies needing help, learners below the cutoff — and one press to the class record, the item analysis, the competencies and the whole report.",
+    "New: an intervention list you can hand in. One file with every competency below the cutoff and the learners named under it, and every learner with the competencies they missed. On the Competencies screen.",
     "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards.",
     "Computers already activated keep working exactly as before. They tell the list about themselves once, quietly, the first time they run this version.",
     "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest.",
     "Only papers QuickCheck is sure of are marked Ready: every answer read clearly, and it knows whose paper it is. A blank, a double shade or a light mark is shown to you, never guessed.",
     "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save.",
     "Straight after each photo the screen turns green (good), amber (check it) or red (take it again), and shows which of the four black corner squares the photo missed. Take it again puts the new photo in the old one's place.",
-    "A whole batch no longer fails when the Wi-Fi drops: each photo is sent on its own and tried again by itself.",
-    "Answer sheets printed before 27 August 2026 are now stopped with \"wrong sheet?\" instead of being read wrongly. Print new sheets for those tests.",
-    "On a computer, the Scan page is for photo files: drop them in, choose them, or choose a whole folder. A QR code beside it opens the camera for this test on your phone, and papers from the phone appear on the computer as they arrive.",
-    "No internet on a computer? Settings -> Install an update file installs an update file you were sent (from the next version on).",
-    "Less to read: explanations now sit behind a small ? you can press.",
-    "The key screen shows today's price: the launch price until 25 September 2026, then the regular price."
+    "A whole batch no longer fails when the Wi-Fi drops: each photo is sent on its own and tried again by itself."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.3.1/QuickCheckPro-2.3.1-portable.zip",
-      "sha256": "43efbfdcf71d7737efa969b2a7b88fccd327658ea9bfa16d0bfa940071af77c2",
-      "signature": "w04ogaQ2RrmN7MDctbRJG3LF8QoQDyWJ5gxym+Bp4/1b8pucb0YkKnnyrmuf1UztqCvnun7K8Hm3zAS19mH5DA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.0/QuickCheckPro-2.4.0-portable.zip",
+      "sha256": "1c043f1e0a5dfb88e14e9ad51fc61b80f42a2dd4b105623a0962a11d7c27b048",
+      "signature": "KabIQEQZrf80hvTlkDtR+zaXV4iE5fnFthglbt9WZgtPTgoH1OA47XAyUBet46nMDILSM/+sNYEJU+52AAbhBQ==",
       "exe": "QuickCheckPro.exe",
-      "size": 91440725
+      "size": 91467471
     }
   }
 }

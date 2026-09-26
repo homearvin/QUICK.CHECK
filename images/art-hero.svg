@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 600" width="680" height="600" role="img"
+     aria-label="A phone photographing an answer sheet, with the score and the class result appearing beside it">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f4b47"/><stop offset="1" stop-color="#072523"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.75" cy="0.15" r="0.75">
+      <stop offset="0" stop-color="#2fe0c4" stop-opacity=".40"/>
+      <stop offset="1" stop-color="#2fe0c4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.12" cy="0.92" r="0.6">
+      <stop offset="0" stop-color="#12a594" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#12a594" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="paper" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef5f4"/>
+    </linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2fe0c4" stop-opacity="0"/>
+      <stop offset=".55" stop-color="#2fe0c4" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#2fe0c4" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16302d"/><stop offset="1" stop-color="#0a201e"/>
+    </linearGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#04211f" flood-opacity=".45"/>
+    </filter>
+    <filter id="card" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#04211f" flood-opacity=".30"/>
+    </filter>
+    <pattern id="dots" width="26" height="26" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.6" fill="#2fe0c4" fill-opacity=".14"/>
+    </pattern>
+  </defs>
+
+  <!-- backdrop -->
+  <rect width="680" height="600" rx="34" fill="url(#bg)"/>
+  <rect width="680" height="600" rx="34" fill="url(#glow)"/>
+  <rect width="680" height="600" rx="34" fill="url(#glow2)"/>
+  <rect x="34" y="34" width="612" height="532" rx="24" fill="url(#dots)"/>
+
+  <!-- the answer sheet, tilted -->
+  <g transform="rotate(-7 300 330)" filter="url(#soft)">
+    <rect x="126" y="126" width="348" height="410" rx="18" fill="url(#paper)"/>
+    <!-- corner squares: what the camera looks for -->
+    <rect x="146" y="146" width="26" height="26" rx="5" fill="#0f4b47"/>
+    <rect x="428" y="146" width="26" height="26" rx="5" fill="#0f4b47"/>
+    <rect x="146" y="490" width="26" height="26" rx="5" fill="#0f4b47"/>
+    <rect x="428" y="490" width="26" height="26" rx="5" fill="#0f4b47"/>
+    <!-- name line -->
+    <rect x="186" y="150" width="150" height="9" rx="4.5" fill="#cfe0dd"/>
+    <rect x="186" y="166" width="96" height="7" rx="3.5" fill="#e2ecea"/>
+    <!-- bubble rows -->
+    <g>
+      <g transform="translate(168 206)">
+        <circle cx="0" cy="0" r="9" fill="#0f4b47"/><circle cx="34" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <circle cx="68" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="102" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <rect x="150" y="-4" width="130" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+      <g transform="translate(168 254)">
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="34" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <circle cx="68" cy="0" r="9" fill="#0f4b47"/><circle cx="102" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <rect x="150" y="-4" width="106" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+      <g transform="translate(168 302)">
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="34" cy="0" r="9" fill="#12a594"/>
+        <circle cx="68" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="102" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <rect x="150" y="-4" width="124" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+      <g transform="translate(168 350)">
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="34" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <circle cx="68" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="102" cy="0" r="9" fill="#0f4b47"/>
+        <rect x="150" y="-4" width="92" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+      <g transform="translate(168 398)">
+        <circle cx="0" cy="0" r="9" fill="#0f4b47"/><circle cx="34" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <circle cx="68" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="102" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <rect x="150" y="-4" width="116" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+      <g transform="translate(168 446)">
+        <circle cx="0" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/><circle cx="34" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <circle cx="68" cy="0" r="9" fill="#12a594"/><circle cx="102" cy="0" r="9" fill="none" stroke="#c9dbd8" stroke-width="2.4"/>
+        <rect x="150" y="-4" width="138" height="8" rx="4" fill="#eaf1f0"/>
+      </g>
+    </g>
+    <!-- the scanning beam sweeping the sheet -->
+    <rect x="126" y="264" width="348" height="120" fill="url(#beam)"/>
+    <rect x="126" y="322" width="348" height="3" fill="#2fe0c4" opacity=".9"/>
+  </g>
+
+  <!-- the phone doing the scanning -->
+  <g filter="url(#soft)">
+    <rect x="392" y="130" width="214" height="404" rx="34" fill="url(#phone)" stroke="#2fe0c4" stroke-opacity=".22" stroke-width="1.5"/>
+    <rect x="406" y="144" width="186" height="376" rx="26" fill="#0b2422"/>
+    <rect x="470" y="156" width="58" height="8" rx="4" fill="#12403c"/>
+    <!-- viewfinder on the screen: the sheet seen through the camera -->
+    <rect x="428" y="186" width="142" height="196" rx="12" fill="#0f312e" stroke="#2fe0c4" stroke-opacity=".35" stroke-width="1.5"/>
+    <path d="M440 202v-10h12M558 202v-10h-12M440 366v10h12M558 366v10h-12" stroke="#2fe0c4" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+    <g opacity=".85">
+      <circle cx="456" cy="230" r="6" fill="#2fe0c4"/><circle cx="478" cy="230" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="500" cy="230" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="522" cy="230" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="456" cy="262" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="478" cy="262" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="500" cy="262" r="6" fill="#2fe0c4"/><circle cx="522" cy="262" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="456" cy="294" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="478" cy="294" r="6" fill="#2fe0c4"/>
+      <circle cx="500" cy="294" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="522" cy="294" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="456" cy="326" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="478" cy="326" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/>
+      <circle cx="500" cy="326" r="6" fill="none" stroke="#2c5c57" stroke-width="2"/><circle cx="522" cy="326" r="6" fill="#2fe0c4"/>
+    </g>
+    <!-- the shutter -->
+    <circle cx="499" cy="452" r="31" fill="none" stroke="#2fe0c4" stroke-width="3.5" opacity=".85"/>
+    <circle cx="499" cy="452" r="23" fill="#2fe0c4" opacity=".92"/>
+    <rect x="440" y="496" width="118" height="7" rx="3.5" fill="#173d39"/>
+  </g>
+
+  <!-- floating card: this paper is scored -->
+  <g filter="url(#card)" transform="translate(48 402)">
+    <rect width="252" height="86" rx="18" fill="#ffffff"/>
+    <circle cx="44" cy="43" r="22" fill="#d6f3ec"/>
+    <path d="M35 43.5l6.5 6.5L54 37" fill="none" stroke="#0f4b47" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="78" y="38" font-family="Segoe UI,system-ui,sans-serif" font-size="19" font-weight="800" fill="#10201f">Scored 44 / 50</text>
+    <text x="78" y="62" font-family="Segoe UI,system-ui,sans-serif" font-size="14" fill="#5d716f">saved to your class record</text>
+  </g>
+
+  <!-- floating card: the class result -->
+  <g filter="url(#card)" transform="translate(402 22)">
+    <rect width="236" height="104" rx="18" fill="#ffffff"/>
+    <text x="20" y="34" font-family="Segoe UI,system-ui,sans-serif" font-size="13" font-weight="700" fill="#5d716f" letter-spacing="1.4">CLASS MPS</text>
+    <text x="20" y="72" font-family="Segoe UI,system-ui,sans-serif" font-size="34" font-weight="850" fill="#10201f">78.4</text>
+    <g transform="translate(140 30)">
+      <rect x="0" y="30" width="14" height="22" rx="4" fill="#bfe9df"/>
+      <rect x="22" y="18" width="14" height="34" rx="4" fill="#5cc9b7"/>
+      <rect x="44" y="8" width="14" height="44" rx="4" fill="#12a594"/>
+      <rect x="66" y="22" width="14" height="30" rx="4" fill="#0f4b47"/>
+    </g>
+    <text x="20" y="92" font-family="Segoe UI,system-ui,sans-serif" font-size="13" fill="#5d716f">whole class, one save</text>
+  </g>
+</svg>

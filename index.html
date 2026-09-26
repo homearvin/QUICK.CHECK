@@ -105,30 +105,11 @@
   .hero-trust span{display:flex; align-items:center; gap:8px; font-size:13.5px; color:var(--muted); font-weight:600;}
   .hero-trust svg{width:17px; height:17px; color:var(--teal);}
 
-  /* Device pictures */
-  .shots{position:relative; padding:10px 0 30px;}
-  .shots .laptop{position:relative; background:var(--paper); border:1px solid var(--line); border-radius:16px;
-    box-shadow:var(--shadow-l); overflow:hidden;}
-  .shots .bar{display:flex; align-items:center; gap:6px; padding:9px 12px; background:var(--panel); border-bottom:1px solid var(--line);}
-  .shots .bar i{width:9px; height:9px; border-radius:50%; background:var(--line); display:block;}
-  .shots .bar i:first-child{background:#f0b8ab;} .shots .bar i:nth-child(2){background:#f3d9a5;} .shots .bar i:nth-child(3){background:var(--teal-edge);}
-  .shots .phone{position:absolute; right:-14px; bottom:-8px; width:31%; min-width:150px; background:var(--teal-night);
-    border-radius:26px; padding:7px; box-shadow:var(--shadow-l); border:1px solid rgba(255,255,255,.08);}
-  .shots .phone img{border-radius:20px;}
-  .chip{position:absolute; display:flex; align-items:center; gap:10px; background:var(--paper); border:1px solid var(--line);
-    border-radius:14px; padding:10px 14px; box-shadow:var(--shadow); font-size:13px; font-weight:700;}
-  .chip small{display:block; font-size:11.5px; font-weight:600; color:var(--muted);}
-  .chip .dot{width:30px; height:30px; border-radius:10px; display:grid; place-items:center; flex:0 0 auto;}
-  .chip .dot svg{width:16px; height:16px;}
-  .chip.one{left:-16px; top:12%;} .chip.one .dot{background:var(--teal-soft); color:var(--teal-deep);}
-  .chip.two{left:-26px; bottom:18%;} .chip.two .dot{background:var(--amber-bg); color:var(--amber);}
-  @media (max-width:1100px){ .chip.one{left:-6px;} .chip.two{left:-10px;} }
-  @media (max-width:980px){
-    .hero{grid-template-columns:1fr; gap:34px; padding-top:34px;}
-    .hero .lead{max-width:none;}
-    .chip.one{left:auto; right:6px; top:-12px;} .chip.two{left:-4px; bottom:-10px;}
-  }
-  @media (max-width:560px){ .chip{font-size:12px; padding:8px 11px;} .chip small{display:none;} }
+  /* Hero artwork */
+  .shots{display:flex; justify-content:center;}
+  .hero-art{width:100%; max-width:600px; height:auto; filter:drop-shadow(0 30px 60px rgba(12,55,52,.22));}
+  .split .pic img{border:0; box-shadow:none; filter:drop-shadow(0 22px 44px rgba(12,55,52,.16));}
+  @media (max-width:980px){ .hero{grid-template-columns:1fr; gap:34px; padding-top:34px;} .hero .lead{max-width:none;} }
 
   /* ---------- Proof strip ---------- */
   .strip{background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:26px 0;}
@@ -293,21 +274,7 @@
       </div>
 
       <div class="shots">
-        <div class="laptop">
-          <div class="bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <img src="images/app-dashboard.webp" width="1240" height="861" alt="QuickCheck on a Windows PC: the home screen showing what to do next, papers checked this week, class averages and recent tests">
-        </div>
-        <div class="phone">
-          <img src="images/app-scan-phone.webp" width="390" height="800" alt="QuickCheck on a phone: a large Take a paper button that opens the camera">
-        </div>
-        <div class="chip one">
-          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg></span>
-          <span>42 of 44 papers<small>scored as you photograph</small></span>
-        </div>
-        <div class="chip two">
-          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg></span>
-          <span>Least mastered<small>named, not guessed</small></span>
-        </div>
+        <img class="hero-art" src="images/art-hero.svg" width="680" height="600" alt="A phone photographing an answer sheet: the paper is scored and the class result appears beside it">
       </div>
     </section>
   </div>
@@ -369,7 +336,7 @@
   <section>
     <div class="wrap">
       <div class="split">
-        <div class="pic"><img src="images/app-competencies.webp" width="1240" height="990" alt="Competency results in QuickCheck: class MPS, the competencies below the cutoff ranked weakest first, and the learners who need support in each one"></div>
+        <div class="pic"><img src="images/art-gaps.svg" width="640" height="520" alt="Competencies ranked weakest first, with the learners who need help named under the lowest one"></div>
         <div>
           <p class="eyebrow">The part nobody has time for</p>
           <h2>37 out of 50 can still hide a gap.</h2>
@@ -390,7 +357,7 @@
   <section style="padding-top:0">
     <div class="wrap">
       <div class="split flip">
-        <div class="pic"><img src="images/app-results.webp" width="1240" height="861" alt="A checked test in QuickCheck: where it stands, and buttons to the class record, the item analysis and the competencies"></div>
+        <div class="pic"><img src="images/art-record.svg" width="640" height="520" alt="Scores moving from the photographed papers into a class record, with a backup kept and the report ready"></div>
         <div>
           <p class="eyebrow">After the last photo</p>
           <h2>The paperwork is already done.</h2>

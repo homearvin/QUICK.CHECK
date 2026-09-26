@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" role="img"
+     aria-label="Competencies ranked weakest first, with the learners who need help named under the lowest one">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eefaf7"/><stop offset="1" stop-color="#dff3ee"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0f4b47" flood-opacity=".16"/>
+    </filter>
+    <filter id="chipShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f4b47" flood-opacity=".18"/>
+    </filter>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0v32" fill="none" stroke="#0f4b47" stroke-opacity=".05"/>
+    </pattern>
+  </defs>
+
+  <rect width="640" height="520" rx="30" fill="url(#panel)"/>
+  <rect width="640" height="520" rx="30" fill="url(#grid)"/>
+
+  <!-- the card: competencies, weakest first -->
+  <g filter="url(#cardShadow)">
+    <rect x="52" y="58" width="500" height="372" rx="22" fill="#ffffff"/>
+
+    <text x="82" y="102" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" font-weight="800"
+          letter-spacing="1.6" fill="#12a594">PRIORITY LEARNING GAPS</text>
+    <text x="82" y="130" font-family="Segoe UI,system-ui,sans-serif" font-size="20" font-weight="800" fill="#10201f">
+      Weakest competency first</text>
+
+    <!-- row 1: below the cutoff -->
+    <g transform="translate(82 160)">
+      <rect x="-14" y="-14" width="470" height="76" rx="14" fill="#fbeae5"/>
+      <text x="0" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="700" fill="#10201f">Factoring polynomials</text>
+      <text x="376" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="17" font-weight="850" fill="#8d2f22">33%</text>
+      <rect x="0" y="22" width="442" height="10" rx="5" fill="#f2d5cd"/>
+      <rect x="0" y="22" width="146" height="10" rx="5" fill="#cf5a43"/>
+      <text x="0" y="52" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" fill="#8d2f22">44 of 45 learners need support</text>
+    </g>
+
+    <!-- row 2 -->
+    <g transform="translate(82 252)">
+      <text x="0" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="700" fill="#10201f">Laws of exponents</text>
+      <text x="376" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="17" font-weight="850" fill="#8a5600">46%</text>
+      <rect x="0" y="22" width="442" height="10" rx="5" fill="#eef3f3"/>
+      <rect x="0" y="22" width="203" height="10" rx="5" fill="#e0a83c"/>
+    </g>
+
+    <!-- row 3: mastered -->
+    <g transform="translate(82 318)">
+      <text x="0" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="700" fill="#10201f">Operations on integers</text>
+      <text x="376" y="6" font-family="Segoe UI,system-ui,sans-serif" font-size="17" font-weight="850" fill="#0f4b47">94%</text>
+      <rect x="0" y="22" width="442" height="10" rx="5" fill="#eef3f3"/>
+      <rect x="0" y="22" width="415" height="10" rx="5" fill="#12a594"/>
+    </g>
+
+    <!-- the cutoff line -->
+    <g opacity=".65">
+      <path d="M413 150V368" stroke="#0f4b47" stroke-width="1.6" stroke-dasharray="5 6"/>
+      <text x="300" y="392" font-family="Segoe UI,system-ui,sans-serif" font-size="11.5" font-weight="700" fill="#5d716f">75% cutoff</text>
+    </g>
+  </g>
+
+  <!-- floating chip: who needs help -->
+  <g filter="url(#chipShadow)" transform="translate(340 404)">
+    <rect width="270" height="86" rx="18" fill="#0f4b47"/>
+    <text x="22" y="34" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" font-weight="800"
+          letter-spacing="1.3" fill="#2fe0c4">NEEDS RETEACHING</text>
+    <g transform="translate(22 48)">
+      <circle cx="13" cy="13" r="13" fill="#2fe0c4"/><text x="13" y="18" text-anchor="middle" font-family="Segoe UI,system-ui,sans-serif" font-size="11" font-weight="800" fill="#06302c">RC</text>
+      <circle cx="41" cy="13" r="13" fill="#bfe9df"/><text x="41" y="18" text-anchor="middle" font-family="Segoe UI,system-ui,sans-serif" font-size="11" font-weight="800" fill="#06302c">MS</text>
+      <circle cx="69" cy="13" r="13" fill="#7fd8c8"/><text x="69" y="18" text-anchor="middle" font-family="Segoe UI,system-ui,sans-serif" font-size="11" font-weight="800" fill="#06302c">JD</text>
+      <circle cx="97" cy="13" r="13" fill="#1d6b64"/><text x="97" y="18" text-anchor="middle" font-family="Segoe UI,system-ui,sans-serif" font-size="11" font-weight="800" fill="#e9f2f0">+41</text>
+      <text x="124" y="18" font-family="Segoe UI,system-ui,sans-serif" font-size="13" fill="#bfe0da">named for you</text>
+    </g>
+  </g>
+
+  <!-- floating chip: one test, every competency -->
+  <g filter="url(#chipShadow)" transform="translate(46 22)">
+    <rect width="212" height="64" rx="16" fill="#ffffff"/>
+    <circle cx="38" cy="32" r="18" fill="#d6f3ec"/>
+    <path d="M30 32.5l6 6 11-12" fill="none" stroke="#0f4b47" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="68" y="28" font-family="Segoe UI,system-ui,sans-serif" font-size="14.5" font-weight="800" fill="#10201f">One test</text>
+    <text x="68" y="48" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" fill="#5d716f">every competency measured</text>
+  </g>
+</svg>

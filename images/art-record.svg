@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" role="img"
+     aria-label="Scores moving from the photographed papers into a DepEd class record, with a backup kept">
+  <defs>
+    <linearGradient id="panel2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f8f8"/><stop offset="1" stop-color="#e4efef"/>
+    </linearGradient>
+    <linearGradient id="row" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#12a594" stop-opacity=".18"/><stop offset="1" stop-color="#12a594" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="s1" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#0f4b47" flood-opacity=".16"/>
+    </filter>
+    <filter id="s2" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#0f4b47" flood-opacity=".18"/>
+    </filter>
+  </defs>
+
+  <rect width="640" height="520" rx="30" fill="url(#panel2)"/>
+
+  <!-- the class record -->
+  <g filter="url(#s1)">
+    <rect x="76" y="76" width="488" height="366" rx="20" fill="#ffffff"/>
+    <!-- title bar -->
+    <rect x="76" y="76" width="488" height="58" rx="20" fill="#0f4b47"/>
+    <rect x="76" y="114" width="488" height="20" fill="#0f4b47"/>
+    <text x="104" y="112" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="800" fill="#ffffff">
+      Class record · Written Works 1</text>
+    <circle cx="524" cy="105" r="13" fill="#2fe0c4"/>
+    <path d="M517 105.5l5 5 9-10" fill="none" stroke="#06302c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- column headings -->
+    <g font-family="Segoe UI,system-ui,sans-serif" font-size="11.5" font-weight="800" fill="#5d716f" letter-spacing="1">
+      <text x="104" y="166">LEARNER</text>
+      <text x="360" y="166">SCORE</text>
+      <text x="446" y="166">SAVED</text>
+    </g>
+    <path d="M104 178h432" stroke="#eef3f3" stroke-width="2"/>
+
+    <!-- rows filling in -->
+    <g>
+      <g transform="translate(104 196)">
+        <rect x="-16" y="-14" width="464" height="40" rx="10" fill="url(#row)"/>
+        <rect x="0" y="-2" width="168" height="10" rx="5" fill="#dde8e6"/>
+        <text x="256" y="8" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="800" fill="#10201f">44</text>
+        <circle cx="352" cy="3" r="11" fill="#d6f3ec"/>
+        <path d="M346 3.5l4.5 4.5 8-9" fill="none" stroke="#0f4b47" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g transform="translate(104 244)">
+        <rect x="-16" y="-14" width="464" height="40" rx="10" fill="url(#row)"/>
+        <rect x="0" y="-2" width="196" height="10" rx="5" fill="#dde8e6"/>
+        <text x="256" y="8" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="800" fill="#10201f">38</text>
+        <circle cx="352" cy="3" r="11" fill="#d6f3ec"/>
+        <path d="M346 3.5l4.5 4.5 8-9" fill="none" stroke="#0f4b47" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g transform="translate(104 292)">
+        <rect x="-16" y="-14" width="464" height="40" rx="10" fill="url(#row)"/>
+        <rect x="0" y="-2" width="150" height="10" rx="5" fill="#dde8e6"/>
+        <text x="256" y="8" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="800" fill="#10201f">47</text>
+        <circle cx="352" cy="3" r="11" fill="#d6f3ec"/>
+        <path d="M346 3.5l4.5 4.5 8-9" fill="none" stroke="#0f4b47" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      <g transform="translate(104 340)" opacity=".55">
+        <rect x="0" y="-2" width="178" height="10" rx="5" fill="#e6eded"/>
+        <rect x="248" y="-4" width="28" height="12" rx="6" fill="#e6eded"/>
+        <circle cx="352" cy="3" r="11" fill="#eef3f3"/>
+      </g>
+      <g transform="translate(104 384)" opacity=".35">
+        <rect x="0" y="-2" width="140" height="10" rx="5" fill="#e6eded"/>
+        <rect x="248" y="-4" width="28" height="12" rx="6" fill="#e6eded"/>
+        <circle cx="352" cy="3" r="11" fill="#eef3f3"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- the papers feeding in -->
+  <g filter="url(#s2)" transform="translate(18 300) rotate(-8)">
+    <rect width="150" height="184" rx="14" fill="#ffffff"/>
+    <rect x="16" y="16" width="18" height="18" rx="4" fill="#0f4b47"/>
+    <rect x="116" y="16" width="18" height="18" rx="4" fill="#0f4b47"/>
+    <rect x="16" y="150" width="18" height="18" rx="4" fill="#0f4b47"/>
+    <rect x="116" y="150" width="18" height="18" rx="4" fill="#0f4b47"/>
+    <g transform="translate(30 62)">
+      <circle cx="0" cy="0" r="6" fill="#12a594"/><circle cx="22" cy="0" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/>
+      <circle cx="44" cy="0" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/><circle cx="66" cy="0" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/>
+      <circle cx="0" cy="28" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/><circle cx="22" cy="28" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/>
+      <circle cx="44" cy="28" r="6" fill="#12a594"/><circle cx="66" cy="28" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/>
+      <circle cx="0" cy="56" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/><circle cx="22" cy="56" r="6" fill="#12a594"/>
+      <circle cx="44" cy="56" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/><circle cx="66" cy="56" r="6" fill="none" stroke="#cfe0dd" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- the one button that does it -->
+  <g filter="url(#s2)" transform="translate(360 438)">
+    <rect width="236" height="62" rx="18" fill="#0f4b47"/>
+    <circle cx="36" cy="31" r="15" fill="#2fe0c4"/>
+    <path d="M29 31.5l5 5 9.5-10.5" fill="none" stroke="#06302c" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="64" y="28" font-family="Segoe UI,system-ui,sans-serif" font-size="15" font-weight="800" fill="#ffffff">Save all</text>
+    <text x="64" y="47" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" fill="#bfe0da">backup kept first</text>
+  </g>
+
+  <!-- report chip -->
+  <g filter="url(#s2)" transform="translate(432 20)">
+    <rect width="178" height="64" rx="16" fill="#ffffff"/>
+    <rect x="18" y="16" width="26" height="32" rx="5" fill="#fbeae5"/>
+    <path d="M24 26h14M24 33h14M24 40h9" stroke="#cf5a43" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="58" y="30" font-family="Segoe UI,system-ui,sans-serif" font-size="14" font-weight="800" fill="#10201f">MPS report</text>
+    <text x="58" y="48" font-family="Segoe UI,system-ui,sans-serif" font-size="12.5" fill="#5d716f">PDF or Excel</text>
+  </g>
+</svg>

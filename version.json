@@ -1,8 +1,10 @@
 {
-  "latest": "2.4.1",
-  "released": "2026-09-24",
+  "latest": "2.4.2",
+  "released": "2026-09-26",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "QuickCheck Pro is now ₱499, and cheaper when teachers buy together: 2 keys for ₱699 (₱350 each) and 5 for ₱1,499 (₱300 each), with a 6th key free for the teacher who collects for five. Every key still works on one computer, and every key is the same complete app.",
+    "The key screen shows those prices, so what you see in QuickCheck is what the website says.",
     "Fixed: on a weak connection, an update that stopped part-way threw away everything it had downloaded and said to check your internet — when the internet was fine. QuickCheck now carries on from where it stopped, and tries again by itself a few times.",
     "If it still can't finish, what already arrived is kept: press Update now again later and it picks up from there instead of starting the whole download again.",
     "Named answer sheets now say whose paper they are. Print one sheet per learner and QuickCheck reads the name from the sheet itself when you photograph it — no list of names to check before saving. Print new sheets for a test to use this; sheets you printed before, and blank sheets, work exactly as they did.",
@@ -12,17 +14,15 @@
     "New: an intervention list you can hand in. One file with every competency below the cutoff and the learners named under it, and every learner with the competencies they missed. On the Competencies screen.",
     "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards.",
     "Computers already activated keep working exactly as before. They tell the list about themselves once, quietly, the first time they run this version.",
-    "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest.",
-    "Only papers QuickCheck is sure of are marked Ready: every answer read clearly, and it knows whose paper it is. A blank, a double shade or a light mark is shown to you, never guessed.",
-    "A paper that needs you fills the screen, zooms to the item in question and shows the choices right under it. Save & next saves it straight away. There is no second save."
+    "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.1/QuickCheckPro-2.4.1-portable.zip",
-      "sha256": "74d1091ff6efb62ad7faa8b318d565806dc333d85a4f4f5b73d478bedd24b1c5",
-      "signature": "FW7RhlxkcFZXMjH5ck3OMWKc9x3Ip6FkptsJqNkP+Z0k8r3jGEEU1UCM83Q65zyG04sPyRNSzLGsJRCrV5SQBQ==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.2/QuickCheckPro-2.4.2-portable.zip",
+      "sha256": "919ef11b254015c2eece5497c10c64e07935389ff8f066d3d262496b227c7017",
+      "signature": "e6vUcGVoT3jjoKs0/NL/tud4UBJJDnuscQJWc+BKb1c1XEtz91OCI3gurLL9sa12KcLvGXIRJwrxFhFCk47ICQ==",
       "exe": "QuickCheckPro.exe",
-      "size": 91469270
+      "size": 91470072
     }
   }
 }

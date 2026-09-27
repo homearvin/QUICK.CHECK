@@ -191,15 +191,20 @@
   .pay .info{flex:1; min-width:0;} .pay .info b{display:block; font-size:14.5px;}
   .pay .info small{color:var(--muted);}
   .pay .num{font-weight:800; font-variant-numeric:tabular-nums;}
-  .qr-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:12px;}
+  .qr-row{display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:12px; align-items:start;}
   .qr-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:18px;
     box-shadow:var(--shadow-s); display:flex; flex-direction:column; align-items:center; gap:10px; text-align:center;}
-  .qr-card img{width:100%; max-width:190px; border-radius:12px; background:#fff; padding:6px; border:1px solid var(--line-2);}
+  .qr-card .pm{width:auto; height:auto; padding:6px 14px; border-radius:99px; font-size:12.5px; letter-spacing:.02em;}
+  .qr-card img{width:auto; max-width:100%; max-height:420px; border-radius:12px; background:#fff;}
+  .qr-card a{display:block; border-radius:12px;}
+  .qr-card a:hover img{filter:brightness(.97);}
   .qr-card .num{font-weight:800; font-variant-numeric:tabular-nums; font-size:15px;}
   .qr-card small{color:var(--muted); font-size:12.5px;}
   @media (max-width:520px){ .qr-row{grid-template-columns:1fr;} }
   .contact-card{background:var(--paper); border:1px solid var(--line); border-radius:var(--r); padding:22px; box-shadow:var(--shadow-s);}
   .contact-card div{margin-bottom:12px; font-size:15px;}
+  .cline{display:flex; gap:12px; align-items:flex-start;}
+  .cline svg{width:20px; height:20px; flex:0 0 auto; color:var(--teal); margin-top:3px;}
   @media (max-width:900px){ .pay-grid{grid-template-columns:1fr; gap:22px;} }
 
   /* ---------- FAQ ---------- */
@@ -486,14 +491,12 @@
                appears by itself; until then the number below it is what teachers use. -->
           <div class="qr-row">
             <div class="qr-card">
-              <span class="pm gcash">GCash</span>
-              <img src="images/gcash-qr.png" alt="GCash QR code for QuickCheck payments" loading="lazy" onerror="this.remove()">
+              <a href="images/gcash-qr.png" target="_blank" rel="noopener" title="Open the GCash code full size"><img src="images/gcash-qr.png" alt="GCash QR code for QuickCheck payments" loading="lazy" onerror="this.remove()"></a>
               <b class="num">0912 068 8399</b>
               <small>Scan in the GCash app, or send to this number</small>
             </div>
             <div class="qr-card">
-              <span class="pm maya">Maya</span>
-              <img src="images/maya-qr.png" alt="Maya QR code for QuickCheck payments" loading="lazy" onerror="this.remove()">
+              <a href="images/maya-qr.png" target="_blank" rel="noopener" title="Open the Maya code full size"><img src="images/maya-qr.png" alt="Maya QR code for QuickCheck payments" loading="lazy" onerror="this.remove()"></a>
               <b class="num">0912 541 6934</b>
               <small>Scan in the Maya app, or send to this number</small>
             </div>
@@ -501,9 +504,9 @@
           <div class="pay"><span class="pm bank">Bank</span><span class="info"><b>Bank transfer</b><small>BPI · AZ Digital Marketing</small></span><span class="num">2469270049</span></div>
         </div>
         <div class="contact-card">
-          <div>📧 <b>Email (best)</b><br><a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a></div>
-          <div>💬 <b>Facebook</b><br><a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">AZ Digital Marketing</a></div>
-          <div>📱 <b>Message</b><br>0912 068 8399</div>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg><span><b>Email (best)</b><br><a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a></span></div>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 10-10.4 8.9v-6.3H8.2V12h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.6h-2.3v6.3A9 9 0 0021 12z"/></svg><span><b>Facebook</b><br><a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">AZ Digital Marketing</a></span></div>
+          <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg><span><b>Message</b><br>0912 068 8399</span></div>
           <p class="lead" style="font-size:14px">Send your <b>full name</b> — and your teammates' names for Duo or Squad — with a
             screenshot of the payment. Keys are usually sent within a few hours, and every purchase has the
             7-day money-back guarantee.</p>

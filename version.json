@@ -1,8 +1,10 @@
 {
-  "latest": "2.4.2",
-  "released": "2026-09-26",
+  "latest": "2.4.3",
+  "released": "2026-09-29",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed Simple scorebooks: opening a class now shows each checked test as a score column, including its highest possible score and every learner's saved score.",
+    "Downloading a Simple scorebook now includes those test columns and scores in Excel instead of exporting only the class list.",
     "QuickCheck Pro is now ₱499, and cheaper when teachers buy together: 2 keys for ₱699 (₱350 each) and 5 for ₱1,499 (₱300 each), with a 6th key free for the teacher who collects for five. Every key still works on one computer, and every key is the same complete app.",
     "The key screen shows those prices, so what you see in QuickCheck is what the website says.",
     "Fixed: on a weak connection, an update that stopped part-way threw away everything it had downloaded and said to check your internet — when the internet was fine. QuickCheck now carries on from where it stopped, and tries again by itself a few times.",
@@ -12,17 +14,15 @@
     "Paste your Table of Specifications instead of typing it row by row: copy the competencies from Excel, from Word or from the curriculum guide, paste them in one go, and QuickCheck works out which column is the competency, the code, the week, the days taught or the item numbers. You check every row before anything is saved.",
     "A test's results now open with where it stands — papers checked, class MPS, items mastered, competencies needing help, learners below the cutoff — and one press to the class record, the item analysis, the competencies and the whole report.",
     "New: an intervention list you can hand in. One file with every competency below the cutoff and the learners named under it, and every learner with the competencies they missed. On the Competencies screen.",
-    "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards.",
-    "Computers already activated keep working exactly as before. They tell the list about themselves once, quietly, the first time they run this version.",
-    "Checking papers is now Scan, glance, save. Take the photos one after another: each one is sent the moment you take it, and QuickCheck sorts the papers as they come in. You only open the papers it asks about, and one button saves all the rest."
+    "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.2/QuickCheckPro-2.4.2-portable.zip",
-      "sha256": "919ef11b254015c2eece5497c10c64e07935389ff8f066d3d262496b227c7017",
-      "signature": "e6vUcGVoT3jjoKs0/NL/tud4UBJJDnuscQJWc+BKb1c1XEtz91OCI3gurLL9sa12KcLvGXIRJwrxFhFCk47ICQ==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.3/QuickCheckPro-2.4.3-portable.zip",
+      "sha256": "1936660d36b52e091b3dd00af6dd8c6a0e4a6501517fb3af2a55bd28adbe42f6",
+      "signature": "Fk1AUTFgBAnR0sKpgjM4EsApsbaC8h8wJ97efsKdqGIbRw/kiCakaEYRZ6r14J52FL4t9Fn7xUhePTEtIA3FBw==",
       "exe": "QuickCheckPro.exe",
-      "size": 91470072
+      "size": 91479284
     }
   }
 }

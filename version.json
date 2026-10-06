@@ -1,28 +1,28 @@
 {
-  "latest": "2.4.3",
-  "released": "2026-09-29",
+  "latest": "2.5.0",
+  "released": "2026-10-06",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "New answer sheets with bigger circles that are easier to shade. The items are shared into even columns that read straight down — 25 items print as 1 to 13 and 14 to 25, so item 21 no longer sits under item 1 — with A B C D printed large over every column and a little space after every fifth question.",
+    "Only tests you make from now on get the new sheet. Tests you already made keep the sheet their papers were printed on, so papers already in your drawer still check correctly.",
+    "One exam for all your sections: open a test's menu and choose Use for another class. Tick the sections, and each gets its own copy with the same answer sheet, answer key, points and Table of Specifications — type the exam once. Make a test also offers this before you start.",
+    "Settings has a new Remove old copies. It finds older copies of QuickCheck and their downloads on your computer and moves the ones you tick to the Recycle Bin. Your classes, tests and scores are never touched.",
+    "Fixed: a class using the updated GMRC or Values Education record could not have a test made for it. Its own score columns can now be chosen.",
     "Fixed Simple scorebooks: opening a class now shows each checked test as a score column, including its highest possible score and every learner's saved score.",
     "Downloading a Simple scorebook now includes those test columns and scores in Excel instead of exporting only the class list.",
     "QuickCheck Pro is now ₱499, and cheaper when teachers buy together: 2 keys for ₱699 (₱350 each) and 5 for ₱1,499 (₱300 each), with a 6th key free for the teacher who collects for five. Every key still works on one computer, and every key is the same complete app.",
     "The key screen shows those prices, so what you see in QuickCheck is what the website says.",
     "Fixed: on a weak connection, an update that stopped part-way threw away everything it had downloaded and said to check your internet — when the internet was fine. QuickCheck now carries on from where it stopped, and tries again by itself a few times.",
     "If it still can't finish, what already arrived is kept: press Update now again later and it picks up from there instead of starting the whole download again.",
-    "Named answer sheets now say whose paper they are. Print one sheet per learner and QuickCheck reads the name from the sheet itself when you photograph it — no list of names to check before saving. Print new sheets for a test to use this; sheets you printed before, and blank sheets, work exactly as they did.",
-    "QuickCheck never guesses from a code it cannot read perfectly. A fold, a shadow or a sheet printed for another class is handed back to you instead, as before.",
-    "Paste your Table of Specifications instead of typing it row by row: copy the competencies from Excel, from Word or from the curriculum guide, paste them in one go, and QuickCheck works out which column is the competency, the code, the week, the days taught or the item numbers. You check every row before anything is saved.",
-    "A test's results now open with where it stands — papers checked, class MPS, items mastered, competencies needing help, learners below the cutoff — and one press to the class record, the item analysis, the competencies and the whole report.",
-    "New: an intervention list you can hand in. One file with every competency below the cutoff and the learners named under it, and every learner with the competencies they missed. On the Competencies screen.",
-    "Your key works on one computer, as it always said. Activating now asks QuickCheck's key list once, over the internet, whether the key is already being used on another computer. It sends only the key's ID and a coded computer ID — never your classes, learners or scores, and never anything again afterwards."
+    "Named answer sheets now say whose paper they are. Print one sheet per learner and QuickCheck reads the name from the sheet itself when you photograph it — no list of names to check before saving. Print new sheets for a test to use this; sheets you printed before, and blank sheets, work exactly as they did."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.4.3/QuickCheckPro-2.4.3-portable.zip",
-      "sha256": "1936660d36b52e091b3dd00af6dd8c6a0e4a6501517fb3af2a55bd28adbe42f6",
-      "signature": "Fk1AUTFgBAnR0sKpgjM4EsApsbaC8h8wJ97efsKdqGIbRw/kiCakaEYRZ6r14J52FL4t9Fn7xUhePTEtIA3FBw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.5.0/QuickCheckPro-2.5.0-portable.zip",
+      "sha256": "8fd34b6fca1c88666173830005c32f84ed95f30c4ec6bdbbec9bfbc181c0d4ad",
+      "signature": "s8w0RNWXQI46WZw6egInkQ15XHaR9kfYKh5trjaporOs7hgXhHn2KDvfjfz5HNTk0Ny9tCDEATTJ8mYRAPSXDw==",
       "exe": "QuickCheckPro.exe",
-      "size": 91479284
+      "size": 91504776
     }
   }
 }

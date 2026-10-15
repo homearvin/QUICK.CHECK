@@ -1,8 +1,12 @@
 {
-  "latest": "2.6.0",
-  "released": "2026-10-06",
+  "latest": "2.7.0",
+  "released": "2026-10-15",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Table of Specifications: choose which items belong to each competency. Type them in Item numbers — for example 3, 10, 13 — when a competency's items are spread through the test. Leave it empty and the items are numbered in order, as before.",
+    "QuickCheck checks the numbers as you type: a competency must list exactly as many items as it is given, and no item can belong to two competencies. Competency results, reports and learning progress all use the items you chose.",
+    "Deleting a checked paper now asks what goes: the photo only, keeping the score, or the photo and the score. Removing the score also takes it out of your class record, and the paper can then be checked again.",
+    "A score you changed by hand in the class record after saving is never erased — QuickCheck leaves it and tells you.",
     "Partial credit by answer: on the answer key page, choose Different answers can earn different points, then set values such as A = 3, B = 2, C = 1 and D = 1. The keyed answer stays the full-credit answer.",
     "Those points follow the paper from scanning through review, the class record, score exports and reports. Partial-credit marks are amber so they are easy to tell from full credit and no credit.",
     "The two scoring choices already in QuickCheck are unchanged. Existing tests and saved scores keep their original scoring unless you deliberately choose the new mode for a test.",
@@ -10,19 +14,15 @@
     "Only tests you make from now on get the new sheet. Tests you already made keep the sheet their papers were printed on, so papers already in your drawer still check correctly.",
     "One exam for all your sections: open a test's menu and choose Use for another class. Tick the sections, and each gets its own copy with the same answer sheet, answer key, points and Table of Specifications — type the exam once. Make a test also offers this before you start.",
     "Settings has a new Remove old copies. It finds older copies of QuickCheck and their downloads on your computer and moves the ones you tick to the Recycle Bin. Your classes, tests and scores are never touched.",
-    "Fixed: a class using the updated GMRC or Values Education record could not have a test made for it. Its own score columns can now be chosen.",
-    "Fixed Simple scorebooks: opening a class now shows each checked test as a score column, including its highest possible score and every learner's saved score.",
-    "Downloading a Simple scorebook now includes those test columns and scores in Excel instead of exporting only the class list.",
-    "QuickCheck Pro is now ₱499, and cheaper when teachers buy together: 2 keys for ₱699 (₱350 each) and 5 for ₱1,499 (₱300 each), with a 6th key free for the teacher who collects for five. Every key still works on one computer, and every key is the same complete app.",
-    "The key screen shows those prices, so what you see in QuickCheck is what the website says."
+    "Fixed: a class using the updated GMRC or Values Education record could not have a test made for it. Its own score columns can now be chosen."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.6.0/QuickCheckPro-2.6.0-portable.zip",
-      "sha256": "aeb03f434895fc0acad3cf10fcb49d827cdd86b775d3dd889302b8a3953062f2",
-      "signature": "6eXoghVBEDT+6TubpZQaEdveQ392nZXktyWftvm/Rudryyq9tXChP+pi1/BPXDUVZzO+EQ8Y9WfohJ/35DYlBQ==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.7.0/QuickCheckPro-2.7.0-portable.zip",
+      "sha256": "e081a6573ae8968c987d6884872b7582cadae26ac0ee0ba894b2f1ab6c2dd807",
+      "signature": "V0ebScOBUs/be80P2qVvfPPH5DQJrRhVus7MW5IB/Bmb4RDZzZkeronSulJGFPlvHFHkEvK1UY4xi0g5NSRsAw==",
       "exe": "QuickCheckPro.exe",
-      "size": 92565643
+      "size": 91527549
     }
   }
 }

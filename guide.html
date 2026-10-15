@@ -170,13 +170,16 @@
   <div class="dl">
     <h2>Don't have QuickCheck yet?</h2>
     <p>This button downloads the app to your Windows computer. Nothing to sign up for.</p>
-    <a class="dlbtn js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.7.0/QuickCheckPro-2.7.0-portable.zip">
+    <a class="dlbtn js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.8.0/QuickCheckPro-2.8.0-portable.zip">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
       Download QuickCheck — free for 7 days
     </a>
-    <p class="facts">Windows 10 or 11 · version <b class="js-dl-version">2.7.0</b> ·
+    <p class="facts">Windows 10 or 11 · version <b class="js-dl-version">2.8.0</b> ·
       <b class="js-dl-size">87 MB</b> zip file · no key needed for the first 7 days.
       Part 1 below explains exactly what to do with the file.</p>
+    <p class="facts">Prefer an installer? <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.8.0/QuickCheckPro-2.8.0-setup.exe"><b>Download the installer (.exe)</b></a> —
+      it adds QuickCheck to the Start menu and to Windows Settings → Apps, so it can be uninstalled
+      properly. No administrator password needed.</p>
   </div>
 
   <div class="big-idea">
@@ -226,7 +229,14 @@
         <span class="btnname">More info</span>, then <span class="btnname">Run anyway</span>.</li>
       <li>The first start takes up to a minute. Then the QuickCheck window opens — that is the app.</li>
     </ol>
-    <div class="note important"><b>Extract the zip first — this matters.</b>
+    <div class="note tip"><b>Or use the installer instead of the zip.</b>
+      <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.8.0/QuickCheckPro-2.8.0-setup.exe">Download the installer</a>, double-click it, and press
+      <span class="btnname">Next</span> until it finishes (the same blue Windows box may appear first —
+      <span class="btnname">More info</span> → <span class="btnname">Run anyway</span>). Then open
+      <b>QuickCheck Pro</b> from the <b>Start menu</b>. There is nothing to extract. To remove the program
+      later, use <b>Windows Settings → Apps → QuickCheck Pro → Uninstall</b>: your classes, tests and
+      scores are kept.</div>
+    <div class="note important"><b>Using the zip? Extract it first — this matters.</b>
       If you double-click the .exe while it is still <i>inside</i> the zip, Windows throws your work
       away when you close it. Extract to a real folder and everything is saved properly.</div>
     <div class="note tip"><b>The blue warning is normal.</b>
@@ -273,8 +283,9 @@
     <ul class="map">
       <li><span class="nm">Home</span><span>Your dashboard. It shows <b>what to do next</b>, how your
         classes are doing, the hardest questions, competency mastery, and the learners to follow up.</span></li>
-      <li><span class="nm">Check papers</span><span>Your list of tests. This is where you make a test,
-        photograph the papers and review them.</span></li>
+      <li><span class="nm">Tests</span><span>Your list of tests. This is where you make a test,
+        photograph the papers and review them. Every test has the same three parts at the top:
+        <b>Prepare</b>, <b>Check papers</b> and <b>Results</b>.</span></li>
       <li><span class="nm">Results</span><span>Every test you have checked, with the reports you can
         print or download.</span></li>
       <li><span class="nm">My classes</span><span>Your class lists and class records.</span></li>
@@ -332,7 +343,7 @@
     <div class="part-head"><div class="num">5</div>
       <div><h2>Make a test</h2>
         <p class="sub">One test = one exam or quiz. Four numbered steps.</p></div></div>
-    <p class="where">Go to <span class="tab">Check papers</span> → <span class="btnname">Create test</span></p>
+    <p class="where">Go to <span class="tab">Tests</span> → <span class="btnname">Create test</span></p>
     <ol class="steps">
       <li><b>Name the test.</b> Name it the way you would say it out loud, e.g. "First Term Exam —
         Math 8".</li>
@@ -493,7 +504,7 @@
     <div class="part-head"><div class="num">11</div>
       <div><h2>Check the papers</h2>
         <p class="sub">The part that used to take your evening.</p></div></div>
-    <p class="where">Go to <span class="tab">Check papers</span> → open your test</p>
+    <p class="where">Go to <span class="tab">Tests</span> → open your test → <b>Check papers</b></p>
 
     <p class="choice-h">Option A — from your phone (fastest)</p>
     <ol class="steps">
@@ -549,25 +560,35 @@
         <p class="sub">Everything about the exam, in one place.</p></div></div>
     <p class="where">Go to <span class="tab">Results</span></p>
     <ol class="steps">
-      <li>Pick the test you want. You'll see the <b>class average</b> and how the class spread out.</li>
-      <li>Then choose what you want to look at:
+      <li>Pick the test you want. The top says <b>where the test stands</b> — papers checked, class MPS,
+        learners below your cutoff, highest and lowest — and <b>where the scores went</b> (your class
+        record).</li>
+      <li>Under <b>Print or download</b>, the first one is the <b>Report for your principal</b>:
+        press <span class="btnname">Print</span> or <span class="btnname">Download PDF</span>. It carries
+        your school's header and the "Noted by" line — fill in your name, the school and the principal's
+        name once in <span class="tab">Settings</span>.</li>
+      <li>Below that is <b>every learner</b> in class order, including anyone marked absent or excused and
+        anyone with no paper yet. Open a learner to see their marked paper and correct it.</li>
+      <li>The tabs at the top show more:
         <ul>
-          <li><b>Item analysis</b> — which questions were hardest, and how each choice was picked.</li>
+          <li><b>Which items were hard</b> — every item, hardest first, and how each choice was picked.</li>
           <li><b>Competencies</b> — which competencies were not mastered, weakest first, and who needs
             help in each. (Needs a TOS — part 6.)</li>
-          <li><b>Scores (Excel)</b> — the score sheet.</li>
-          <li><b>Formal report</b> — a full test report you can read on screen or download as
-            <b>PDF</b> or <b>Excel</b>: results summary (mean, SD, MPS and proficiency levels, by sex),
-            learner proficiency list, score distribution and item analysis, least mastered
-            competencies, the Table of Specifications and a learner-by-competency matrix. The
-            interpretation and recommendations are written for you, and you can edit them.</li>
-          <li><b>Complete report</b> — <b>every part in one Excel file</b>. This is the one to download
-            when you're asked to submit documents.</li>
+          <li><b>Printable report</b> — the formal test report on screen: results summary (mean, SD, MPS
+            and proficiency levels, by sex), learner proficiency list, score distribution and item
+            analysis, least mastered competencies, the Table of Specifications and a
+            learner-by-competency matrix. Print one part or the complete report. The interpretation and
+            recommendations are written for you, and you can edit them.</li>
           <li><b>Marked papers</b> — the photos with the ticks, if you need to show a learner or a parent.</li>
         </ul>
       </li>
-      <li>Use the tabs at the top of any of those pages to move between them without going back.</li>
+      <li>Also under <b>Print or download</b>: the <b>Score list (Excel)</b>, and the <b>Whole report
+        (Excel)</b> with every part in one file — the one to download when you're asked to submit
+        documents.</li>
     </ol>
+    <div class="note tip"><b>Changed a score by hand in the class record?</b> In QuickCheck's own class
+      record, the score you type is the official one. The marked paper, the Results page and the printed
+      report show it beside that learner, so nobody is surprised.</div>
     <div class="note tip"><b>That's the whole cycle:</b> class → test → answer key → print → check →
       results. Next time you skip straight to making the test and checking.</div>
   </section>
@@ -589,7 +610,7 @@
         bad save can always be undone.</li>
     </ol>
     <div class="note important"><b>Saved photos take the most space.</b>
-      Once you no longer need to look at the papers, go to <span class="tab">Results</span> →
+      Once you no longer need to look at the papers, go to <span class="tab">Settings</span> →
       <b>Saved paper photos</b> → delete them. <strong>All scores and answers are kept</strong> — you
       just can't view the marked photo afterwards.</div>
     <div class="note tip"><b>Moving to another computer?</b> Settings has a
@@ -622,6 +643,13 @@
     <div class="part-head"><div class="num">?</div>
       <div><h2>If something goes wrong</h2>
         <p class="sub">The things teachers ask about most.</p></div></div>
+
+    <p class="choice-h">Something else went wrong</p>
+    <p style="margin:0 0 14px; color:var(--ink-soft)">Go to <span class="tab">Settings</span> →
+      <span class="btnname">Make a problem report</span>, press <span class="btnname">Save this report</span>
+      and send the file to us with a sentence about what you were doing. It tells us your version and what
+      QuickCheck found — there are <b>no learners' names, scores or photos</b> in it, and you can read every
+      word before you send it.</p>
 
     <p class="choice-h">Windows says "Windows protected your PC"</p>
     <p style="margin:0 0 14px; color:var(--ink-soft)">Normal for a new app. Click

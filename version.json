@@ -1,28 +1,28 @@
 {
-  "latest": "2.7.0",
+  "latest": "2.8.0",
   "released": "2026-10-15",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
-    "Table of Specifications: choose which items belong to each competency. Type them in Item numbers — for example 3, 10, 13 — when a competency's items are spread through the test. Leave it empty and the items are numbered in order, as before.",
-    "QuickCheck checks the numbers as you type: a competency must list exactly as many items as it is given, and no item can belong to two competencies. Competency results, reports and learning progress all use the items you chose.",
-    "Deleting a checked paper now asks what goes: the photo only, keeping the score, or the photo and the score. Removing the score also takes it out of your class record, and the paper can then be checked again.",
-    "A score you changed by hand in the class record after saving is never erased — QuickCheck leaves it and tells you.",
-    "Partial credit by answer: on the answer key page, choose Different answers can earn different points, then set values such as A = 3, B = 2, C = 1 and D = 1. The keyed answer stays the full-credit answer.",
-    "Those points follow the paper from scanning through review, the class record, score exports and reports. Partial-credit marks are amber so they are easy to tell from full credit and no credit.",
-    "The two scoring choices already in QuickCheck are unchanged. Existing tests and saved scores keep their original scoring unless you deliberately choose the new mode for a test.",
-    "New answer sheets with bigger circles that are easier to shade. The items are shared into even columns that read straight down — 25 items print as 1 to 13 and 14 to 25, so item 21 no longer sits under item 1 — with A B C D printed large over every column and a little space after every fifth question.",
-    "Only tests you make from now on get the new sheet. Tests you already made keep the sheet their papers were printed on, so papers already in your drawer still check correctly.",
-    "One exam for all your sections: open a test's menu and choose Use for another class. Tick the sections, and each gets its own copy with the same answer sheet, answer key, points and Table of Specifications — type the exam once. Make a test also offers this before you start.",
-    "Settings has a new Remove old copies. It finds older copies of QuickCheck and their downloads on your computer and moves the ones you tick to the Recycle Bin. Your classes, tests and scores are never touched.",
-    "Fixed: a class using the updated GMRC or Values Education record could not have a test made for it. Its own score columns can now be chosen."
+    "A new Check papers page: every paper waiting for you in one list, what is ready to save and what needs a look, and exactly where the scores will go — your class record, QuickCheck's copy of it, or a simple scorebook.",
+    "Sheets printed with names: QuickCheck now remembers who each sheet was printed for, so a late enrollee or a renumbered class can no longer put a paper under the wrong name. If a sheet was printed for someone no longer in the class, it asks you instead of guessing.",
+    "Absent or excused: mark a learner who did not sit the test, and they are no longer counted as missing. A make-up paper checked later clears the mark by itself.",
+    "Checking with your phone is safer: photos taken while the Wi-Fi drops wait on the phone and send themselves when the computer is back, even if you close the page.",
+    "One bar on every page of a test — Prepare, Check papers, Results — so you always know where you are. A quick quiz no longer asks about a Table of Specifications; tick the box when you want one. The menu item Check papers is now called Tests.",
+    "One clean Results page for each test: where the test stands and where the scores went, then Print or download — the Report for your principal first, with your school's header and the Noted by line — then every learner, including those absent or with no paper yet.",
+    "A score you change by hand in QuickCheck's class record is the official one. The marked paper, the Results page and the printed report now say so beside that learner.",
+    "Deleting saved photos and clearing backups moved from Results to Settings.",
+    "Easier to read: stronger colours for small text and for the Save score & next button. The photo review works from the keyboard too: + and − zoom, arrow keys move.",
+    "Settings has Make a problem report: one short file that tells us what we need to help you, with no learners' names, scores or photos in it. You see all of it before you send it.",
+    "New: a Windows installer beside the usual zip, with a Start-menu entry and a real Uninstall. Your classes, tests and scores are kept apart from the program, so uninstalling never removes them.",
+    "Table of Specifications: choose which items belong to each competency. Type them in Item numbers — for example 3, 10, 13 — when a competency's items are spread through the test. Leave it empty and the items are numbered in order, as before."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.7.0/QuickCheckPro-2.7.0-portable.zip",
-      "sha256": "e081a6573ae8968c987d6884872b7582cadae26ac0ee0ba894b2f1ab6c2dd807",
-      "signature": "V0ebScOBUs/be80P2qVvfPPH5DQJrRhVus7MW5IB/Bmb4RDZzZkeronSulJGFPlvHFHkEvK1UY4xi0g5NSRsAw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.8.0/QuickCheckPro-2.8.0-portable.zip",
+      "sha256": "c09e51245a07a735066653388dec0adb9e60e4251a1eba434e4372163883aeed",
+      "signature": "+FCQIkDz6Y3GVcroGulFvVtfwrH95SMhPeHAdiSie5+h1QS5YMXHmsrsvGIaag7Mgs6Fn9YEgOTG8BlqgaIUAw==",
       "exe": "QuickCheckPro.exe",
-      "size": 91527549
+      "size": 91567731
     }
   }
 }

@@ -1,28 +1,28 @@
 {
-  "latest": "2.8.2",
-  "released": "2026-10-17",
+  "latest": "2.9.0",
+  "released": "2026-10-19",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Edit existing classes and learner lists: rename a class, correct a learner's name, add learners or remove them in QuickCheck scorebooks and supported DepEd Excel records. Saved papers, scores and printed-sheet history stay attached to the right learner.",
+    "Fixed laptop imports of JPEG photos saved with the .jfif filename. JPG, PNG, JFIF, scanned PDF and ZIP batches now use the same checking flow.",
+    "Fixed named sheets printed before a class was renamed: QuickCheck now remembers the old printed class code and still identifies the learner, while sheets from another class remain blocked.",
+    "Fixed the Remove learner button so confirmed removals are applied, and protected learner numbers that are still referenced by saved results or interventions.",
+    "Faster everyday pages: smaller compressed assets, safer browser caching, fewer repeated file reads and smoother searches on tests, results, classes and learners.",
     "Fixed: sheets printed with learner names now identify the learner automatically after a real printer, photocopier or phone camera thickens the tiny code-square outlines. QuickCheck uses a code-specific reading method and still refuses an unclear or conflicting code instead of risking the wrong learner.",
     "Fixed: a clear answer-sheet photo was rejected when glare, a fold or a printer edge hid one of its four black corner squares. QuickCheck now reads safely from the other three and asks you to check it once; a photo with fewer than three still asks for a retake.",
     "A new Check papers page: every paper waiting for you in one list, what is ready to save and what needs a look, and exactly where the scores will go — your class record, QuickCheck's copy of it, or a simple scorebook.",
     "Sheets printed with names: QuickCheck now remembers who each sheet was printed for, so a late enrollee or a renumbered class can no longer put a paper under the wrong name. If a sheet was printed for someone no longer in the class, it asks you instead of guessing.",
     "Absent or excused: mark a learner who did not sit the test, and they are no longer counted as missing. A make-up paper checked later clears the mark by itself.",
     "Checking with your phone is safer: photos taken while the Wi-Fi drops wait on the phone and send themselves when the computer is back, even if you close the page.",
-    "One bar on every page of a test — Prepare, Check papers, Results — so you always know where you are. A quick quiz no longer asks about a Table of Specifications; tick the box when you want one. The menu item Check papers is now called Tests.",
-    "One clean Results page for each test: where the test stands and where the scores went, then Print or download — the Report for your principal first, with your school's header and the Noted by line — then every learner, including those absent or with no paper yet.",
-    "A score you change by hand in QuickCheck's class record is the official one. The marked paper, the Results page and the printed report now say so beside that learner.",
-    "Deleting saved photos and clearing backups moved from Results to Settings.",
-    "Easier to read: stronger colours for small text and for the Save score & next button. The photo review works from the keyboard too: + and − zoom, arrow keys move.",
-    "Settings has Make a problem report: one short file that tells us what we need to help you, with no learners' names, scores or photos in it. You see all of it before you send it."
+    "One bar on every page of a test — Prepare, Check papers, Results — so you always know where you are. A quick quiz no longer asks about a Table of Specifications; tick the box when you want one. The menu item Check papers is now called Tests."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.8.2/QuickCheckPro-2.8.2-portable.zip",
-      "sha256": "9bd780cd6546c95655135cf8b9a00794b5509835ceee1b25f587ab5d3b1976f7",
-      "signature": "s9SxuxvH4y0RJk8NPkWRkWNjYE6YPpfeLhD52L+USJK7IzxltA9iiXH/1p1fOgFWY5ZaqQNKHFq8gxEoE0b3Cw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.9.0/QuickCheckPro-2.9.0-portable.zip",
+      "sha256": "745396e8a335bae15f29c99c38bcbb3dfc869d5f1f84f6c69029d02700c79219",
+      "signature": "F7B3tW1wnil0e6yGawilQ6IXM3zb4YlX+bX73O9820l5D3s1NMIrklSPyK+Zb804nO507zalUCXfqzY6aJfDCg==",
       "exe": "QuickCheckPro.exe",
-      "size": 92688281
+      "size": 92667890
     }
   }
 }

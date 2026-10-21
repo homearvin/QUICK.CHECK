@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickCheck helps teachers prepare answer sheets, check paper assessments, review uncertain marks, and understand class results.">
+  <title>Table of Specifications · QuickCheck</title>
+  <link rel="icon" href="../static/brand/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../static/app.css">
+  <link rel="stylesheet" href="../static/workspace.css">
+  <link rel="stylesheet" href="../static/redesign.css">
+  
+  <link rel="stylesheet" href="../static/ui.css">
+  
+  
+  <link rel="stylesheet" href="../static/iconlook.css">
+  
+  
+  <style media="print">
+    @page {
+      @top-center { content: ""; }
+      @bottom-left { content: "Table of Specifications"; font: 8pt Arial, sans-serif; color: #5b6b70; }
+      @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 8pt Arial, sans-serif; color: #5b6b70; }
+    }
+  </style>
+</head>
+
+
+
+
+
+
+<body class="">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ui-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="ui-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="ui-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="ui-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="ui-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="ui-sheet" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9" cy="13" r="1.2"/><circle cx="13" cy="13" r="1.2"/><circle cx="9" cy="17" r="1.2"/><circle cx="13" cy="17" r="1.2"/></symbol>
+  <symbol id="ui-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="ui-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol>
+  <symbol id="ui-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="ui-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ui-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="ui-xls" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+  <symbol id="ui-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="ui-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ui-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+  <symbol id="ui-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="ui-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="ui-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+  <symbol id="ui-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.9M12 17.2v.01"/></symbol>
+  <symbol id="ui-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="ui-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+  <symbol id="ui-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="ui-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></symbol>
+  <symbol id="ui-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ui-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="ui-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
+  <symbol id="ui-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="ui-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="ui-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="ui-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 15v5h16v-5"/></symbol>
+  <symbol id="ui-save" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM8 3v5h7V3M8 21v-7h8v7"/></symbol>
+  <symbol id="ui-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="ui-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="ui-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h4"/></symbol>
+  <symbol id="ui-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="ui-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="ui-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="ui-pie" viewBox="0 0 24 24"><path d="M12 3v9h9A9 9 0 1 1 12 3z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+  <symbol id="ui-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="ui-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ui-q" viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.3"/></symbol>
+  <symbol id="ui-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+</svg>
+
+
+
+
+
+
+
+<header class="ui-top il-top">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.10.1">
+    <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+    <span><b>QuickCheck</b></span>
+  </a>
+  <div class="il-right">
+    <a class="il-round" href="search.html" title="Search"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg><span class="ui-sr">Search</span></a>
+    <a class="il-round" href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg><span class="ui-sr">Help</span></a>
+    <a class="ui-avatar il-me" href="settings.html" title="Settings · Demo Teacher">DT</a>
+  </div>
+</header>
+
+
+<div class="il-rail-shade" id="ilRailShade" aria-hidden="true"></div>
+<nav class="il-rail" id="ilRail" aria-label="Main navigation">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.10.1"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg><span class="ui-sr">QuickCheck home</span></a>
+  <button class="il-rail-toggle" id="ilRailToggle" type="button" aria-expanded="false" aria-controls="ilRail" title="Show the names (M)">
+    <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-menu"/></svg></span><span class="il-rail-word">Menu</span></button>
+  <div class="il-rail-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="il-rail-word">Home</span></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" aria-current=page>
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
+    
+    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="il-rail-word">Check</span></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="il-rail-word">Classes</span></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="il-rail-word">Results</span></a>
+    
+  </div>
+  <div class="il-rail-foot">
+    <a href="search.html" title="Search (/)" ><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="il-rail-word">Search</span></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="il-rail-word">Help</span></a>
+    
+    
+    <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
+  </div>
+</nav>
+<div class="app">
+
+
+  <!-- Main -->
+  <main class="main" id="main-content" tabindex="-1">
+    
+<div class="qc-demo-bar" role="region" aria-label="Demo">
+  <span class="qc-demo-tag">Demo</span>
+  <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
+  <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
+    <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+  </form>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+<section class="tbar il-tbar" aria-label="This test">
+  <div class="il-tid">
+    <a class="il-back" href="tests.html" title="Back to Tests" aria-label="Back to Tests"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
+    <div class="il-tname">
+      <small class="il-tpage">Table of Specifications</small>
+      <h1>Science 7 – Quarter 1 Quiz</h1>
+      <small>Grade 7 – Sampaguita · 20</small>
+    </div>
+    <span class="il-chip il-c-go"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg>Ready</span>
+  </div>
+  <nav class="il-tsteps" aria-label="Steps of this test">
+    
+      
+      
+      <a href="tests_sample-science-quiz_key.html" class="" aria-current=page><i><svg class="ui-i " aria-hidden="true"><use href="#ui-key"/></svg></i>Key</a>
+      
+    
+      <span class="il-ln done" aria-hidden="true"></span>
+      
+      <a href="sheets--test-sample-science-quiz.html" class="" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-print"/></svg></i>Print</a>
+      
+    
+      <span class="il-ln " aria-hidden="true"></span>
+      
+      <a href="tests_sample-science-quiz_check.html" class="" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></i>Check</a>
+      
+    
+      <span class="il-ln " aria-hidden="true"></span>
+      
+      <span class="il-later" title="Not ready yet"><i><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></i>Results<span class="ui-sr">, not ready yet</span></span>
+      
+    
+  </nav>
+  
+  
+  <nav class="il-subnav" aria-label="Set up this test">
+    <a href="tests_sample-science-quiz_edit.html"  class="is-done"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg>Details</a>
+    <a href="tests_sample-science-quiz_key.html"  class="is-done"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg>Key</a>
+    <a href="tests_sample-science-quiz_tos.html" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>TOS</a>
+  </nav>
+  
+</section>
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <div class="il-messages" id="qcMessages">
+    </div>
+    
+    
+<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="tos">
+  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
+  <p class="qc-tip-words"><b id="qcTipTitle">TOS</b> List the skills and the days you taught each. QuickCheck shares out the items for you.</p>
+  <div class="qc-tip-acts">
+    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p6" target="_blank" rel="noopener">Details</a>
+    <form method="post" action="#" data-demo-action="/guide/tip/tos/hide" data-guide-hide data-busy="off">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><input type="hidden" name="next" value="/tests/sample-science-quiz/tos?">
+      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
+    </form>
+  </div>
+</aside>
+
+    
+
+<style>
+  /* Real competencies are long sentences. Below this the columns are squeezed until
+     the numbers in them are hidden behind their own spinner arrows, so the table
+     keeps its width and the card scrolls sideways instead. */
+  .tos-table { width:100%; min-width:880px; border-collapse:collapse; }
+  .tos-table input { width:100%; }
+  .tos-table .num input { text-align:center; font-variant-numeric:tabular-nums; -moz-appearance:textfield; }
+  .tos-table .num input::-webkit-outer-spin-button,
+  .tos-table .num input::-webkit-inner-spin-button { -webkit-appearance:none; margin:0; }
+  .calc { text-align:center; font-weight:700; font-variant-numeric:tabular-nums; }
+  .calc .sub { display:block; font-weight:400; font-size:11px; color:var(--muted); }
+  .totals { display:flex; gap:12px; flex-wrap:wrap; margin-top:16px; }
+  .totbox { background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; font-size:13px; }
+  .totbox b { display:block; font-size:22px; font-variant-numeric:tabular-nums; margin-top:2px; }
+  .paste summary { cursor:pointer; font-weight:700; list-style:none; display:flex; align-items:center; gap:8px; }
+  .paste summary::-webkit-details-marker { display:none; }
+  .paste summary::before { content:"＋"; color:var(--muted); font-weight:800; }
+  .paste[open] summary::before { content:"−"; }
+  .paste summary span { font-weight:400; color:var(--muted); font-size:13px; }
+  .paste textarea { width:100%; margin-top:12px; }
+  .paste .why { color:var(--muted); font-size:12.5px; margin:10px 0 14px; }
+  .read { background:var(--mint); border:1px solid var(--line); border-radius:12px;
+    padding:12px 16px; margin-bottom:18px; font-size:14px; }
+  .tos-error { background:var(--red-bg); color:var(--bad); border:1px solid var(--red-line); border-radius:12px;
+    padding:12px 16px; margin-bottom:18px; font-weight:700; font-size:14px; }
+  /* Item numbers: empty = QuickCheck numbers them in order (shown faintly as the
+     placeholder); typed = the teacher's own, checked as she types. */
+  .tos-table .picks input { text-align:left; }
+  .pick-note { display:block; font-size:11px; margin-top:3px; color:var(--muted); min-height:14px; }
+  .pick-note.bad { color:var(--bad); font-weight:700; }
+</style>
+
+
+
+<div class="card">
+  <div class="card-head">
+    <div>
+      <h2>Science 7 – Quarter 1 Quiz</h2>
+      <p>List the competencies and the days you taught them<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — how the items are worked out"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>QuickCheck works out the item counts the DepEd way — days divided by total days, times the number of items — and they always add up exactly to your test.</span></span></p>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap">
+      
+        
+          <a class="btn primary" href="tests_sample-science-quiz_competencies.html"><svg class="ui-i" aria-hidden="true"><use href="#ui-chart"/></svg>Competency results</a>
+        
+        <a class="btn primary" href="tests_sample-science-quiz_check.html" data-download="Making Excel…"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Complete report</a>
+      <a class="btn ghost" href="tests_sample-science-quiz_check.html">← Back to test</a>
+      
+    </div>
+  </div>
+  <div style="display:flex; gap:10px; flex-wrap:wrap">
+    <span class="pill blue">20 items</span>
+    <span class="pill gray">Grade 7 – Sampaguita (Simple scorebook)</span>
+    <span class="pill green">
+      20 of 20 items allocated</span>
+  </div>
+</div>
+
+
+
+<details class="card paste" >
+  <summary>Paste your competencies <span>— from Excel, Word or the curriculum guide</span></summary>
+  <form method="post" action="#" data-demo-action="/tests/sample-science-quiz/tos/paste">
+    <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8">
+    
+    <textarea name="pasted" required aria-label="Paste your competencies here" placeholder="Factoring polynomials&#10;Special products&#10;Laws of exponents&#10;&#10;— or paste the columns straight out of Excel:&#10;M7NS-Ia-1&#9;Factoring polynomials&#9;Week 1&#9;4"></textarea>
+    <p class="why">One competency per line, or the whole block of cells copied from Excel — QuickCheck works out
+      which column is the competency, the code, the week, the days taught or the item numbers
+      (1–5, 6–10). You check every row before anything is saved.</p>
+    <button class="btn primary" type="submit">Read what I pasted</button>
+  </form>
+</details>
+
+
+<form method="post" id="tosForm" action="#" data-demo-action="/tests/sample-science-quiz/tos"
+      data-unsaved="">
+  <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8">
+  <input type="hidden" name="manual_items" id="manualItems" value="">
+  <div class="card">
+    <div class="card-title-row">
+      <h2>Competencies taught</h2>
+      <button type="button" class="btn ghost" onclick="addRow()">+ Add competency</button>
+    </div>
+
+    <div style="overflow-x:auto">
+      <table class="tos-table" id="tosTable">
+        <caption class="ui-sr">Table of Specifications</caption>
+        <thead>
+          <tr>
+            <th scope="col" style="width:32%">Competency</th>
+            <th scope="col" style="width:11%">Code <span style="text-transform:none;font-weight:400">(optional)</span></th>
+            <th scope="col" style="width:10%">Week</th>
+            <th scope="col" style="width:10%">Days taught</th>
+            <th scope="col" style="width:10%">% Weight</th>
+            <th scope="col" style="width:10%">No. of items</th>
+            <th scope="col" style="width:22%">Item numbers <span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — choosing item numbers"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Leave this empty and QuickCheck numbers the items in order — the first competency gets the first items. If your items are scattered, type which ones belong here, like 3, 10, 13 or 1-3, 7. List exactly as many as the No. of items.</span></span></th>
+            <th scope="col" style="width:40px"></th>
+          </tr>
+        </thead>
+        <tbody id="tosBody"></tbody>
+      </table>
+    </div>
+
+    <div class="totals">
+      <div class="totbox">Total days <b id="totDays">0</b></div>
+      <div class="totbox">Items allocated <b id="totItems">0</b></div>
+      <div class="totbox">Test has <b>20</b></div>
+      <div class="totbox" id="fitBox" style="min-width:190px">Status <b id="fitText">—</b></div>
+    </div>
+
+    <p style="color:var(--muted); font-size:12.5px; margin:14px 0 0">
+      The item counts are worked out for you and always add up to exactly 20.
+      If you'd rather set them yourself, type in the <b>No. of items</b> boxes.
+      Items are numbered in order unless you type your own in <b>Item numbers</b> —
+      for example <b>3, 10, 13</b> when that competency's items are spread through the test.</p>
+
+    <div style="display:flex; gap:10px; margin-top:18px; flex-wrap:wrap">
+      <button class="btn primary" type="submit">Save Table of Specifications</button>
+      
+        <button class="btn ghost danger" type="submit" formaction="#" data-demo-action="/tests/sample-science-quiz/tos/delete"
+                formnovalidate data-confirm="Remove this Table of Specifications? The test and its scores are not touched." data-confirm-action="Remove TOS">Remove TOS</button>
+      
+    </div>
+  </div>
+</form>
+
+<script>
+  var TOTAL_ITEMS = 20;
+  // Saved rows, or the rows just read from a paste — both fill the same table,
+  // and both are only saved when the teacher presses Save.
+  var SAVED = [{"chosen_items": false, "code": "S7MT-Ia-1", "competency": "Scientific investigation", "days": 2.0, "first_item": 1, "item_numbers": "", "items": 4, "last_item": 4, "weight": 20.0}, {"chosen_items": false, "code": "S7MT-Ib-2", "competency": "Properties of solutions", "days": 3.0, "first_item": 5, "item_numbers": "", "items": 6, "last_item": 10, "weight": 30.0}, {"chosen_items": false, "code": "S7MT-Ic-3", "competency": "Pure substances and mixtures", "days": 3.0, "first_item": 11, "item_numbers": "", "items": 6, "last_item": 16, "weight": 30.0}, {"chosen_items": false, "code": "S7MT-Id-4", "competency": "Acids and bases", "days": 2.0, "first_item": 17, "item_numbers": "", "items": 4, "last_item": 20, "weight": 20.0}];
+
+  function rowHtml(r) {
+    r = r || {};
+    return '<td><input name="competency" aria-label="Competency" placeholder="Competency taught" value="' + (r.competency ? esc(r.competency) : '') + '"></td>' +
+           '<td><input name="code" aria-label="Code (optional)" placeholder="M7NS-Ia-1" value="' + (r.code ? esc(r.code) : '') + '"></td>' +
+           '<td><input name="week" aria-label="Week" placeholder="Week 5" value="' + (r.week ? esc(r.week) : '') + '"></td>' +
+           '<td class="num"><input name="days" type="number" aria-label="Days taught" min="0" step="0.5" value="' + (r.days != null ? r.days : '') + '" oninput="recalc()"></td>' +
+           '<td class="calc weight">—</td>' +
+           '<td class="num"><input name="items" type="number" min="0" aria-label="Number of items" value="' + (r.items != null ? r.items : '') + '" oninput="manual()"></td>' +
+           '<td class="picks"><input name="item_numbers" autocomplete="off" aria-label="Item numbers for this competency" value="' +
+             (r.item_numbers ? esc(r.item_numbers) : '') + '" oninput="recalc()"><span class="pick-note"></span></td>' +
+           '<td><button type="button" class="btn ghost danger il-mini" title="Remove row" aria-label="Remove row" onclick="this.closest(\'tr\').remove(); recalc();">&times;</button></td>';
+  }
+  function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;'); }
+
+  function addRow(r) {
+    var tr = document.createElement('tr');
+    tr.innerHTML = rowHtml(r);
+    document.getElementById('tosBody').appendChild(tr);
+    recalc();
+  }
+
+  function manual() { document.getElementById('manualItems').value = '1'; recalc(); }
+
+  // Same rule the server uses: whole part first, then hand the leftover items
+  // to the biggest fractions, so the column always totals the test's items.
+  function allocate(days, total) {
+    var sum = days.reduce(function (a, b) { return a + (b > 0 ? b : 0); }, 0);
+    var out = days.map(function () { return 0; });
+    if (!sum || !total) return out;
+    var exact = days.map(function (d) { return d > 0 ? (d / sum) * total : 0; });
+    out = exact.map(Math.floor);
+    var left = total - out.reduce(function (a, b) { return a + b; }, 0);
+    var order = exact.map(function (v, i) { return i; }).sort(function (a, b) {
+      return (exact[b] - Math.floor(exact[b])) - (exact[a] - Math.floor(exact[a])) || a - b;
+    });
+    var p = 0;
+    while (left > 0 && order.length) {
+      var i = order[p % order.length];
+      if (days[i] > 0) { out[i]++; left--; }
+      p++;
+      if (p > order.length * (total + 1)) break;
+    }
+    return out;
+  }
+
+  function recalc() {
+    var rows = Array.prototype.slice.call(document.querySelectorAll('#tosBody tr'));
+    var days = rows.map(function (tr) { return parseFloat(tr.querySelector('[name=days]').value) || 0; });
+    var totalDays = days.reduce(function (a, b) { return a + b; }, 0);
+    var isManual = document.getElementById('manualItems').value === '1';
+
+    var counts = isManual
+      ? rows.map(function (tr) { return parseInt(tr.querySelector('[name=items]').value, 10) || 0; })
+      : allocate(days, TOTAL_ITEMS);
+
+    // Item numbers: the ones a teacher typed are hers; every other competency
+    // takes the lowest numbers still free, in order — the same rule the server
+    // saves with (tos.number_items), so what is shown is what is saved.
+    var allocated = 0, owner = {}, chosen = [], trouble = false;
+    rows.forEach(function (tr, i) {
+      tr.querySelector('.weight').textContent = totalDays ? ((100 * days[i] / totalDays).toFixed(2) + '%') : '—';
+      if (!isManual) tr.querySelector('[name=items]').value = counts[i] || 0;
+      allocated += counts[i] || 0;
+      var box = tr.querySelector('[name=item_numbers]');
+      var read = box.value.trim() ? parsePicks(box.value) : null;
+      chosen.push(read);
+      if (read && read.numbers) read.numbers.forEach(function (n) {
+        if (owner[n] === undefined) owner[n] = i; else read.clash = read.clash || { item: n, row: owner[n] };
+      });
+    });
+    var next = 1;
+    function nextFree() { while (owner[next] !== undefined) next++; return next++; }
+    rows.forEach(function (tr, i) {
+      var n = counts[i] || 0, read = chosen[i];
+      var box = tr.querySelector('[name=item_numbers]'), note = tr.querySelector('.pick-note');
+      var problem = '';
+      if (read) {
+        if (read.error) problem = read.error;
+        else if (read.numbers.some(function (q) { return q > TOTAL_ITEMS; })) problem = 'Item ' + Math.max.apply(null, read.numbers) + ' is past the end of the test';
+        else if (read.clash) problem = 'Item ' + read.clash.item + ' is also in row ' + (read.clash.row + 1);
+        else if (read.numbers.length !== n) problem = 'Needs ' + n + ', ' + read.numbers.length + ' listed';
+      }
+      var auto = [];
+      if (!read) for (var k = 0; k < n; k++) auto.push(nextFree());
+      box.placeholder = auto.length ? label(auto) : (n ? '' : '—');
+      note.id = 'pick-note-' + i;
+      if (problem) { box.setAttribute('aria-invalid', 'true'); box.setAttribute('aria-describedby', note.id); }
+      else { box.removeAttribute('aria-invalid'); box.removeAttribute('aria-describedby'); }
+      note.className = 'pick-note' + (problem ? ' bad' : '');
+      note.textContent = problem || (read ? '✓ Yours: ' + label(read.numbers) : (n ? 'In order' : ''));
+      if (problem) trouble = true;
+    });
+
+    document.getElementById('totDays').textContent = totalDays % 1 ? totalDays.toFixed(1) : totalDays;
+    document.getElementById('totItems').textContent = allocated;
+    var fit = document.getElementById('fitText');
+    var box = document.getElementById('fitBox');
+    if (!rows.length || !totalDays) { fit.textContent = '—'; box.style.background = ''; }
+    else if (trouble) { fit.textContent = 'Check item numbers'; box.style.background = 'var(--red-bg)'; }
+    else if (allocated === TOTAL_ITEMS) { fit.textContent = '✓ Fits exactly'; box.style.background = 'var(--mint)'; }
+    else { fit.textContent = (allocated > TOTAL_ITEMS ? '+' : '') + (allocated - TOTAL_ITEMS) + ' vs test'; box.style.background = 'var(--cream)'; }
+  }
+
+  // "3, 10, 13", "1-3 7", "items 4–6" -> {numbers: [...]} or {error}. Mirrors tos.parse_item_numbers.
+  function parsePicks(text) {
+    var cleaned = text.toLowerCase().replace(/[–—]/g, '-').replace(/\b(items?|nos?\.?|numbers?)\b/g, ' ')
+      .replace(/(\d)\s+to\s+(\d)/g, '$1-$2').replace(/\s*-\s*/g, '-');
+    var seen = {}, pieces = cleaned.split(/[,;\/\s]+/).filter(Boolean);
+    for (var i = 0; i < pieces.length; i++) {
+      var p = pieces[i], m = /^(\d{1,3})-(\d{1,3})$/.exec(p);
+      if (/^\d{1,3}$/.test(p)) { seen[+p] = true; continue; }
+      if (!m) return { error: '“' + p + '” is not an item number' };
+      if (+m[1] > +m[2]) return { error: 'Write ' + m[2] + '-' + m[1] + ' instead' };
+      for (var q = +m[1]; q <= +m[2]; q++) seen[q] = true;
+    }
+    if (seen[0]) return { error: 'Items start at 1' };
+    return { numbers: Object.keys(seen).map(Number).sort(function (a, b) { return a - b; }) };
+  }
+
+  // [1,2,3,7] -> "1–3, 7"
+  function label(numbers) {
+    var out = [], start = null;
+    numbers.forEach(function (n, i) {
+      if (start === null) start = n;
+      if (numbers[i + 1] !== n + 1) { out.push(start === n ? String(n) : start + '–' + n); start = null; }
+    });
+    return out.join(', ');
+  }
+
+  if (SAVED.length) { SAVED.forEach(addRow); } else { addRow(); addRow(); addRow(); }
+  recalc();
+</script>
+
+  </main>
+</div>
+
+
+<details class="qc-demo-guide" id="qcDemoGuide" open>
+  <summary><span><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>Try these</span><b><span data-demo-done>0</span> of 7</b></summary>
+  <ol>
+    
+    <li data-goal="tour" class=" is-next">
+      <span class="qc-demo-dot">1</span>
+      <a href="index--tour-1.html"><b>Take the tour</b><small>A one-minute look around the screen.</small></a>
+    </li>
+    
+    <li data-goal="class" class="">
+      <span class="qc-demo-dot">2</span>
+      <a href="classes_new.html"><b>Add a class</b><small>Make your own class with a few learners.</small></a>
+    </li>
+    
+    <li data-goal="key" class="">
+      <span class="qc-demo-dot">3</span>
+      <a href="tests_sample-science-quiz_key.html"><b>See the answer key</b><small>Open the sample test&#39;s answer key.</small></a>
+    </li>
+    
+    <li data-goal="print" class="">
+      <span class="qc-demo-dot">4</span>
+      <a href="sheets--test-sample-science-quiz.html"><b>Print the sheets</b><small>Each learner&#39;s sheet carries their name.</small></a>
+    </li>
+    
+    <li data-goal="upload" class="">
+      <span class="qc-demo-dot">5</span>
+      <a href="tests_sample-science-quiz_check.html"><b>Check sample papers</b><small>Load the sample answer sheets in one click.</small></a>
+    </li>
+    
+    <li data-goal="save" class="">
+      <span class="qc-demo-dot">6</span>
+      <a href="tests_sample-science-quiz_check.html"><b>Review and save</b><small>Fix the few marks flagged, then Save.</small></a>
+    </li>
+    
+    <li data-goal="results" class="">
+      <span class="qc-demo-dot">7</span>
+      <a href="tests_sample-science-quiz_check.html"><b>See the results</b><small>Scores, hard items and the skills to reteach.</small></a>
+    </li>
+    
+  </ol>
+  <div class="qc-demo-foot">
+    
+    <form method="post" action="#" data-demo-action="/demo/end">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+    </form>
+  </div>
+</details>
+
+
+
+<!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
+     get around, so the five things teachers use sit within thumb reach and
+     everything else lives behind "More". -->
+<nav class="tabbar il-tabbar" aria-label="Main navigation">
+  
+  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
+  
+  <a href="tests.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span></a>
+  
+  <a href="classes.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  
+  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  
+</nav>
+
+<script>
+  // Folding sections start closed on a phone and open on a bigger screen, so
+  // a phone opens on the job at hand rather than a page of history.
+  (function () {
+    if (window.matchMedia('(min-width: 641px)').matches) {
+      document.querySelectorAll('details.fold').forEach(function (d) {
+        if (!d.hasAttribute('data-keep-closed')) d.setAttribute('open', '');
+      });
+    }
+  }());
+</script>
+<script>
+  (function () {
+    var token = "l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8";
+    document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
+      if (form.querySelector('input[name="_csrf"]')) return;
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = '_csrf';
+      input.value = token;
+      form.appendChild(input);
+    });
+  }());
+</script>
+<script>
+  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
+    if (document.querySelector('dialog[open]')) return;
+    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
+                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    if (go) { e.preventDefault(); location.href = go.href; }
+  });
+</script>
+<script src="../static/workspace.js"></script>
+<!-- Grey page template while the next page opens, instead of a spinning circle. -->
+<script src="../static/skeleton.js"></script>
+<!-- Shrinks camera photos before upload — the slowest part of checking from a phone. -->
+<script src="../static/shrink.js"></script>
+<!-- The "?" buttons: each one holds the words that explain a step, until they are asked for. -->
+<script src="../static/hint.js"></script>
+<!-- Asks before leaving a page whose typing is not saved (forms marked data-unsaved). -->
+<script src="../static/unsaved.js"></script>
+<script src="../static/confirm.js"></script>
+<script src="../static/menus.js"></script>
+<script src="../static/rail.js"></script>
+<script src="../static/messages.js"></script>
+<script src="../static/sections.js"></script>
+<script src="../static/tables.js"></script>
+<script src="../static/busy.js"></script>
+<script src="../static/fielderror.js"></script>
+<script src="../static/alive.js"></script>
+<!-- Tips: "Got it" without reloading; the walkthrough when it is due (guidance.py). -->
+<script>window.QC_DEMO_PAGE={"stage": "s0", "url": "/tests/sample-science-quiz/tos"};</script><script src="../demo.js"></script>
+<script src="../static/guide.js"></script>
+</body>
+</html>

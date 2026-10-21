@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickCheck helps teachers prepare answer sheets, check paper assessments, review uncertain marks, and understand class results.">
+  <title>Create class · QuickCheck</title>
+  <link rel="icon" href="../static/brand/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../static/app.css">
+  <link rel="stylesheet" href="../static/workspace.css">
+  <link rel="stylesheet" href="../static/redesign.css">
+  
+  <link rel="stylesheet" href="../static/ui.css">
+  
+  
+  <link rel="stylesheet" href="../static/iconlook.css">
+  
+  
+  <style media="print">
+    @page {
+      @top-center { content: ""; }
+      @bottom-left { content: "Create class"; font: 8pt Arial, sans-serif; color: #5b6b70; }
+      @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 8pt Arial, sans-serif; color: #5b6b70; }
+    }
+  </style>
+</head>
+
+
+
+
+
+
+<body class="">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ui-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="ui-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="ui-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="ui-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="ui-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="ui-sheet" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9" cy="13" r="1.2"/><circle cx="13" cy="13" r="1.2"/><circle cx="9" cy="17" r="1.2"/><circle cx="13" cy="17" r="1.2"/></symbol>
+  <symbol id="ui-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="ui-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol>
+  <symbol id="ui-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="ui-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ui-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="ui-xls" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+  <symbol id="ui-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="ui-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ui-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+  <symbol id="ui-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="ui-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="ui-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+  <symbol id="ui-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.9M12 17.2v.01"/></symbol>
+  <symbol id="ui-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="ui-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+  <symbol id="ui-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="ui-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></symbol>
+  <symbol id="ui-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ui-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="ui-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
+  <symbol id="ui-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="ui-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="ui-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="ui-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 15v5h16v-5"/></symbol>
+  <symbol id="ui-save" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM8 3v5h7V3M8 21v-7h8v7"/></symbol>
+  <symbol id="ui-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="ui-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="ui-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h4"/></symbol>
+  <symbol id="ui-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="ui-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="ui-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="ui-pie" viewBox="0 0 24 24"><path d="M12 3v9h9A9 9 0 1 1 12 3z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+  <symbol id="ui-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="ui-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ui-q" viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.3"/></symbol>
+  <symbol id="ui-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+</svg>
+
+
+
+
+
+
+
+<header class="ui-top il-top">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.10.1">
+    <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+    <span><b>QuickCheck</b></span>
+  </a>
+  <div class="il-right">
+    <a class="il-round" href="search.html" title="Search"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg><span class="ui-sr">Search</span></a>
+    <a class="il-round" href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg><span class="ui-sr">Help</span></a>
+    <a class="ui-avatar il-me" href="settings.html" title="Settings · Demo Teacher">DT</a>
+  </div>
+</header>
+
+
+<div class="il-rail-shade" id="ilRailShade" aria-hidden="true"></div>
+<nav class="il-rail" id="ilRail" aria-label="Main navigation">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.10.1"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg><span class="ui-sr">QuickCheck home</span></a>
+  <button class="il-rail-toggle" id="ilRailToggle" type="button" aria-expanded="false" aria-controls="ilRail" title="Show the names (M)">
+    <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-menu"/></svg></span><span class="il-rail-word">Menu</span></button>
+  <div class="il-rail-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="il-rail-word">Home</span></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
+    
+    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">7<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" aria-current=page>
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="il-rail-word">Classes</span></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="il-rail-word">Results</span></a>
+    
+  </div>
+  <div class="il-rail-foot">
+    <a href="search.html" title="Search (/)" ><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="il-rail-word">Search</span></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="il-rail-word">Help</span></a>
+    
+    
+    <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
+  </div>
+</nav>
+<div class="app">
+
+
+  <!-- Main -->
+  <main class="main" id="main-content" tabindex="-1">
+    
+<div class="qc-demo-bar" role="region" aria-label="Demo">
+  <span class="qc-demo-tag">Demo</span>
+  <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
+  <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
+    <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+  </form>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="ui-head">
+      
+      <div class="il-headback">
+        <a class="il-back" href="classes.html" title="Back to Classes" aria-label="Back to Classes"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
+        <div>
+          <div class="ui-date">Classes</div>
+          <h1>Add class<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — this page"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Add your class and its learners. Next, make a test for this class.</span></span></h1>
+          
+        </div>
+      </div>
+      
+      <div class="ui-head-actions"></div>
+    </div>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <div class="il-messages" id="qcMessages">
+    </div>
+    
+    
+<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="new_class">
+  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
+  <p class="qc-tip-words"><b id="qcTipTitle">Add a class</b> Give the class a name, then add learners one at a time. You can change the list later.</p>
+  <div class="qc-tip-acts">
+    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p4" target="_blank" rel="noopener">Details</a>
+    <form method="post" action="#" data-demo-action="/guide/tip/new_class/hide" data-guide-hide data-busy="off">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><input type="hidden" name="next" value="/classes/new?">
+      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
+    </form>
+  </div>
+</aside>
+
+    
+
+<style>
+  .nc-type { margin-bottom: 18px; }
+  .nc-note { margin: 8px 0 0; font-size: 12.5px; color: var(--ui-muted); }
+  .stu-row { display:flex; gap:10px; flex-wrap:wrap; align-items:end; margin:4px 0 14px; }
+  .stu-row .field { margin:0; }
+  .stu-list { list-style:none; padding:0; margin:0; }
+  .stu-list li { display:flex; align-items:center; gap:12px; padding:8px 12px;
+                 border:1px solid var(--line); border-radius:10px; margin-bottom:6px; }
+  .stu-list li .n { width:26px; text-align:right; color:var(--muted); font-weight:700;
+                    font-variant-numeric:tabular-nums; }
+  .stu-list li .nm { flex:1; font-weight:600; }
+  .stu-list li button { border:none; background:var(--ui-coral-bg); color:var(--ui-coral-ink); border-radius:8px;
+                        width:30px; height:30px; cursor:pointer; font-weight:800; font-size:16px; }
+  #subjChips .il-chip { margin: 0 8px 8px 0; }
+  .subhead { display:flex; align-items:center; gap:10px; margin:6px 0 2px; }
+  .hidden { display:none; }
+</style>
+
+<form method="post" id="wiz">
+<input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8">
+  <input type="hidden" name="simple_students" id="h_simple_students">
+  <input type="hidden" name="subjects" id="h_subjects">
+  <input type="hidden" name="terms" id="h_terms">
+  <input type="hidden" name="categories" id="h_categories">
+  <input type="hidden" name="males" id="h_males">
+  <input type="hidden" name="females" id="h_females">
+
+  <div class="il-wizard">
+    <div class="il-wizard-step is-here" data-dot="1" title="Class details" aria-current="step"><span class="il-wizard-dot">1</span> Details</div>
+    <div class="il-wizard-step" data-dot="2" title="Add students"><span class="il-wizard-dot">2</span> Learners</div>
+    <div class="il-wizard-step" data-dot="3" title="Review &amp; create"><span class="il-wizard-dot">3</span> Save</div>
+  </div>
+
+  <!-- STEP 1 — DETAILS ---------------------------------------------------- -->
+  <div class="card panel" data-step="1">
+    <div class="card-head"><div>
+      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg> Scores go to<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — where scores are kept"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Pick what you want to end up with. You can download any of them as Excel. QuickCheck records the scores; it does not compute final grades.</span></span></h2></div></div>
+
+    <div class="nc-type">
+      <div class="ui-label ui-sr">Keep the scores in</div>
+      <div class="ui-choices" role="radiogroup" aria-label="Record type">
+        <label class="ui-choice" for="nc-mode-simple">
+          <input type="radio" id="nc-mode-simple" name="record_mode" value="simple"
+                 checked onchange="syncMode()">
+          <span class="ui-choice-mark"></span>
+          <span title="Fastest. Just the learners' names. Each test becomes a column of scores you download as Excel."><b><svg class="ui-i " aria-hidden="true"><use href="#ui-list"/></svg> List</b><small>Fastest</small></span>
+        </label>
+        <label class="ui-choice" for="nc-mode-book">
+          <input type="radio" id="nc-mode-book" name="record_mode" value="book" checked onchange="syncMode()">
+          <span class="ui-choice-mark"></span>
+          <span title="A DepEd class record, kept in QuickCheck. Terms and score columns like the DepEd form, already set up for you. No Excel file needed."><b><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg> Class book</b><small>DepEd form</small><span class="ui-tag">Best</span></span>
+        </label>
+        <label class="ui-choice" for="nc-mode-deped">
+          <input type="radio" id="nc-mode-deped" name="record_mode" value="deped"
+                 disabled onchange="syncMode()">
+          <span class="ui-choice-mark"></span>
+          <span title="Upload your e-class record on Classes first — QuickCheck then writes the scores into it."><b><svg class="ui-i " aria-hidden="true"><use href="#ui-xls"/></svg> My Excel</b><small><a href="classes.html">Upload first</a></small></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-row" style="gap:14px; flex-wrap:wrap">
+      <div class="field" style="flex:1; min-width:110px"><label for="new_class-field-1">Grade</label>
+        <input id="new_class-field-1" type="text" name="grade" placeholder="e.g. 8"></div>
+      <div class="field" style="flex:1; min-width:160px"><label for="new_class-field-2">Section</label>
+        <input id="new_class-field-2" type="text" name="section" placeholder="e.g. Mabini"></div>
+    </div>
+    <div class="field" id="simpleNameField">
+      <label for="new_class-field-3">Name</label>
+      <input id="new_class-field-3" type="text" name="simple_name" placeholder="e.g. Grade 8 Mabini - Science">
+    </div>
+    <div class="field"><label for="new_class-field-4">School</label>
+      <input id="new_class-field-4" type="text" name="school" value="Sample National High School" placeholder="School name"></div>
+
+    <div class="book-only">
+      <div class="form-row" style="gap:14px; flex-wrap:wrap">
+        <div class="field" style="flex:1; min-width:180px"><label for="new_class-field-5">Subject</label>
+          <input id="new_class-field-5" type="text" name="book_subject" placeholder="e.g. Mathematics"></div>
+        <div class="field" style="flex:1; min-width:150px"><label for="new_class-field-6">School year</label>
+          <input id="new_class-field-6" type="text" name="school_year" placeholder="e.g. 2026-2027"></div>
+      </div>
+
+      <div class="field">
+        <label for="presetSel" title="Fills in the DepEd weights; you can still change anything">Learning area</label>
+        <select id="presetSel" onchange="applyPreset(this.value)" style="max-width:560px">
+          <option value="core" selected>Grades 4–10: English, Filipino, Math, Science, AP, GMRC/VE</option><option value="epp_tle_mapeh" >Grades 4–10: EPP/TLE, MAPEH</option><option value="shs_core" >Senior High: Core subjects and other academic electives</option><option value="shs_arts_sports" >Senior High: Arts, Sports, and Health and Wellness electives</option><option value="shs_techpro" >Senior High: TechPro electives</option><option value="shs_field" >Senior High: Field Exposure, Arts Apprenticeship, Creative Production</option><option value="shs_research" >Senior High: Research electives, Design and Innovation</option><option value="shs_immersion" >Senior High: Work Immersion</option>
+          <option value="custom">Custom</option>
+        </select>
+      </div>
+      <details class="nc-advanced">
+        <summary title="Already set the DepEd way. Change them only if your school does it differently."><b>Terms &amp; columns</b> <span><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg> DepEd</span></summary>
+      <div class="field">
+        <label title="DepEd moved from 4 quarters to 3 terms; type whatever yours are">Terms</label>
+        <div id="termRows"></div>
+        <button type="button" class="btn ghost" onclick="addTerm('')" title="Add term">+ Add</button>
+      </div>
+
+
+      <div class="field">
+        <label>Categories <span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — categories"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Weights follow DepEd Order No. 015, s. 2026. Examinations are split the DepEd way — ST1 30%, ST2 30% and the term exam 40% of that share — so for core subjects the 30% is recorded as Summative Test 18% (2 columns) and Term Examination 12% (1 column). The percentages are recorded and shown, never used to compute a grade.</span></span></label>
+        <span class="hint ui-sr" style="display:block; margin:-2px 0 8px">Weights follow DepEd Order No. 015, s. 2026.
+          Examinations are split the DepEd way &mdash; ST1 30%, ST2 30% and the term exam 40% of that
+          share &mdash; so for core subjects the 30% is recorded as Summative Test 18% (2 columns) and
+          Term Examination 12% (1 column). The percentages are recorded and shown, never used to compute a grade.</span>
+        <div style="overflow-x:auto">
+          <table class="tbl" id="catTable">
+        <caption class="ui-sr">Score categories</caption>
+            <thead><tr><th scope="col" style="width:46%">Category</th><th scope="col" style="width:18%" class="num">%</th>
+              <th scope="col" style="width:22%">Columns</th><th scope="col" style="width:44px"></th></tr></thead>
+            <tbody id="catRows"></tbody>
+          </table>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center; margin-top:10px; flex-wrap:wrap">
+          <button type="button" class="btn ghost" onclick="addCat('', '', 1)" title="Add category">+ Add</button>
+          <span id="pctTotal" class="pill gray">Total 0%</span>
+        </div>
+      </div>
+      </details>
+    </div>
+
+    <div class="field deped-only">
+      <label>Subjects <span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — subjects"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>One record is created per subject. Leave empty to make a single general record.</span></span></label>
+      <div style="display:flex; gap:8px; flex-wrap:wrap">
+        <input type="text" id="subjInput" aria-label="Subject" placeholder="e.g. Mathematics"
+               style="flex:1; min-width:200px" onkeydown="if(event.key==='Enter'){event.preventDefault();addSubject();}">
+        <button type="button" class="btn ghost" onclick="addSubject()" title="Add subject">+ Add</button>
+      </div>
+      <div id="subjChips" style="margin-top:12px"></div>
+    </div>
+
+    <div class="field deped-only"><label for="new_class-field-7" title="An existing record whose layout &amp; grade formulas are reused">Copy format from</label>
+      <select id="new_class-field-7" name="template" style="max-width:340px">
+        
+      </select>
+    </div>
+
+    <style>
+      .nc-advanced { margin: 4px 0 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+      .nc-advanced > summary { cursor: pointer; font-size: 14px; }
+      .nc-advanced > summary span { color: var(--muted); font-size: 13px; }
+      .nc-advanced[open] > summary { margin-bottom: 12px; }
+    </style>
+    <div style="text-align:right; margin-top:8px">
+      <button type="button" class="btn primary il-next" onclick="goStep(2)" title="Next: add students">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 — STUDENTS --------------------------------------------------- -->
+  <div class="card panel hidden" data-step="2">
+    <div class="card-head"><div>
+      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Learners<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — adding learners"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Add the learners for this class. Simple scorebooks accept one plain name per line; DepEd records keep the male and female sections. Type a name and press Enter.</span></span></h2></div></div>
+
+    <details style="margin:0 0 16px">
+      <summary style="cursor:pointer; color:var(--teal-d); font-weight:650">
+        <span title="Import a class list — Excel, CSV, a DepEd record, pasted cells, or another class"><svg class="ui-i " aria-hidden="true"><use href="#ui-upload"/></svg> Import</span></summary>
+      <div style="margin-top:10px">
+        
+          
+<style>
+  .imp { border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:var(--panel); }
+  .imp-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .imp-tab { border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 12px;
+             font:inherit; font-size:13.5px; font-weight:600; color:var(--muted); cursor:pointer; }
+  .imp-tab.on { background:var(--teal-soft); color:var(--teal-d); border-color:transparent; }
+  .imp textarea, .imp select, .imp input[type=text] { width:100%; }
+  .imp-hint { color:var(--muted); font-size:12.5px; margin:6px 0 10px; }
+  .imp-error { background:var(--red-bg); color:var(--bad); border-radius:10px; padding:9px 12px; margin:10px 0 0; font-size:13.5px; }
+  .imp-result { margin-top:14px; }
+  .imp-summary { font-weight:650; margin:0 0 8px; }
+  .imp-map { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:8px 12px; margin:0 0 10px; }
+  .imp-map label { font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:3px; }
+  .imp-bulk { display:flex; gap:6px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); margin:6px 0 8px; }
+  .imp-scroll { max-height:340px; overflow:auto; border:1px solid var(--line); border-radius:10px; background:var(--card); }
+  .imp-table input[type=text] { min-width:200px; }
+  .imp-table select { min-width:96px; }
+  .imp-exists { font-size:11.5px; color:var(--cream-i); font-weight:600; white-space:nowrap; }
+  .imp-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+</style>
+
+<div class="imp" data-import-panel data-mode="wizard"
+     data-preview-url="classes.html" data-apply-url=""
+     data-target="" data-csrf="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8">
+  <div class="imp-tabs" role="tablist">
+    <button type="button" class="imp-tab on" data-source="file">Excel or CSV file</button>
+    <button type="button" class="imp-tab" data-source="paste">Paste from Excel</button>
+    <button type="button" class="imp-tab" data-source="class">Copy from another class</button>
+  </div>
+
+  <div data-pane="file">
+    <input type="file" accept=".xlsx,.xlsm,.csv,.txt" data-file aria-label="Class list file">
+    <p class="imp-hint">A list with learner names<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — the file to use"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>An Excel or CSV file with learner names and either a sex column (M or F) or separate MALE and FEMALE parts. A DepEd class record works as it is.</span></span></p>
+  </div>
+  <div data-pane="paste" hidden>
+    <textarea rows="6" data-text aria-label="Paste the class list" placeholder="In Excel or Google Sheets, select the names (and the sex column if you have one), copy, and paste here."></textarea>
+    <p class="imp-hint">Copied cells keep their columns, so a name and its M/F stay together.</p>
+  </div>
+  
+  <div data-pane="class" hidden>
+    <select data-class aria-label="Class to copy from">
+      <option value="Grade 7 – Sampaguita (Simple scorebook)">Grade 7 – Sampaguita (Simple scorebook)</option>
+    </select>
+    <p class="imp-hint">Copies the learner names. Scores are not copied.</p>
+  </div>
+  
+
+  <div class="imp-actions"><button type="button" class="btn primary" data-read>Read the list</button></div>
+  <p class="imp-error" data-error hidden></p>
+
+  <div class="imp-result" data-result hidden>
+    <p class="imp-summary" data-summary></p>
+    <div class="imp-map" data-map></div>
+    <div class="imp-bulk" data-bulk-row hidden>Learners without a section:
+      <button type="button" class="btn ghost il-mini" data-bulk="M">Set as boys</button>
+      <button type="button" class="btn ghost il-mini" data-bulk="F">Set as girls</button>
+    </div>
+    <div class="imp-scroll">
+      <table class="imp-table">
+        <caption class="ui-sr">Learners read from the list</caption>
+        <thead><tr><th scope="col" style="width:34px"><input type="checkbox" data-all checked aria-label="Select all"></th>
+          <th scope="col">Name</th><th scope="col" style="width:120px">Section</th><th scope="col" style="width:130px"></th></tr></thead>
+        <tbody data-rows></tbody>
+      </table>
+    </div>
+    <div class="imp-actions">
+      <button type="button" class="btn primary" data-add>Add learners</button>
+      <span class="imp-hint" style="margin:0" data-chosen></span>
+    </div>
+  </div>
+</div>
+<script src="../static/import.js"></script>
+        
+      </div>
+    </details>
+
+    <div id="simpleStudentPanel">
+      <div class="stu-row">
+        <div class="field" style="flex:1; min-width:220px">
+          <label for="s_name">Name</label>
+          <input id="s_name" onkeydown="keyAddSimple(event)" placeholder="e.g. Dela Cruz, Juan P.">
+        </div>
+        <button type="button" class="btn ghost is-todo" onclick="addSimple()">+ Add</button>
+      </div>
+      <ol class="stu-list" id="simpleList"></ol>
+      <details style="margin-top:12px">
+        <summary style="cursor:pointer; color:var(--muted); font-weight:600; font-size:13px">
+          <span title="Already have a list? Paste many names at once"><svg class="ui-i " aria-hidden="true"><use href="#ui-copy"/></svg> Paste</span></summary>
+        <div class="field" style="margin-top:10px">
+          <textarea id="simplePaste" rows="6" aria-label="Student names, one per line" placeholder="One name per line&#10;Dela Cruz, Juan P.&#10;Santos, Maria L."></textarea>
+          <button type="button" class="btn ghost" style="margin-top:8px" onclick="addPasted()" title="Add these names">+ Add</button>
+        </div>
+      </details>
+    </div>
+
+    <div id="depedStudentPanel">
+
+    <div class="subhead"><h4 style="margin:0">Male</h4>
+      <span class="pill teal" id="maleCount">0</span></div>
+    <div class="stu-row">
+      <div class="field" style="flex:2; min-width:150px"><label for="m_surname">Surname</label>
+        <input id="m_surname" onkeydown="keyAdd(event,'M')" placeholder="Dela Cruz"></div>
+      <div class="field" style="flex:2; min-width:150px"><label for="m_first">First name</label>
+        <input id="m_first" onkeydown="keyAdd(event,'M')" placeholder="Juan"></div>
+      <div class="field" style="flex:1; min-width:80px"><label for="m_mi">M.I.</label>
+        <input id="m_mi" maxlength="6" onkeydown="keyAdd(event,'M')" placeholder="P."></div>
+      <button type="button" class="btn ghost is-todo" onclick="addStudent('M')">+ Add</button>
+    </div>
+    <ol class="stu-list" id="maleList"></ol>
+
+    <div class="subhead" style="margin-top:24px"><h4 style="margin:0">Female</h4>
+      <span class="pill teal" id="femaleCount">0</span></div>
+    <div class="stu-row">
+      <div class="field" style="flex:2; min-width:150px"><label for="f_surname">Surname</label>
+        <input id="f_surname" onkeydown="keyAdd(event,'F')" placeholder="Santos"></div>
+      <div class="field" style="flex:2; min-width:150px"><label for="f_first">First name</label>
+        <input id="f_first" onkeydown="keyAdd(event,'F')" placeholder="Maria"></div>
+      <div class="field" style="flex:1; min-width:80px"><label for="f_mi">M.I.</label>
+        <input id="f_mi" maxlength="6" onkeydown="keyAdd(event,'F')" placeholder="L."></div>
+      <button type="button" class="btn ghost is-todo" onclick="addStudent('F')">+ Add</button>
+    </div>
+    <ol class="stu-list" id="femaleList"></ol>
+    </div>
+
+    <div style="display:flex; justify-content:space-between; margin-top:16px">
+      <button type="button" class="btn ghost" onclick="goStep(1)">← Back</button>
+      <button type="button" class="btn primary il-next" onclick="goStep(3)" title="Next: review">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 — REVIEW ----------------------------------------------------- -->
+  <div class="card panel hidden" data-step="3">
+    <div class="card-head"><div>
+      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg> Check<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — reviewing"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Check the details, then create the record(s).</span></span></h2></div></div>
+    <div id="reviewBox" style="line-height:2"></div>
+    <div style="display:flex; justify-content:space-between; margin-top:16px">
+      <button type="button" class="btn ghost" onclick="goStep(2)">← Back</button>
+      <button type="button" class="btn primary il-next" onclick="createClass()" title="Create class record(s)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+        Create
+      </button>
+    </div>
+  </div>
+</form>
+
+<script>
+  const S = { subjects: [], M: [], F: [], simple: [] };
+
+  function val(id) { return (document.getElementById(id).value || "").trim(); }
+  function fieldVal(name) { const el = document.querySelector('[name=' + name + ']'); return el ? el.value.trim() : ""; }
+  function mode() {
+    const picked = document.querySelector('input[name="record_mode"]:checked');
+    return picked ? picked.value : "simple";
+  }
+  function simpleNames() { return S.simple.slice(); }
+  function renderSimple() {
+    const ol = document.getElementById("simpleList"); ol.innerHTML = "";
+    S.simple.forEach((nm, i) => {
+      const li = document.createElement("li");
+      const n = document.createElement("span"); n.className = "n"; n.textContent = (i + 1);
+      const t = document.createElement("span"); t.className = "nm"; t.textContent = nm;
+      const d = document.createElement("button"); d.type = "button"; d.textContent = "×"; d.title = "Remove";
+      d.onclick = () => { S.simple.splice(i, 1); renderSimple(); };
+      li.appendChild(n); li.appendChild(t); li.appendChild(d); ol.appendChild(li);
+    });
+  }
+  function addSimple() {
+    const v = val("s_name"); if (!v) return;
+    S.simple.push(v); document.getElementById("s_name").value = "";
+    document.getElementById("s_name").focus(); renderSimple();
+  }
+  function keyAddSimple(e) { if (e.key === "Enter") { e.preventDefault(); addSimple(); } }
+  function addPasted() {
+    val("simplePaste").split(/\r?\n/).map(s => s.trim()).filter(Boolean).forEach(l => S.simple.push(l));
+    document.getElementById("simplePaste").value = ""; renderSimple();
+  }
+  function syncMode() {
+    const m = mode();
+    const simple = m === "simple";
+    // Both DepEd styles use the male/female roster, because that is how a class
+    // record is laid out - and it stops the two from feeling like different apps.
+    document.querySelectorAll(".deped-only").forEach(el => el.style.display = m === "deped" ? "" : "none");
+    document.querySelectorAll(".book-only").forEach(el => el.style.display = m === "book" ? "" : "none");
+    document.getElementById("simpleNameField").style.display = simple ? "" : "none";
+    document.getElementById("simpleStudentPanel").style.display = simple ? "" : "none";
+    document.getElementById("depedStudentPanel").style.display = simple ? "none" : "";
+  }
+
+  // ---- terms -------------------------------------------------------------
+  function addTerm(value) {
+    const wrap = document.getElementById("termRows");
+    const row = document.createElement("div");
+    row.style.cssText = "display:flex; align-items:center; gap:8px; margin-bottom:8px";   // the button keeps its own height
+    const input = document.createElement("input");
+    input.type = "text"; input.className = "term-in"; input.placeholder = "e.g. Term 1";
+    input.setAttribute("aria-label", "Term name");
+    input.style.flex = "1"; input.value = value || "";
+    const del = document.createElement("button");
+    del.type = "button"; del.className = "btn ghost"; del.textContent = "Remove";
+    del.onclick = () => row.remove();
+    row.appendChild(input); row.appendChild(del); wrap.appendChild(row);
+  }
+
+  // ---- categories --------------------------------------------------------
+  function addCat(name, percent, slots) {
+    const tr = document.createElement("tr");
+    const cell = (child) => { const td = document.createElement("td"); td.appendChild(child); return td; };
+    const mk = (cls, type, value, extra) => {
+      const i = document.createElement("input");
+      i.type = type; i.className = cls; i.value = value;
+      Object.assign(i, extra || {});
+      return i;
+    };
+    const nameIn = mk("cat-name", "text", name || "", { placeholder: "e.g. Written Works" });
+    const pctIn = mk("cat-pct", "number", percent === "" ? "" : percent, { min: 0, max: 100, step: 1 });
+    nameIn.setAttribute("aria-label", "Category name");
+    pctIn.setAttribute("aria-label", "Weight (%)");
+    pctIn.style.textAlign = "center"; pctIn.oninput = pctSum;
+    const slotIn = mk("cat-slots", "number", slots || 1, { min: 1, max: 20 });
+    slotIn.setAttribute("aria-label", "Number of score columns");
+    slotIn.style.textAlign = "center";
+    const del = document.createElement("button");
+    del.type = "button"; del.className = "btn ghost"; del.textContent = "\u00d7";
+    del.style.padding = "8px 10px";
+    del.onclick = () => { tr.remove(); pctSum(); };
+    tr.appendChild(cell(nameIn)); tr.appendChild(cell(pctIn));
+    tr.appendChild(cell(slotIn)); tr.appendChild(cell(del));
+    document.getElementById("catRows").appendChild(tr);
+    pctSum();
+  }
+
+  function pctSum() {
+    let total = 0;
+    document.querySelectorAll(".cat-pct").forEach(i => total += parseFloat(i.value) || 0);
+    const chip = document.getElementById("pctTotal");
+    chip.textContent = "Total " + (Math.round(total * 100) / 100) + "%";
+    // 100 is the usual target, but nothing is enforced: some schools split
+    // differently, and the app never computes a grade from these anyway.
+    chip.className = "pill " + (Math.abs(total - 100) < 0.01 ? "green" : "amber");
+  }
+
+  function collectStructure() {
+    const terms = [];
+    document.querySelectorAll(".term-in").forEach(i => { if (i.value.trim()) terms.push(i.value.trim()); });
+    const cats = [];
+    document.querySelectorAll("#catRows tr").forEach(tr => {
+      const nm = tr.querySelector(".cat-name").value.trim();
+      if (!nm) return;
+      cats.push({ name: nm,
+                  percent: parseFloat(tr.querySelector(".cat-pct").value) || 0,
+                  slots: parseInt(tr.querySelector(".cat-slots").value, 10) || 1 });
+    });
+    document.getElementById("h_terms").value = JSON.stringify(terms);
+    document.getElementById("h_categories").value = JSON.stringify(cats);
+  }
+
+  // Starting shapes per learning area (classbook.PRESETS, from the DepEd order).
+  const PRESETS = [{"categories": [{"name": "Written Works", "percent": 20, "slots": 5}, {"name": "Performance Tasks", "percent": 50, "slots": 3}, {"name": "Summative Test", "percent": 18, "slots": 2}, {"name": "Term Examination", "percent": 12, "slots": 1}], "id": "core", "label": "Grades 4\u201310: English, Filipino, Math, Science, AP, GMRC/VE"}, {"categories": [{"name": "Written Works", "percent": 20, "slots": 5}, {"name": "Performance Tasks", "percent": 60, "slots": 3}, {"name": "Summative Test", "percent": 12, "slots": 2}, {"name": "Term Examination", "percent": 8, "slots": 1}], "id": "epp_tle_mapeh", "label": "Grades 4\u201310: EPP/TLE, MAPEH"}, {"categories": [{"name": "Written Works", "percent": 20, "slots": 5}, {"name": "Performance Tasks", "percent": 50, "slots": 3}, {"name": "Summative Test", "percent": 18, "slots": 2}, {"name": "Term Examination", "percent": 12, "slots": 1}], "id": "shs_core", "label": "Senior High: Core subjects and other academic electives"}, {"categories": [{"name": "Written Works", "percent": 20, "slots": 5}, {"name": "Performance Tasks", "percent": 60, "slots": 3}, {"name": "Summative Test", "percent": 12, "slots": 2}, {"name": "Term Examination", "percent": 8, "slots": 1}], "id": "shs_arts_sports", "label": "Senior High: Arts, Sports, and Health and Wellness electives"}, {"categories": [{"name": "Written Works", "percent": 15, "slots": 5}, {"name": "Performance Tasks", "percent": 65, "slots": 3}, {"name": "Summative Test", "percent": 12, "slots": 2}, {"name": "Term Examination", "percent": 8, "slots": 1}], "id": "shs_techpro", "label": "Senior High: TechPro electives"}, {"categories": [{"name": "Written Works", "percent": 15, "slots": 5}, {"name": "Performance Tasks", "percent": 70, "slots": 3}, {"name": "Term Examination", "percent": 15, "slots": 1}], "id": "shs_field", "label": "Senior High: Field Exposure, Arts Apprenticeship, Creative Production"}, {"categories": [{"name": "Written Works", "percent": 40, "slots": 5}, {"name": "Performance Tasks", "percent": 60, "slots": 3}], "id": "shs_research", "label": "Senior High: Research electives, Design and Innovation"}, {"categories": [{"name": "Written Works", "percent": 20, "slots": 3}, {"name": "Performance Tasks", "percent": 80, "slots": 2}], "id": "shs_immersion", "label": "Senior High: Work Immersion"}];
+
+  function applyPreset(id) {
+    const preset = PRESETS.find(p => p.id === id);
+    if (!preset) return;                       // "Custom": keep what the teacher typed
+    document.getElementById("catRows").innerHTML = "";
+    preset.categories.forEach(c => addCat(c.name, c.percent, c.slots));
+  }
+
+  // Start on the shape DepEd uses today; every field stays editable.
+  ["Term 1", "Term 2", "Term 3"].forEach(addTerm);
+  applyPreset("core");
+
+  function fullName(st) {
+    let n = st.surname;
+    if (st.first) n += ", " + st.first;
+    if (st.mi) { let mi = st.mi; if (!mi.endsWith(".")) mi += "."; n += " " + mi; }
+    return n.toUpperCase();
+  }
+
+  function addStudent(sex) {
+    const p = sex === "M" ? "m_" : "f_";
+    const surname = val(p + "surname"), first = val(p + "first"), mi = val(p + "mi");
+    if (!surname || !first) {
+      qcFieldError(document.getElementById(p + (surname ? "first" : "surname")), "Type at least the surname and the first name.");
+      return;
+    }
+    S[sex].push({ surname, first, mi });
+    ["surname", "first", "mi"].forEach(k => document.getElementById(p + k).value = "");
+    document.getElementById(p + "surname").focus();
+    renderStudents(sex);
+  }
+
+  function renderStudents(sex) {
+    const listId = sex === "M" ? "maleList" : "femaleList";
+    const cntId = sex === "M" ? "maleCount" : "femaleCount";
+    const ol = document.getElementById(listId);
+    ol.innerHTML = "";
+    S[sex].forEach((st, i) => {
+      const li = document.createElement("li");
+      const num = document.createElement("span"); num.className = "n"; num.textContent = (i + 1);
+      const nm = document.createElement("span"); nm.className = "nm"; nm.textContent = fullName(st);
+      const del = document.createElement("button"); del.type = "button"; del.textContent = "×";
+      del.title = "Remove"; del.setAttribute("aria-label", "Remove " + fullName(st)); del.onclick = () => { S[sex].splice(i, 1); renderStudents(sex); };
+      li.appendChild(num); li.appendChild(nm); li.appendChild(del);
+      ol.appendChild(li);
+    });
+    document.getElementById(cntId).textContent = S[sex].length;
+  }
+
+  function keyAdd(e, sex) { if (e.key === "Enter") { e.preventDefault(); addStudent(sex); } }
+
+  function addSubject() {
+    const v = val("subjInput");
+    if (!v) return;
+    S.subjects.push(v);
+    document.getElementById("subjInput").value = "";
+    renderSubjects();
+  }
+  function renderSubjects() {
+    const c = document.getElementById("subjChips");
+    c.innerHTML = "";
+    S.subjects.forEach((s, i) => {
+      const chip = document.createElement("span"); chip.className = "il-chip il-c-go"; chip.textContent = s;
+      const b = document.createElement("button"); b.type = "button"; b.textContent = "×";
+      b.className = "il-chip-x"; b.setAttribute("aria-label", "Remove " + s);
+      b.onclick = () => { S.subjects.splice(i, 1); renderSubjects(); };
+      chip.appendChild(b); c.appendChild(chip);
+    });
+  }
+
+  // Add anything typed but not yet "Added", so nothing is lost.
+  function flushPending() {
+    if (val("s_name")) addSimple();
+    if (val("subjInput")) addSubject();
+    ["M", "F"].forEach(sex => {
+      const p = sex === "M" ? "m_" : "f_";
+      if (val(p + "surname") && val(p + "first")) addStudent(sex);
+    });
+  }
+
+  function goStep(n) {
+    flushPending();
+    if (n === 3) buildReview();
+    document.querySelectorAll(".panel").forEach(p => p.classList.toggle("hidden", +p.dataset.step !== n));
+    document.querySelectorAll(".il-wizard-step").forEach(s => {
+      s.classList.toggle("is-here", +s.dataset.dot === n);
+      if (+s.dataset.dot === n) s.setAttribute("aria-current", "step"); else s.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+
+  function buildReview() {
+    if (mode() === "simple") {
+      const names = simpleNames();
+      const fallbackName = [fieldVal("grade"), fieldVal("section")].filter(Boolean).join(" - ") || "Simple Scorebook";
+      document.getElementById("reviewBox").innerHTML =
+        "<div><b>Record type:</b> Simple scorebook</div>" +
+        "<div><b>Name:</b> " + (fieldVal("simple_name") || fallbackName) + "</div>" +
+        "<div><b>Students:</b> " + names.length + " total</div>";
+      return;
+    }
+    const grade = fieldVal("grade"), section = fieldVal("section"), school = fieldVal("school");
+    const gs = [grade, section].filter(Boolean).join(" - ") || "(not set)";
+    const subs = S.subjects.length ? S.subjects.join(", ") : "One general record (no subject)";
+    document.getElementById("reviewBox").innerHTML =
+      "<div><b>Grade &amp; Section:</b> " + gs + "</div>" +
+      "<div><b>School:</b> " + (school || "—") + "</div>" +
+      "<div><b>Subjects / records:</b> " + subs + "</div>" +
+      "<div><b>Students:</b> " + S.M.length + " male, " + S.F.length + " female (" +
+        (S.M.length + S.F.length) + " total)</div>";
+  }
+
+  // Ask QuickCheck whether a class with this name already exists BEFORE sending, so a clash
+  // shows under the name with every learner still on the page. The save checks again.
+  const CHECK_URL = "/classes/new/check";
+  const CHECK_FIELDS = ["record_mode", "simple_name", "grade", "section", "book_subject"];
+  let sending = false;
+  function sendIfNameFree() {
+    if (sending) return;                       // a second click while checking
+    sending = true;
+    const form = document.getElementById("wiz");
+    const params = new URLSearchParams();
+    CHECK_FIELDS.forEach(n => { const el = form.elements[n]; if (el) params.set(n, el.value); });
+    fetch(CHECK_URL + "?" + params, { credentials: "same-origin", cache: "no-store" })
+      .then(r => r.json())
+      .then(answer => {
+        if (answer.ok) { form.submit(); return; }
+        sending = false;
+        goStep(1);
+        qcFieldError(form.elements[answer.field], answer.message);
+      })
+      .catch(() => form.submit());             // offline check failed: the save still checks
+  }
+
+  function createClass() {
+    flushPending();
+    if (mode() === "simple") {
+      const names = simpleNames();
+      if (!names.length) { goStep(2); qcFieldError(document.getElementById("s_name"), "Add at least one student name."); return; }
+      if (!fieldVal("simple_name")) {
+        const fallbackName = [fieldVal("grade"), fieldVal("section")].filter(Boolean).join(" - ");
+        document.querySelector('[name=simple_name]').value = fallbackName || "Simple Scorebook";
+      }
+      document.getElementById("h_simple_students").value = names.join("\n");
+      sendIfNameFree();
+      return;
+    }
+    if (S.M.length + S.F.length === 0) { goStep(2); qcFieldError(document.getElementById("m_surname"), "Add at least one student."); return; }
+    collectStructure();          // terms + categories, for the built-here record
+    document.getElementById("h_subjects").value = S.subjects.join("\n");
+    document.getElementById("h_males").value = S.M.map(fullName).join("\n");
+    document.getElementById("h_females").value = S.F.map(fullName).join("\n");
+    sendIfNameFree();
+  }
+  // The import panel (_import_panel.html) hands its learners here.
+  // A simple scorebook has no boys/girls sections, so names alone are fine there.
+  window.qcImportAllowsNoSex = () => mode() === "simple";
+  window.qcImportAdd = function (learners) {
+    let added = 0;
+    if (mode() === "simple") {
+      const have = new Set(S.simple.map(n => n.toUpperCase()));
+      learners.forEach(l => { if (!have.has(l.name.toUpperCase())) { S.simple.push(l.name); have.add(l.name.toUpperCase()); added++; } });
+      renderSimple();
+      return added;
+    }
+    const have = new Set(S.M.concat(S.F).map(st => fullName(st)));
+    learners.forEach(l => {
+      if ((l.sex === "M" || l.sex === "F") && !have.has(l.name.toUpperCase())) {
+        S[l.sex].push({ surname: l.name, first: "", mi: "" });   // already "SURNAME, FIRST M."
+        have.add(l.name.toUpperCase());
+        added++;
+      }
+    });
+    renderStudents("M");
+    renderStudents("F");
+    return added;
+  };
+  syncMode();
+</script>
+
+  </main>
+</div>
+
+
+<details class="qc-demo-guide" id="qcDemoGuide" open>
+  <summary><span><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>Try these</span><b><span data-demo-done>2</span> of 7</b></summary>
+  <ol>
+    
+    <li data-goal="tour" class=" is-next">
+      <span class="qc-demo-dot">1</span>
+      <a href="index--tour-1.html"><b>Take the tour</b><small>A one-minute look around the screen.</small></a>
+    </li>
+    
+    <li data-goal="class" class="">
+      <span class="qc-demo-dot">2</span>
+      <a href="classes_new.html"><b>Add a class</b><small>Make your own class with a few learners.</small></a>
+    </li>
+    
+    <li data-goal="key" class="">
+      <span class="qc-demo-dot">3</span>
+      <a href="tests_sample-science-quiz_key.html"><b>See the answer key</b><small>Open the sample test&#39;s answer key.</small></a>
+    </li>
+    
+    <li data-goal="print" class="">
+      <span class="qc-demo-dot">4</span>
+      <a href="sheets--test-sample-science-quiz.html"><b>Print the sheets</b><small>Each learner&#39;s sheet carries their name.</small></a>
+    </li>
+    
+    <li data-goal="upload" class="is-done">
+      <span class="qc-demo-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+      <a href="tests_sample-science-quiz_check.html"><b>Check sample papers</b><small>Load the sample answer sheets in one click.</small></a>
+    </li>
+    
+    <li data-goal="save" class="is-done">
+      <span class="qc-demo-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+      <a href="tests_sample-science-quiz_check.html"><b>Review and save</b><small>Fix the few marks flagged, then Save.</small></a>
+    </li>
+    
+    <li data-goal="results" class="">
+      <span class="qc-demo-dot">7</span>
+      <a href="results_sample-science-quiz.html"><b>See the results</b><small>Scores, hard items and the skills to reteach.</small></a>
+    </li>
+    
+  </ol>
+  <div class="qc-demo-foot">
+    
+    <form method="post" action="#" data-demo-action="/demo/end">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+    </form>
+  </div>
+</details>
+
+
+
+<!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
+     get around, so the five things teachers use sit within thumb reach and
+     everything else lives behind "More". -->
+<nav class="tabbar il-tabbar" aria-label="Main navigation">
+  
+  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
+  
+  <a href="tests.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">7<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="classes.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  
+  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  
+</nav>
+
+<script>
+  // Folding sections start closed on a phone and open on a bigger screen, so
+  // a phone opens on the job at hand rather than a page of history.
+  (function () {
+    if (window.matchMedia('(min-width: 641px)').matches) {
+      document.querySelectorAll('details.fold').forEach(function (d) {
+        if (!d.hasAttribute('data-keep-closed')) d.setAttribute('open', '');
+      });
+    }
+  }());
+</script>
+<script>
+  (function () {
+    var token = "l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8";
+    document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
+      if (form.querySelector('input[name="_csrf"]')) return;
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = '_csrf';
+      input.value = token;
+      form.appendChild(input);
+    });
+  }());
+</script>
+<script>
+  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
+    if (document.querySelector('dialog[open]')) return;
+    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
+                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    if (go) { e.preventDefault(); location.href = go.href; }
+  });
+</script>
+<script src="../static/workspace.js"></script>
+<!-- Grey page template while the next page opens, instead of a spinning circle. -->
+<script src="../static/skeleton.js"></script>
+<!-- Shrinks camera photos before upload — the slowest part of checking from a phone. -->
+<script src="../static/shrink.js"></script>
+<!-- The "?" buttons: each one holds the words that explain a step, until they are asked for. -->
+<script src="../static/hint.js"></script>
+<!-- Asks before leaving a page whose typing is not saved (forms marked data-unsaved). -->
+<script src="../static/unsaved.js"></script>
+<script src="../static/confirm.js"></script>
+<script src="../static/menus.js"></script>
+<script src="../static/rail.js"></script>
+<script src="../static/messages.js"></script>
+<script src="../static/sections.js"></script>
+<script src="../static/tables.js"></script>
+<script src="../static/busy.js"></script>
+<script src="../static/fielderror.js"></script>
+<script src="../static/alive.js"></script>
+<!-- Tips: "Got it" without reloading; the walkthrough when it is due (guidance.py). -->
+<script>window.QC_DEMO_PAGE={"stage": "s2a", "url": "/classes/new"};</script><script src="../demo.js"></script>
+<script src="../static/guide.js"></script>
+</body>
+</html>

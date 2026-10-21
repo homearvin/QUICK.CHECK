@@ -1,0 +1,1201 @@
+/* ==========================================================================
+   Icon-first look (branch icon-look)
+   Teachers read one word, not a sentence: every menu item and button is an
+   icon + one word, and the next step is the only solid green button.
+   Loaded last by base.html, so it wins over app/redesign/ui.css.
+   ========================================================================== */
+
+:root {
+  --il-ground: #e4f4ed;
+  --il-bar: #102b28;
+  --il-pill: #1a3a36;
+  --il-go: #0f6b4f;
+  --il-go-hi: #18a374;
+  --il-go-soft: #dcf4ea;
+  --il-r: 18px;
+  --ui-ground: var(--il-ground);
+  --ui-r: var(--il-r);
+  --ui-top-h: 68px;
+  --il-font: "Lexend", "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+}
+
+body { background: var(--il-ground); }
+
+/* ---- Top bar ---- */
+.il-top { background: var(--il-bar); border: 0; height: var(--ui-top-h); gap: 16px;
+  padding: 0 max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px)); box-shadow: none; }
+.il-top .ui-brand { color: #fff; }
+.il-top .ui-brand b { color: #fff; font-size: 19px; }
+.il-top .ui-mark { width: 40px; height: 40px; border-radius: 12px; background: #fff; color: var(--il-go); }
+.il-top .ui-mark .ui-i { width: 22px; height: 22px; stroke-width: 3; color: var(--il-go); }
+.il-right { display: flex; gap: 8px; align-items: center; }
+.il-round { width: 42px; height: 42px; border-radius: 50%; border: 1px solid #2c4a45; display: grid; place-items: center; color: #e3f1ee; }
+.il-round:hover { background: #1a3a36; }
+.il-round .ui-i { width: 19px; height: 19px; }
+.il-me { width: 42px; height: 42px; background: #fff; color: var(--il-go); font-weight: 700; display: grid; place-items: center; }
+.il-me .ui-i { width: 20px; height: 20px; }
+
+/* ---- Shell: no sidebar, one centred work area ---- */
+.app { display: block; min-height: calc(100vh - var(--ui-top-h)); }
+.main { background: transparent; max-width: 1280px; margin: 0 auto;
+  padding: 22px max(20px, env(safe-area-inset-right, 0px)) 48px max(20px, env(safe-area-inset-left, 0px)); }
+.ui-head { margin-bottom: 16px; }
+.ui-head h1 { font-size: 26px; }
+.ui-date { font-size: 13px; }
+
+/* ---- Surfaces ---- */
+
+/* Buttons: see the "Buttons" block under Foundations. */
+
+/* The one next step: solid green with a soft ring. It pulses twice (3.6 s) and then stays
+   still, inside the 5 s WCAG 2.2.2 allows for motion that starts by itself. */
+.il-next { position: relative; }
+.il-next::after { content: ""; position: absolute; inset: -5px; border-radius: 18px; border: 2px solid var(--il-go-hi);
+  opacity: 0; animation: il-ring 1.8s ease-out 2; pointer-events: none; }
+@keyframes il-ring { 0% { opacity: .9; transform: scale(.97); } 100% { opacity: 0; transform: scale(1.07); } }
+
+/* ---- Colour pairs for icon tiles and chips (chips: see the "Chips" block) ---- */
+.il-c-go { background: var(--il-go-soft); color: var(--il-go); }
+.il-c-sun { background: #fff1d1; color: #8a5600; }
+.il-c-sky { background: #e4effd; color: #2a62c4; }
+.il-c-lav { background: #ece9ff; color: #5b4bd6; }
+.il-c-rose { background: #ffe4e6; color: #b42a44; }
+.il-c-peach { background: #ffeadf; color: #c4511b; }
+.il-c-grey { background: #eef2f1; color: #566765; }
+
+/* ---- Home ---- */
+.il-home { display: grid; }
+.il-hero { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 18px; align-items: center; padding: 24px 26px;
+  border-radius: var(--il-r); background: linear-gradient(110deg, var(--il-go-soft) 0%, #fff 85%); border: 1px solid #d3ece2; }
+.il-hero h1 { font-size: 30px; margin: 0; letter-spacing: -.02em; }
+.il-hero .il-tname { font-size: 18px; font-weight: 700; margin-top: 10px; }
+.il-hero .il-sub { color: var(--ui-muted); font-size: 14px; }
+.il-bar { height: 10px; border-radius: 99px; background: #fff; overflow: hidden; max-width: 380px; margin-top: 10px; box-shadow: inset 0 0 0 1px #d3ece2; }
+.il-bar i { display: block; height: 100%; border-radius: 99px; background: var(--il-go-hi); }
+.il-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.il-art { width: 150px; height: 120px; }
+.il-stats { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); }
+.il-stat { display: flex; gap: 12px; align-items: center; background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r); padding: 14px 16px; text-decoration: none; color: inherit; }
+.il-stat .il-ico { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; flex: none; }
+.il-stat .il-ico .ui-i { width: 24px; height: 24px; }
+.il-stat b { display: block; font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.il-stat small { color: var(--ui-muted); font-size: 13px; }
+
+/* ---- Test rows (Home + Tests) ---- */
+.il-trow { display: grid; grid-template-columns: 44px minmax(0,1.5fr) minmax(0,1fr) auto auto auto; gap: 14px; align-items: center;
+  padding: 12px 2px; border-bottom: 1px solid var(--ui-line-2); }
+.il-trow:last-child { border-bottom: 0; }
+.il-trow .il-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+.il-trow .il-ico .ui-i { width: 22px; height: 22px; }
+.il-trow b { display: block; }
+.il-trow a.il-name { color: inherit; text-decoration: none; min-width: 0; }
+.il-trow a.il-name small { color: var(--ui-muted); font-size: 13px; }
+@media (max-width: 860px) { .il-trow a.il-name { display: grid; align-content: center; min-height: 44px; } }
+.il-prog { display: grid; gap: 4px; font-size: 13px; font-variant-numeric: tabular-nums; }
+.il-prog .il-bar { margin: 0; background: #eef2f1; box-shadow: none; height: 8px; max-width: none; }
+.il-steps4 { display: flex; gap: 6px; }
+.il-steps4 span { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; background: #f1f5f4; color: #8a9896; }
+.il-steps4 span .ui-i { width: 17px; height: 17px; }
+.il-steps4 span.done { background: var(--il-go-soft); color: var(--il-go); }
+.il-steps4 span.now { background: var(--il-go); color: #fff; }
+.il-act { min-width: 118px; }
+.il-filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0 4px; }
+
+/* ---- Test bar: icons + one word ---- */
+.tbar { border-radius: var(--il-r); }
+.il-tsteps { display: flex; align-items: center; gap: 0; }
+.il-tsteps a, .il-tsteps span.il-later { display: grid; justify-items: center; gap: 4px; min-width: 70px; text-decoration: none; color: var(--ui-muted); font-weight: 600; font-size: 13px; }
+.il-tsteps i { width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center; background: #f1f5f4; border: 2px solid var(--ui-line); font-style: normal; }
+.il-tsteps i .ui-i { width: 19px; height: 19px; }
+.il-tsteps .done i { background: var(--il-go-soft); border-color: var(--il-go-hi); color: var(--il-go); }
+.il-tsteps [aria-current=page] { color: var(--ui-ink); }
+.il-tsteps [aria-current=page] i { background: var(--il-go); border-color: var(--il-go); color: #fff; }
+.il-tsteps .il-later { opacity: .55; }
+.il-tsteps .il-ln { flex: 1; height: 2px; min-width: 16px; background: var(--ui-line); margin-bottom: 22px; }
+.il-tsteps .il-ln.done { background: var(--il-go-hi); }
+/* Four steps in a card on a 360px phone: 4 × 70px + lines did not fit (0.8px sideways scroll). */
+@media (max-width: 420px) { .il-tsteps a, .il-tsteps span.il-later { min-width: 54px; } }
+.il-tbar { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
+  background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r); padding: 14px 18px; margin-bottom: 16px; }
+.il-tbar .il-tid { display: flex; gap: 12px; align-items: center; min-width: 0; }
+.il-tbar .il-tid b { display: block; font-size: 17px; }
+.il-tbar .il-tid small { color: var(--ui-muted); }
+.il-tbar .il-ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; flex: none; }
+.il-subnav { display: flex; gap: 6px; flex-wrap: wrap; width: 100%; border-top: 1px solid var(--ui-line-2); padding-top: 10px; }
+.il-subnav a { display: inline-flex; gap: 6px; align-items: center; padding: 7px 12px; border-radius: 10px; color: var(--ui-muted); font-weight: 600; font-size: 14px; text-decoration: none; }
+.il-subnav a.is-done .ui-i { color: var(--il-go-hi); }
+
+/* ---- Phone ---- */
+.il-tabbar { display: none; }
+@media (max-width: 860px) {
+  .il-round, .il-me { width: 44px; height: 44px; }
+  .il-top { justify-content: space-between; }
+  .il-tabbar { display: grid !important; grid-template-columns: repeat(5, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: var(--il-bar); border: 0; height: auto;
+    padding: 6px max(6px, env(safe-area-inset-right, 0px)) calc(6px + env(safe-area-inset-bottom, 0px)) max(6px, env(safe-area-inset-left, 0px)); }
+  .il-tabbar a { position: relative; display: grid; justify-items: center; gap: 3px; padding: 7px 2px; border-radius: 12px; color: #cfe2de; text-decoration: none; }
+  .il-tabbar a .ui-i { width: 23px; height: 23px; color: currentColor; }
+  .il-tabbar a span { font-size: 12px; font-weight: 600; color: currentColor; }
+  .il-tabbar a.on { background: var(--il-go-hi); color: var(--ui-ink); }   /* 5.2:1; pill vs bar 4.7:1 */
+  .il-tabbar .il-dot { top: 0; right: 16%; }
+  .main { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .il-hero { grid-template-columns: minmax(0,1fr); }
+  .il-art { display: none; }
+  .il-tiles, .il-stats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .il-trow { grid-template-columns: 44px minmax(0,1fr) auto; }
+  .il-trow .il-prog, .il-trow .il-steps4, .il-trow .il-chipcell { display: none; }
+  .il-act { min-width: 0; }
+  .il-tbar .il-tsteps a, .il-tbar .il-tsteps span.il-later { min-width: 54px; }
+}
+
+/* ---- Headings with icons ---- */
+.ui-card-h h2 > .ui-i { width: 20px; height: 20px; vertical-align: -3px; margin-right: 4px; color: var(--il-go); }
+.ui-card-h { align-items: center; }
+
+/* ---- Results ---- */
+.il-rnav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.il-rnav .rviews { margin-left: auto; display: grid; grid-auto-flow: column; gap: 4px; background: #fff; padding: 5px; border-radius: 16px;
+  border: 1px solid var(--ui-line); }
+.il-rstats { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); }
+.il-saved-to { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; background: #fff; border: 1px solid var(--ui-line);
+  border-radius: var(--il-r); padding: 12px 16px; margin-bottom: 16px; }
+.il-saved-to .il-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+.il-saved-to > span:nth-child(2) { flex: 1; min-width: 200px; display: grid; }
+.il-saved-to small { color: var(--ui-muted); font-size: 12.5px; }
+.il-reps { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 14px; }
+.il-rep { display: grid; justify-items: center; align-content: start; gap: 10px; text-align: center; padding: 18px 12px; border-radius: var(--il-r); }
+.il-rep .il-ico { width: 56px; height: 56px; border-radius: 16px; background: #fff; display: grid; place-items: center; }
+.il-rep .il-ico .ui-i { width: 26px; height: 26px; }
+.il-rep b { color: var(--ui-ink); font-size: 16px; }
+.il-rep .il-row { gap: 6px; }
+
+/* ---- Review (glance) ---- */
+.gl-who small .ui-i, .gl-ask .ui-i, .gl-links .ui-i, .gl-bottom .ui-i { width: 16px; height: 16px; vertical-align: -3px; }
+.gl-save { font-size: 17px; }
+.gl-save .ui-i { width: 19px; height: 19px; }
+.gl-links button, .gl-links a { display: inline-flex; gap: 6px; align-items: center; }
+@media (min-width: 960px) {
+  body.fx-dark { background: var(--il-ground); color: var(--ui-ink); }
+  .gl { max-width: 1240px; height: 100vh; display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(340px, 1fr);
+    grid-auto-rows: min-content; column-gap: 18px; row-gap: 10px; padding: 16px 20px; align-content: start; }
+  .gl > * { grid-column: 2; margin: 0 !important; }
+  .gl > .gl-sheet { grid-column: 1; grid-row: 1 / span 40; height: calc(100vh - 32px); margin: 0 !important; border-radius: var(--il-r);
+    box-shadow: 0 6px 24px rgba(16,43,40,.12); }
+  .gl-top { background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r); padding: 12px 14px; }
+  .gl-back { background: #eef4f2; color: var(--ui-ink); }
+  .gl-who { color: var(--ui-ink); }
+  .gl-who small { color: var(--ui-muted); }
+  .gl-score { color: var(--il-go); }
+  .gl-score small { color: var(--ui-muted); }
+  .gl-ask.is-ok { background: var(--il-go-soft); color: var(--il-go); }
+  .gl-links { padding: 4px 2px; }
+  .gl-links button, .gl-links a { color: var(--ui-muted); background: #fff; border: 1px solid var(--ui-line); border-radius: 12px; padding: 8px 12px; }
+  .gl-links button:hover, .gl-links a:hover { color: var(--ui-ink); }
+  .gl-bottom { padding: 0; }
+  .gl-re { background: #fff; color: var(--ui-ink); border: 1px solid var(--ui-line) !important; }
+  /* Light layout here, so the bright ring meant for the dark phone screen would be too faint. */
+  body.fx-dark .gl :focus-visible { outline-color: var(--il-go); }
+}
+
+@media (max-width: 860px) {
+  .il-rstats { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .il-reps { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .il-rnav .rviews { margin-left: 0; width: 100%; overflow-x: auto; }
+  .il-rnav .rview span { display: none; }
+  .il-rnav .rview { justify-content: center; }
+}
+
+/* ---- Check papers ---- */
+.il-check { display: grid; }
+.il-check .il-card-h h2 .ui-i { width: 20px; height: 20px; vertical-align: -3px; color: var(--il-go); }
+.il-sub { color: var(--ui-muted); font-weight: 600; font-size: .85em; }
+.il-alert { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r); padding: 14px 16px; }
+.il-alert > div { flex: 1; min-width: 200px; }
+.il-alert ul { margin: 4px 0 0; padding-left: 18px; color: var(--ui-muted); font-size: 14px; }
+.il-alert .il-ico, .il-prow .il-ico, .il-empty .il-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+.il-ways { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+.il-way { display: grid; gap: 14px; align-content: start; border-radius: var(--il-r); padding: 18px; text-decoration: none; color: var(--ui-ink); }
+.il-way h2 { margin: 0; font-size: 20px; color: var(--ui-ink); }
+.il-way .il-ico.il-solid { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #fff; }
+.il-way.il-c-go .il-solid { background: var(--il-go); }
+.il-way.il-c-lav .il-solid { background: #6b5ce7; }
+.il-way .il-solid .ui-i { width: 24px; height: 24px; }
+.il-way-in { background: #fff; border-radius: 16px; padding: 14px; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.il-qr { width: 128px; height: 128px; border-radius: 10px; }
+.il-pin { display: grid; gap: 6px; justify-items: start; }
+.il-pin small { color: var(--ui-muted); font-size: 12px; }
+.il-pin b { font-size: 30px; letter-spacing: .2em; font-variant-numeric: tabular-nums; }
+.il-pin > span { display: inline-flex; gap: 6px; align-items: center; color: var(--ui-muted); font-size: 14px; }
+.il-pin .ui-i { width: 16px; height: 16px; }
+.il-drop { border: 2px dashed #b9b0f3; justify-content: center; flex-direction: column; min-height: 152px; color: #6b5ce7; }
+.il-drop > .ui-i { width: 34px; height: 34px; }
+.il-drop small { color: var(--ui-muted); }
+.il-way:is(a):hover { filter: brightness(.98); }
+.il-phone-only { display: none !important; }
+.il-stats-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.il-stat b small { font-size: 15px; color: var(--ui-muted); font-weight: 600; }
+.il-prow { display: grid; grid-template-columns: 40px minmax(0,1fr) auto auto; gap: 14px; align-items: center; padding: 10px 2px; border-bottom: 1px solid var(--ui-line-2); }
+.il-prow:last-of-type { border-bottom: 0; }
+.il-thumb { width: 40px; height: 50px; border-radius: 6px; background: #fbfaf6; border: 1px solid var(--ui-line); position: relative; overflow: hidden; }
+.il-thumb::before { content: ""; position: absolute; inset: 8px 6px; background: repeating-linear-gradient(0deg, #9aa 0 2px, transparent 2px 6px); opacity: .5; }
+.il-pname { min-width: 0; display: grid; }
+.il-pname small { color: var(--ui-muted); font-size: 13px; display: inline-flex; gap: 4px; align-items: center; }
+.il-pname small .ui-i { width: 14px; height: 14px; }
+.il-score { font-weight: 700; font-variant-numeric: tabular-nums; display: inline-flex; gap: 10px; align-items: center; white-space: nowrap; }
+.il-missing { list-style: none; margin: 0; padding: 0; }
+.il-missing li { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; padding: 8px 2px; border-bottom: 1px solid var(--ui-line-2); }
+.il-missing li:last-child { border-bottom: 0; }
+.il-missing form { display: flex; gap: 6px; margin: 0; }
+.il-fold summary { cursor: pointer; font-weight: 700; font-size: 16px; list-style: none; display: flex; gap: 8px; align-items: center; }
+.il-fold summary::-webkit-details-marker { display: none; }
+.il-fold summary .ui-i { width: 18px; height: 18px; color: var(--il-go); }
+.il-fold[open] summary { margin-bottom: 12px; }
+#checkSaveForm { margin: 0; }
+
+/* ---- Classes ---- */
+.cl-ico { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; }
+.cl-ico .ui-i { width: 23px; height: 23px; }
+.cl-top { grid-template-columns: 46px minmax(0, 1fr) auto !important; }
+.cl-title small { display: inline-flex !important; gap: 4px; align-items: center; }
+.cl-title small .ui-i { width: 14px; height: 14px; }
+/* A long test name is cut with "…" so the score and bars never leave the card (both the panel, a grid
+   item, and the name, a flex item, must be allowed to be narrower than their text). */
+.cl-perf { min-width: 0; }
+.cl-perf-top > span:first-child { display: inline-flex; gap: 6px; align-items: center; min-width: 0; }
+.cl-perf-top > span:first-child b { min-width: 0; }
+.cl-perf-top .ui-i { width: 16px; height: 16px; color: var(--ui-muted); }
+.cl-links { display: flex; gap: 8px; flex-wrap: wrap; }
+
+@media (max-width: 860px) {
+  .il-ways { grid-template-columns: minmax(0,1fr); }
+  .il-desk { display: none !important; }
+  .il-phone-only { display: flex !important; align-items: center; gap: 14px; }
+  .il-stats-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+  .il-stats-3 .il-stat { flex-direction: column; align-items: flex-start; }
+  .il-prow { grid-template-columns: 40px minmax(0,1fr) auto; }
+  .il-prow .il-chipslot { display: none; }
+}
+
+/* check.css colours links on this page; keep button text readable */
+#checkWorkspace a.btn.primary { color: #fff; }
+#checkWorkspace a.btn.ghost, #checkWorkspace a.il-way { color: var(--ui-ink); }
+.check-workspace .main { background: transparent; }
+.cl-links .btn { width: auto; flex: 1 1 0; }
+
+/* On a phone the job comes first; the summary card follows it. */
+@media (max-width: 860px) {
+  .ky-layout > aside, .nt-layout > aside, .sh-layout > aside { order: 2 !important; }
+}
+
+/* Settings section links and older card headings with icons */
+.st-sections .ui-i, .card-head h3 .ui-i, .card-title-row h3 .ui-i, .panel h3 .ui-i { width: 18px; height: 18px; vertical-align: -3px; color: var(--il-go); }
+
+/* ==========================================================================
+   Laptop layout (round 6)
+   - Navigation: a slim icon strip on the LEFT (Fitts: short, straight moves
+     between places; always in the same spot). Phones keep the bottom bar.
+   - One column next to the strip, max 1180px, so the page title, its tabs and
+     its main button stay close together instead of at opposite screen edges.
+   - Density follows the pointer: a mouse gets compact controls, a finger keeps
+     the big ones (pointer: fine / coarse).
+   ========================================================================== */
+.il-rail, .il-rail-shade { display: none; }
+.il-rail .ui-i { color: currentColor; }
+
+@media (min-width: 861px) {
+  :root { --il-rail-w: 84px; --il-rail-open: 240px; --ui-top-h: 0px; }
+  .il-top { display: none; }
+  /* Closed: icons only. Open (menu button or M, static/rail.js): grows to the right OVER the page, so
+     nothing on the page moves, and the names fade in once the strip has started to grow. */
+  .il-rail { display: flex; flex-direction: column; gap: 6px; position: fixed; z-index: 50; left: 0; top: 0; bottom: 0;
+    width: var(--il-rail-w); padding: 14px 8px 16px; background: var(--il-bar); overflow: hidden;
+    transition: width var(--il-dur-move) var(--il-ease), box-shadow var(--il-dur-move) var(--il-ease); }
+  .il-rail.is-open { width: var(--il-rail-open); box-shadow: 12px 0 32px rgba(16, 32, 31, .28); transition-duration: var(--il-dur-slow); }
+  .il-rail a, .il-rail-toggle { color: #cfe2de; text-decoration: none; }
+  .il-rail :is(a, button):focus-visible { outline: 3px solid var(--il-go-hi); outline-offset: -3px; }
+  .il-rail-logo { flex: none; width: 44px; height: 44px; margin: 0 0 4px 12px; border-radius: 13px; background: #fff; display: grid; place-items: center; }
+  .il-rail-logo .ui-i { width: 24px; height: 24px; stroke-width: 3; color: var(--il-go); }
+  .il-rail-main, .il-rail-foot { display: grid; gap: 4px; }
+  .il-rail-foot { margin-top: auto; }
+  /* One row per place: the icon stays where it is; its name sits to its right, outside a closed strip. */
+  .il-rail-main a, .il-rail-foot a, .il-rail-toggle { display: flex; align-items: center; gap: 16px; width: 100%; height: 48px;
+    padding: 0 0 0 23px; border: 0; border-radius: 14px; background: none; cursor: pointer; white-space: nowrap; text-align: left;
+    font: 600 15px/1 var(--ui-font); }
+  .il-rail-foot a { height: 44px; }
+  :is(.il-rail-main a, .il-rail-foot a, .il-rail-toggle):hover { background: var(--il-pill); color: #fff; }
+  .il-rail-main a[aria-current=page] { background: var(--il-go-hi); color: var(--ui-ink); }   /* 5.2:1; pill vs bar 4.7:1 */
+  .il-rail-foot a[aria-current=page] { background: var(--il-pill); color: #fff; }
+  .il-rail-ico { position: relative; flex: none; width: 22px; display: grid; place-items: center; }
+  .il-rail-ico .ui-i { width: 22px; height: 22px; }
+  .il-rail-foot .il-rail-ico .ui-i { width: 19px; height: 19px; }
+  .il-rail .il-dot { top: -8px; right: -12px; }
+  .il-rail-ico.il-rail-avatar { width: 32px; height: 32px; margin-left: -5px; border-radius: 50%; background: #fff; color: var(--il-go); font-size: 13px; font-weight: 700; }
+  .il-rail-foot .il-rail-me[aria-current=page] { background: none; }
+  .il-rail-foot .il-rail-me[aria-current=page] .il-rail-avatar { box-shadow: 0 0 0 3px var(--il-go-hi); }
+  .il-rail-word { opacity: 0; transform: translateX(-6px); transition: opacity var(--il-dur-fade) var(--il-ease), transform var(--il-dur-fade) var(--il-ease); }
+  .il-rail.is-open .il-rail-word { opacity: 1; transform: none; transition-delay: calc(var(--il-dur-slow) / 3); }
+  /* The light shade over the page while the strip is open; a click on it closes the strip. */
+  .il-rail-shade { display: block; position: fixed; inset: 0; z-index: 45; background: rgba(16, 32, 31, .32); opacity: 0; pointer-events: none;
+    transition: opacity var(--il-dur-move) var(--il-ease); }
+  .il-rail-shade.is-on { opacity: 1; pointer-events: auto; transition-duration: var(--il-dur-slow); }
+
+  .app { margin-left: var(--il-rail-w); min-height: 100vh; }
+  /* The page is at most 1280px of content (+ its 32px sides), centred beside the menu: a maximized
+     window looks like a comfortable laptop window instead of stretching cards thin (Arvin, 21 Oct). */
+  :root { --il-page-max: 1280px; }
+  .main, .app > .main { margin: 0 auto; max-width: calc(var(--il-page-max) + 64px); padding: 22px 32px 48px; }
+  .app > .main > * { max-width: none; }
+  .il-rnav { justify-content: flex-start; }
+  .il-rnav .rviews { margin-left: 0; }
+  .ui-summary { top: 16px; }
+}
+
+/* Compact controls for a mouse on a laptop; touch screens keep the large ones. */
+@media (min-width: 861px) and (pointer: fine) {
+  .ui-head { margin-bottom: 12px; }
+  .ui-head h1 { font-size: 22px; }
+  .il-next::after { inset: -4px; border-radius: 14px; }
+  .il-hero { padding: 16px 22px; }
+  .il-hero h1 { font-size: 24px; }
+  .il-hero .il-tname { font-size: 16px; margin-top: 6px; }
+  .il-hero .il-next { min-height: 42px !important; font-size: 15px !important; padding: 0 20px !important; }
+  .il-art { width: 112px; height: 90px; }
+  .il-tiles { gap: 12px; }
+  .il-tile { grid-template-columns: 44px minmax(0,1fr); justify-items: start; align-items: center; gap: 12px;
+    padding: 12px 14px; font-size: 15px; border-radius: 14px; }
+  .il-tile .il-ico { width: 44px; height: 44px; border-radius: 12px; }
+  .il-tile .il-ico .ui-i { width: 22px; height: 22px; }
+  .il-stat .il-ico { width: 38px; height: 38px; border-radius: 11px; }
+  .il-stat .il-ico .ui-i { width: 20px; height: 20px; }
+  .il-stat b { font-size: 21px; }
+  .il-trow { padding: 9px 2px; gap: 12px; grid-template-columns: 36px minmax(0,1.5fr) minmax(0,1fr) auto auto auto; }
+  .il-trow .il-ico { width: 36px; height: 36px; border-radius: 10px; }
+  .il-trow .il-ico .ui-i { width: 18px; height: 18px; }
+  .il-steps4 span { width: 28px; height: 28px; border-radius: 8px; }
+  .il-steps4 span .ui-i { width: 15px; height: 15px; }
+  .il-act { min-width: 96px; }
+  .il-tbar { padding: 10px 14px; margin-bottom: 12px; }
+  .il-tbar .il-ico { width: 38px; height: 38px; border-radius: 11px; }
+  .il-tsteps a, .il-tsteps span.il-later { min-width: 58px; font-size: 12px; }
+  .il-tsteps i { width: 34px; height: 34px; }
+  .il-tsteps i .ui-i { width: 16px; height: 16px; }
+  .il-tsteps .il-ln { margin-bottom: 18px; }
+  .il-way .il-ico.il-solid { width: 40px; height: 40px; border-radius: 12px; }
+  .il-qr { width: 108px; height: 108px; }
+  .il-pin b { font-size: 24px; }
+  .il-drop { min-height: 124px; }
+  .il-prow { padding: 8px 2px; }
+  .il-rep { padding: 14px 10px; border-radius: 14px; }
+  .il-rep .il-ico { width: 44px; height: 44px; border-radius: 12px; }
+  .il-saved-to { padding: 10px 14px; }
+  .cl-ico { width: 40px; height: 40px; border-radius: 12px; }
+}
+
+/* Keyboard cursor on the answer key */
+.ky-row.is-cursor { outline: 2px solid var(--il-go-hi); outline-offset: 2px; border-radius: 10px; background: var(--il-go-soft); }
+
+/* Keyboard hints: only where a keyboard and mouse are likely */
+.il-kbd { display: none; font: 600 12px var(--ui-font); color: var(--ui-muted); background: #eef4f2; border-radius: 8px; padding: 3px 8px; vertical-align: middle; }
+@media (pointer: fine) and (min-width: 861px) { .il-kbd { display: inline-block; } }
+
+/* ==========================================================================
+   Foundations (audit step 1) — one set of tokens and buttons for every page.
+   Colours unchanged. Spacing 4·8·12·16·24·32; radius 10 controls / 14 cards.
+   ========================================================================== */
+:root {
+  --il-s1: 4px; --il-s2: 8px; --il-s3: 12px; --il-s4: 16px; --il-s5: 24px; --il-s6: 32px;
+  --il-r-ctl: 10px; --il-r-card: 14px;
+  --il-coral-ink: #b42a44;
+}
+.ui-date:empty { display: none; }
+
+/* ==========================================================================
+   Buttons — the one standard (design/buttons-audit.md). Every button on every
+   page is defined here and nowhere else.
+   Kinds:  .btn (secondary, white outline) · .btn.primary (solid green, one per view)
+           · .btn.danger (coral) · .btn.ghost.is-todo (a row's own next step, green outline)
+           · .ui-btn-big (full-width primary for sign-in style pages).
+   Sizes:  regular, and small (.il-mini) for lists. Touch screens get the tall
+           version of each; a mouse on a laptop gets the compact one.
+   Old names (.btn.ghost, .btn.dark, .ui-btn-dark/-ghost/-danger) are kept as
+   aliases so no template needs to change.
+   ========================================================================== */
+:root {
+  --il-go-dark: #0b5a42;                 /* primary hover / pressed */
+  --il-btn-lg-h: 48px; --il-r-lg: 14px;  /* large buttons: sign-in pages and phone Scan / Review */
+  --il-btn-h: 46px;  --il-btn-pad: 18px;  --il-btn-fs: 15px;  --il-btn-ico: 20px;
+  --il-btn-sm-h: 44px; --il-btn-sm-pad: 12px; --il-btn-sm-fs: 14px; --il-btn-sm-ico: 18px;
+  --il-btn-ease: var(--il-dur-fade) var(--il-ease);   /* alias of the motion tokens */
+}
+@media (min-width: 861px) and (pointer: fine) {
+  :root {
+    --il-btn-h: 38px;  --il-btn-pad: 14px;  --il-btn-fs: 14px;  --il-btn-ico: 18px;
+    --il-btn-sm-h: 32px; --il-btn-sm-pad: 10px; --il-btn-sm-fs: 13px; --il-btn-sm-ico: 16px;
+  }
+}
+
+/* Shape: the same for every kind */
+.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--il-s2);
+  min-height: var(--il-btn-h); height: auto; padding: 0 var(--il-btn-pad);
+  border: 1px solid transparent; border-radius: var(--il-r-ctl); box-shadow: none;
+  font-family: inherit; font-size: var(--il-btn-fs); font-weight: 700; line-height: 1.2;
+  text-decoration: none; white-space: nowrap; cursor: pointer; transition: none; }
+/* Large: full-width, one per screen (sign-in pages, Copy test). Same size as the phone Scan/Review buttons. */
+.ui-btn-big { display: flex; width: 100%; min-height: var(--il-btn-lg-h); border-radius: var(--il-r-lg); }
+:is(.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big) :is(.ui-i, svg) {
+  width: var(--il-btn-ico); height: var(--il-btn-ico); flex: none; }
+.btn.il-mini { min-height: var(--il-btn-sm-h); min-width: var(--il-btn-sm-h); padding: 0 var(--il-btn-sm-pad); font-size: var(--il-btn-sm-fs); }   /* an icon-only one (×) is at least square */
+.btn.il-mini :is(.ui-i, svg) { width: var(--il-btn-sm-ico); height: var(--il-btn-sm-ico); }
+
+/* Colours by kind (order matters: later kinds win over the secondary default) */
+:is(.btn, .btn.ghost, .ui-btn-ghost) { background: #fff; color: var(--ui-ink); border-color: var(--ui-line); }
+:is(.btn.primary, .btn.dark, .ui-btn-dark, .ui-btn-big) { background: var(--il-go); color: #fff; border-color: var(--il-go); }
+:is(.btn.danger, .btn.ghost.danger, .ui-btn-danger) { background: #fff; color: var(--il-coral-ink); border-color: #f1c9cf; }
+.btn.ghost.is-todo { background: #fff; color: var(--il-go); border-color: #9fd8c0; }
+
+/* Hover (never on a disabled button) */
+:is(.btn, .btn.ghost, .ui-btn-ghost):hover:not(:disabled, [aria-disabled=true]) { background: var(--il-go-soft); border-color: #bfe3d6; }
+:is(.btn.primary, .btn.dark, .ui-btn-dark, .ui-btn-big):hover:not(:disabled, [aria-disabled=true]) {
+  background: var(--il-go-dark); border-color: var(--il-go-dark); }
+:is(.btn.danger, .btn.ghost.danger, .ui-btn-danger):hover:not(:disabled, [aria-disabled=true]) { background: #ffe4e6; border-color: #f1c9cf; }
+.btn.ghost.is-todo:hover:not(:disabled, [aria-disabled=true]) { background: var(--il-go-soft); border-color: #9fd8c0; }
+
+/* Pressed: every kind moves down 1px */
+:is(.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big):active:not(:disabled, [aria-disabled=true]) { transform: translateY(1px); }
+
+/* Disabled: one look for every kind */
+:is(.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big):is(:disabled, [aria-disabled=true]) {
+  opacity: .5; cursor: not-allowed; transform: none; }
+
+/* Motion: colours fade, the press moves 1px (tokens: the "Motion" block) */
+:is(.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big) {
+  transition: background-color var(--il-btn-ease), border-color var(--il-btn-ease), color var(--il-btn-ease),
+              transform var(--il-dur-press) var(--il-ease); }
+
+/* Keyboard focus: one ring, dark green, 5.7:1 on the page background and 6.5:1 on white (WCAG 1.4.11).
+   Dark screens (phone Scan / Review) keep their own bright ring in focus.css. */
+:focus-visible { outline: 3px solid var(--il-go); outline-offset: 2px; }
+
+/* ==========================================================================
+   Fields — the one standard (design/form-fields-audit.md). Every text box,
+   number box, dropdown and text area looks like this unless a page puts it
+   inside its own box (search, answer cells). Pages may set width and
+   alignment, never the look.
+   Written with :where() so it has no weight: a page's layout rule (width,
+   text-align) never has to fight it.
+   ========================================================================== */
+:root {
+  --il-field-h: 46px; --il-field-fs: 16px;   /* touch: 16px stops iPhone zooming the page on tap */
+  --il-field-line: #c9d6d2;                  /* field edge: clearer than the card hairline */
+  --il-field-pad: 12px;
+}
+@media (min-width: 861px) and (pointer: fine) {
+  :root { --il-field-h: 40px; --il-field-fs: 15px; }   /* 40px sits level with the 38px buttons */
+}
+:where(input:not([type=checkbox], [type=radio], [type=file], [type=hidden], [type=range], [type=color],
+                 [type=submit], [type=button], [type=reset], [type=image]), select, textarea) {
+  box-sizing: border-box; min-height: var(--il-field-h); padding: 0 var(--il-field-pad);
+  border: 1px solid var(--il-field-line); border-radius: var(--il-r-ctl); background: #fff; color: var(--ui-ink);
+  font-family: inherit; font-size: var(--il-field-fs); line-height: 1.3; box-shadow: none; }
+:where(textarea) { min-height: 96px; padding: 10px var(--il-field-pad); line-height: 1.5; resize: vertical; }
+:where(.field) :where(input:not([type=checkbox], [type=radio]), select, textarea) { width: 100%; }
+::placeholder { color: var(--ui-faint); opacity: 1; }      /* 4.9:1 on white */
+
+/* Focus: a 2px dark-green edge (6.5:1 on white). It replaces the ring, so the field never changes size. */
+:where(input:not([type=checkbox], [type=radio], [type=file]), select, textarea):focus {
+  outline: none; border-color: var(--il-go); box-shadow: 0 0 0 1px var(--il-go); }
+
+/* Wrong: coral edge, with the reason right under the field (macro field_error in _il.html, or fielderror.js). */
+:where(input, select, textarea)[aria-invalid=true] { border-color: var(--il-coral-ink); }
+:where(input, select, textarea)[aria-invalid=true]:focus { border-color: var(--il-coral-ink); box-shadow: 0 0 0 1px var(--il-coral-ink); }
+.il-field-error { display: flex; gap: 6px; align-items: flex-start; margin: 6px 0 0; color: var(--il-coral-ink);
+  font-size: 13px; font-weight: 600; line-height: 1.4; }
+.il-field-error .ui-i { width: 16px; height: 16px; flex: none; margin-top: 1px; }
+[role=radiogroup][aria-invalid=true] .ui-choice { border-color: var(--il-coral-ink); }
+
+/* Can't be changed */
+:where(input, select, textarea):is(:disabled, [readonly]) { background: var(--ui-panel); color: var(--ui-muted); opacity: .6; cursor: not-allowed; }
+
+/* File pickers: the same height as the fields beside them */
+:where(input[type=file]) { min-height: var(--il-field-h); padding: 6px var(--il-field-pad); border: 1px dashed var(--il-field-line);
+  border-radius: var(--il-r-ctl); background: var(--ui-panel); font-family: inherit; font-size: 14px; max-width: 100%; }
+
+/* Tick boxes and round buttons: one size, brand green */
+:where(input[type=checkbox], input[type=radio]) { width: 20px; height: 20px; margin: 0; accent-color: var(--il-go); flex: none; }
+
+/* Search: one box everywhere — magnifier + borderless input inside a field-shaped label */
+.il-find { display: flex; align-items: center; gap: var(--il-s2); min-height: var(--il-field-h); padding: 0 var(--il-field-pad);
+  border: 1px solid var(--il-field-line); border-radius: var(--il-r-ctl); background: #fff; color: var(--ui-faint); margin: 0; }
+.il-find .ui-i { width: 18px; height: 18px; flex: none; }
+.il-find input { flex: 1; min-width: 0; min-height: 0; width: 220px; padding: 0; border: 0; background: transparent;
+  font-family: inherit; font-size: var(--il-field-fs); color: var(--ui-ink); box-shadow: none; outline: none; }
+.il-find input:focus { border: 0; box-shadow: none; }
+.il-find:focus-within { border-color: var(--il-go); box-shadow: 0 0 0 1px var(--il-go); }
+@media (max-width: 640px) { .il-find, .il-find input { width: 100%; } }
+
+/* Answer cells (Review, saved paper): one look for both (design/qa-crawl-audit.md). The coloured
+   cell is the box, so its dropdown has no edge of its own, is a full field tall (40 / 46px) and the
+   cell shows the focus edge. The item number is ≥4.5:1 on every cell colour. */
+.acell { display: flex; align-items: center; gap: 6px; padding: 0 7px; margin-bottom: 8px; border: 1.5px solid var(--ui-line);
+  border-radius: var(--il-r-ctl); background: var(--ui-paper); break-inside: avoid; -webkit-column-break-inside: avoid; }
+.acell .qn { width: 22px; font-size: 12px; font-weight: 700; color: var(--ui-muted); text-align: right; }
+.acell.correct { border-color: var(--ui-teal-edge); background: var(--ui-teal-wash); }
+.acell:is(.partial, .double) { border-color: var(--ui-amber-line); background: var(--ui-amber-bg); }
+.acell.wrong { border-color: var(--ui-coral-bg); background: #fdf3f0; }
+.acell select { flex: 1; width: 100%; min-height: var(--il-field-h); padding: 0 4px; border: 0; background: transparent;
+  font-weight: 600; box-shadow: none; }
+.acell select:focus { border: 0; box-shadow: none; }
+.acell:focus-within { border-color: var(--il-go); box-shadow: 0 0 0 1px var(--il-go); }
+
+/* ==========================================================================
+   Chips — a label you read, never a button (design/chips-toggles-audit.md).
+   One shape (pill), two sizes, five tones; a chip always carries a word, so
+   colour is never the only signal. Old names (.pill, .ui-tag, .ui-act) are
+   aliases. The il-c-* colour classes are shared with icon tiles; on a chip
+   they mean:  go = done/good · sun = needs you · sky = in progress/info ·
+   rose = a problem · grey = not started / not counted.
+   ========================================================================== */
+:is(.il-chip, .pill, .ui-tag, .ui-act) {
+  display: inline-flex; align-items: center; gap: 6px; min-height: 24px; padding: 0 10px; border-radius: 99px;
+  font-size: 12px; font-weight: 700; line-height: 1.2; white-space: nowrap; box-shadow: none; flex: none;
+  background: #eef3f1; color: #566765; }
+:is(.il-chip, .pill, .ui-tag, .ui-act) .ui-i { width: 14px; height: 14px; stroke-width: 2.6; flex: none; }
+/* Small: a tag inside a card or a table cell */
+:is(.il-chip, .pill).is-small, .ui-tag, .ui-act { min-height: 20px; padding: 0 8px; gap: 4px; font-size: 11px; }
+:is(.il-chip, .pill).is-small .ui-i, .ui-tag .ui-i, .ui-act .ui-i { width: 12px; height: 12px; }
+/* Tones (all 4.5:1 or better for the text) */
+.il-chip.il-c-go, .pill.green, .pill.teal, .ui-tag, .ui-act.is-retain { background: var(--il-go-soft); color: var(--il-go); }
+.il-chip.il-c-sun, .pill.amber, .ui-tag.is-amber, .ui-act.is-revise { background: #fff1d1; color: #8a5600; }
+.il-chip.il-c-sky, .pill.blue { background: #e4effd; color: #2a62c4; }
+.il-chip.il-c-rose, .pill.red, .ui-tag.is-coral, .ui-act.is-reject { background: #ffe4e6; color: var(--il-coral-ink); }
+.il-chip.il-c-grey, .pill.gray { background: #eef3f1; color: #566765; }
+/* A chip that opens something ("4 to fix") says so on hover */
+a.il-chip { text-decoration: none; }
+/* Target sizes (design/qa-crawl-audit.md): every fold-out toggle and small text link is at least
+   24px tall on a laptop (WCAG 2.5.8) and 44px on a phone. Zero weight (:where), so a toggle with its
+   own padding keeps it; the padding centres one line of text. Menu buttons have their own size. */
+:where(summary:not(.btn, .il-dropmenu > summary)), :where(.ui-link) {
+  min-height: 24px; padding-block: max(0px, calc((24px - 1lh) / 2)); }
+@media (max-width: 860px) {
+  :where(summary:not(.btn, .il-dropmenu > summary)), :where(.ui-link) {
+    min-height: 44px; padding-block: max(0px, calc((44px - 1lh) / 2)); }
+}
+/* On touch screens a chip link and the logo get a 44px tap area, the same as the "?" hints (ui.css).
+   The look does not change. */
+@media (pointer: coarse) {
+  a.il-chip { position: relative; }
+  a.il-chip::before { content: ""; position: absolute; inset: -10px 0; }
+  .il-top .ui-brand { min-height: 44px; }
+}
+a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+/* Count on the Check menu: white on burnt orange, 5.2:1 */
+.il-dot { position: absolute; top: 2px; right: 4px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 99px;
+  background: #c2410c; color: #fff; font: 700 11px/18px var(--ui-font); font-style: normal; text-align: center; }
+
+/* ==========================================================================
+   Toggles — small things pressed to choose (Tests filters, item shortcuts,
+   answer-key letters). Unselected looks like a field edge; selected is solid
+   brand green with white text (6.5:1). Pill toggles say aria-pressed; the key
+   letters are real radio buttons.
+   ========================================================================== */
+:root { --il-tog-h: 44px; --il-key-d: 44px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-tog-h: 32px; --il-key-d: 38px; } }
+:is(.il-toggle, .il-filters button, .ui-quick button) {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: var(--il-tog-h); padding: 0 14px;
+  border: 1px solid var(--il-field-line); border-radius: 99px; background: #fff; color: var(--ui-ink);
+  font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; cursor: pointer; }
+:is(.il-toggle, .il-filters button, .ui-quick button) .ui-i { width: 15px; height: 15px; flex: none; }
+:is(.il-toggle, .il-filters button, .ui-quick button):hover:not([aria-pressed=true]) { background: var(--il-go-soft); border-color: #bfe3d6; }
+:is(.il-toggle, .il-filters button, .ui-quick button)[aria-pressed=true] { background: var(--il-go); border-color: var(--il-go); color: #fff; }
+:is(.il-toggle, .il-filters button, .ui-quick button):active { transform: translateY(1px); }
+/* Phone: a short label ("10") still gets a 44px-wide target. */
+@media (max-width: 860px) { .ui-quick button { min-width: 44px; } }
+/* Answer-key letters: circles, same colours */
+.ky-choices label { width: var(--il-key-d); height: var(--il-key-d); border-radius: 50%; border: 2px solid var(--il-field-line);
+  display: grid; place-items: center; background: #fff; color: var(--ui-muted); font-size: 15px; font-weight: 700; cursor: pointer; }
+.ky-choices label:hover { background: var(--il-go-soft); border-color: #bfe3d6; color: var(--ui-ink); }
+.ky-choices input:checked + label { background: var(--il-go); border-color: var(--il-go); color: #fff; }
+.ky-choices input:focus-visible + label { outline: 3px solid var(--il-go); outline-offset: 2px; }
+:is(.il-toggle, .il-filters button, .ui-quick button, .ky-choices label) {
+  transition: background-color var(--il-dur-fade) var(--il-ease), border-color var(--il-dur-fade) var(--il-ease),
+              color var(--il-dur-fade) var(--il-ease), transform var(--il-dur-press) var(--il-ease); }
+/* A chip that can be taken away (Add class subjects): the × is a 24px button that says what it removes */
+.il-chip-x { display: grid; place-items: center; width: 24px; height: 24px; margin-right: -6px; padding: 0; border: 0;
+  border-radius: 50%; background: transparent; color: inherit; font-size: 16px; line-height: 1; cursor: pointer; }
+.il-chip-x:hover { background: rgba(15, 107, 79, .12); }
+
+/* ==========================================================================
+   Dialogs (design/dialogs-audit.md) — the confirm box (confirm.js), Delete
+   papers, All answers on Review and the phone More sheet share one look:
+   18px corners, 24px padding, one dim behind, a short fade-and-rise.
+   ========================================================================== */
+:root { --il-backdrop: rgba(16, 32, 31, .45); --il-dialog-r: 18px; --il-dialog-pad: 24px;
+        --il-pop-shadow: 0 12px 32px rgba(16, 32, 31, .16); }
+.il-dialog { border: 0; border-radius: var(--il-dialog-r); padding: var(--il-dialog-pad); width: min(440px, calc(100% - 32px));
+  max-width: none; background: #fff; color: var(--ui-ink); box-shadow: 0 24px 60px rgba(16, 32, 31, .25); }
+.il-dialog::backdrop { background: var(--il-backdrop); }
+.il-dialog h2 { margin: 0 0 6px; font-size: 20px; line-height: 1.3; overflow-wrap: anywhere; }
+.il-dialog-lead { margin: 0; color: var(--ui-muted); font-size: 14px; line-height: 1.5; white-space: pre-line; }
+.il-dialog-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: var(--il-s2); margin-top: var(--il-s5); }
+@media (max-width: 480px) { .il-dialog-actions > * { flex: 1 1 100%; } .il-dialog-actions { flex-direction: column-reverse; } }
+.il-dialog[open], .gl-all:not([hidden]) .gl-all-in { animation: il-rise var(--il-dur-enter) var(--il-ease); }
+.il-dialog[open]::backdrop { animation: il-fade var(--il-dur-enter) var(--il-ease); }
+/* Delete papers (_delete_papers.html): two option cards, then an "are you sure?" step */
+.dp-dialog { width: min(460px, calc(100% - 32px)); }
+.dp-options { display: grid; gap: 10px; margin-top: var(--il-s4); }
+.dp-option { display: flex; gap: 14px; align-items: flex-start; width: 100%; padding: 14px; text-align: left; cursor: pointer;
+  border: 1px solid var(--il-field-line); border-radius: var(--il-r-card); background: #fff; color: var(--ui-ink); font: inherit; }
+.dp-option:hover { background: var(--il-go-soft); border-color: #bfe3d6; }
+.dp-option b { display: block; font-size: 15px; }
+.dp-option small { display: block; margin-top: 3px; font-size: 13px; color: var(--ui-muted); line-height: 1.45; }
+.dp-icon { flex: none; width: 38px; height: 38px; border-radius: 11px; display: grid; place-items: center;
+  background: var(--il-go-soft); color: var(--il-go); }
+.dp-option.is-danger .dp-icon { background: #ffe4e6; color: var(--il-coral-ink); }
+.dp-option.is-danger:hover { background: #fff5f6; border-color: #f1c9cf; }
+
+.gl-all { background: var(--il-backdrop); }
+.gl-all-in { border-radius: var(--il-dialog-r) var(--il-dialog-r) 0 0; }
+
+/* ==========================================================================
+   Menus — every ⋯ and Download menu (menus.js): opening one closes the
+   others; outside click, Escape and choosing close it.
+   ========================================================================== */
+:root { --il-menu-item: 44px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-menu-item: 38px; } }
+.il-dropmenu { position: relative; }
+.il-dropmenu > summary { list-style: none; cursor: pointer; }
+.il-dropmenu > summary::-webkit-details-marker { display: none; }
+.il-dropmenu > summary:not(.btn) { display: grid; place-items: center; width: var(--il-menu-trigger, 40px); height: var(--il-menu-trigger, 40px);
+  border: 1px solid var(--il-field-line); border-radius: var(--il-r-ctl); background: #fff; color: var(--ui-muted); }
+@media (pointer: coarse) { .il-dropmenu > summary:not(.btn) { --il-menu-trigger: 44px; } }
+.il-dropmenu > summary:not(.btn):hover, .il-dropmenu[open] > summary:not(.btn) { background: var(--il-go-soft); border-color: #bfe3d6; color: var(--ui-ink); }
+.il-dropmenu-panel { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; min-width: 200px; padding: 6px;
+  background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); box-shadow: var(--il-pop-shadow); }
+.il-dropmenu-panel.is-left { right: auto; left: 0; }
+.il-dropmenu-panel > a, .il-dropmenu-panel > form > button {
+  display: flex; align-items: center; gap: 10px; width: 100%; min-height: var(--il-menu-item); padding: 0 12px;
+  border: 0; border-radius: var(--il-r-ctl); background: none; color: var(--ui-ink); font: 600 14px/1.2 var(--ui-font);
+  text-align: left; text-decoration: none; cursor: pointer; }
+.il-dropmenu-panel .ui-i { width: 16px; height: 16px; flex: none; }
+.il-dropmenu-panel > a:hover, .il-dropmenu-panel > form > button:hover { background: var(--il-go-soft); }
+.il-dropmenu-panel > form { margin: 6px 0 0; padding-top: 6px; border-top: 1px solid var(--ui-line-2); }   /* Delete sits apart */
+.il-dropmenu-panel .is-danger { color: var(--il-coral-ink); }
+.il-dropmenu-panel .is-danger:hover { background: #ffe4e6; }
+
+/* ==========================================================================
+   Messages after an action — one area under the page header (base.html).
+   Done: mint, read politely, fades after 6s. Problem: coral, read at once,
+   stays until dismissed.
+   ========================================================================== */
+.il-messages { display: grid; gap: var(--il-s2); margin: 0 0 var(--il-s4); }
+.il-messages:empty { display: none; }
+.il-msg { display: flex; align-items: flex-start; gap: 10px; padding: 10px 8px 10px 14px; border-radius: var(--il-r-card);
+  font-size: 14px; font-weight: 600; line-height: 1.45; }
+.il-msg > .ui-i { width: 18px; height: 18px; flex: none; margin-top: 1px; }
+.il-msg > span { flex: 1; min-width: 0; }
+.il-msg.is-ok { background: var(--il-go-soft); color: var(--il-go); }
+.il-msg.is-bad { background: #ffe4e6; color: var(--il-coral-ink); }
+.il-msg-x { flex: none; display: grid; place-items: center; width: 28px; height: 28px; margin: -4px 0; padding: 0; border: 0;
+  border-radius: 50%; background: transparent; color: inherit; font-size: 18px; line-height: 1; cursor: pointer; }
+.il-msg-x:hover { background: rgba(16, 32, 31, .08); }
+/* Arriving: rises in like a dialog. Leaving: fades while its space closes, so nothing below jumps. */
+.il-msg { animation: il-rise var(--il-dur-enter) var(--il-ease); }
+.il-msg.is-leaving { opacity: 0; height: 0 !important; padding-top: 0; padding-bottom: 0; margin-top: calc(-1 * var(--il-s2));
+  overflow: hidden; transition: opacity var(--il-dur-slow) var(--il-ease), height var(--il-dur-slow) var(--il-ease),
+  padding var(--il-dur-slow) var(--il-ease), margin var(--il-dur-slow) var(--il-ease); }
+.il-msg.is-leaving:only-child { margin-top: 0; }
+
+/* ==========================================================================
+   Navigation (design/navigation-audit.md). In-page tabs (result and class
+   tabs, the test's Details / Key / TOS row, Settings sections) share one size
+   and one "here" look; back buttons share one size.
+   ========================================================================== */
+:root { --il-tab-h: 44px; --il-back: 44px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-tab-h: 38px; --il-back: 40px; } }
+:is(.rview, .il-subnav a, .st-sections a) {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: var(--il-tab-h); padding: 0 14px;
+  border-radius: var(--il-r-ctl); background: transparent; color: var(--ui-muted); box-shadow: none;
+  font-size: 14px; font-weight: 600; line-height: 1.2; white-space: nowrap; text-decoration: none; }
+:is(.rview, .il-subnav a, .st-sections a) .ui-i { width: 17px; height: 17px; flex: none; }
+:is(.rview, .il-subnav a, .st-sections a):hover { background: var(--il-go-soft); color: var(--ui-ink); }
+:is(.rview.on, .rview[aria-current=page], .il-subnav a[aria-current=page], .st-sections a.is-here) {
+  background: var(--il-go-soft); color: var(--il-go); }
+/* Section links (data-sections, sections.js) stay in sight while the page scrolls, so the
+   marked "here" is always visible. (The phone top bar scrolls away: body has height:100%
+   in app.css, so it never stays — the links therefore stick to the very top.) */
+.st-sections[data-sections] { position: sticky; top: 0; z-index: 12; padding: 6px 0; background: var(--il-ground); }
+.il-back { width: var(--il-back); height: var(--il-back); }
+/* Pages under a section (Settings, Tests, Classes) get the same back button in their header. */
+.ui-head .il-headback { display: flex; align-items: center; gap: var(--il-s3); }
+/* A count or a date under the page title ("5 tests · 58 checked") */
+.ui-subline { margin: 2px 0 0; color: var(--ui-muted); font-size: 13px; font-weight: 600; }
+
+/* ==========================================================================
+   Cards & page layout (design/cards-layout-audit.md) — one box, one header,
+   one title, one gap, one empty state. Old names (.card, .ui-card, .mini,
+   .card-head, .card-title-row, .ui-card-h, .empty, .ui-empty) are aliases.
+   ========================================================================== */
+:root { --il-card-pad: 16px; --il-gap: 16px; }
+@media (min-width: 861px) { :root { --il-card-pad: 20px; } }
+:is(.il-card, .card, .ui-card, .mini) {
+  min-width: 0; padding: var(--il-card-pad); margin: 0 0 var(--il-gap);
+  background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); box-shadow: none; }
+.ui-card { display: flex; flex-direction: column; }
+/* Inside a grid the grid's gap does the spacing */
+:is(.ui-grid, .grid, .card-grid, .il-home, .il-check, .ui-summary, .cl-grid) > :is(.il-card, .card, .ui-card, .mini) { margin-bottom: 0; }
+:is(.ui-grid, .grid, .card-grid, .il-home, .il-check, .ui-summary, .cl-grid, .il-stats, .il-rstats) { gap: var(--il-gap); }
+.form-row { gap: var(--il-s3) var(--il-gap); }
+
+/* Card header: title (and a one-line hint) on the left, actions on the right */
+:is(.il-card-h, .card-head, .card-title-row, .ui-card-h) {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--il-s3); flex-wrap: wrap; margin: 0 0 var(--il-s3); }
+:is(.il-card-h, .card-head, .card-title-row, .ui-card-h) p { margin: 2px 0 0; color: var(--ui-muted); font-size: 13px; }
+/* Card title: one step under the page title */
+:is(.il-card-h, .card-head, .card-title-row, .ui-card-h) :is(h2, h3),
+:is(.il-card, .card, .ui-card, .il-way) > :is(h2, h3):first-child, .ui-step-card h2 {
+  margin: 0; display: flex; align-items: center; gap: 6px; color: var(--ui-ink);
+  font-size: 17px; font-weight: 700; line-height: 1.3; letter-spacing: 0; }
+:is(.il-card-h, .card-head, .card-title-row, .ui-card-h) :is(h2, h3) > .ui-i { width: 18px; height: 18px; color: var(--il-go); flex: none; }
+
+/* Stat tiles and the Check entry tiles: the card's corners */
+.il-stat { border-radius: var(--il-r-card); padding: 12px 16px; }
+.il-way { border-radius: var(--il-r-card); padding: var(--il-card-pad); }
+.il-way h2 { font-size: 17px; font-weight: 700; }
+/* A whole-card link answers the pointer like a secondary button */
+a.il-way:hover { filter: none; box-shadow: 0 0 0 1px #bfe3d6; }
+
+/* Numbered step cards (Create test, Key, Print): white and the card's corners; on phones the
+   number sits above the title so the content gets the full width */
+.ui-step-card { background: #fff; border-radius: var(--il-r-card); }
+@media (max-width: 640px) {
+  .ui-step-card { padding: var(--il-card-pad); }
+  .ui-step-card .ui-step-no { position: static; margin: 0 0 var(--il-s2); }
+}
+
+/* One "nothing here yet" */
+:is(.il-empty, .empty, .ui-empty) {
+  display: grid; justify-items: center; gap: var(--il-s2); max-width: none; margin: 0; padding: 24px 16px;
+  text-align: center; color: var(--ui-muted); font-size: 14px; line-height: 1.5; }
+:is(.il-empty, .empty, .ui-empty) b { display: block; margin: 0; color: var(--ui-ink); font-size: 16px; }
+:is(.il-empty, .empty, .ui-empty) p { margin: 0; }
+:is(.il-empty, .empty, .ui-empty) > :is(svg, .ui-i):first-child,
+:is(.il-empty, .empty, .ui-empty) > :first-child:not(.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger) > .ui-i:first-child:only-child {
+  box-sizing: content-box; width: 20px; height: 20px; padding: 10px; margin: 0 auto; border-radius: 50%;
+  background: var(--il-go-soft); color: var(--il-go); opacity: 1; }
+:is(.il-empty, .empty, .ui-empty) .il-ico { width: 40px; height: 40px; border-radius: 50%; }
+
+/* ==========================================================================
+   Tables (design/tables-audit.md) — one look for every data table on screen.
+   Old class names are aliases. Printed documents (doc-table, the intervention
+   report's dtable) and the class record editing grid keep their own look.
+   ========================================================================== */
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) {
+  width: 100%; border-collapse: collapse; background: none; font-variant-numeric: tabular-nums; }
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) thead th {
+  padding: 8px 12px; border-bottom: 1px solid var(--ui-line); background: transparent; text-align: left; white-space: nowrap;
+  font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #566765; vertical-align: bottom; }
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) tbody :is(td, th) {
+  padding: 10px 12px; border-bottom: 1px solid var(--ui-line-2); font-size: 14px; line-height: 1.4; text-align: left;
+  vertical-align: middle; color: var(--ui-ink); background: transparent; }
+/* The name that says whose row it is (<th scope="row">): a normal cell, a little bolder */
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) tbody th[scope=row] {
+  font-weight: 600; text-transform: none; letter-spacing: 0; }
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) tbody tr:last-child :is(td, th) { border-bottom: 0; }
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) tbody tr:is(:hover, :has(input[type=checkbox]:checked)) :is(td, th) {
+  background: #f3faf7; }
+/* Numbers line up on the right with same-width digits, header included */
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) :is(td, th).num { text-align: right; white-space: nowrap; }
+/* A last cell that only holds a button sits on the right */
+:is(.il-table, .tbl, .ui-table, .ptable, .mini-tbl, .ctable, .tos-table, .edit-table, .imp-table) td:last-child:has(> .btn:only-child, > form:only-child) { text-align: right; }
+/* Dense: grids that need many columns (TOS, class progress, editing tables) */
+:is(.il-table, .ptable, .tos-table, .edit-table, .imp-table).is-dense tbody :is(td, th),
+:is(.tos-table, .edit-table, .imp-table) tbody :is(td, th) { padding: 6px 8px; }
+/* Long tables keep their header row in view (tables.js lets it stick to the page when the table fits) */
+.is-long thead th { position: sticky; top: 0; z-index: 2; background: #fff; }
+/* !important: some boxes set overflow inline in their page; a table that fits never needs clipping */
+.il-tablebox.is-fits { overflow: visible !important; }
+/* Phones: a wide table scrolls inside its card; whose row it is stays in view, and a fade on the
+   right edge says there is more until the last column is showing (tables.js) */
+@media (max-width: 860px) {
+  :is(.il-table, .tbl, .ptable, .mini-tbl, .ctable, .tos-table) tbody th[scope=row],
+  :is(.il-table, .tbl, .ptable, .mini-tbl, .ctable, .tos-table) thead th.il-stick-col {
+    position: sticky; left: 0; z-index: 1; background: #fff; box-shadow: 1px 0 0 var(--ui-line-2); }
+  :is(.il-table, .tbl, .ptable, .mini-tbl, .ctable, .tos-table) thead th.il-stick-col { z-index: 3; }
+  :is(.il-table, .tbl, .ptable, .mini-tbl, .ctable, .tos-table) tbody th[scope=row] { min-width: 8.5em; }   /* names on 1–2 lines */
+  .il-tablebox.no-pin :is(tbody th[scope=row], thead th.il-stick-col) { position: static; box-shadow: none; }
+  .il-tablebox.is-more-right { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 32px), transparent); }
+}
+/* Phones: the Results tables (.ui-table) turn each row into a small card instead (ui.css lays
+   the row out); these keep the cells bare inside it. */
+@media (max-width: 640px) {
+  .ui-table, .ui-table tbody { display: block; min-width: 0; }
+  .ui-table thead { display: none; }
+  .ui-table tbody tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--ui-line-2); }
+  .ui-table tbody tr:last-child { border-bottom: 0; }
+  .ui-table tbody :is(td, th) { display: block; padding: 0; border: 0; text-align: left; background: none; }
+  .ui-table tbody tr > :first-child { grid-column: 1 / -1; }
+  .ui-table tbody tr > :is(:nth-child(odd):not(:first-child), :last-child) { text-align: right; justify-self: end; }
+  .ui-table tbody tr:hover :is(td, th) { background: none; }
+}
+/* Phone test rows (Home, Tests): the name gets its own line; its next step and ⋯ go underneath */
+@media (max-width: 640px) {
+  .il-trow { grid-template-columns: 44px minmax(0, 1fr) !important; row-gap: var(--il-s2); }
+  .il-trow > .il-row { grid-column: 2; justify-self: start; }
+}
+
+/* ---- One test header: back · test · status · steps · main button ---- */
+.il-tbar { display: flex; align-items: center; gap: var(--il-s3) var(--il-s5); flex-wrap: wrap; }
+.il-tbar .il-tid { flex: 1 1 320px; min-width: 0; gap: var(--il-s3); }
+.il-back { flex: none; border-radius: var(--il-r-ctl); border: 1px solid var(--il-field-line);
+  display: grid; place-items: center; color: var(--ui-ink); background: #fff; }
+.il-back:hover { background: var(--il-go-soft); }
+.il-back .ui-i { width: 18px; height: 18px; }
+.il-tname { min-width: 0; display: grid; }
+.il-tname h1 { margin: 0; font-size: 20px; line-height: 1.25; letter-spacing: -.01em; overflow-wrap: anywhere; }
+.il-tname small { color: var(--ui-muted); font-size: 12.5px; }
+.il-tname .il-tpage { text-transform: uppercase; letter-spacing: .08em; font-size: 11px; font-weight: 700; color: var(--il-go); }
+.il-tactions { display: flex; gap: var(--il-s2); align-items: center; flex-wrap: wrap; }
+.il-tactions form { margin: 0; }
+.il-tbar .il-subnav { order: 10; }
+.il-tbar + .il-rnav { margin-top: calc(-1 * var(--il-s2)); }
+
+/* ---- Check page pieces ---- */
+.il-dest { display: flex; align-items: center; gap: var(--il-s2); margin: 0; color: var(--ui-muted); font-size: 13px; }
+.il-dest .ui-i { width: 16px; height: 16px; color: var(--il-go); flex: none; }
+.il-dest b { color: var(--ui-ink); }
+.il-intake { display: flex; gap: var(--il-s2); align-items: center; flex-wrap: wrap; margin-top: var(--il-s2);
+  padding-top: var(--il-s3); border-top: 1px solid var(--ui-line-2); }
+.il-pop { position: relative; }
+.il-pop > summary { list-style: none; }
+.il-pop > summary::-webkit-details-marker { display: none; }
+.il-pop-in { position: absolute; left: 0; bottom: calc(100% + 8px); z-index: 20; display: flex; gap: var(--il-s4); align-items: center;
+  background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); padding: var(--il-s3);
+  box-shadow: 0 12px 30px rgba(16,32,31,.16); white-space: nowrap; }
+.il-who { min-height: 32px; max-width: 220px; margin-right: var(--il-s3); border-radius: var(--il-r-ctl); border: 1px solid #f0c060;
+  background: #fffaf0; font: 600 13px var(--ui-font); padding: 0 8px; }
+.il-prow.is-suggested { background: #fffaf0; border-radius: var(--il-r-ctl); }
+a.il-thumb { display: block; }
+
+/* ---- Review: previous / next ---- */
+.gl-pager { display: inline-flex; gap: 4px; flex: none; }
+.gl-pager a, .gl-pager span { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center;
+  font: 700 20px/1 var(--ui-font); color: #fff; background: rgba(255,255,255,.12); text-decoration: none; }
+.gl-pager span { opacity: .3; }
+@media (min-width: 960px) {
+  .gl-pager a, .gl-pager span { color: var(--ui-ink); background: #eef4f2; }
+  .gl-pager a:hover { background: var(--il-go-soft); }
+}
+
+@media (max-width: 860px) {
+  .il-tbar .il-tid { flex-basis: 100%; }
+  .il-tactions { width: 100%; }
+  .il-tactions > *, .il-tactions .btn { flex: 1; }
+  .il-who { max-width: 150px; }
+}
+
+/* ---- Home (audit step 3): Next strip · Needs you · Done ---- */
+.il-next-strip { display: grid; grid-template-columns: 48px minmax(0,1fr) auto; gap: var(--il-s4); align-items: center;
+  background: #fff; border: 1px solid #cfeadf; border-left: 4px solid var(--il-go-hi); border-radius: var(--il-r-card);
+  padding: var(--il-s4) var(--il-s5); }
+.il-next-strip > .il-ico { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; }
+.il-next-strip > .il-ico .ui-i { width: 24px; height: 24px; }
+.il-next-body { min-width: 0; display: grid; gap: 6px; }
+.il-next-body h2 { margin: 0; font-size: 19px; line-height: 1.25; overflow-wrap: anywhere; }
+.il-next-body .il-bar { margin-top: 2px; background: #eef2f1; box-shadow: none; }
+.il-next-go { min-width: 140px; }
+
+/* ---- Home sections (design/home-proposal.md) ---- */
+.hm-head .ui-subline { margin: 2px 0 0; }
+.hm-term select { min-height: var(--il-btn-h); }
+/* Today in numbers: four tiles, 2 × 2 on a phone */
+.hm-nums { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--il-gap); }
+.hm-num { display: grid; align-content: start; gap: 4px; margin: 0; color: var(--ui-ink); text-decoration: none; }
+.hm-num:hover { box-shadow: 0 0 0 1px #bfe3d6; }
+.hm-num b { font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.hm-num b .il-sub { font-size: 14px; }
+.hm-lbl { font-size: 13.5px; font-weight: 700; }
+.hm-up { color: var(--il-go); font-size: 14px; font-weight: 700; white-space: nowrap; }
+.hm-down { color: var(--il-coral-ink); font-size: 14px; font-weight: 700; white-space: nowrap; }
+.hm-spark { display: flex; align-items: flex-end; gap: 3px; height: 26px; }
+.hm-spark i { flex: 0 0 8px; background: #bfe3d6; border-radius: 3px 3px 0 0; }
+.hm-spark i:last-child { background: var(--il-go-hi); }
+/* Two columns: the wider one on the left */
+.hm-two { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: var(--il-gap); align-items: start; }
+.hm-two > :only-child { grid-column: 1 / -1; }
+.hm-two:empty { display: none; }
+.hm-for { margin: -6px 0 6px; }
+.hm-who, .hm-cls, .hm-skill { list-style: none; margin: 0; padding: 0; }
+.hm-who li + li, .hm-skill li + li { border-top: 1px solid var(--ui-line-2); }
+.hm-who li, .hm-who a { display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 8px 0; color: inherit; text-decoration: none; }
+.hm-who li:has(> a) { display: block; padding: 0; }
+.hm-who b, .hm-skill b, .hm-cls b { display: block; font-size: 14.5px; overflow-wrap: anywhere; }
+.hm-av { width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: #ffe4e6;
+  color: var(--il-coral-ink); font-size: 12px; font-weight: 800; }
+.hm-pct { color: var(--il-coral-ink); font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.hm-cls a { display: grid; grid-template-columns: minmax(0, 1fr) 52px 52px; gap: 4px 10px; align-items: center; padding: 8px 0; color: inherit; text-decoration: none; }
+.hm-mps { text-align: right; font-size: 15px; font-weight: 800; font-variant-numeric: tabular-nums; }
+.hm-mps.is-below { color: var(--il-coral-ink); }
+.hm-meter { grid-column: 1 / -1; position: relative; height: 8px; border-radius: 99px; background: var(--ui-line-2); overflow: hidden; }
+.hm-meter i { position: absolute; inset: 0 auto 0 0; width: var(--v); border-radius: 99px; background: var(--il-go-hi); }
+.hm-meter.is-below i { background: #e8735d; }
+.hm-meter::after { content: ""; position: absolute; top: 0; bottom: 0; left: var(--cut); border-left: 2px dashed #9aa9ae; }
+.hm-skill li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 9px 0; }
+.hm-skill code { font-size: 12px; }
+/* Keep safe */
+.hm-safe { display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; gap: var(--il-s4); align-items: center; }
+.hm-safe h2 { margin: 0; font-size: 16px; }
+.hm-safe p { margin: 2px 0 0; }
+.hm-safe .il-ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
+/* First time */
+.hm-start ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.hm-start li { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; gap: 12px; align-items: center;
+  padding: 12px; border-radius: 12px; background: var(--ui-line-2); }
+.hm-start li.is-done { background: var(--il-go-soft); }
+.hm-start li b { display: block; }
+.hm-k { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: #fff; color: var(--ui-muted); font-weight: 800; }
+.hm-start li.is-done .hm-k { background: var(--il-go); color: #fff; }
+.hm-k .ui-i { width: 16px; height: 16px; }
+@media (max-width: 860px) {
+  .hm-nums { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-two { grid-template-columns: minmax(0, 1fr); }
+  .hm-safe { grid-template-columns: 44px minmax(0, 1fr); }
+  .hm-safe .btn { grid-column: 1 / -1; }
+  .hm-start li { grid-template-columns: 34px minmax(0, 1fr); }
+  .hm-start li > :last-child { grid-column: 2; justify-self: start; }
+  .hm-skill li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .hm-skill .il-chip { justify-self: start; }
+}
+/* Lists without the step-icon column */
+.il-trow { grid-template-columns: 44px minmax(0,1.6fr) minmax(0,1fr) auto auto !important; }
+@media (min-width: 861px) and (pointer: fine) {
+  .il-trow { grid-template-columns: 36px minmax(0,1.6fr) minmax(0,1fr) auto auto !important; }
+}
+@media (max-width: 860px) {
+  .il-next-strip { grid-template-columns: 44px minmax(0,1fr); padding: var(--il-s4); }
+  .il-next-go { grid-column: 1 / -1; width: 100%; }
+  .il-trow { grid-template-columns: 44px minmax(0,1fr) auto !important; }
+}
+
+/* ---- Results (audit step 4): tabs · Print · Download menu · shared numbers ---- */
+.il-rnav { justify-content: space-between !important; gap: var(--il-s3); }
+.il-ractions { display: flex; align-items: center; gap: var(--il-s2); flex-wrap: wrap; margin-left: auto; }
+.il-dl { min-width: 320px; display: grid; }     /* shell: .il-dropmenu-panel */
+.il-dl-row { display: flex; align-items: center; justify-content: space-between; gap: var(--il-s3);
+  padding: var(--il-s2) var(--il-s2); border-radius: var(--il-r-ctl); }
+.il-dl-row + .il-dl-row { border-top: 1px solid var(--ui-line-2); }
+.il-dl-row b { font-size: 14px; }
+.il-dl-row > span { display: flex; gap: 6px; flex: none; }
+.il-skillchips { margin: 0 0 var(--il-s3); }
+.il-rstats { margin-bottom: var(--il-s4); }
+@media (max-width: 860px) {
+  .il-ractions { width: 100%; margin-left: 0; }
+  .il-ractions > .btn, .il-ractions > .il-menu-dl { flex: 1; }
+  .il-menu-dl > summary { width: 100%; }
+  .il-dl { left: auto; right: 0; min-width: 0; width: min(340px, calc(100vw - 32px)); }
+}
+
+/* ---- Print (audit step 5): from a test, one card beside the preview ---- */
+.sh-onecard { background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); padding: var(--il-s2) var(--il-s5); }
+.sh-onecard > .ui-step-card { background: transparent; border: 0; box-shadow: none; border-radius: 0; margin: 0;
+  padding: var(--il-s4) 0; }
+.sh-onecard > .ui-step-card + .ui-step-card { border-top: 1px solid var(--ui-line-2); }
+.sh-onecard .ui-step-no { display: none; }
+@media (max-width: 860px) { .sh-onecard { padding: var(--il-s1) var(--il-s4); } }
+
+/* ---- Save bar (audit step 6): one Save per form, always on screen ---- */
+.il-savebar { position: sticky; bottom: var(--il-s3); z-index: 15; display: flex; align-items: center; justify-content: space-between;
+  gap: var(--il-s3); flex-wrap: wrap; background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card);
+  padding: var(--il-s2) var(--il-s3) var(--il-s2) var(--il-s4); box-shadow: 0 8px 24px rgba(16,32,31,.10); margin-top: var(--il-s2); }
+.il-savestate { display: inline-flex; align-items: center; gap: var(--il-s2); color: var(--ui-muted); font-size: 13px; font-weight: 600; }
+.il-savestate i { width: 9px; height: 9px; border-radius: 50%; background: #c5d3d0; }
+.il-savestate .il-dirty { display: none; }
+form.is-dirty .il-savestate { color: #8a5600; }
+form.is-dirty .il-savestate i { background: #f0a500; }
+form.is-dirty .il-savestate .il-clean { display: none; }
+form.is-dirty .il-savestate .il-dirty { display: inline; }
+.nt-reuse { margin: var(--il-s3) 0 0; }
+.nt-reuse > summary { display: inline-flex; gap: 6px; align-items: center; }
+.nt-reuse > summary .ui-i { width: 16px; height: 16px; color: var(--il-go); }
+.nt-reuse .nt-reuse-list { margin-top: var(--il-s2); }
+@media (max-width: 860px) {
+  .il-savebar { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); }
+  .il-savebar > .il-row { width: 100%; }
+  .il-savebar > .il-row > * { flex: 1; }
+}
+
+/* A Save bar wrapped in a grid cell sticks through its wrapper (sticky only works
+   inside its own box, and the wrapper is the grid item). */
+.il-sticky { position: sticky; bottom: var(--il-s3); z-index: 15; align-self: end; }
+.il-sticky > .il-savebar { position: static; margin-top: 0; }
+@media (max-width: 860px) { .il-sticky { bottom: calc(80px + env(safe-area-inset-bottom, 0px)); } }
+
+/* ==========================================================================
+   Older screens (audit step 7): the shared classes they still use — .card,
+   .card-head, .stat-grid/.stat, .pill, .tbl, .empty — drawn with the same
+   tokens as the redesigned pages, so every screen reads as one product.
+   ========================================================================== */
+.main .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--il-s3); margin-bottom: var(--il-s4); }
+.main .stat { background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); padding: var(--il-s3) var(--il-s4); }
+.main .stat .label { font-size: 12px; color: var(--ui-muted); font-weight: 600; }
+.main .stat .value { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.main .stat .sub { font-size: 12px; color: var(--ui-muted); }
+/* The class header's tabs sit on their own row under the name, like the result tabs. */
+.il-classbar .il-classtabs { order: 5; margin-left: 0; }
+.il-classbar .il-tid .il-ico { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; flex: none; }
+
+/* Scan page in a narrow window on a computer: let the batch header wrap. */
+.fx-batch-head { flex-wrap: wrap; }
+@media (max-width: 600px) and (hover: hover) and (pointer: fine) {
+  body.fx-scan .fx-page { padding-inline: 16px; }
+  .fx-batch-head .fx-go { flex: 1 1 100%; }
+}
+
+/* Create class: the three steps (Details · Learners · Save). The step you are on is the brand
+   green; the others are muted ink, 4.5:1 or more on their grey number (design/qa-crawl-audit.md). */
+.il-wizard { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
+.il-wizard-step { display: flex; align-items: center; gap: 8px; padding: 6px 14px 6px 6px; border: 1px solid var(--ui-line);
+  border-radius: 999px; background: #fff; color: var(--ui-muted); font-size: 13px; font-weight: 700; }
+.il-wizard-dot { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%;
+  background: var(--ui-line-2); color: var(--ui-muted); font-size: 12px; }
+.il-wizard-step.is-here { background: var(--il-go); border-color: var(--il-go); color: #fff; }
+.il-wizard-step.is-here .il-wizard-dot { background: #fff; color: var(--il-go); }
+
+/* ---------------------------------------------------------------------------
+   Guidance (guidance.py, _guide.html, guide.js)
+   The tip on each page: one quiet line under the page header, never a pop-up over
+   the work. The walkthrough: the page dims, one place is lit, a small card beside it.
+   The online demo: a thin bar on top, and the "Try these" list in the corner.
+   --------------------------------------------------------------------------- */
+.qc-tip { display: flex; align-items: center; gap: var(--il-s3); margin: 0 0 var(--il-s4); padding: 10px 12px 10px 14px;
+  border: 1px solid #bfe3d3; border-radius: var(--il-r-card); background: var(--il-go-soft); color: var(--ui-ink); }
+.qc-tip.is-leaving { opacity: 0; transition: opacity var(--il-dur-enter) var(--il-ease); }
+.qc-tip-ico { display: grid; place-items: center; flex: none; width: 32px; height: 32px; border-radius: 50%; background: #fff; color: var(--il-go); }
+.qc-tip-ico .ui-i { width: 18px; height: 18px; }
+.qc-tip-words { flex: 1; min-width: 0; margin: 0; font-size: 14px; line-height: 1.45; }
+.qc-tip-words b { margin-right: 4px; }
+.qc-tip-acts { display: flex; align-items: center; gap: var(--il-s2); flex: none; }
+.qc-tip-acts form { margin: 0; }
+.qc-tip-more { font-size: 14px; font-weight: 600; color: var(--il-go); text-decoration: underline; text-underline-offset: 3px;
+  min-height: 24px; display: inline-flex; align-items: center; padding-inline: 4px; }
+.qc-tip-float { position: fixed; right: 16px; bottom: 16px; z-index: 30; width: min(380px, calc(100vw - 32px)); }
+.qc-tip-float .qc-tip { margin: 0; flex-wrap: wrap; box-shadow: 0 10px 28px rgba(8, 28, 25, .16); }
+.qc-tip-float .qc-tip-words { flex-basis: calc(100% - 48px); }
+.qc-tip-float .qc-tip-acts { width: 100%; justify-content: flex-end; }
+@media (max-width: 860px) { .qc-tip-float { display: none; } }
+@media (max-width: 640px) {
+  .qc-tip { flex-wrap: wrap; }
+  .qc-tip-words { flex-basis: calc(100% - 48px); }
+  .qc-tip-acts { width: 100%; justify-content: flex-end; }
+  .qc-tip-more { min-height: 44px; }
+}
+
+.qc-tour { position: fixed; inset: 0; z-index: 1000; }
+.qc-tour-spot { position: fixed; border-radius: 12px; box-shadow: 0 0 0 9999px rgba(8, 28, 25, .55), 0 0 0 3px var(--il-go-hi);
+  pointer-events: none; }
+.qc-tour.is-centred .qc-tour-spot { left: 50% !important; top: 50% !important; width: 0 !important; height: 0 !important;
+  box-shadow: 0 0 0 9999px rgba(8, 28, 25, .55); }
+.qc-tour-card { position: fixed; width: min(340px, calc(100vw - 16px)); padding: var(--il-s4) var(--il-s4) var(--il-s3);
+  border-radius: var(--il-r-card); background: #fff; color: var(--ui-ink); box-shadow: 0 18px 48px rgba(8, 28, 25, .28); }
+.qc-tour-count { margin: 0 0 2px; font-size: 12px; font-weight: 700; color: var(--ui-muted); }
+.qc-tour-card h2 { margin: 0 0 6px; font-size: 18px; }
+.qc-tour-card #qcTourText { margin: 0 0 var(--il-s4); font-size: 14.5px; line-height: 1.5; }
+.qc-tour-acts { display: flex; align-items: center; gap: var(--il-s2); }
+.qc-tour-skip { margin-right: auto; padding: 0 4px; min-height: 32px; border: 0; background: none; font: inherit; font-size: 13.5px;
+  color: var(--ui-muted); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.qc-tour-dots { display: flex; gap: 4px; margin-right: var(--il-s2); }
+.qc-tour-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--ui-line); }
+.qc-tour-dots i.is-on { background: var(--il-go); }
+@media (pointer: coarse) { .qc-tour-skip { min-height: 44px; } }
+
+.qc-demo-bar { display: flex; align-items: center; gap: var(--il-s3); flex-wrap: wrap; margin: 0 0 var(--il-s4); padding: 8px 10px 8px 12px;
+  border-radius: var(--il-r-card); background: var(--il-bar); color: #e8f5f0; font-size: 13.5px; }
+.qc-demo-bar form { margin: 0 0 0 auto; }
+.qc-demo-tag { padding: 2px 10px; border-radius: 999px; background: #f4c84a; color: #2b2300; font-weight: 800; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+.qc-demo-note { flex: 1 1 260px; min-width: 0; }
+.qc-demo-bar .qc-demo-end { background: #fff; color: var(--il-bar); border-color: #fff; }
+
+.qc-demo-guide { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: min(320px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
+  overflow: auto; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); background: #fff; box-shadow: 0 12px 32px rgba(8, 28, 25, .18); }
+.qc-demo-guide > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--il-s2); min-height: 44px;
+  padding: 0 var(--il-s4); font-weight: 700; cursor: pointer; list-style: none; }
+.qc-demo-guide > summary::-webkit-details-marker { display: none; }
+.qc-demo-guide > summary > span { display: flex; align-items: center; gap: var(--il-s2); color: var(--il-go); }
+.qc-demo-guide > summary b { font-size: 12.5px; color: var(--ui-muted); }
+.qc-demo-guide ol { margin: 0; padding: 0 var(--il-s3); list-style: none; }
+.qc-demo-guide li { display: flex; gap: var(--il-s3); align-items: flex-start; padding: 8px 4px; border-top: 1px solid var(--ui-line-2); }
+.qc-demo-guide li a { display: grid; gap: 1px; color: var(--ui-ink); text-decoration: none; min-width: 0; }
+.qc-demo-guide li a:hover b { text-decoration: underline; }
+.qc-demo-guide li b { font-size: 14px; }
+.qc-demo-guide li small { font-size: 12.5px; color: var(--ui-muted); }
+.qc-demo-dot { display: grid; place-items: center; flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--ui-line-2);
+  color: var(--ui-muted); font-size: 12px; font-weight: 700; }
+.qc-demo-dot .ui-i { width: 14px; height: 14px; }
+.qc-demo-guide li.is-done .qc-demo-dot { background: var(--il-go); color: #fff; }
+.qc-demo-guide li.is-done b { color: var(--ui-muted); text-decoration: line-through; }
+.qc-demo-guide li.is-next { background: var(--il-go-soft); border-radius: 10px; border-top-color: transparent; }
+.qc-demo-guide li.is-next .qc-demo-dot { background: var(--il-go-hi); color: #fff; }
+.qc-demo-foot { padding: var(--il-s3) var(--il-s4) var(--il-s4); border-top: 1px solid var(--ui-line-2); }
+.qc-demo-foot p { margin: 0 0 var(--il-s2); font-size: 13px; }
+.qc-demo-foot form { margin: 0; }
+/* Phones: above the bottom menu bar. */
+@media (max-width: 860px) { .qc-demo-guide { bottom: calc(76px + env(safe-area-inset-bottom, 0px)); right: 8px; width: calc(100vw - 16px);
+  max-height: 55vh; } }
+
+/* ---------------------------------------------------------------------------
+   Motion (design/motion-audit.md)
+   Five lengths and one easing for every one-off movement. Only the loops (ring,
+   shimmer, blink, connection dot, restart spinner) keep their own lengths.
+   --------------------------------------------------------------------------- */
+:root {
+  --il-dur-press: 100ms;   /* a button going down */
+  --il-dur-fade: 150ms;    /* colour and hover changes */
+  --il-dur-enter: 160ms;   /* something appearing: dialog, message, phone overlay */
+  --il-dur-move: 200ms;    /* a short move: chevron, picture fade, zoom */
+  --il-dur-slow: 300ms;    /* progress bars, a message leaving */
+  --il-ease: ease-out;
+}
+@keyframes il-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes il-fade { from { opacity: 0; } to { opacity: 1; } }
+.ui-preview { transition: opacity var(--il-dur-move) var(--il-ease); }        /* answer-sheet picture refreshing */
+.fx-meter i, .up-bar i { transition: width var(--il-dur-slow) var(--il-ease); }  /* phone and update progress */
+.is-gliding { transition: transform var(--il-dur-move) var(--il-ease); }       /* phone zoom onto a mark (glance.js) */
+
+/* The one "reduce motion" rule. iconlook.css is on every page (app, phone, sign-in,
+   setup), so a teacher who turned animations off in Windows gets none anywhere. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------------------------------------------------------------------------
+   Print (design/printed-documents-audit.md)
+   The one print block for every app page, last in the last sheet so it beats
+   the phone rules (paper is ~794px wide, so the phone layout applies on paper).
+   The formal report's print page has its own sheet (report.css + report_print.html).
+   base.html adds the footer text: page title left, "Page x of y" right.
+   --------------------------------------------------------------------------- */
+@page { size: A4; margin: 15mm 15mm 18mm; }
+@media print {
+  /* The app around the document: nothing to tap on paper. */
+  .skip-link, .il-top, .ui-top, .il-rail, .il-tabbar, .tabbar, .ui-head, .tbar, .resultnav,
+  .il-messages, .trial-bar, .test-workspace, .no-print,
+  .qc-tip, .qc-tip-float, .qc-tour, .qc-demo-bar, .qc-demo-guide { display: none !important; }
+  html, body, .app, .main { background: #fff !important; }
+  .app { display: block !important; }
+  .main { padding: 0 !important; margin: 0 !important; max-width: none !important; }
+
+  /* Boxes are for screens: on paper a card is a plain section that may break between rows. */
+  :is(.il-card, .card, .ui-card, .doc-paper) { border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+    padding: 0 !important; margin: 0 0 14pt !important; max-width: none !important; break-inside: auto !important; }
+  tr, .il-stat, .doc-sign { break-inside: avoid; }
+  h1, h2, h3, h4, .card-head, .ui-card-h, .il-card-h { break-after: avoid; }
+  thead { display: table-header-group; }
+
+  /* Fills that carry meaning keep their colour when "Background graphics" is off. */
+  :is(.pill, .il-chip, .rep-tiles > div, .best, .worst, .il-stat, .bar, .bar i, .code, .status-gap, .status-up) {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  a { color: inherit !important; text-decoration: none !important; }
+}

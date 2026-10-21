@@ -1,0 +1,1777 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="QuickCheck helps teachers prepare answer sheets, check paper assessments, review uncertain marks, and understand class results.">
+  <title>Answer key · QuickCheck</title>
+  <link rel="icon" href="../static/brand/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../static/app.css">
+  <link rel="stylesheet" href="../static/workspace.css">
+  <link rel="stylesheet" href="../static/redesign.css">
+  
+  <link rel="stylesheet" href="../static/ui.css">
+  
+  
+  <link rel="stylesheet" href="../static/iconlook.css">
+  
+  
+  <style media="print">
+    @page {
+      @top-center { content: ""; }
+      @bottom-left { content: "Answer key"; font: 8pt Arial, sans-serif; color: #5b6b70; }
+      @bottom-right { content: "Page " counter(page) " of " counter(pages); font: 8pt Arial, sans-serif; color: #5b6b70; }
+    }
+  </style>
+</head>
+
+
+
+
+
+
+<body class="">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ui-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="ui-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="ui-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="ui-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="ui-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="ui-sheet" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9" cy="13" r="1.2"/><circle cx="13" cy="13" r="1.2"/><circle cx="9" cy="17" r="1.2"/><circle cx="13" cy="17" r="1.2"/></symbol>
+  <symbol id="ui-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="ui-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol>
+  <symbol id="ui-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="ui-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ui-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="ui-xls" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+  <symbol id="ui-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="ui-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ui-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+  <symbol id="ui-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="ui-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="ui-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+  <symbol id="ui-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.9M12 17.2v.01"/></symbol>
+  <symbol id="ui-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="ui-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+  <symbol id="ui-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="ui-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></symbol>
+  <symbol id="ui-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ui-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="ui-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
+  <symbol id="ui-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="ui-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="ui-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="ui-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 15v5h16v-5"/></symbol>
+  <symbol id="ui-save" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM8 3v5h7V3M8 21v-7h8v7"/></symbol>
+  <symbol id="ui-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="ui-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="ui-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h4"/></symbol>
+  <symbol id="ui-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="ui-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="ui-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="ui-pie" viewBox="0 0 24 24"><path d="M12 3v9h9A9 9 0 1 1 12 3z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+  <symbol id="ui-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="ui-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ui-q" viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.3"/></symbol>
+  <symbol id="ui-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+</svg>
+
+
+
+
+
+
+
+<header class="ui-top il-top">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.10.1">
+    <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+    <span><b>QuickCheck</b></span>
+  </a>
+  <div class="il-right">
+    <a class="il-round" href="search.html" title="Search"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg><span class="ui-sr">Search</span></a>
+    <a class="il-round" href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg><span class="ui-sr">Help</span></a>
+    <a class="ui-avatar il-me" href="settings.html" title="Settings · Demo Teacher">DT</a>
+  </div>
+</header>
+
+
+<div class="il-rail-shade" id="ilRailShade" aria-hidden="true"></div>
+<nav class="il-rail" id="ilRail" aria-label="Main navigation">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.10.1"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg><span class="ui-sr">QuickCheck home</span></a>
+  <button class="il-rail-toggle" id="ilRailToggle" type="button" aria-expanded="false" aria-controls="ilRail" title="Show the names (M)">
+    <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-menu"/></svg></span><span class="il-rail-word">Menu</span></button>
+  <div class="il-rail-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="il-rail-word">Home</span></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" aria-current=page>
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
+    
+    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">7<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="il-rail-word">Classes</span></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" >
+      <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="il-rail-word">Results</span></a>
+    
+  </div>
+  <div class="il-rail-foot">
+    <a href="search.html" title="Search (/)" ><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="il-rail-word">Search</span></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="il-rail-word">Help</span></a>
+    
+    
+    <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
+  </div>
+</nav>
+<div class="app">
+
+
+  <!-- Main -->
+  <main class="main" id="main-content" tabindex="-1">
+    
+<div class="qc-demo-bar" role="region" aria-label="Demo">
+  <span class="qc-demo-tag">Demo</span>
+  <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
+  <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
+    <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+  </form>
+</div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+      
+
+
+
+
+
+
+
+
+<section class="tbar il-tbar" aria-label="This test">
+  <div class="il-tid">
+    <a class="il-back" href="tests.html" title="Back to Tests" aria-label="Back to Tests"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
+    <div class="il-tname">
+      <small class="il-tpage">Key</small>
+      <h1>Science 7 – Quarter 1 Quiz</h1>
+      <small>Grade 7 – Sampaguita · 20</small>
+    </div>
+    <span class="il-chip il-c-sun"><svg class="ui-i " aria-hidden="true"><use href="#ui-q"/></svg>1 to fix</span>
+  </div>
+  <nav class="il-tsteps" aria-label="Steps of this test">
+    
+      
+      
+      <a href="tests_sample-science-quiz_key.html" class="" aria-current=page><i><svg class="ui-i " aria-hidden="true"><use href="#ui-key"/></svg></i>Key</a>
+      
+    
+      <span class="il-ln done" aria-hidden="true"></span>
+      
+      <a href="sheets--test-sample-science-quiz.html" class="done" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></i>Print<span class="ui-sr">, done</span></a>
+      
+    
+      <span class="il-ln done" aria-hidden="true"></span>
+      
+      <a href="tests_sample-science-quiz_check.html" class="" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></i>Check</a>
+      
+    
+      <span class="il-ln " aria-hidden="true"></span>
+      
+      <a href="results_sample-science-quiz.html" class="" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></i>Results</a>
+      
+    
+  </nav>
+  
+  
+  <nav class="il-subnav" aria-label="Set up this test">
+    <a href="tests_sample-science-quiz_edit.html"  class="is-done"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg>Details</a>
+    <a href="tests_sample-science-quiz_key.html" aria-current=page class="is-done"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg>Key</a>
+    <a href="tests_sample-science-quiz_tos.html" ><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>TOS</a>
+  </nav>
+  
+</section>
+
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    <div class="il-messages" id="qcMessages">
+    </div>
+    
+    
+<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="key">
+  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
+  <p class="qc-tip-words"><b id="qcTipTitle">Answer key</b> Tap the right answer for each item, or type the letters on your keyboard. Then Save.</p>
+  <div class="qc-tip-acts">
+    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p7" target="_blank" rel="noopener">Details</a>
+    <form method="post" action="#" data-demo-action="/guide/tip/key/hide" data-guide-hide data-busy="off">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><input type="hidden" name="next" value="/tests/sample-science-quiz/key?">
+      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
+    </form>
+  </div>
+</aside>
+
+    
+
+<style>
+  details.ky-points > summary { list-style: none; display: flex; align-items: center; gap: 12px; cursor: pointer; }
+  details.ky-points > summary::-webkit-details-marker { display: none; }
+  details.ky-points > summary .ui-step-no { position: static; }
+  .ky-points-line { flex: 1; min-width: 0; }
+  .ky-points-line b { display: block; font-size: 16px; }
+  .ky-points-line small { display: block; font-size: 13px; color: var(--ui-muted); }
+  .ky-points-change { font-size: 13px; font-weight: 700; color: var(--ui-teal-deep); text-decoration: underline; }
+  details.ky-points[open] .ky-points-change { visibility: hidden; }
+  .ky-points-why { margin: 12px 0; font-size: 13.5px; color: var(--ui-muted); }
+</style>
+
+
+
+
+<div class="ky-locked" role="status" title="Papers have been uploaded or saved with it, so the answers and points can't change. Make a new test for a different key; correct single papers from Results."><svg class="ui-i " aria-hidden="true"><use href="#ui-lock"/></svg><span><b>Locked</b><span class="ui-sr">This answer key is locked. Papers have been uploaded or saved with it.</span></span></div>
+
+
+
+<form method="post" id="key-form" class="ui-grid ky-layout" data-unsaved="">
+  <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8">
+  <fieldset class="ui-c8 ui-steps-list ky-fields" disabled>
+
+    
+    <section class="ui-step-card" aria-labelledby="ky-s1">
+      <span class="ui-step-no">1</span>
+      <h2 id="ky-s1"><svg class="ui-i " aria-hidden="true"><use href="#ui-key"/></svg> Tap the answers <span class="il-kbd" title="Keyboard: type the letter to fill the highlighted item; ↑ ↓ move">⌨ A–D · ↑↓</span><span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — typing the answer key"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Go down each column. The counter on the right shows how many items are still empty, and nothing is saved until you press Save.</span></span></h2>
+      
+      
+      <div class="ky-list">
+        
+        <div class="ky-row" data-q="1">
+          <span class="ky-qn">1</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 1">
+            
+            <input type="radio" id="q1A" name="q1" value="A" >
+            <label for="q1A">A</label>
+            
+            <input type="radio" id="q1B" name="q1" value="B" checked>
+            <label for="q1B">B</label>
+            
+            <input type="radio" id="q1C" name="q1" value="C" >
+            <label for="q1C">C</label>
+            
+            <input type="radio" id="q1D" name="q1" value="D" >
+            <label for="q1D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="1" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="2">
+          <span class="ky-qn">2</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 2">
+            
+            <input type="radio" id="q2A" name="q2" value="A" >
+            <label for="q2A">A</label>
+            
+            <input type="radio" id="q2B" name="q2" value="B" >
+            <label for="q2B">B</label>
+            
+            <input type="radio" id="q2C" name="q2" value="C" >
+            <label for="q2C">C</label>
+            
+            <input type="radio" id="q2D" name="q2" value="D" checked>
+            <label for="q2D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="2" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="3">
+          <span class="ky-qn">3</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 3">
+            
+            <input type="radio" id="q3A" name="q3" value="A" checked>
+            <label for="q3A">A</label>
+            
+            <input type="radio" id="q3B" name="q3" value="B" >
+            <label for="q3B">B</label>
+            
+            <input type="radio" id="q3C" name="q3" value="C" >
+            <label for="q3C">C</label>
+            
+            <input type="radio" id="q3D" name="q3" value="D" >
+            <label for="q3D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="3" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="4">
+          <span class="ky-qn">4</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 4">
+            
+            <input type="radio" id="q4A" name="q4" value="A" >
+            <label for="q4A">A</label>
+            
+            <input type="radio" id="q4B" name="q4" value="B" >
+            <label for="q4B">B</label>
+            
+            <input type="radio" id="q4C" name="q4" value="C" checked>
+            <label for="q4C">C</label>
+            
+            <input type="radio" id="q4D" name="q4" value="D" >
+            <label for="q4D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="4" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="5">
+          <span class="ky-qn">5</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 5">
+            
+            <input type="radio" id="q5A" name="q5" value="A" >
+            <label for="q5A">A</label>
+            
+            <input type="radio" id="q5B" name="q5" value="B" >
+            <label for="q5B">B</label>
+            
+            <input type="radio" id="q5C" name="q5" value="C" checked>
+            <label for="q5C">C</label>
+            
+            <input type="radio" id="q5D" name="q5" value="D" >
+            <label for="q5D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="5" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="6">
+          <span class="ky-qn">6</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 6">
+            
+            <input type="radio" id="q6A" name="q6" value="A" checked>
+            <label for="q6A">A</label>
+            
+            <input type="radio" id="q6B" name="q6" value="B" >
+            <label for="q6B">B</label>
+            
+            <input type="radio" id="q6C" name="q6" value="C" >
+            <label for="q6C">C</label>
+            
+            <input type="radio" id="q6D" name="q6" value="D" >
+            <label for="q6D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="6" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="7">
+          <span class="ky-qn">7</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 7">
+            
+            <input type="radio" id="q7A" name="q7" value="A" >
+            <label for="q7A">A</label>
+            
+            <input type="radio" id="q7B" name="q7" value="B" checked>
+            <label for="q7B">B</label>
+            
+            <input type="radio" id="q7C" name="q7" value="C" >
+            <label for="q7C">C</label>
+            
+            <input type="radio" id="q7D" name="q7" value="D" >
+            <label for="q7D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="7" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="8">
+          <span class="ky-qn">8</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 8">
+            
+            <input type="radio" id="q8A" name="q8" value="A" >
+            <label for="q8A">A</label>
+            
+            <input type="radio" id="q8B" name="q8" value="B" >
+            <label for="q8B">B</label>
+            
+            <input type="radio" id="q8C" name="q8" value="C" >
+            <label for="q8C">C</label>
+            
+            <input type="radio" id="q8D" name="q8" value="D" checked>
+            <label for="q8D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="8" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="9">
+          <span class="ky-qn">9</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 9">
+            
+            <input type="radio" id="q9A" name="q9" value="A" >
+            <label for="q9A">A</label>
+            
+            <input type="radio" id="q9B" name="q9" value="B" checked>
+            <label for="q9B">B</label>
+            
+            <input type="radio" id="q9C" name="q9" value="C" >
+            <label for="q9C">C</label>
+            
+            <input type="radio" id="q9D" name="q9" value="D" >
+            <label for="q9D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="9" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="10">
+          <span class="ky-qn">10</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 10">
+            
+            <input type="radio" id="q10A" name="q10" value="A" checked>
+            <label for="q10A">A</label>
+            
+            <input type="radio" id="q10B" name="q10" value="B" >
+            <label for="q10B">B</label>
+            
+            <input type="radio" id="q10C" name="q10" value="C" >
+            <label for="q10C">C</label>
+            
+            <input type="radio" id="q10D" name="q10" value="D" >
+            <label for="q10D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="10" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="11">
+          <span class="ky-qn">11</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 11">
+            
+            <input type="radio" id="q11A" name="q11" value="A" >
+            <label for="q11A">A</label>
+            
+            <input type="radio" id="q11B" name="q11" value="B" >
+            <label for="q11B">B</label>
+            
+            <input type="radio" id="q11C" name="q11" value="C" >
+            <label for="q11C">C</label>
+            
+            <input type="radio" id="q11D" name="q11" value="D" checked>
+            <label for="q11D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="11" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="12">
+          <span class="ky-qn">12</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 12">
+            
+            <input type="radio" id="q12A" name="q12" value="A" >
+            <label for="q12A">A</label>
+            
+            <input type="radio" id="q12B" name="q12" value="B" >
+            <label for="q12B">B</label>
+            
+            <input type="radio" id="q12C" name="q12" value="C" checked>
+            <label for="q12C">C</label>
+            
+            <input type="radio" id="q12D" name="q12" value="D" >
+            <label for="q12D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="12" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="13">
+          <span class="ky-qn">13</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 13">
+            
+            <input type="radio" id="q13A" name="q13" value="A" >
+            <label for="q13A">A</label>
+            
+            <input type="radio" id="q13B" name="q13" value="B" >
+            <label for="q13B">B</label>
+            
+            <input type="radio" id="q13C" name="q13" value="C" checked>
+            <label for="q13C">C</label>
+            
+            <input type="radio" id="q13D" name="q13" value="D" >
+            <label for="q13D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="13" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="14">
+          <span class="ky-qn">14</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 14">
+            
+            <input type="radio" id="q14A" name="q14" value="A" >
+            <label for="q14A">A</label>
+            
+            <input type="radio" id="q14B" name="q14" value="B" checked>
+            <label for="q14B">B</label>
+            
+            <input type="radio" id="q14C" name="q14" value="C" >
+            <label for="q14C">C</label>
+            
+            <input type="radio" id="q14D" name="q14" value="D" >
+            <label for="q14D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="14" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="15">
+          <span class="ky-qn">15</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 15">
+            
+            <input type="radio" id="q15A" name="q15" value="A" checked>
+            <label for="q15A">A</label>
+            
+            <input type="radio" id="q15B" name="q15" value="B" >
+            <label for="q15B">B</label>
+            
+            <input type="radio" id="q15C" name="q15" value="C" >
+            <label for="q15C">C</label>
+            
+            <input type="radio" id="q15D" name="q15" value="D" >
+            <label for="q15D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="15" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="16">
+          <span class="ky-qn">16</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 16">
+            
+            <input type="radio" id="q16A" name="q16" value="A" >
+            <label for="q16A">A</label>
+            
+            <input type="radio" id="q16B" name="q16" value="B" >
+            <label for="q16B">B</label>
+            
+            <input type="radio" id="q16C" name="q16" value="C" >
+            <label for="q16C">C</label>
+            
+            <input type="radio" id="q16D" name="q16" value="D" checked>
+            <label for="q16D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="16" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="17">
+          <span class="ky-qn">17</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 17">
+            
+            <input type="radio" id="q17A" name="q17" value="A" >
+            <label for="q17A">A</label>
+            
+            <input type="radio" id="q17B" name="q17" value="B" checked>
+            <label for="q17B">B</label>
+            
+            <input type="radio" id="q17C" name="q17" value="C" >
+            <label for="q17C">C</label>
+            
+            <input type="radio" id="q17D" name="q17" value="D" >
+            <label for="q17D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="17" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="18">
+          <span class="ky-qn">18</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 18">
+            
+            <input type="radio" id="q18A" name="q18" value="A" >
+            <label for="q18A">A</label>
+            
+            <input type="radio" id="q18B" name="q18" value="B" >
+            <label for="q18B">B</label>
+            
+            <input type="radio" id="q18C" name="q18" value="C" checked>
+            <label for="q18C">C</label>
+            
+            <input type="radio" id="q18D" name="q18" value="D" >
+            <label for="q18D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="18" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="19">
+          <span class="ky-qn">19</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 19">
+            
+            <input type="radio" id="q19A" name="q19" value="A" checked>
+            <label for="q19A">A</label>
+            
+            <input type="radio" id="q19B" name="q19" value="B" >
+            <label for="q19B">B</label>
+            
+            <input type="radio" id="q19C" name="q19" value="C" >
+            <label for="q19C">C</label>
+            
+            <input type="radio" id="q19D" name="q19" value="D" >
+            <label for="q19D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="19" hidden></span>
+        </div>
+        
+        <div class="ky-row" data-q="20">
+          <span class="ky-qn">20</span>
+          <span class="ky-choices" role="radiogroup" aria-label="Answer for item 20">
+            
+            <input type="radio" id="q20A" name="q20" value="A" >
+            <label for="q20A">A</label>
+            
+            <input type="radio" id="q20B" name="q20" value="B" >
+            <label for="q20B">B</label>
+            
+            <input type="radio" id="q20C" name="q20" value="C" >
+            <label for="q20C">C</label>
+            
+            <input type="radio" id="q20D" name="q20" value="D" checked>
+            <label for="q20D">D</label>
+            
+          </span>
+          <span class="ky-pts il-chip is-small il-c-go" data-pts-for="20" hidden></span>
+        </div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+    <details class="ui-step-card ky-points" >
+      <summary aria-labelledby="ky-s2">
+        <span class="ui-step-no">2</span>
+        <span class="ky-points-line"><b id="ky-s2">1 point each</b>
+          <small title="Highest possible score">Max 20</small></span>
+        <span class="ky-points-change" title="Change"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg></span>
+      </summary>
+      <p class="ky-points-why"><span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — points"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Most tests give 1 point per item. Choose another option if some items are worth more — for example items 1 to 5 worth 5 points each. Scores, your class record and every report then use those points.</span></span></p>
+      <div class="ui-choices" role="radiogroup" aria-label="Points">
+        <label class="ui-choice" for="ky-points-one">
+          <input type="radio" id="ky-points-one" name="points_mode" value="one" checked>
+          <span class="ui-choice-mark"></span>
+          <span title="The highest possible score is 20."><b>1 point each</b><span class="ui-tag">Most</span></span>
+        </label>
+        <label class="ui-choice" for="ky-points-custom">
+          <input type="radio" id="ky-points-custom" name="points_mode" value="item" >
+          <span class="ui-choice-mark"></span>
+          <span><b>Some worth more</b><small><span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — points for a range"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Items you don&#39;t list stay at 1 point. If two ranges cover the same item, the lower one in the list wins.</span></span></small></span>
+        </label>
+        <label class="ui-choice ky-choice-weighted" for="ky-points-weighted">
+          <input type="radio" id="ky-points-weighted" name="points_mode" value="choice" >
+          <span class="ui-choice-mark"></span>
+          <span title="Give full credit to the correct answer and partial credit to other choices — for example A = 3, B = 2, C = 1, D = 1."><b>Partial credit</b><span class="ui-sr">Different answers can earn different points</span></span>
+        </label>
+      </div>
+
+      <div class="ky-ranges" id="ky-ranges">
+        <div class="ky-range-list" id="ky-range-list">
+          
+          <div class="ky-range">
+            <span>Items</span>
+            <input class="ui-input" type="number" name="points_first" min="1" max="20" value="1" aria-label="First item">
+            <span>to</span>
+            <input class="ui-input" type="number" name="points_last" min="1" max="20" value="5" aria-label="Last item">
+            <span>are worth</span>
+            <input class="ui-input" type="number" name="points_value" min="1" max="100" value="2" aria-label="Points for each item">
+            <span>points each</span>
+            <button type="button" class="ui-btn-ghost ky-remove" aria-label="Remove this range">✕</button>
+          </div>
+          
+        </div>
+        <button type="button" class="ui-btn-ghost" id="ky-add" title="Add another range"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg>Add</button>
+      </div>
+
+      <div class="ky-weighted" id="ky-weighted">
+        <div class="ky-weighted-head">
+          <div><b>Points<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — points for each answer"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>The highlighted choice is correct and must earn more than every other answer. A wrong choice may earn 0 or partial points.</span></span></b></div>
+          <span class="il-chip il-c-grey">0–100 points</span>
+        </div>
+        
+          
+          <div class="ky-weight-list">
+          
+            
+            <div class="ky-weight-row" data-weight-q="1">
+              <b class="ky-weight-q">1</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_1_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 1">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_1_B" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer B on item 1">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_1_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 1">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_1_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 1">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="2">
+              <b class="ky-weight-q">2</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_2_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 2">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_2_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 2">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_2_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 2">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_2_D" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer D on item 2">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="3">
+              <b class="ky-weight-q">3</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option is-key" data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_3_A" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer A on item 3">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_3_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 3">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_3_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 3">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_3_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 3">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="4">
+              <b class="ky-weight-q">4</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_4_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 4">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_4_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 4">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_4_C" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer C on item 4">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_4_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 4">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="5">
+              <b class="ky-weight-q">5</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_5_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 5">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_5_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 5">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_5_C" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer C on item 5">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_5_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 5">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="6">
+              <b class="ky-weight-q">6</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option is-key" data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_6_A" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer A on item 6">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_6_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 6">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_6_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 6">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_6_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 6">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="7">
+              <b class="ky-weight-q">7</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_7_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 7">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_7_B" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer B on item 7">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_7_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 7">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_7_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 7">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="8">
+              <b class="ky-weight-q">8</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_8_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 8">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_8_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 8">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_8_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 8">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_8_D" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer D on item 8">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="9">
+              <b class="ky-weight-q">9</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_9_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 9">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_9_B" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer B on item 9">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_9_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 9">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_9_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 9">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="10">
+              <b class="ky-weight-q">10</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option is-key" data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_10_A" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer A on item 10">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_10_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 10">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_10_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 10">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_10_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 10">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="11">
+              <b class="ky-weight-q">11</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_11_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 11">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_11_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 11">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_11_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 11">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_11_D" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer D on item 11">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="12">
+              <b class="ky-weight-q">12</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_12_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 12">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_12_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 12">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_12_C" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer C on item 12">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_12_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 12">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="13">
+              <b class="ky-weight-q">13</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_13_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 13">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_13_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 13">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_13_C" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer C on item 13">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_13_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 13">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="14">
+              <b class="ky-weight-q">14</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_14_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 14">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_14_B" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer B on item 14">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_14_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 14">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_14_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 14">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="15">
+              <b class="ky-weight-q">15</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option is-key" data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_15_A" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer A on item 15">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_15_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 15">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_15_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 15">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_15_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 15">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="16">
+              <b class="ky-weight-q">16</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_16_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 16">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_16_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 16">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_16_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 16">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_16_D" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer D on item 16">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="17">
+              <b class="ky-weight-q">17</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_17_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 17">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_17_B" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer B on item 17">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_17_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 17">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_17_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 17">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="18">
+              <b class="ky-weight-q">18</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_18_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 18">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_18_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 18">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_18_C" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer C on item 18">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_18_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 18">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="19">
+              <b class="ky-weight-q">19</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option is-key" data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_19_A" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer A on item 19">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_19_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 19">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_19_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 19">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_19_D" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer D on item 19">
+                </label>
+              
+              </div>
+            </div>
+          
+            
+            <div class="ky-weight-row" data-weight-q="20">
+              <b class="ky-weight-q">20</b>
+              <div class="ky-weight-options">
+              
+                <label class="ky-weight-option " data-weight-choice="A">
+                  <span>A</span>
+                  <input class="ui-input" type="number" name="choice_points_20_A" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer A on item 20">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="B">
+                  <span>B</span>
+                  <input class="ui-input" type="number" name="choice_points_20_B" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer B on item 20">
+                </label>
+              
+                <label class="ky-weight-option " data-weight-choice="C">
+                  <span>C</span>
+                  <input class="ui-input" type="number" name="choice_points_20_C" min="0" max="100"
+                         value="0"
+                         aria-label="Points for answer C on item 20">
+                </label>
+              
+                <label class="ky-weight-option is-key" data-weight-choice="D">
+                  <span>D</span>
+                  <input class="ui-input" type="number" name="choice_points_20_D" min="0" max="100"
+                         value="1"
+                         aria-label="Points for answer D on item 20">
+                </label>
+              
+              </div>
+            </div>
+          
+          </div>
+        
+      </div>
+    </details>
+
+    
+  </fieldset>
+
+  
+  <aside class="ui-c4">
+    <div class="ui-summary">
+      <section class="ui-card" aria-labelledby="ky-sum">
+        <div class="ui-card-h"><div><h2 id="ky-sum"><svg class="ui-i " aria-hidden="true"><use href="#ui-key"/></svg> Progress</h2><p>TERM1 · WW1</p></div></div>
+        <div class="ky-meter">
+          <div class="ky-meter-top" title="Answers filled in"><span><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg> Done</span><b><span id="ky-done">0</span> / 20</b></div>
+          <div class="ui-thinbar"><i id="ky-bar" style="width:0%"></i></div>
+          <small id="ky-left"></small>
+        </div>
+        <dl class="ui-facts">
+          <div><dt>Items</dt><dd>20</dd></div>
+          <div><dt>Choices</dt><dd>A-D</dd></div>
+          <div><dt title="Highest possible score">Max</dt><dd id="ky-highest">20</dd></div>
+        </dl>
+        <p class="ky-note" id="ky-points-note">1 point each</p>
+      </section>
+    </div>
+  </aside>
+</form>
+
+<style>
+  .ky-layout { align-items: start; }
+  .ky-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .ky-locked, .ky-error { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 16px; padding: 12px 14px; border-radius: 12px; font-size: 13.5px; line-height: 1.5; }
+  .ky-locked { background: var(--ui-panel); border: 1px solid var(--ui-line); color: var(--ui-muted); }
+  .ky-locked b { color: var(--ui-ink); }
+  .ky-error { background: var(--ui-coral-bg); color: var(--ui-coral-ink); font-weight: 600; }
+  .ky-locked .ui-i, .ky-error .ui-i { margin-top: 1px; }
+  .ky-part { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline;
+    margin: 18px 0 6px; padding-bottom: 6px; border-bottom: 2px solid var(--ui-teal); }
+  .ky-part:first-of-type { margin-top: 4px; }
+  .ky-part span { color: var(--ui-muted); font-size: 13px; }
+  /* Columns fill top to bottom (1–10, then 11–20…), like the printed sheet. */
+  .ky-list { column-width: 300px; column-gap: 28px; }
+  .ky-row { display: flex; align-items: center; gap: 12px; padding: 7px 4px; border-bottom: 1px solid var(--ui-line-2); break-inside: avoid; }
+  .ky-row.is-empty .ky-qn { color: var(--ui-amber); }   /* 5.3:1 on the cursor row's mint */
+  .ky-qn { width: 32px; text-align: right; font-weight: 800; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .ky-choices { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; min-width: 0; }
+  .ky-choices input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+
+  .ky-ranges { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--ui-line-2); }
+  .ky-range-list { display: grid; gap: 8px; margin-bottom: 10px; }
+  .ky-range { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 13.5px; color: var(--ui-muted); }
+  .ky-range .ui-input { width: 76px; height: 40px; text-align: center; font-weight: 700; }
+  .ky-range .ky-remove { width: 40px; height: 40px; padding: 0; justify-content: center; }
+  .ky-hint { margin: 8px 0 0; font-size: 12.5px; color: var(--ui-muted); }
+  .ky-choice-weighted { grid-column: 1 / -1; }
+
+  .ky-weighted { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--ui-line-2); }
+  .ky-weighted-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; margin-bottom: 12px; }
+  .ky-weighted-head b { color: var(--ui-ink); }
+  .ky-weighted-head p { margin: 3px 0 0; color: var(--ui-muted); font-size: 12.5px; line-height: 1.5; }
+  .ky-weight-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(285px, 1fr)); gap: 8px 16px; }
+  .ky-weight-row { display: flex; align-items: center; gap: 6px; min-height: 48px; padding: 6px; border: 1px solid var(--ui-line-2); border-radius: 10px; background: var(--ui-paper); }
+  .ky-weight-q { width: 22px; text-align: right; font-variant-numeric: tabular-nums; }
+  .ky-weight-options { display: flex; gap: 4px; flex-wrap: wrap; }
+  .ky-weight-option { display: grid; grid-template-columns: 16px 36px; align-items: center; gap: 1px; padding: 1px; border: 1px solid transparent; border-radius: 8px; }
+  .ky-weight-option > span { display: grid; place-items: center; width: 16px; height: 16px; border-radius: 50%; color: var(--ui-muted); font-size: 10.5px; font-weight: 800; }
+  .ky-weight-option.is-key { border-color: var(--ui-teal-edge); background: var(--ui-teal-wash); }
+  .ky-weight-option.is-key > span { color: #fff; background: var(--ui-teal-deep); }
+  .ky-weight-option .ui-input { width: 36px; height: 34px; padding: 2px 1px; text-align: center; font-size: 12.5px; font-weight: 700; }
+
+  .ky-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .ky-save { width: auto; min-width: 240px; }
+  .ky-meter { display: grid; gap: 6px; margin-bottom: 12px; }
+  .ky-meter-top { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--ui-muted); }
+  .ky-meter-top b { color: var(--ui-ink); }
+  .ky-meter small { font-size: 12px; color: var(--ui-amber); }
+  #ky-highest { font-size: 18px; }
+  .ky-note { margin: 10px 0 0; font-size: 12.5px; color: var(--ui-muted); }
+  @media (max-width: 1280px) { .ky-layout > aside { order: -1; } }
+  /* Phones: 44px letters need tighter gaps so A-D stays on one line. */
+  @media (max-width: 640px) { .ky-save { width: 100%; } .ky-range .ui-input { width: 64px; }
+    .ky-row { gap: 8px; padding-left: 0; padding-right: 0; } .ky-qn { width: 26px; } .ky-choices { gap: 4px; } }
+</style>
+
+<script>
+  // Live counts: answers filled in, and the highest possible score from the point ranges.
+  (function () {
+    const NUM = 20;
+    const form = document.getElementById('key-form');
+    const rangesBox = document.getElementById('ky-ranges');
+    const list = document.getElementById('ky-range-list');
+    const weightedBox = document.getElementById('ky-weighted');
+
+    function customPoints() { return document.getElementById('ky-points-custom').checked; }
+    function weightedPoints() { return document.getElementById('ky-points-weighted').checked; }
+
+    function pointsPerItem() {
+      const points = {};
+      for (let q = 1; q <= NUM; q++) points[q] = 1;
+      if (customPoints()) {
+        list.querySelectorAll('.ky-range').forEach(function (row) {
+          const first = parseInt(row.querySelector('[name=points_first]').value, 10);
+          const last = parseInt(row.querySelector('[name=points_last]').value, 10);
+          const value = parseInt(row.querySelector('[name=points_value]').value, 10);
+          if (!(first >= 1 && last >= first && last <= NUM && value >= 1 && value <= 100)) return;
+          for (let q = first; q <= last; q++) points[q] = value;
+        });
+      } else if (weightedPoints()) {
+        weightedBox.querySelectorAll('[data-weight-q]').forEach(function (row) {
+          const q = +row.dataset.weightQ;
+          const values = Array.from(row.querySelectorAll('input')).map(function (input) {
+            return parseInt(input.value, 10) || 0;
+          });
+          points[q] = Math.max.apply(null, values.concat([0]));
+        });
+      }
+      return points;
+    }
+
+    function updateKeyHighlights() {
+      weightedBox.querySelectorAll('[data-weight-q]').forEach(function (row) {
+        const q = row.dataset.weightQ;
+        const checked = form.querySelector('input[name="q' + q + '"]:checked');
+        row.querySelectorAll('[data-weight-choice]').forEach(function (option) {
+          option.classList.toggle('is-key', !!checked && option.dataset.weightChoice === checked.value);
+        });
+        if (weightedPoints() && checked) {
+          const inputs = Array.from(row.querySelectorAll('input'));
+          const allZero = inputs.every(function (input) { return (parseInt(input.value, 10) || 0) === 0; });
+          if (allZero) {
+            const correctInput = row.querySelector('[data-weight-choice="' + checked.value + '"] input');
+            if (correctInput) correctInput.value = 1;
+          }
+        }
+      });
+    }
+
+    function update() {
+      let done = 0;
+      form.querySelectorAll('.ky-row').forEach(function (row) {
+        const filled = !!row.querySelector('input:checked');
+        row.classList.toggle('is-empty', !filled);
+        if (filled) done++;
+      });
+      document.getElementById('ky-done').textContent = done;
+      document.getElementById('ky-bar').style.width = (100 * done / NUM) + '%';
+      document.getElementById('ky-left').textContent = done < NUM ? (NUM - done) + ' empty' : '';
+
+      const custom = customPoints();
+      const weighted = weightedPoints();
+      rangesBox.hidden = !custom;
+      weightedBox.hidden = !weighted;
+      // Hidden range boxes are switched off, so "every item is worth 1" really sends no ranges.
+      rangesBox.querySelectorAll('input').forEach(function (el) { el.disabled = !custom || form.querySelector('fieldset').disabled; });
+      weightedBox.querySelectorAll('input').forEach(function (el) { el.disabled = !weighted || form.querySelector('fieldset').disabled; });
+      updateKeyHighlights();
+      const points = pointsPerItem();
+      let highest = 0;
+      for (let q = 1; q <= NUM; q++) {
+        highest += points[q];
+        const tag = form.querySelector('[data-pts-for="' + q + '"]');
+        tag.hidden = points[q] === 1;
+        tag.textContent = points[q] + (weighted ? ' pts max' : ' pts');
+      }
+      document.getElementById('ky-highest').textContent = highest;
+      document.getElementById('ky-points-note').textContent = weighted
+        ? 'Partial credit'
+        : (custom && highest !== NUM ? 'Some worth more' : '1 point each');
+    }
+
+    function wireRow(row) {
+      row.querySelector('.ky-remove').addEventListener('click', function () {
+        if (list.children.length > 1) { row.remove(); } else { row.querySelectorAll('input').forEach(function (i) { i.value = ''; }); }
+        update();
+      });
+    }
+    list.querySelectorAll('.ky-range').forEach(wireRow);
+    document.getElementById('ky-add').addEventListener('click', function () {
+      const copy = list.lastElementChild.cloneNode(true);
+      copy.querySelectorAll('input').forEach(function (i) { i.value = ''; });
+      list.appendChild(copy);
+      wireRow(copy);
+      copy.querySelector('input').focus();
+      update();
+    });
+    form.addEventListener('input', update);
+    form.addEventListener('change', update);
+    update();
+  })();
+</script>
+
+  </main>
+</div>
+
+
+<details class="qc-demo-guide" id="qcDemoGuide" open>
+  <summary><span><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>Try these</span><b><span data-demo-done>2</span> of 7</b></summary>
+  <ol>
+    
+    <li data-goal="tour" class=" is-next">
+      <span class="qc-demo-dot">1</span>
+      <a href="index--tour-1.html"><b>Take the tour</b><small>A one-minute look around the screen.</small></a>
+    </li>
+    
+    <li data-goal="class" class="">
+      <span class="qc-demo-dot">2</span>
+      <a href="classes_new.html"><b>Add a class</b><small>Make your own class with a few learners.</small></a>
+    </li>
+    
+    <li data-goal="key" class="">
+      <span class="qc-demo-dot">3</span>
+      <a href="tests_sample-science-quiz_key.html"><b>See the answer key</b><small>Open the sample test&#39;s answer key.</small></a>
+    </li>
+    
+    <li data-goal="print" class="">
+      <span class="qc-demo-dot">4</span>
+      <a href="sheets--test-sample-science-quiz.html"><b>Print the sheets</b><small>Each learner&#39;s sheet carries their name.</small></a>
+    </li>
+    
+    <li data-goal="upload" class="is-done">
+      <span class="qc-demo-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+      <a href="tests_sample-science-quiz_check.html"><b>Check sample papers</b><small>Load the sample answer sheets in one click.</small></a>
+    </li>
+    
+    <li data-goal="save" class="is-done">
+      <span class="qc-demo-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
+      <a href="tests_sample-science-quiz_check.html"><b>Review and save</b><small>Fix the few marks flagged, then Save.</small></a>
+    </li>
+    
+    <li data-goal="results" class="">
+      <span class="qc-demo-dot">7</span>
+      <a href="results_sample-science-quiz.html"><b>See the results</b><small>Scores, hard items and the skills to reteach.</small></a>
+    </li>
+    
+  </ol>
+  <div class="qc-demo-foot">
+    
+    <form method="post" action="#" data-demo-action="/demo/end">
+      <input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+    </form>
+  </div>
+</details>
+
+
+
+<!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
+     get around, so the five things teachers use sit within thumb reach and
+     everything else lives behind "More". -->
+<nav class="tabbar il-tabbar" aria-label="Main navigation">
+  
+  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
+  
+  <a href="tests.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">7<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="classes.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  
+  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  
+</nav>
+
+<script>
+  // Folding sections start closed on a phone and open on a bigger screen, so
+  // a phone opens on the job at hand rather than a page of history.
+  (function () {
+    if (window.matchMedia('(min-width: 641px)').matches) {
+      document.querySelectorAll('details.fold').forEach(function (d) {
+        if (!d.hasAttribute('data-keep-closed')) d.setAttribute('open', '');
+      });
+    }
+  }());
+</script>
+<script>
+  (function () {
+    var token = "l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8";
+    document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
+      if (form.querySelector('input[name="_csrf"]')) return;
+      var input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = '_csrf';
+      input.value = token;
+      form.appendChild(input);
+    });
+  }());
+</script>
+<script>
+  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    var t = e.target;
+    if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
+    if (document.querySelector('dialog[open]')) return;
+    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
+                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    if (go) { e.preventDefault(); location.href = go.href; }
+  });
+</script>
+<script src="../static/workspace.js"></script>
+<!-- Grey page template while the next page opens, instead of a spinning circle. -->
+<script src="../static/skeleton.js"></script>
+<!-- Shrinks camera photos before upload — the slowest part of checking from a phone. -->
+<script src="../static/shrink.js"></script>
+<!-- The "?" buttons: each one holds the words that explain a step, until they are asked for. -->
+<script src="../static/hint.js"></script>
+<!-- Asks before leaving a page whose typing is not saved (forms marked data-unsaved). -->
+<script src="../static/unsaved.js"></script>
+<script src="../static/confirm.js"></script>
+<script src="../static/menus.js"></script>
+<script src="../static/rail.js"></script>
+<script src="../static/messages.js"></script>
+<script src="../static/sections.js"></script>
+<script src="../static/tables.js"></script>
+<script src="../static/busy.js"></script>
+<script src="../static/fielderror.js"></script>
+<script src="../static/alive.js"></script>
+<!-- Tips: "Got it" without reloading; the walkthrough when it is due (guidance.py). -->
+<script>window.QC_DEMO_PAGE={"stage": "s2b", "url": "/tests/sample-science-quiz/key"};</script><script src="../demo.js"></script>
+<script src="../static/guide.js"></script>
+</body>
+</html>

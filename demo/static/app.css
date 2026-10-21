@@ -1,0 +1,466 @@
+/* ==========================================================================
+   QuickCheck — dashboard styles (LIGHT "LMS" theme)
+   Soft blue-white background, deep-teal sidebar, glassy rounded cards.
+   Runs fully offline — no external fonts or assets.
+   ========================================================================== */
+
+:root {
+  /* The brand palette, taken from the public site so the app and the website
+     are the same product. Teal is the brand; the accents are only ever small
+     icon chips and pills. */
+  --bg-1:      #eef3f6;
+  --bg-2:      #e6eef4;
+  --card:      #ffffff;
+  --panel:     #f7fafb;         /* quiet fill: hovers, inputs, chips */
+  --text:      #17272b;
+  --muted:     #6f8087;
+  --faint:     #9aa9ae;
+  --line:      #e4ebee;         /* hairlines do the work heavy shadows used to */
+  --line-2:    #eef3f5;
+
+  /* Brand teal */
+  --teal-deep: #0f4b47;         /* the site's primary button */
+  --teal:      #12a594;
+  --teal-d:    #0e8b7d;
+  --teal-soft: #d9f5ef;
+  --ink:       #0f4b47;         /* dark brand surfaces */
+  --ink-d:     #0a3a37;
+  --sidebar-1: #0f4b47;         /* kept: templates use these for dark surfaces */
+  --sidebar-2: #0a3a37;
+
+  /* Accents — the site's tinted pairs: light background, strong ink */
+  --lav:  #efecfe;  --lav-i:  #7263f5;
+  --mint: #e2f6ee;  --mint-i: #17b083;
+  --peach:#ffe9e0;  --peach-i:#ef6d3e;
+  --cream:#fbf1d6;  --cream-i:#c9950a;
+  --sky:  #e6f1fd;  --sky-i:  #3b82f6;
+  --pink: #ffe3ee;  --pink-i: #e0447e;
+  --good: #17b083;  --bad:    #e5484d;
+
+  --radius: 18px;
+  --radius-sm: 12px;
+  --shadow:   0 1px 2px rgba(15,60,60,.05);
+  --shadow-h: 0 10px 28px rgba(15,60,60,.10);
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body {
+  font-family: var(--font);
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(18,165,148,.10), transparent 60%),
+    linear-gradient(160deg, var(--bg-1), var(--bg-2));
+  background-attachment: fixed;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+code { background: var(--panel); padding: 2px 6px; border-radius: 6px; font-size: 12px; }
+
+/* ---- App shell ---------------------------------------------------------- */
+.app { display: flex; min-height: 100vh; padding: 14px; gap: 14px; }
+
+/* A white sidebar reads calmer than a dark slab, and it lets the green mean
+   "you are here" instead of competing with a dark background. */
+.sidebar {
+  width: 236px; flex-shrink: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 18px 12px;
+  display: flex; flex-direction: column;
+  border-radius: 20px;
+  position: sticky; top: 14px; height: calc(100vh - 28px);
+}
+.brand { display: flex; align-items: center; gap: 11px; padding: 4px 8px 16px; }
+.brand .logo {
+  width: 36px; height: 36px; border-radius: 11px;
+  background: linear-gradient(135deg, #2fe0c4, #12a594);
+  display: grid; place-items: center; color: #fff; flex-shrink: 0;
+}
+.brand .logo svg { width: 19px; height: 19px; }
+.brand b { color: var(--text); font-size: 15.5px; letter-spacing: -.2px; }
+.brand span { display: block; font-size: 11px; color: var(--faint); }
+
+.nav-label { font-size: 10.5px; text-transform: uppercase; letter-spacing: .09em;
+  color: var(--faint); font-weight: 700; margin: 15px 12px 7px; }
+.nav a {
+  display: flex; align-items: center; gap: 11px;
+  padding: 10px 12px; border-radius: 11px;
+  color: #5d6f72; font-weight: 500; font-size: 14px; margin-bottom: 2px;
+}
+.nav a svg { width: 18px; height: 18px; opacity: .9; flex-shrink: 0; }
+.nav a:hover { background: var(--panel); color: var(--text); }
+.nav a.active { background: var(--teal-soft); color: var(--teal-d); font-weight: 650; }
+.nav a.active svg { opacity: 1; }
+.nav .cnt { margin-left: auto; font-size: 11px; font-weight: 700; color: var(--faint);
+  background: var(--panel); border-radius: 999px; padding: 1px 8px; }
+.nav a.active .cnt { background: #fff; color: var(--teal-d); }
+
+/* The card at the foot of the sidebar — one offer, stated quietly. */
+.side-card {
+  margin-top: auto; background: var(--ink); border-radius: 16px;
+  padding: 16px; color: #fff;
+}
+.side-card h4 { margin: 0 0 4px; font-size: 13.5px; }
+.side-card p { margin: 0 0 12px; font-size: 11.5px; color: #a9b6b3; line-height: 1.45; }
+.side-card a { background: #fff; color: var(--ink); font-weight: 650;
+  display: block; text-align: center; padding: 9px; border-radius: 10px; font-size: 12.5px; }
+
+/* ---- Main area ---------------------------------------------------------- */
+.main { flex: 1; min-width: 0; padding: 8px 18px 40px; }
+
+.topbar { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.topbar .crumbs { font-size: 12px; color: var(--faint); }
+.topbar h1 { margin: 1px 0 0; font-size: 25px; font-weight: 720; letter-spacing: -.5px; }
+.topbar .spacer { flex: 1; }
+.user { display: flex; align-items: center; gap: 10px; background: var(--card);
+  border: 1px solid var(--line); border-radius: 12px; padding: 5px 13px 5px 5px; }
+.user .avatar { width: 32px; height: 32px; border-radius: 10px;
+  background: linear-gradient(135deg, #2fe0c4, #12a594); color: #fff;
+  display: grid; place-items: center; font-weight: 700; font-size: 12.5px; }
+.user b { display: block; font-size: 13px; line-height: 1.25; }
+.user span { display: block; font-size: 11px; color: var(--faint); line-height: 1.2; }
+
+/* ---- Stat cards ---------------------------------------------------------
+   White panels with one small tinted icon chip. The number is the loudest
+   thing on the card; colour is a label, not decoration. */
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px; }
+.stat {
+  background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); padding: 18px 19px;
+  position: relative; overflow: hidden;
+}
+.stat.lav, .stat.mint, .stat.peach, .stat.cream { background: var(--card); }
+.stat .row { display: flex; justify-content: space-between; align-items: center; }
+.stat .label { font-size: 13px; color: var(--muted); font-weight: 550; }
+.stat .value { font-size: 30px; font-weight: 750; margin-top: 12px; letter-spacing: -.8px;
+  font-variant-numeric: tabular-nums; line-height: 1.1; }
+.stat .sub { font-size: 12px; color: var(--faint); margin-top: 4px; }
+.stat .badge { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; }
+.stat.lav   .badge { background: var(--lav);   color: var(--lav-i); }
+.stat.mint  .badge { background: var(--mint);  color: var(--mint-i); }
+.stat.peach .badge { background: var(--peach); color: var(--peach-i); }
+.stat.cream .badge { background: var(--cream); color: var(--cream-i); }
+.stat .badge svg { width: 17px; height: 17px; color: inherit; }
+
+/* ---- Content cards ------------------------------------------------------ */
+.grid { display: grid; }
+.cols-2-1 { grid-template-columns: 2fr 1fr; }
+/* A grid column normally refuses to be narrower than its longest unbreakable
+   line (e.g. a long test name). Letting it shrink keeps phones from scrolling
+   sideways; the text inside still wraps or ends in "…". */
+.cols-2-1 > * { min-width: 0; }
+
+
+/* ---- Forms ----------------------------------------------------------------
+   Buttons live in one place: the "Buttons" block in iconlook.css. */
+
+
+.field { margin-bottom: 16px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; }
+
+/* card list (tests / classes) */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr)); }
+.mini .top { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.mini .thumb { width: 44px; height: 44px; border-radius: 13px; display: grid; place-items: center;
+  color: #fff; flex-shrink: 0; font-weight: 700; }
+.mini h4 { margin: 0; font-size: 14.5px; }
+.mini .meta { color: var(--muted); font-size: 12px; }
+.mini .foot { display: flex; justify-content: space-between; align-items: center;
+  margin-top: 15px; padding-top: 14px; border-top: 1px solid var(--line-2);
+  font-size: 12.5px; color: var(--muted); }
+
+/* Results workspace */
+.result-workspace {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 14px;
+  align-items: start;
+}
+.result-picker { position: sticky; top: 20px; max-height: calc(100vh - 40px); overflow: auto; }
+.result-tabs { display: grid; gap: 8px; }
+.result-select-wrap { display: none; }
+.result-detail { min-width: 0; }
+.result-tab {
+  width: 100%;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  font: inherit;
+}
+.result-tab b, .result-tab span, .result-tab small { display: block; }
+.result-tab span { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.result-tab small { color: var(--faint); font-size: 12px; margin-top: 6px; }
+.result-tab.active { border-color: var(--teal); background: var(--teal-soft); }
+.result-panel { display: none; }
+.result-panel.active { display: block; }
+.result-empty-row td { text-align: center; color: var(--muted); }
+.maintenance summary { cursor: pointer; font-weight: 680; color: var(--text); }
+
+/* avatar cluster */
+.avatars { display: flex; align-items: center; }
+.avatars .av { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff;
+  display: grid; place-items: center; font-size: 11px; font-weight: 700; color: #fff; margin-left: -8px; }
+.avatars .av:first-child { margin-left: 0; }
+.avatars .more { margin-left: -8px; background: var(--panel); color: var(--muted); border: 2px solid #fff;
+  width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center;
+  font-size: 11px; font-weight: 700; }
+
+@media (max-width: 1050px) {
+  .stat-grid { grid-template-columns: repeat(2,1fr); }
+  .cols-2-1 { grid-template-columns: 1fr; }
+  .sidebar { width: 74px; }
+  .brand b, .brand span, .nav a span, .nav-label, .side-card { display: none; }
+  .nav a { justify-content: center; }
+}
+
+/* ---- Phone layout (portrait) -------------------------------------------
+   On a phone the desktop sidebar + fixed widths cause sideways scrolling.
+   Here we stack everything in one column, turn the sidebar into a compact
+   top bar of icons you can swipe, and let wide content (tables) scroll
+   inside its own card instead of pushing the whole page sideways. */
+@media (max-width: 640px) {
+  .app { flex-direction: column; padding: 8px; gap: 8px; }
+
+  /* The sidebar becomes a slim title bar. Getting around is handled by the
+     bottom tab bar instead — a swipeable strip of icons meant hunting for
+     Results or Settings off the right-hand edge. */
+  .sidebar {
+    width: auto; height: auto; position: static;
+    flex-direction: row; align-items: center; gap: 6px;
+    border-radius: 16px; padding: 9px 12px; overflow: visible;
+  }
+  .brand { padding: 2px 4px; }
+  .brand b { display: block; font-size: 14px; }
+  .brand span { display: none; }
+  .nav, .side-card { display: none; }
+
+  /* Main content full width; the extra bottom padding keeps the last card
+     clear of the fixed tab bar. */
+  .main { padding: 4px 2px 96px; min-width: 0; }
+
+  /* Top bar: let it wrap, search goes full-width on its own line */
+  .topbar { flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+  .topbar h1 { font-size: 20px; }
+  .topbar .spacer { display: none; }
+  .user { margin-left: auto; padding: 6px 10px 6px 6px; }
+  .user span { display: none; }
+
+  /* Grids stack; cards get less padding and scroll wide tables internally */
+  .stat-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .stat { padding: 16px; }
+  .stat .value { font-size: 26px; }
+  .card { overflow-x: auto; }
+  .result-workspace { grid-template-columns: 1fr; }
+  .result-picker { position: static; }
+  .result-tabs { display: none; }
+  .result-select-wrap { display: block; margin-bottom: 0; }
+  .card-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+
+  /* Button rows and headers stack instead of overflowing */
+  .card .card-head, .card-title-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .btn { width: 100%; justify-content: center; }
+  .card-head > div[style*="flex"], .card-title-row > div[style*="flex"] { width: 100%; flex-wrap: wrap; }
+}
+
+/* =========================================================================
+   PHONES & TABLETS — navigation, folding, and reach
+   Teachers do the actual checking on a phone, so the things they touch most
+   must be at the top of the screen and within thumb reach, and everything
+   secondary must fold away instead of forcing a long scroll.
+   ========================================================================= */
+
+/* ---- Bottom tab bar (phones only) -------------------------------------- */
+/* Phone-only furniture. These must be hidden by DEFAULT, not just inside the
+   phone media query — otherwise the "More" sheet has no display rule on a
+   desktop and renders as a stray row of links at the foot of every page. */
+.tabbar { display: none; }
+
+@media (max-width: 640px) {
+  .tabbar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+    background: var(--card); border-top: 1px solid var(--line);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px));
+    box-shadow: 0 -6px 20px rgba(15, 60, 60, .09);
+  }
+  .tabbar a, .tabbar button {
+    flex: 1 1 0; display: flex; flex-direction: column; align-items: center; gap: 3px;
+    padding: 7px 2px; border: none; background: none; font: inherit; cursor: pointer;
+    color: var(--muted); text-decoration: none; border-radius: 12px; min-width: 0;
+  }
+  .tabbar svg { width: 21px; height: 21px; }
+  .tabbar span { font-size: 10.5px; font-weight: 600; white-space: nowrap;
+                 overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+  .tabbar .on { color: var(--teal-d); }
+  .tabbar .on svg { stroke-width: 2.4; }
+
+}
+
+/* ---- Folding sections --------------------------------------------------
+   <details class="fold"> — open on a desktop, closed on a phone, so a page
+   opens showing the job and not a wall of history. */
+.fold { border: 1px solid var(--line); border-radius: 16px; background: var(--card);
+        margin-bottom: 14px; overflow: hidden; }
+.fold > summary {
+  list-style: none; cursor: pointer; padding: 15px 18px; font-weight: 700;
+  display: flex; align-items: center; gap: 10px; user-select: none;
+}
+.fold > summary::-webkit-details-marker { display: none; }
+.fold > summary::after {
+  content: "⌄"; margin-left: auto; font-size: 17px; color: var(--muted);
+  transition: transform var(--il-dur-move) var(--il-ease); line-height: 1;
+}
+.fold[open] > summary::after { transform: rotate(180deg); }
+.fold > summary:hover { background: var(--mint); }
+.fold > summary .count { font-weight: 600; font-size: 12.5px; color: var(--muted); }
+.fold .fold-body { padding: 0 18px 18px; }
+
+@media (max-width: 640px) {
+  /* Comfortable touch targets and no accidental zoom on focus */
+  .fold > summary { padding: 15px 16px; }
+  .fold .fold-body { padding: 0 16px 16px; }
+
+  /* The one action a page exists for, pinned to the top of the content. */
+  .primary-first { order: -1; }
+  .page-stack { display: flex; flex-direction: column; }
+}
+
+@media (max-width: 640px) {
+  /* Reclaim the top of the screen for the job. Navigation now lives in the
+     bottom bar, so the brand strip, the search box and the profile chip do
+     not need to sit between the teacher and the camera button. */
+  .sidebar { padding: 7px 12px; border-radius: 14px; }
+  .brand .logo { width: 30px; height: 30px; border-radius: 10px; }
+  .brand .logo svg { width: 17px; height: 17px; }
+  .brand b { font-size: 13.5px; }
+  .topbar { margin-bottom: 12px; gap: 6px; align-items: flex-start; }
+  .topbar .crumbs { font-size: 11px; }
+  .topbar h1 { font-size: 19px; }
+  .user { margin-left: auto; order: 0; padding: 4px 10px 4px 4px; border-radius: 12px; }
+  .user .avatar { width: 28px; height: 28px; border-radius: 9px; font-size: 11px; }
+  .user b { font-size: 12px; }
+  .user span { display: none; }
+}
+
+/* ---- Result view switcher ----------------------------------------------
+   Shown on every result view of a single test: back to that test's results,
+   and tabs to move between the views without going back at all. */
+.resultnav { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 14px; }
+.rback { display: inline-flex; align-items: center; gap: 6px; font-size: 13px;
+         color: var(--muted); font-weight: 600; }
+.rback:hover { color: var(--teal-d); }
+.rviews { display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto;
+          background: var(--card); border: 1px solid var(--line);
+          border-radius: 12px; padding: 4px; }
+
+@media (max-width: 640px) {
+  .resultnav { gap: 10px; }
+  .rviews { margin-left: 0; width: 100%; overflow-x: auto; padding: 4px;
+            -webkit-overflow-scrolling: touch; }
+}
+
+/* ---- Class book grid ---------------------------------------------------
+   A DepEd-format class built inside QuickCheck: one row per learner, one
+   box per score column. The name column stays put while the scores scroll. */
+.book-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.book-terms { margin: 0 0 14px; width: max-content; max-width: 100%; }
+.book-problems { background: var(--cream); margin-bottom: 16px; }
+.book-problems ul { margin: 8px 0 0; padding-left: 20px; }
+.book-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px;
+            flex-wrap: wrap; margin: 0 0 12px; }
+.book-bar-end { margin: 14px 0 0; }
+.book-status { color: var(--muted); font-size: 13px; }
+.book-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px;
+               -webkit-overflow-scrolling: touch; }
+.book-grid { border-collapse: separate; border-spacing: 0; width: 100%; font-size: 13px; }
+.book-grid th, .book-grid td { border-bottom: 1px solid var(--line-2); padding: 4px; text-align: center; }
+.book-grid thead th { background: var(--panel); color: var(--muted); font-size: 12px;
+                      font-weight: 650; padding: 8px 4px; white-space: nowrap; }
+.book-grid .book-cat { color: var(--teal-d); border-left: 1px solid var(--line); }
+.book-grid .book-cat span { color: var(--muted); font-weight: 500; }
+.book-grid .book-no { width: 40px; color: var(--muted); }
+.book-grid .book-name { position: sticky; left: 0; z-index: 1; background: var(--card);
+                        text-align: left; min-width: 190px; padding: 4px 10px;
+                        font-weight: 600; box-shadow: 1px 0 0 var(--line); }
+.book-grid thead .book-name { background: var(--panel); z-index: 2; }
+.book-hps td { background: var(--teal-soft); }
+.book-hps .book-name { background: var(--teal-soft); color: var(--teal-d); }
+.book-section td { background: var(--panel); }
+.book-section .book-name { background: var(--panel); color: var(--teal-d); font-size: 12px;
+                           letter-spacing: .04em; }
+.book-in { width: 54px; min-height: 40px; padding: 6px 4px; text-align: center; font: inherit;
+           font-size: 16px; border: 1px solid var(--line); border-radius: 8px;
+           background: var(--card); color: var(--text); }
+.book-in:focus { outline: none; border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-soft); }
+.book-in.changed { background: var(--cream); border-color: var(--cream-i); }
+
+@media (max-width: 640px) {
+  .book-grid .book-name { min-width: 130px; font-size: 12.5px; }
+  .book-bar .btn { width: 100%; justify-content: center; }
+}
+
+/* ---- Free trial bar -----------------------------------------------------
+   Always visible while a computer without a key runs the 7-day trial. */
+.trial-bar { display: flex; align-items: center; justify-content: space-between; gap: 10px 16px;
+             flex-wrap: wrap; margin: 0 0 16px; padding: 10px 14px; border-radius: 12px;
+             background: var(--teal-soft); color: var(--teal-deep); font-size: 13.5px; }
+.trial-bar a { font-weight: 700; color: var(--teal-deep); text-decoration: underline; white-space: nowrap; }
+.trial-bar.ended { background: var(--cream); color: #7a5a06; }
+.trial-bar.ended a { color: #7a5a06; }
+
+/* ---- Loading skeleton ---------------------------------------------------
+   Soft grey shapes laid out like the page that is about to open, shown
+   instead of a spinning circle. skeleton.js draws them. */
+.skel { display: block; border-radius: 7px;
+        background: linear-gradient(100deg, #e8eef0 35%, #f6f9fa 50%, #e8eef0 65%);
+        background-size: 250% 100%; animation: skel-shimmer 1.4s ease-in-out infinite; }
+@keyframes skel-shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
+.skel-line { height: 10px; margin: 7px 0; max-width: 100%; }
+.skel-chip { flex: 0 0 auto; border-radius: 11px; }
+.skel-grow { flex: 1 1 auto; min-width: 0; }
+.skel-split { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.skel-top { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
+.skel-pill { width: 150px; height: 42px; border-radius: 12px; }
+.skel-card { margin-bottom: 14px; }
+.skel-head { margin-bottom: 14px; }
+/* The cards sit in the dashboard's own 12-column grid, which brings its own gap. */
+.skel-grid .skel-card { margin-bottom: 0; }
+.skel-tall { min-height: 230px; }
+.skel-kpi { padding: 18px 20px; }
+.skel-action, .skel-row, .skel-nav { display: flex; align-items: center; gap: 12px; }
+.skel-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.skel-action { border: 1px solid var(--line); border-radius: 14px; padding: 15px 16px; }
+.skel-row { padding: 12px 0; border-bottom: 1px solid var(--line-2); }
+.skel-row:last-child { border-bottom: none; }
+.skel-bar { padding: 9px 0; }
+.skel-track { height: 8px; border-radius: 99px; }
+.skel-nav { padding: 10px 12px; gap: 11px; }
+.skel-brand { display: flex; align-items: center; gap: 11px; padding: 4px 8px 16px; }
+.skel-dark { background: linear-gradient(135deg, var(--teal-deep), var(--ink-d)); border-color: transparent; }
+.skel-dark .skel { background: rgba(255, 255, 255, .15); animation: none; }
+
+/* While another page is opening, the old content steps aside for the skeleton. */
+.is-loading .main > :not(.skel-root) { display: none !important; }
+
+@media (max-width: 1050px) {
+  .skel-side-text, .skel-nav .skel-line { display: none; }
+  .skel-nav { justify-content: center; }
+}
+@media (max-width: 640px) {
+  .skel-side-text { display: block; }
+  .skel-nav { display: none; }
+  .skel-brand { padding: 2px 4px; }
+  .skel-top { margin-bottom: 12px; }
+  .skel-pill { width: 90px; height: 36px; }
+  .skel-tall { min-height: 170px; }
+}
+@media (max-width: 560px) { .skel-actions { grid-template-columns: minmax(0, 1fr); } }

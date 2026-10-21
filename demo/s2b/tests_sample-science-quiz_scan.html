@@ -1,0 +1,203 @@
+
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fcfdfd">
+  <title>Scan papers · QuickCheck</title>
+  <link rel="stylesheet" href="../static/ui.css">
+  <link rel="stylesheet" href="../static/focus.css">
+  <link rel="stylesheet" href="../static/iconlook.css">
+</head>
+<body class="fx fx-scan">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="ui-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="ui-scan" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3.2"/></symbol>
+  <symbol id="ui-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+  <symbol id="ui-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18.5 14.5A6.5 6.5 0 0 1 21.5 20"/></symbol>
+  <symbol id="ui-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
+  <symbol id="ui-sheet" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><circle cx="9" cy="13" r="1.2"/><circle cx="13" cy="13" r="1.2"/><circle cx="9" cy="17" r="1.2"/><circle cx="13" cy="17" r="1.2"/></symbol>
+  <symbol id="ui-phone" viewBox="0 0 24 24"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></symbol>
+  <symbol id="ui-qr" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></symbol>
+  <symbol id="ui-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+  <symbol id="ui-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="ui-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/></symbol>
+  <symbol id="ui-xls" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></symbol>
+  <symbol id="ui-doc" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="ui-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="ui-check" viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></symbol>
+  <symbol id="ui-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5.5M12 16.5v.01"/></symbol>
+  <symbol id="ui-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/></symbol>
+  <symbol id="ui-lock" viewBox="0 0 24 24"><rect x="4.5" y="10.5" width="15" height="10.5" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></symbol>
+  <symbol id="ui-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.2a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.2-2.5 3.9M12 17.2v.01"/></symbol>
+  <symbol id="ui-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+  <symbol id="ui-dots" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></symbol>
+  <symbol id="ui-edit" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></symbol>
+  <symbol id="ui-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></symbol>
+  <symbol id="ui-trend" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+  <symbol id="ui-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+  <symbol id="ui-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/></symbol>
+  <symbol id="ui-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  <symbol id="ui-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></symbol>
+  <symbol id="ui-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M10.8 12.2 20 3M16 7l3 3M14 9l2 2"/></symbol>
+  <symbol id="ui-upload" viewBox="0 0 24 24"><path d="M12 16V4M7 9l5-5 5 5M4 15v5h16v-5"/></symbol>
+  <symbol id="ui-save" viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5zM8 3v5h7V3M8 21v-7h8v7"/></symbol>
+  <symbol id="ui-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+  <symbol id="ui-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="ui-file" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7zM14 3v4h4M9 13h6M9 17h4"/></symbol>
+  <symbol id="ui-list" viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+  <symbol id="ui-trophy" viewBox="0 0 24 24"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v2a3 3 0 0 0 3 3M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+  <symbol id="ui-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="ui-pie" viewBox="0 0 24 24"><path d="M12 3v9h9A9 9 0 1 1 12 3z"/><path d="M15 3.5A9 9 0 0 1 20.5 9H15z"/></symbol>
+  <symbol id="ui-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="ui-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="ui-q" viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.3"/></symbol>
+  <symbol id="ui-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
+</svg>
+<form id="fxCsrf" hidden><input type="hidden" name="_csrf" value="l40P18kfkOOPKr2vyoxpKsFlKZMEJOg_KLB9fl1Nbz8"></form>
+
+
+<h1 class="ui-sr">Scan papers · Science 7 – Quarter 1 Quiz</h1>
+<main class="fx-page" id="scanPage">
+  <header class="fx-bar">
+    <a href="tests_sample-science-quiz_check.html" aria-label="Back to Science 7 – Quarter 1 Quiz">
+      <span class="fx-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="fx-title" id="barTitle">QuickCheck</span></a>
+    <span class="fx-sp"></span>
+    <span class="fx-pill" id="barPill" hidden></span>
+    <a class="fx-back fx-desk-only" href="tests_sample-science-quiz_check.html">Back to the test</a>
+  </header>
+  
+  <div class="fx-conn is-down" id="linkBar" role="status" aria-live="polite" hidden>
+    <span class="fx-conn-dot" aria-hidden="true"></span>
+    <span><b id="linkTitle"></b><span id="linkText"></span></span>
+    <button type="button" class="fx-conn-go" id="linkAction" hidden>Sign in</button>
+  </div>
+
+  <section id="scanMode" aria-labelledby="scanTest">
+    <div class="fx-test" id="scanTest"><b>Science 7 – Quarter 1 Quiz</b>Grade 7 – Sampaguita (Simple scorebook) · 20 items</div>
+
+    
+    <div class="fx-phone-only">
+      <label class="fx-shoot" for="camIn" tabindex="0" role="button" id="shootBtn">
+        <span><span class="fx-lens"><i></i></span><b>Take a paper</b><small>Your phone's camera opens</small></span>
+      </label>
+      <div class="fx-guide">
+        <span class="fx-map is-guide" aria-hidden="true"><i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i></span>
+        <span><b>All four black squares in the photo</b>Hold the phone flat above the sheet, in good light. QuickCheck tells you at once if a photo needs taking again.</span>
+      </div>
+      <label class="fx-ghost" for="galleryIn" tabindex="0" role="button" id="galleryBtn">Add photos I already took</label>
+    </div>
+
+    
+    <div class="fx-desk-only fx-desk">
+      <div class="fx-drop" id="dropZone">
+        <span class="fx-drop-icon" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg></span>
+        <b>Drop the photos of the papers here</b>
+        <span>Drag them in from a folder on this computer, or</span>
+        <label class="fx-drop-btn" for="galleryIn" tabindex="0" role="button" id="chooseBtn">Choose photos</label>
+        <small>JPG or PNG photos, a scanned PDF (one page per paper), or a .zip of photos.
+          <label class="fx-link" for="folderIn" tabindex="0" role="button" id="folderBtn">Choose a whole folder</label></small>
+      </div>
+
+      <aside class="fx-phonecard" aria-labelledby="phoneTitle">
+        <span class="fx-tag">Taking the photos now?</span>
+        <b id="phoneTitle">Use your phone as the camera</b>
+        
+          <img src="#" data-demo-missing="/phone/qr0.png?to=sample-science-quiz" alt="QR code that opens this test's camera on your phone" width="148" height="148">
+          <p>Point your phone's camera at this square. This test opens on the phone, ready to take photos, and each paper shows up here as it arrives.</p>
+          <small>Same Wi-Fi as this computer · PIN <b>411276</b> · or type <code>172.16.0.115:80</code></small>
+        
+      </aside>
+    </div>
+
+    <input id="camIn" type="file" accept="image/*" capture="environment" hidden>
+    <input id="galleryIn" type="file" accept="image/*,application/pdf,.pdf,.zip" multiple hidden>
+    <input id="folderIn" type="file" webkitdirectory directory multiple hidden>
+
+    <div class="fx-counter"><span>Received<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — the count"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Papers in so far, out of the learners in this class. One paper per photo, with all four corner squares in view.</span></span></span>
+      <b id="counter">1 of 10</b></div>
+  </section>
+
+  <section class="fx-reading" id="batch" aria-labelledby="batchTitle" >
+    <div class="fx-batch-head">
+      <h2 id="batchTitle">Your papers</h2>
+      <a class="fx-go fx-desk-only" id="goDoneDesk" href="tests_sample-science-quiz_done.html">Check and save<svg class="ui-i " aria-hidden="true"><use href="#ui-arrow"/></svg></a>
+    </div>
+    <div class="fx-meter" id="meter" hidden><i id="meterBar"></i></div>
+    <ul class="fx-rows" id="rows"></ul>
+  </section>
+</main>
+
+
+<div class="fx-check" id="check" hidden role="alertdialog" aria-labelledby="checkTitle" aria-describedby="checkText">
+  <div class="fx-check-in">
+    <span class="fx-map is-big" id="checkMap" aria-hidden="true"><i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i></span>
+    <b id="checkTitle"></b>
+    <p id="checkText"></p>
+    <div class="fx-check-actions" id="checkActions">
+      <label class="fx-check-go" for="camIn" id="checkRetake" tabindex="0" role="button"><svg class="ui-i " aria-hidden="true"><use href="#ui-scan"/></svg><span class="fx-phone-only">Take it again</span><span class="fx-desk-only">Choose a better photo</span></label>
+      <button type="button" class="fx-check-skip" id="checkSkip">Keep it for now</button>
+    </div>
+  </div>
+</div>
+
+<div class="fx-bottom fx-phone-only" id="bottom" >
+  <div class="fx-bottom-in">
+    <a class="fx-go" id="goDone" href="tests_sample-science-quiz_done.html">Check and save<svg class="ui-i " aria-hidden="true"><use href="#ui-arrow"/></svg></a>
+  </div>
+</div>
+
+
+
+
+<div class="fx-toast" id="fxToast" role="status" aria-live="polite" hidden></div>
+
+<script>
+  // One small message at the top. "Saved" goes by itself after 4 seconds; a warning or a
+  // problem stays until it is tapped away, so there is time to read it.
+  var QC_TOAST_ICONS = { ok: "\u003csvg class=\"ui-i \" aria-hidden=\"true\"\u003e\u003cuse href=\"#ui-check\"/\u003e\u003c/svg\u003e", warn: "\u003csvg class=\"ui-i \" aria-hidden=\"true\"\u003e\u003cuse href=\"#ui-alert\"/\u003e\u003c/svg\u003e", bad: "\u003csvg class=\"ui-i \" aria-hidden=\"true\"\u003e\u003cuse href=\"#ui-alert\"/\u003e\u003c/svg\u003e" };
+  var QC_TOAST_DONE_FOR = 4000;
+  function qcToast(text, kind) {
+    var box = document.getElementById('fxToast');
+    var stays = kind === 'warn' || kind === 'bad';
+    box.className = 'fx-toast' + (kind === 'warn' ? ' is-warn' : kind === 'bad' ? ' is-bad' : '');
+    box.setAttribute('role', stays ? 'alert' : 'status');
+    box.innerHTML = QC_TOAST_ICONS[kind || 'ok'] + '<span></span>' +
+      (stays ? '<button type="button" class="fx-toast-x" aria-label="Dismiss this message">&times;</button>' : '');
+    box.querySelector('span').textContent = text;
+    box.hidden = false;
+    clearTimeout(qcToast.timer);
+    if (stays) box.querySelector('.fx-toast-x').addEventListener('click', function () { box.hidden = true; });
+    else qcToast.timer = setTimeout(function () { box.hidden = true; }, QC_TOAST_DONE_FOR);
+  }
+  function qcCsrf() { return document.querySelector('#fxCsrf input[name=_csrf]').value; }
+  
+</script>
+
+<script src="../static/hint.js"></script>
+<script src="../static/alive.js"></script>
+<script src="../static/confirm.js"></script>
+<script src="../static/busy.js"></script>
+<script>window.QC_DEMO_PAGE={"stage": "s2b", "url": "/tests/sample-science-quiz/scan"};</script><script src="../demo.js"></script>
+<script src="../static/guide.js"></script>
+
+<script>
+  var QC_SCAN = {
+    photoUrl: "/tests/sample-science-quiz/scan/photo",
+    stateUrl: "/tests/sample-science-quiz/scan/state",
+    healthUrl: "/health",
+    rows: [{"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/pbe035f29dcd66c9a", "id": "pbe035f29dcd66c9a", "learner": "S-1", "n": 1, "name": "AQUINO, Mark", "name_image": "/tests/sample-science-quiz/paper/pbe035f29dcd66c9a-name.png", "reason": "", "reason_code": "", "score": 18, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/p620d79e5e54059d9", "id": "p620d79e5e54059d9", "learner": "S-2", "n": 2, "name": "BAUTISTA, Ana", "name_image": "/tests/sample-science-quiz/paper/p620d79e5e54059d9-name.png", "reason": "", "reason_code": "", "score": 16, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/p2312720cc06888ef", "id": "p2312720cc06888ef", "learner": "S-3", "n": 3, "name": "CRUZ, Paolo", "name_image": "/tests/sample-science-quiz/paper/p2312720cc06888ef-name.png", "reason": "Item 6: nothing shaded.", "reason_code": "blank", "score": 18, "short": "nothing shaded", "status": "check", "suggested": false, "tag": "1 to check", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/pa2a357b3a6b2093d", "id": "pa2a357b3a6b2093d", "learner": "S-4", "n": 4, "name": "DELA CRUZ, Juan", "name_image": "/tests/sample-science-quiz/paper/pa2a357b3a6b2093d-name.png", "reason": "", "reason_code": "", "score": 15, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/p3a4e56b16158d8d9", "id": "p3a4e56b16158d8d9", "learner": "S-6", "n": 6, "name": "MENDOZA, Carlo", "name_image": "/tests/sample-science-quiz/paper/p3a4e56b16158d8d9-name.png", "reason": "", "reason_code": "", "score": 17, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/pd3d84f3d1744d895", "id": "pd3d84f3d1744d895", "learner": "S-7", "n": 7, "name": "RAMOS, Joy", "name_image": "/tests/sample-science-quiz/paper/pd3d84f3d1744d895-name.png", "reason": "", "reason_code": "", "score": 17, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}, {"found": [0, 1, 2, 3], "from_sheet": true, "glance": "/tests/sample-science-quiz/glance/p76a7a0c9c9b2a6c4", "id": "p76a7a0c9c9b2a6c4", "learner": "S-8", "n": 8, "name": "REYES, Miguel", "name_image": "/tests/sample-science-quiz/paper/p76a7a0c9c9b2a6c4-name.png", "reason": "", "reason_code": "", "score": 20, "short": "", "status": "ready", "suggested": false, "tag": "", "total": 20}],
+    counts: {"check": 1, "ready": 6, "retake": 0},
+    savedCount: 1,
+    classSize: 10
+  };
+</script>
+<script src="../static/scan.js"></script>
+
+</body>
+</html>

@@ -674,22 +674,22 @@
     }).catch(function () { /* keep what is written in the page */ });
   }());
 </script>
-<!-- The live demo (QuickCheck's own online demo, demo.py in the app): notes first, then the link.
+<!-- The live demo (demo/, a click-through copy of the app): notes first, then the link.
      The demo's End demo button brings the visitor back here with ?demo=done. -->
 <div class="demo-pop" id="demoPop" role="dialog" aria-modal="true" aria-labelledby="demoTitle" aria-hidden="true">
   <div class="demo-box">
     <button class="demo-x" type="button" data-close aria-label="Close">&times;</button>
     <span class="tag">Free live demo</span>
     <h2 id="demoTitle">Try QuickCheck in your browser</h2>
-    <p class="sub">The real app, the newest version, with a sample class ready to check. About five minutes.</p>
+    <p class="sub">The newest QuickCheck, with a sample class and 8 answer sheets ready to check. About five minutes.</p>
     <ul class="demo-notes">
-      <li><i>1</i><span><b>Nothing is kept.</b> Try anything: it is all deleted when you press <b>End demo</b> or close the tab. No sign-up.</span></li>
-      <li><i>2</i><span>The first visit can take <b>up to a minute</b> to wake up. Please wait on the <b>Start the demo</b> page.</span></li>
-      <li><i>3</i><span>A one-minute walkthrough shows where everything is. Then follow the <b>Try these</b> list: make a class, check 8 sample answer sheets, see the results.</span></li>
+      <li><i>1</i><span><b>Sample data only.</b> Click anything you like. Nothing you do is saved. No sign-up.</span></li>
+      <li><i>2</i><span>A one-minute walkthrough shows where everything is. Then follow the <b>Try these</b> list.</span></li>
+      <li><i>3</i><span>Press <b>Check the 8 sample papers</b>, fix the 2 that QuickCheck asks about, save, and see the scores and the skills to reteach.</span></li>
       <li><i>4</i><span>Best on a laptop. When you are done, <b>End demo</b> brings you back here.</span></li>
     </ul>
-    <a class="btn primary big js-demo-go" href="https://quickcheck-xwqq.onrender.com/demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Open the live demo</a>
-    <p class="small">Free · sample data only · no sign-up</p>
+    <a class="btn primary big js-demo-go" href="demo/"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Open the live demo</a>
+    <p class="small">Free · opens right away · no sign-up</p>
     <button class="demo-later" type="button" data-close>Maybe later</button>
   </div>
 </div>
@@ -701,29 +701,23 @@
 
 <script>
   // Live demo pop-up. It opens a few seconds after the page loads, once per visit; closing it
-  // leaves the floating button. Opening it also wakes the free demo server, so the demo is
-  // usually ready by the time the notes are read. A visitor back from the demo (?demo=done)
+  // leaves the floating button. The demo itself is in demo/ (made from the app at every
+  // release by its scripts/build_web_demo.py). A visitor back from the demo (?demo=done)
   // gets a thank-you at the prices instead of the pop-up.
   (function () {
     var FIRST_OPEN_MS = 4000;
     var SEEN_KEY = 'qcDemoPopSeen';
-    var WAKE_URL = 'https://quickcheck-xwqq.onrender.com/health';
     var pop = document.getElementById('demoPop');
     var float = document.getElementById('demoFloat');
     var go = pop.querySelector('.js-demo-go');
-    var lastFocus = null, woke = false;
+    var lastFocus = null;
 
     function seen() { try { return sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) { return false; } }
     function markSeen() { try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {} }
-    function wake() {
-      if (woke || !window.fetch) return;
-      woke = true;
-      fetch(WAKE_URL, { mode: 'no-cors', cache: 'no-store' }).catch(function () {});
-    }
     function isOpen() { return pop.classList.contains('open'); }
     function open() {
       if (isOpen()) return;
-      wake(); markSeen();
+      markSeen();
       lastFocus = document.activeElement;
       pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false');
       document.body.classList.add('demo-locked');

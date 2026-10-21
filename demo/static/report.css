@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Formal test report — one stylesheet for the screen and the PDF.
+
+   The PDF is printed from the same HTML the teacher reads in the app, and
+   this file is inlined into that print page, so both always look alike.
+   Colours are fixed here (not app tokens) because the PDF page has no app.
+   ========================================================================== */
+
+/* The signature block also stands alone on in-app pages (templates/_sign.html), so it gets the colours too. */
+.doc, .doc-sign {
+  --doc-ink: #1b2a2e;
+  --doc-muted: #5b6b70;
+  --doc-rule: #1b2a2e;
+  --doc-hair: #d3dcde;
+  --doc-accent: #0f4b47;
+  --doc-off: #a9c3bf;
+  --doc-sans: "Segoe UI", Calibri, Arial, sans-serif;
+}
+.doc {
+  color: var(--doc-ink);
+  font-family: Cambria, "Times New Roman", Georgia, serif;
+  font-size: 11pt;
+  line-height: 1.5;
+}
+.doc p { margin: 0 0 7pt; text-align: justify; }
+
+/* ---- Header ---- */
+.doc-head { text-align: center; border-bottom: 2pt solid var(--doc-accent);
+            padding-bottom: 12pt; margin-bottom: 6pt; }
+.doc-logo { display: block; height: 30pt; width: auto; margin: 0 auto 8pt; }
+.doc-org { margin: 0 !important; text-align: center !important; font-family: var(--doc-sans);
+           font-size: 9pt; letter-spacing: .06em; text-transform: uppercase; color: var(--doc-muted); }
+.doc-org.school { font-size: 11pt; letter-spacing: .04em; color: var(--doc-ink); font-weight: 600; }
+.doc .doc-title { margin: 10pt 0 2pt; padding: 0; border: 0; font-family: var(--doc-sans); font-size: 17pt;
+             font-weight: 650; letter-spacing: .01em; color: var(--doc-ink); }  /* also when it is an h2 */
+.doc-sub { margin: 0 !important; text-align: center !important; color: var(--doc-muted); }
+.doc-meta { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5pt 16pt;
+            margin: 14pt 0 0; text-align: left; font-family: var(--doc-sans); font-size: 9pt; }
+.doc-meta div { border-top: .5pt solid var(--doc-hair); padding-top: 3pt; }
+.doc-meta dt { color: var(--doc-muted); font-size: 7.5pt; text-transform: uppercase; letter-spacing: .05em; }
+.doc-meta dd { margin: 0; font-weight: 600; }
+
+/* ---- Sections ---- */
+.doc-section { margin: 14pt 0 0; }
+.doc h2 { font-family: var(--doc-sans); font-size: 12.5pt; font-weight: 650; color: var(--doc-ink);
+          margin: 0 0 8pt; padding-bottom: 3pt; border-bottom: .75pt solid var(--doc-hair);
+          break-after: avoid; }
+.doc-cap { font-family: var(--doc-sans); font-size: 9.5pt; margin: 12pt 0 4pt !important;
+           text-align: left !important; break-after: avoid; }
+.doc-cap b { color: var(--doc-accent); }
+.doc-cap i { font-style: italic; }
+
+.doc h3 { font-family: var(--doc-sans); font-size: 10.5pt; font-weight: 650; color: var(--doc-accent);
+          margin: 14pt 0 5pt; break-after: avoid; }
+.doc-part { margin: 16pt 0 0; }
+.doc-empty { font-family: var(--doc-sans); font-size: 9.5pt !important; text-align: left !important;
+             color: var(--doc-muted); background: #f3f6f6; padding: 8pt 10pt; border-radius: 5pt; }
+.doc-code { color: var(--doc-muted); font-size: 8pt; }
+.doc-key { margin: 0 0 6pt; padding: 0; list-style: none; columns: 2; column-gap: 18pt;
+           font-family: var(--doc-sans); font-size: 8.5pt; }
+.doc-key li { break-inside: avoid; margin-bottom: 2pt; }
+.doc-key b { color: var(--doc-accent); margin-right: 3pt; }
+
+/* ---- Tables: thesis style, horizontal rules only ---- */
+.doc-scroll { overflow-x: auto; }
+.doc-table { width: 100%; border-collapse: collapse; font-family: var(--doc-sans); font-size: 9.5pt;
+             font-variant-numeric: tabular-nums; }
+.doc-table thead th { border-top: 1.5pt solid var(--doc-rule); border-bottom: .75pt solid var(--doc-rule);
+                      padding: 5pt 6pt; font-weight: 650; text-align: center; vertical-align: bottom; }
+.doc-table td { padding: 3pt 6pt; text-align: center; border-bottom: .5pt solid var(--doc-hair); }
+.doc-table .l { text-align: left; }
+.doc-table tbody tr:last-child td { border-bottom: 1.5pt solid var(--doc-rule); }
+.doc-table tr.total td { font-weight: 650; border-top: .75pt solid var(--doc-rule); }
+.doc-table tr { break-inside: avoid; }
+.doc-table thead { display: table-header-group; }         /* repeat headings on every printed page */
+.doc-table.dense { font-size: 8.5pt; }
+.doc-table.dense thead th { padding: 4pt 4pt; }
+.doc-table.dense td { padding: 2pt 4pt; }
+.doc-table-narrow { width: auto; min-width: 55%; }
+.doc-table td.flag { font-weight: 650; color: #8a3a22; }
+.doc-matrix td.below { background: #f4e3dc; color: #7a2e1f; font-weight: 650; }
+.doc-note { font-family: var(--doc-sans); font-size: 8pt !important; color: var(--doc-muted);
+            margin: 4pt 0 0 !important; text-align: left !important; }
+
+/* ---- Figures ---- */
+.doc-figure { margin: 0; break-inside: avoid; }
+.doc-chart { display: block; width: 100%; max-width: 640px; height: auto; }
+.doc-chart text { font-family: var(--doc-sans); font-size: 11px; fill: var(--doc-ink); }
+.doc-chart .axis { font-size: 10px; fill: var(--doc-muted); }
+.doc-chart .grid { stroke: var(--doc-hair); stroke-width: 1; }
+.doc-chart .bar-on { fill: var(--doc-accent); }
+.doc-chart .bar-off { fill: var(--doc-off); }
+.doc-chart .base { stroke: var(--doc-rule); stroke-width: 1; }
+.doc-chart .ref { stroke: #b4432f; stroke-width: 1.2; stroke-dasharray: 4 3; }
+.doc-legend { display: flex; flex-wrap: wrap; gap: 4pt 16pt; margin: 4pt 0 0; font-family: var(--doc-sans);
+              font-size: 8.5pt; color: var(--doc-muted); }
+.doc-legend .is-ref::before { height: 0; width: 14pt; border-top: 1.2pt dashed #b4432f; border-radius: 0;
+                            background: none; vertical-align: 3pt; }
+.doc-legend span::before { content: ""; display: inline-block; width: 9pt; height: 9pt; margin-right: 4pt;
+                           vertical-align: -1pt; border-radius: 1.5pt; background: var(--swatch); }
+
+/* ---- Wording ---- */
+.doc-recs { margin: 0; padding-left: 18pt; }
+/* Left-aligned: a justified numbered list opens wide gaps in its short lines. */
+.doc-recs li { margin-bottom: 3pt; text-align: left; }
+
+/* ---- Computation notes ---- */
+.doc-method ul { margin: 0; padding-left: 14pt; font-family: var(--doc-sans); font-size: 8.5pt;
+                 color: var(--doc-muted); line-height: 1.5; }
+.doc-method li { margin-bottom: 2pt; }
+
+/* ---- Signatories: the computation notes and the signatures travel together, so a
+   signature never lands alone on the last page. ---- */
+.doc-end { break-inside: avoid; }
+.doc-sign { display: grid; grid-template-columns: repeat(var(--signers, 2), minmax(0, 1fr)); gap: 40pt;
+            margin-top: 24pt; color: var(--doc-ink); font-family: var(--doc-sans); font-size: 9.5pt;
+            line-height: 1.5; break-inside: avoid; }
+.doc-sign .role { color: var(--doc-muted); margin-bottom: 22pt; }
+.doc-sign .name { border-top: .75pt solid var(--doc-rule); padding-top: 3pt; min-height: 14pt;
+                  text-align: center; font-weight: 650; text-transform: uppercase; }
+.doc-sign .title { text-align: center; color: var(--doc-muted); }
+
+.doc-trial { margin: 18pt 0 0 !important; text-align: center !important; font-family: var(--doc-sans);
+             font-size: 8pt !important; color: var(--doc-muted); letter-spacing: .03em; }
+
+/* ==========================================================================
+   Screen only: the sheet of paper, and the controls to edit the wording.
+   ========================================================================== */
+.doc-paper { background: #fff; border: 1px solid var(--line, #e4ebee); border-radius: 12px;
+             padding: 44px 52px; max-width: 880px; margin: 0 auto; }
+.doc-stale { font-family: var(--doc-sans); font-size: 9pt !important; text-align: left !important;
+             background: #fbf1d6; color: #7a5a06; border-radius: 8px; padding: 8px 10px; margin-top: 6pt !important; }
+.doc-edit { margin: 6pt 0 0; font-family: var(--doc-sans); font-size: 13px; }
+.doc-edit summary { cursor: pointer; color: var(--teal-d, #0e8b7d); font-weight: 600; width: max-content; line-height: 24px; padding: 2px 0; }   /* ≥24px to click (WCAG 2.5.8) */
+.doc-edit summary span { color: var(--doc-muted); font-weight: 400; }
+.doc-edit textarea { width: 100%; margin-top: 8px; }   /* look: the "Fields" block in iconlook.css */
+.doc-edit-hint { font-size: 12px !important; color: var(--doc-muted); text-align: left !important; margin: 6px 0 8px !important; }
+.doc-edit-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* Phone and tablet: "Edit wording" is a 44px-tall target (24px line + 10px above and below). */
+@media (max-width: 860px) { .doc-edit summary { padding: 10px 0; } }
+
+@media (max-width: 640px) {
+  .doc-paper { padding: 22px 16px; border-radius: 10px; }
+  .doc { font-size: 11pt; }
+  .doc p, .doc-recs li { text-align: left; }
+  .doc-meta { grid-template-columns: 1fr 1fr; }
+  .doc-sign { grid-template-columns: 1fr; gap: 14pt; }
+}
+
+.report-parts { margin-left: 0; max-width: 100%; overflow-x: auto; }
+
+/* A wide learner matrix gets a landscape page of its own when printed. */
+@page landscape { size: A4 landscape; }
+
+@media print {
+  .doc-edit, .doc-stale { display: none !important; }
+  .doc-part-break { break-before: page; }
+  .doc-part-matrix, .doc-landscape { page: landscape; }
+}

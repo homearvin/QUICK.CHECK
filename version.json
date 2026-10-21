@@ -1,8 +1,11 @@
 {
-  "latest": "2.10.0",
+  "latest": "2.10.1",
   "released": "2026-10-21",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed phone checking on ordinary home and school Wi-Fi: QuickCheck can now check and repair the Windows Firewall permission for both the installed app and the desktop source copy.",
+    "The firewall repair now allows only QuickCheck's current port and devices on the same local network, across Windows Domain, Private and Public network profiles.",
+    "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot.",
     "A new, simpler look: one word and an icon for every menu item and button, a menu down the left on a laptop and along the bottom on a phone, and one green button that always shows your next step.",
     "Help that stays out of the way: a one-minute walkthrough the first time you open QuickCheck, and one short tip on each page with a link to the full guide. Press Got it and that tip is gone; Settings → Help turns tips off, brings them back, or plays the walkthrough again.",
     "Every page works the same way: buttons say \"Saving…\" and can't send twice, a problem is shown right at the box that needs fixing, and QuickCheck asks before deleting anything.",
@@ -11,18 +14,15 @@
     "Downloads show they are working: \"Making PDF…\" appears until the file is saved.",
     "Fixed: on the Answer key, pressing an arrow key after typing answers could change item 1. The arrow keys now only move between the letters of the item you are on.",
     "Fixed: after an update, a browser could keep showing parts of the old look.",
-    "Kinder to the eyes: clearer text colours throughout, and no movement for teachers who turned animations off in Windows.",
-    "Edit existing classes and learner lists: rename a class, correct a learner's name, add learners or remove them in QuickCheck scorebooks and supported DepEd Excel records. Saved papers, scores and printed-sheet history stay attached to the right learner.",
-    "Fixed laptop imports of JPEG photos saved with the .jfif filename. JPG, PNG, JFIF, scanned PDF and ZIP batches now use the same checking flow.",
-    "Fixed named sheets printed before a class was renamed: QuickCheck now remembers the old printed class code and still identifies the learner, while sheets from another class remain blocked."
+    "Kinder to the eyes: clearer text colours throughout, and no movement for teachers who turned animations off in Windows."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.0/QuickCheckPro-2.10.0-portable.zip",
-      "sha256": "9107e220f5012616db08fc40dd9b61b7ee0e0795b899f5cbe3ffc4abf3506012",
-      "signature": "+eGJ9Ua2Y+v7HlQGrZB1WyqwFrLJ02AZRFxSU7WF1PWRl8OgB4yTSqsBOD1yoLc1kaZs0sE9AEldTHuy+MUiDA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.1/QuickCheckPro-2.10.1-portable.zip",
+      "sha256": "cddeb51b0d2fd9a1e3b5014c8d9b4e77050339f90946ba5e3d7496be05f322c4",
+      "signature": "bT3gwORAnozGvRLc9RZX01acQx6D0KEx7R+nyBnFjyq5HYlmU2FDta2pf3pjVoh8IEXhn98YEFnJ//0OW0qIDw==",
       "exe": "QuickCheckPro.exe",
-      "size": 91686107
+      "size": 92794971
     }
   }
 }

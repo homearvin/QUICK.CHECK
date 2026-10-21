@@ -229,6 +229,41 @@
   footer a{color:var(--muted);}
   @media (max-width:640px){ .final{padding:38px 22px;} }
   @media (prefers-reduced-motion:reduce){ *{transition:none !important;} }
+
+  /* ---------- Live demo: pop-up, floating button, welcome back ---------- */
+  .demo-pop{position:fixed; inset:0; z-index:300; display:grid; place-items:center; padding:16px; background:rgba(6,30,28,.55);
+    opacity:0; visibility:hidden; transition:opacity .25s, visibility .25s}
+  .demo-pop.open{opacity:1; visibility:visible}
+  .demo-box{position:relative; width:min(560px,100%); max-height:calc(100vh - 32px); overflow:auto; background:var(--paper); color:var(--ink);
+    border-radius:var(--r-l); box-shadow:var(--shadow-l); padding:28px 28px 22px}
+  .demo-box .tag{display:inline-block; font-size:11px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; color:var(--teal-deep);
+    background:var(--teal-soft); padding:5px 10px; border-radius:99px}
+  .demo-box h2{font-size:24px; margin:10px 0 4px}
+  .demo-box .sub{color:var(--muted); font-size:14.5px; margin:0}
+  .demo-notes{list-style:none; padding:0; margin:16px 0 20px; display:grid; gap:12px}
+  .demo-notes li{display:flex; gap:12px; font-size:15px; line-height:1.5}
+  .demo-notes li i{flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:8px; background:var(--teal-wash);
+    color:var(--teal-deep); font-style:normal; font-weight:800; font-size:13px}
+  .demo-box .btn{width:100%}
+  .demo-box .small{margin:10px 0 0; text-align:center; font-size:12.5px; color:var(--faint)}
+  .demo-later{display:block; margin:6px auto 0; font:inherit; font-size:14px; font-weight:700; color:var(--muted); background:none; border:0; cursor:pointer; padding:8px 12px}
+  .demo-x{position:absolute; top:12px; right:12px; width:40px; height:40px; border-radius:50%; border:0; background:var(--ground); color:var(--ink);
+    cursor:pointer; font-size:22px; line-height:1}
+  .demo-float{position:fixed; right:20px; bottom:20px; z-index:50; display:flex; align-items:center; gap:12px; padding:10px 18px 10px 10px;
+    background:var(--teal-deep); color:#fff; border-radius:99px; text-decoration:none; box-shadow:0 14px 34px rgba(6,30,28,.35);
+    transform:translateY(160%); transition:transform .35s ease-out}
+  .demo-float.show{transform:none}
+  .demo-float .play{display:grid; place-items:center; width:40px; height:40px; border-radius:50%; background:var(--teal-bright); color:var(--teal-night); flex:none}
+  .demo-float .play svg{width:18px; height:18px}
+  .demo-float b{display:block; font-size:15px}
+  .demo-float small{display:block; font-size:12px; opacity:.8}
+  .demo-back{display:flex; gap:14px; align-items:center; margin:0 auto 26px; max-width:760px; padding:16px 18px; border-radius:var(--r);
+    background:var(--teal-wash); border:1px solid var(--teal-edge); font-size:15px; line-height:1.5}
+  .demo-back[hidden]{display:none}
+  .demo-back b{display:block; font-size:16px}
+  body.demo-locked{overflow:hidden}
+  @media (max-width:600px){ .demo-float{right:12px; left:12px; bottom:12px; justify-content:center} .demo-box{padding:24px 18px 18px} }
+  @media (prefers-reduced-motion:reduce){ .demo-pop, .demo-float{transition:none} }
 </style>
 </head>
 <body>
@@ -243,6 +278,7 @@
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
+      <a href="#demo" class="js-demo">Live demo</a>
       <a href="guide.html">Teacher guide</a>
     </nav>
     <a class="btn primary sm js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.1/QuickCheckPro-2.10.1-portable.zip">
@@ -267,7 +303,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download — free for 7 days
           </a>
-          <a class="btn ghost big" href="#pricing">See the price</a>
+          <a class="btn ghost big js-demo" href="#demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Try the live demo</a>
         </div>
         <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.10.1</b> · <b class="js-dl-size">87 MB</b> ·
           <b>no key needed</b> for the first 7 days ·
@@ -400,6 +436,10 @@
   <!-- ============ PRICING ============ -->
   <section id="pricing">
     <div class="wrap">
+      <div class="demo-back" id="demoBack" role="status" hidden>
+        <span><b>Thanks for trying QuickCheck!</b> Everything from your demo was deleted. Ready to use it with your own
+          classes? Download it free for 7 days, or choose a licence below.</span>
+      </div>
       <div class="section-head">
         <p class="eyebrow">Pricing</p>
         <h2>Cheaper together — the way teachers already work.</h2>
@@ -632,6 +672,99 @@
         document.querySelectorAll('.js-dl-size').forEach(function (el) { el.textContent = mb; });
       }
     }).catch(function () { /* keep what is written in the page */ });
+  }());
+</script>
+<!-- The live demo (QuickCheck's own online demo, demo.py in the app): notes first, then the link.
+     The demo's End demo button brings the visitor back here with ?demo=done. -->
+<div class="demo-pop" id="demoPop" role="dialog" aria-modal="true" aria-labelledby="demoTitle" aria-hidden="true">
+  <div class="demo-box">
+    <button class="demo-x" type="button" data-close aria-label="Close">&times;</button>
+    <span class="tag">Free live demo</span>
+    <h2 id="demoTitle">Try QuickCheck in your browser</h2>
+    <p class="sub">The real app, the newest version, with a sample class ready to check. About five minutes.</p>
+    <ul class="demo-notes">
+      <li><i>1</i><span><b>Nothing is kept.</b> Try anything: it is all deleted when you press <b>End demo</b> or close the tab. No sign-up.</span></li>
+      <li><i>2</i><span>The first visit can take <b>up to a minute</b> to wake up. Please wait on the <b>Start the demo</b> page.</span></li>
+      <li><i>3</i><span>A one-minute walkthrough shows where everything is. Then follow the <b>Try these</b> list: make a class, check 8 sample answer sheets, see the results.</span></li>
+      <li><i>4</i><span>Best on a laptop. When you are done, <b>End demo</b> brings you back here.</span></li>
+    </ul>
+    <a class="btn primary big js-demo-go" href="https://quickcheck-xwqq.onrender.com/demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Open the live demo</a>
+    <p class="small">Free · sample data only · no sign-up</p>
+    <button class="demo-later" type="button" data-close>Maybe later</button>
+  </div>
+</div>
+
+<a class="demo-float js-demo" id="demoFloat" href="#demo" aria-label="Try the live demo">
+  <span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg></span>
+  <span><b>Try the live demo</b><small>Free · sample data · no sign-up</small></span>
+</a>
+
+<script>
+  // Live demo pop-up. It opens a few seconds after the page loads, once per visit; closing it
+  // leaves the floating button. Opening it also wakes the free demo server, so the demo is
+  // usually ready by the time the notes are read. A visitor back from the demo (?demo=done)
+  // gets a thank-you at the prices instead of the pop-up.
+  (function () {
+    var FIRST_OPEN_MS = 4000;
+    var SEEN_KEY = 'qcDemoPopSeen';
+    var WAKE_URL = 'https://quickcheck-xwqq.onrender.com/health';
+    var pop = document.getElementById('demoPop');
+    var float = document.getElementById('demoFloat');
+    var go = pop.querySelector('.js-demo-go');
+    var lastFocus = null, woke = false;
+
+    function seen() { try { return sessionStorage.getItem(SEEN_KEY) === '1'; } catch (e) { return false; } }
+    function markSeen() { try { sessionStorage.setItem(SEEN_KEY, '1'); } catch (e) {} }
+    function wake() {
+      if (woke || !window.fetch) return;
+      woke = true;
+      fetch(WAKE_URL, { mode: 'no-cors', cache: 'no-store' }).catch(function () {});
+    }
+    function isOpen() { return pop.classList.contains('open'); }
+    function open() {
+      if (isOpen()) return;
+      wake(); markSeen();
+      lastFocus = document.activeElement;
+      pop.classList.add('open'); pop.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('demo-locked');
+      float.classList.remove('show');
+      go.focus({ preventScroll: true });
+    }
+    function close() {
+      if (!isOpen()) return;
+      pop.classList.remove('open'); pop.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('demo-locked');
+      float.classList.add('show');
+      if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+    }
+
+    document.querySelectorAll('.js-demo').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); open(); });
+    });
+    pop.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', close); });
+    pop.addEventListener('click', function (e) { if (e.target === pop) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (!isOpen()) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (e.key === 'Tab') {                  // keep the keyboard inside the pop-up
+        var items = pop.querySelectorAll('button, a[href]');
+        var first = items[0], last = items[items.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    if (/[?&]demo=done/.test(location.search)) {
+      document.getElementById('demoBack').hidden = false;
+      markSeen();
+      float.classList.add('show');
+      return;
+    }
+    if (location.hash === '#demo') { open(); return; }
+    if (seen()) { float.classList.add('show'); return; }
+    setTimeout(function () {
+      if (document.visibilityState === 'visible') open(); else float.classList.add('show');
+    }, FIRST_OPEN_MS);
   }());
 </script>
 <script src="promo.js"></script>

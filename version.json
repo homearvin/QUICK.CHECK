@@ -1,8 +1,10 @@
 {
-  "latest": "2.10.1",
-  "released": "2026-10-21",
+  "latest": "2.10.2",
+  "released": "2026-10-23",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Fixed: correcting a learner's name in a simple class list now saves. Before, the old name came back after pressing Save.",
+    "If a change to a class list cannot be saved, the message now shows in red, so it is never mistaken for a saved change.",
     "Fixed phone checking on ordinary home and school Wi-Fi: QuickCheck can now check and repair the Windows Firewall permission for both the installed app and the desktop source copy.",
     "The firewall repair now allows only QuickCheck's current port and devices on the same local network, across Windows Domain, Private and Public network profiles.",
     "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot.",
@@ -12,17 +14,15 @@
     "Easier on a phone: bigger buttons and tap areas, tables that scroll sideways instead of squeezing, and no page that slides left and right.",
     "Better printouts: the learner, progress and intervention reports print on A4 with no app menu or web address on the paper, page numbers at the bottom, and signature lines that never end up alone on the last page.",
     "Downloads show they are working: \"Making PDF…\" appears until the file is saved.",
-    "Fixed: on the Answer key, pressing an arrow key after typing answers could change item 1. The arrow keys now only move between the letters of the item you are on.",
-    "Fixed: after an update, a browser could keep showing parts of the old look.",
-    "Kinder to the eyes: clearer text colours throughout, and no movement for teachers who turned animations off in Windows."
+    "Fixed: on the Answer key, pressing an arrow key after typing answers could change item 1. The arrow keys now only move between the letters of the item you are on."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.1/QuickCheckPro-2.10.1-portable.zip",
-      "sha256": "cddeb51b0d2fd9a1e3b5014c8d9b4e77050339f90946ba5e3d7496be05f322c4",
-      "signature": "bT3gwORAnozGvRLc9RZX01acQx6D0KEx7R+nyBnFjyq5HYlmU2FDta2pf3pjVoh8IEXhn98YEFnJ//0OW0qIDw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.2/QuickCheckPro-2.10.2-portable.zip",
+      "sha256": "27aaf65a6d75d52163a454564959699e22384ef68590b4e1b4f0e0ef6c910440",
+      "signature": "vvGm4Y+CeyFxSl37+JFai9BCa/2tTKiR1Q6/VWyFyR8cQWzkdmyP/6H5uBWWHmh7IgDqg0bB3k8TMZhBwjToBg==",
       "exe": "QuickCheckPro.exe",
-      "size": 92794971
+      "size": 95288321
     }
   }
 }

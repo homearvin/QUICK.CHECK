@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>QuickCheck for Android</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Download QuickCheck for Android: check papers with the phone camera and sync with QuickCheck on your laptop using the same key.">
+<style>
+  :root{
+    --bg:#eef4f2; --surface:#ffffff; --surface-2:#f4f8f7;
+    --ink:#1e2b2a; --ink-soft:#556760; --line:#e2ebe8;
+    --accent:#0e8b7d; --accent-strong:#0f4b47;
+    --mint-bg:#e2f6ee; --mint-ink:#0c7550; --mint-line:#bfe9d6;
+    --cream-bg:#fbf1d6; --cream-ink:#8a6410; --cream-line:#ecd9a2;
+    --pill-bg:#0f4b47; --pill-ink:#ffffff;
+    --shadow:0 10px 30px rgba(15,50,60,.08);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1614; --surface:#15211e; --surface-2:#101a18;
+      --ink:#e9f1ee; --ink-soft:#9fb2ab; --line:#24322e;
+      --accent:#2fd6bf; --accent-strong:#8bece0;
+      --mint-bg:#15302a; --mint-ink:#83e2bb; --mint-line:#245043;
+      --cream-bg:#2c2716; --cream-ink:#e6c877; --cream-line:#4a4227;
+      --pill-bg:#0e8b7d; --pill-ink:#ffffff;
+      --shadow:0 12px 34px rgba(0,0,0,.34);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1614; --surface:#15211e; --surface-2:#101a18;
+    --ink:#e9f1ee; --ink-soft:#9fb2ab; --line:#24322e;
+    --accent:#2fd6bf; --accent-strong:#8bece0;
+    --mint-bg:#15302a; --mint-ink:#83e2bb; --mint-line:#245043;
+    --cream-bg:#2c2716; --cream-ink:#e6c877; --cream-line:#4a4227;
+    --pill-bg:#0e8b7d; --pill-ink:#ffffff;
+    --shadow:0 12px 34px rgba(0,0,0,.34);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+    font-size:18px; line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:730px; margin:0 auto; padding:38px 20px 80px;}
+
+  /* Header */
+  .eyebrow{font-size:14px; font-weight:800; letter-spacing:.12em; text-transform:uppercase;
+    color:var(--accent);}
+  h1{font-size:38px; line-height:1.15; margin:10px 0 12px; text-wrap:balance; letter-spacing:-.01em;}
+  .lead{font-size:19px; color:var(--ink-soft); margin:0;}
+
+  /* Download card — the first thing on the page */
+  .dl{background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    padding:22px 24px; margin:24px 0 6px; box-shadow:var(--shadow);}
+  .dl h2{margin:0 0 4px; font-size:21px;}
+  .dl p{margin:0; color:var(--ink-soft); font-size:16px;}
+  .dlbtn{display:inline-flex; align-items:center; gap:10px; margin:14px 0 0;
+    background:var(--accent-strong); color:#fff; text-decoration:none; font-weight:800; font-size:17px;
+    padding:15px 24px; border-radius:14px; box-shadow:0 10px 24px rgba(15,75,71,.28);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dlbtn{background:var(--accent); color:#06302c;}}
+  :root[data-theme="dark"] .dlbtn{background:var(--accent); color:#06302c;}
+  .dlbtn svg{width:20px; height:20px;}
+  .dl .facts{margin-top:10px; font-size:14.5px;}
+  .dl .facts b{color:var(--ink);}
+
+  /* Reassurance banner */
+  .big-idea{
+    display:flex; gap:14px; align-items:flex-start;
+    background:var(--accent-strong); color:#fff;
+    border-radius:18px; padding:20px 22px; margin:28px 0 6px; box-shadow:var(--shadow);
+  }
+  .big-idea .ic{font-size:26px; line-height:1;}
+  .big-idea b{color:#fff;}
+  .big-idea p{margin:0; font-size:17px; color:#dff2ee;}
+
+  /* Table of contents */
+  .toc{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:18px 22px; margin:26px 0;}
+  .toc h2{font-size:15px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft);
+    margin:0 0 12px;}
+  .toc ol{margin:0; padding-left:0; list-style:none; counter-reset:toc;}
+  .toc li{counter-increment:toc; margin:0;}
+  .toc a{display:flex; gap:12px; align-items:baseline; padding:7px 0; color:var(--ink);
+    text-decoration:none; border-bottom:1px solid var(--line); font-weight:600;}
+  .toc li:last-child a{border-bottom:none;}
+  .toc a::before{content:counter(toc); flex:0 0 26px; text-align:center; font-weight:800;
+    color:var(--accent); font-variant-numeric:tabular-nums;}
+  .toc a:hover{color:var(--accent);}
+
+  /* Part cards */
+  .part{background:var(--surface); border:1px solid var(--line); border-radius:20px;
+    padding:26px 26px 24px; margin:20px 0; box-shadow:var(--shadow);}
+  .part-head{display:flex; gap:16px; align-items:center; margin-bottom:6px;}
+  .num{flex:0 0 auto; width:44px; height:44px; border-radius:50%;
+    background:var(--accent-strong); color:#fff; font-weight:800; font-size:20px;
+    display:grid; place-items:center;}
+  .part h2{font-size:25px; margin:0; line-height:1.2; text-wrap:balance;}
+  .part .sub{color:var(--ink-soft); font-size:16px; margin:2px 0 0;}
+
+  /* "Click this tab" pill */
+  .where{margin:16px 0 6px; font-size:16px; color:var(--ink-soft);}
+  .tab{display:inline-flex; align-items:center; gap:7px; background:var(--pill-bg);
+    color:var(--pill-ink); font-weight:700; font-size:15px; padding:6px 13px;
+    border-radius:999px; vertical-align:middle; white-space:nowrap;}
+  .tab svg{width:15px; height:15px;}
+
+  /* Step lists */
+  ol.steps{list-style:none; counter-reset:step; margin:14px 0 0; padding:0;}
+  ol.steps>li{counter-increment:step; position:relative; padding:4px 0 16px 46px; margin:0;}
+  ol.steps>li::before{content:counter(step); position:absolute; left:0; top:2px;
+    width:30px; height:30px; border-radius:50%; background:var(--surface-2);
+    border:2px solid var(--accent); color:var(--accent); font-weight:800; font-size:15px;
+    display:grid; place-items:center; font-variant-numeric:tabular-nums;}
+  ol.steps>li:last-child{padding-bottom:0;}
+  ol.steps b{color:var(--ink);}
+  ol.steps ul{margin:8px 0 0; padding-left:20px; color:var(--ink-soft); font-size:16.5px;}
+  .btnname{background:var(--surface-2); border:1px solid var(--line); border-radius:8px;
+    padding:1px 8px; font-weight:700; font-size:16px; white-space:nowrap;}
+
+  /* Callouts */
+  .note{border-radius:14px; padding:15px 18px; margin:16px 0 0; font-size:16.5px;}
+  .note b{display:block; margin-bottom:3px;}
+  .tip{background:var(--mint-bg); color:var(--mint-ink); border:1px solid var(--mint-line);}
+  .tip b, .important b{color:inherit;}
+  .important{background:var(--cream-bg); color:var(--cream-ink); border:1px solid var(--cream-line);}
+
+  .choice-h{font-weight:800; font-size:17px; margin:20px 0 2px; color:var(--accent-strong);}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .choice-h{color:var(--accent);}}
+  :root[data-theme="dark"] .choice-h{color:var(--accent);}
+
+  /* Screen map */
+  .map{margin:16px 0 0; padding:0; list-style:none;}
+  .map li{display:flex; gap:12px; align-items:baseline; padding:9px 0; border-bottom:1px solid var(--line);
+    font-size:16.5px; color:var(--ink-soft);}
+  .map li:last-child{border-bottom:none;}
+  .map .nm{flex:0 0 150px; font-weight:800; color:var(--ink);}
+  @media (max-width:520px){ .map li{flex-direction:column; gap:2px;} .map .nm{flex:none;} }
+
+  /* Footer */
+  footer{margin-top:34px; text-align:center; color:var(--ink-soft); font-size:15.5px;}
+  footer a{color:var(--accent); font-weight:700;}
+  .contact{background:var(--surface); border:1px solid var(--line); border-radius:16px;
+    padding:20px; margin-top:26px; box-shadow:var(--shadow);}
+  .contact h2{margin:0 0 8px; font-size:19px; color:var(--ink);}
+
+  a{color:var(--accent);}
+  a:focus-visible, .toc a:focus-visible{outline:3px solid var(--accent); outline-offset:3px; border-radius:6px;}
+  @media (max-width:520px){
+    h1{font-size:30px;} .wrap{padding:26px 16px 60px;}
+    .part{padding:22px 18px;} .part h2{font-size:22px;}
+    .dlbtn{width:100%; justify-content:center;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <a href="./" style="display:inline-block; margin-bottom:20px; color:var(--accent); font-weight:700; text-decoration:none;">← Back to QuickCheck home</a>
+
+  <header>
+    <div class="eyebrow">QuickCheck for Android</div>
+    <h1>QuickCheck on your phone</h1>
+    <p class="lead">The same QuickCheck as on your laptop, on an Android phone: check papers with the
+      camera, see the score at once, and keep your classes with you.</p>
+  </header>
+
+  <div class="dl">
+    <h2>Download the phone app</h2>
+    <p>Open this page <b>on your Android phone</b>, then press the button.</p>
+    <a class="dlbtn" href="https://github.com/homearvin/QUICK.CHECK/releases/download/mobile/QuickCheck-Mobile.apk">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      Download for Android
+    </a>
+    <p class="facts">Android 7 or newer · about <b>98 MB</b> · <b>free for 7 days</b>, then the
+      <b>same key as your laptop</b> · updates itself</p>
+  </div>
+
+  <div class="big-idea">
+    <span class="ic" aria-hidden="true">🔑</span>
+    <p><b>One key: your laptop and your phone.</b> A QuickCheck key works on one laptop and one
+      phone. When both have the same key and are online, press <b>Sync now</b> and your classes,
+      tests and scores move between them — no password, no account.</p>
+  </div>
+
+  <section class="part" id="install">
+    <div class="part-head"><span class="num">1</span><div><h2>Install it</h2>
+      <p class="sub">About two minutes. The app is not from the Play Store, so Android asks twice.</p></div></div>
+    <ol class="steps">
+      <li>On the phone, press <span class="btnname">Download for Android</span> above. Wait until the
+        download finishes (about 98 MB — Wi-Fi is best).</li>
+      <li>Tap the downloaded file <b>QuickCheck-Mobile.apk</b> (in the notification, or in
+        <b>Files → Downloads</b>).</li>
+      <li>If Android says <b>“your phone is not allowed to install unknown apps”</b>, tap
+        <span class="btnname">Settings</span>, switch on <b>Allow from this source</b>, and go back.</li>
+      <li>Tap <span class="btnname">Install</span>. If <b>Play Protect</b> warns about the app, tap
+        <span class="btnname">More details</span> → <span class="btnname">Install anyway</span>. That warning
+        appears for any app that is not from the Play Store.</li>
+      <li>Open <b>QuickCheck</b>. The very first start takes about 20 seconds; after that it opens quickly.</li>
+    </ol>
+  </section>
+
+  <section class="part" id="key">
+    <div class="part-head"><span class="num">2</span><div><h2>Enter your key</h2>
+      <p class="sub">Use the same key file as your laptop. It needs the internet this once.</p></div></div>
+    <ol class="steps">
+      <li>Put your key file (it ends in <b>.qckey</b>) on the phone — the easiest way is to send it to
+        yourself on Messenger or Gmail, then download it on the phone.</li>
+      <li>In QuickCheck, tap <span class="btnname">Buy or enter a key</span> in the yellow bar and choose
+        your <b>.qckey</b> file.</li>
+    </ol>
+    <div class="note important"><b>One phone per key</b>Changing phones? Message us and we move your key
+      to the new phone, free — the same as moving to a new laptop.</div>
+  </section>
+
+  <section class="part" id="check">
+    <div class="part-head"><span class="num">3</span><div><h2>Check papers with the camera</h2>
+      <p class="sub">One paper at a time: photo, score, next.</p></div></div>
+    <ol class="steps">
+      <li>Open a test: <span class="tab">Tests</span> → the test → <span class="btnname">Check</span> →
+        <span class="btnname">Take a paper</span>.</li>
+      <li>Hold the phone flat above the sheet with all four black corner squares in view, and take the photo.</li>
+      <li>The checked paper appears at once: the learner's name, the score, green for correct and red
+        for wrong. An unclear mark is circled in amber — tap the right letter.</li>
+      <li>Tap <span class="btnname">Save &amp; next paper</span>. It saves the score and opens the camera
+        for the next paper.</li>
+    </ol>
+  </section>
+
+  <section class="part" id="sync">
+    <div class="part-head"><span class="num">4</span><div><h2>Sync with your laptop</h2>
+      <p class="sub">Both with the same key, both online.</p></div></div>
+    <ol class="steps">
+      <li>On the laptop: <span class="tab">Settings</span> → <b>Sync</b> → <span class="btnname">Sync now</span>.</li>
+      <li>On the phone: <span class="tab">Settings</span> → <b>Sync</b> → <span class="btnname">Sync now</span>.
+        The Sync page lists what was sent and received.</li>
+      <li>It also syncs by itself every few minutes while QuickCheck is open and online.</li>
+    </ol>
+    <div class="note tip"><b>What travels</b>Classes, tests and answer keys, scores, and your name and
+      school — both ways. Your laptop's class record (Excel or QuickCheck's own) stays the official
+      copy: scores checked on the phone wait on the laptop until you press <b>Put them in</b>.
+      Photos of the papers stay on the phone.</div>
+    <div class="note important"><b>Needs QuickCheck 2.11 or newer on the laptop</b>Older laptop versions
+      don't have Sync yet; the phone app works on its own until the laptop is updated (QuickCheck
+      offers the update by itself).</div>
+  </section>
+
+  <section class="part" id="updates">
+    <div class="part-head"><span class="num">5</span><div><h2>Updates</h2>
+      <p class="sub">Nothing to download by hand again.</p></div></div>
+    <ol class="steps">
+      <li>When a new version is out, QuickCheck says so when it opens. Tap
+        <span class="btnname">Update</span>, then Android's <span class="btnname">Update</span>.
+        Your classes, tests and scores stay.</li>
+      <li>To check any time: <span class="tab">Settings</span> → About →
+        <span class="btnname">Check for updates</span>.</li>
+    </ol>
+  </section>
+
+  <div class="contact">
+    <h2>Need help?</h2>
+    <p style="margin:0; color:var(--ink-soft)">Message us any time — we're happy to walk you through it.</p>
+    <p style="margin:8px 0 0">📧 <a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a>
+      &nbsp;·&nbsp; 💬 <a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">AZ Digital Marketing on Facebook</a></p>
+  </div>
+
+  <footer>
+    <p>QuickCheck — made to save teachers hours of checking.<br>
+      <a href="./">Back to the QuickCheck home page</a> · <a href="guide.html">Teacher guide</a></p>
+  </footer>
+
+</div>
+</body>
+</html>

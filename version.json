@@ -1,8 +1,11 @@
 {
-  "latest": "2.11.0",
+  "latest": "2.11.1",
   "released": "2026-10-27",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "New: Settings → Photos → After a paper is saved. Keep the photo (as before), or delete it and keep only the score and answers — the paper itself is the original. Each laptop and phone keeps its own choice.",
+    "A saved paper without its photo (deleted, or checked on your other device) is now shown as its answer sheet drawn from the saved answers, with the same green and red marks — never a broken picture.",
+    "Excel class records open much faster: each class page is prepared once and remembered.",
     "New: QuickCheck for Android. The same QuickCheck on your phone — check papers with the camera and see the score at once. Get it from the QuickCheck website (Android app); your key works on one laptop and one phone.",
     "New: Sync. A laptop and a phone with the same key share classes, tests, answer keys and scores when both are online — no password, no account. Settings → Sync → Sync now; it also syncs by itself every few minutes.",
     "Scores checked on the phone for an Excel class record wait on the laptop: a bar says how many, and Put them in writes them into the record. Your laptop's record stays the official one.",
@@ -11,18 +14,15 @@
     "If a change to a class list cannot be saved, the message now shows in red, so it is never mistaken for a saved change.",
     "Fixed phone checking on ordinary home and school Wi-Fi: QuickCheck can now check and repair the Windows Firewall permission for both the installed app and the desktop source copy.",
     "The firewall repair now allows only QuickCheck's current port and devices on the same local network, across Windows Domain, Private and Public network profiles.",
-    "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot.",
-    "A new, simpler look: one word and an icon for every menu item and button, a menu down the left on a laptop and along the bottom on a phone, and one green button that always shows your next step.",
-    "Help that stays out of the way: a one-minute walkthrough the first time you open QuickCheck, and one short tip on each page with a link to the full guide. Press Got it and that tip is gone; Settings → Help turns tips off, brings them back, or plays the walkthrough again.",
-    "Every page works the same way: buttons say \"Saving…\" and can't send twice, a problem is shown right at the box that needs fixing, and QuickCheck asks before deleting anything."
+    "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.0/QuickCheckPro-2.11.0-portable.zip",
-      "sha256": "7318eec80eaf6b44f3352fb893f4f256800adf5781d5264efbd963d9f0639fce",
-      "signature": "7d2jOpOgCM5/jzSC3auST8EEcR0yrLbjOtp5k9ZzgxESyUylZNTBCWgy4o4cGxP78miQuTfSWJSS62B5mSPxDw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.1/QuickCheckPro-2.11.1-portable.zip",
+      "sha256": "04a4852ed9b1389bb882a77b6924add6ab470477fc93daa420af8b9e40c553ea",
+      "signature": "9fjS6i8Mhh2M0VblWEGHGMCwzhLuR6ObZV/T4TeXsuihJ+OpUfQ1g6QtbpYGjkmCoW/EiCpY5wLZOeiV3DQrBA==",
       "exe": "QuickCheckPro.exe",
-      "size": 95321935
+      "size": 95326262
     }
   }
 }

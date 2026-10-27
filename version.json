@@ -1,8 +1,12 @@
 {
-  "latest": "2.10.2",
-  "released": "2026-10-23",
+  "latest": "2.11.0",
+  "released": "2026-10-27",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "New: QuickCheck for Android. The same QuickCheck on your phone — check papers with the camera and see the score at once. Get it from the QuickCheck website (Android app); your key works on one laptop and one phone.",
+    "New: Sync. A laptop and a phone with the same key share classes, tests, answer keys and scores when both are online — no password, no account. Settings → Sync → Sync now; it also syncs by itself every few minutes.",
+    "Scores checked on the phone for an Excel class record wait on the laptop: a bar says how many, and Put them in writes them into the record. Your laptop's record stays the official one.",
+    "Faster: class lists from DepEd Excel records are remembered, so QuickCheck opens without reading every workbook again.",
     "Fixed: correcting a learner's name in a simple class list now saves. Before, the old name came back after pressing Save.",
     "If a change to a class list cannot be saved, the message now shows in red, so it is never mistaken for a saved change.",
     "Fixed phone checking on ordinary home and school Wi-Fi: QuickCheck can now check and repair the Windows Firewall permission for both the installed app and the desktop source copy.",
@@ -10,19 +14,15 @@
     "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot.",
     "A new, simpler look: one word and an icon for every menu item and button, a menu down the left on a laptop and along the bottom on a phone, and one green button that always shows your next step.",
     "Help that stays out of the way: a one-minute walkthrough the first time you open QuickCheck, and one short tip on each page with a link to the full guide. Press Got it and that tip is gone; Settings → Help turns tips off, brings them back, or plays the walkthrough again.",
-    "Every page works the same way: buttons say \"Saving…\" and can't send twice, a problem is shown right at the box that needs fixing, and QuickCheck asks before deleting anything.",
-    "Easier on a phone: bigger buttons and tap areas, tables that scroll sideways instead of squeezing, and no page that slides left and right.",
-    "Better printouts: the learner, progress and intervention reports print on A4 with no app menu or web address on the paper, page numbers at the bottom, and signature lines that never end up alone on the last page.",
-    "Downloads show they are working: \"Making PDF…\" appears until the file is saved.",
-    "Fixed: on the Answer key, pressing an arrow key after typing answers could change item 1. The arrow keys now only move between the letters of the item you are on."
+    "Every page works the same way: buttons say \"Saving…\" and can't send twice, a problem is shown right at the box that needs fixing, and QuickCheck asks before deleting anything."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.10.2/QuickCheckPro-2.10.2-portable.zip",
-      "sha256": "27aaf65a6d75d52163a454564959699e22384ef68590b4e1b4f0e0ef6c910440",
-      "signature": "vvGm4Y+CeyFxSl37+JFai9BCa/2tTKiR1Q6/VWyFyR8cQWzkdmyP/6H5uBWWHmh7IgDqg0bB3k8TMZhBwjToBg==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.0/QuickCheckPro-2.11.0-portable.zip",
+      "sha256": "7318eec80eaf6b44f3352fb893f4f256800adf5781d5264efbd963d9f0639fce",
+      "signature": "7d2jOpOgCM5/jzSC3auST8EEcR0yrLbjOtp5k9ZzgxESyUylZNTBCWgy4o4cGxP78miQuTfSWJSS62B5mSPxDw==",
       "exe": "QuickCheckPro.exe",
-      "size": 95288321
+      "size": 95321935
     }
   }
 }

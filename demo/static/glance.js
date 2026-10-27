@@ -285,7 +285,66 @@
     }
     $('saveBtn').disabled = true;
     $('saveBtn').textContent = 'Saving…';
+    if (cfg.camera) {
+      e.preventDefault();
+      saveThenNextPhoto();
+    }
   });
+
+  // ---- from the camera: Save & next paper = save this one AND open the camera -------
+  // The camera can only open in the same tap that asked for it, so the save goes out
+  // in the background while the camera opens. The next photo is sent once the save
+  // is known to be done; a failed save shows this paper again with what went wrong.
+  function saveThenNextPhoto() {
+    var body = new FormData(form);
+    body.append('action', 'save');
+    var saved = fetch(location.href, { method: 'POST', body: body, credentials: 'same-origin' })
+      .then(function (r) { return { ok: r.ok && r.url.indexOf('/glance/') < 0, url: r.url }; })
+      .catch(function () { return { ok: false, url: location.href }; });
+    var next = $('nextIn');
+    var settled = false;
+    function afterSave(then) {
+      saved.then(function (res) {
+        if (!res.ok) { location.href = res.url; return; }      // shows this paper and the problem
+        then();
+      });
+    }
+    next.addEventListener('change', function () {
+      settled = true;
+      var file = next.files && next.files[0];
+      next.value = '';
+      if (!file) { afterSave(function () { location.href = cfg.scanUrl; }); return; }
+      afterSave(function () { sendNextPhoto(file); });
+    }, { once: true });
+    next.addEventListener('cancel', function () {             // the teacher closed the camera
+      settled = true;
+      afterSave(function () { location.href = cfg.scanUrl; });
+    }, { once: true });
+    next.click();
+    // A browser without the cancel event: once saved, come back here and stay put.
+    saved.then(function (res) {
+      if (!res.ok) location.href = res.url;
+      else window.addEventListener('focus', function () {
+        setTimeout(function () { if (!settled) location.href = cfg.scanUrl; }, 600);
+      }, { once: true });
+    });
+  }
+
+  function sendNextPhoto(file) {
+    qcToast('Saved. Reading the next paper…');
+    var data = new FormData();
+    data.append('photo', file, file.name || 'photo.jpg');
+    data.append('client_id', Date.now().toString(36) + Math.random().toString(36).slice(2, 10));
+    fetch(cfg.photoUrl, { method: 'POST', body: data, credentials: 'same-origin', headers: { 'X-CSRF-Token': qcCsrf() } })
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        var row = res.ok && res.d.added && res.d.added[0];
+        if (!row) { qcToast((res.d && res.d.error) || "That photo couldn't be added. Try again.", 'bad'); location.href = cfg.scanUrl; return; }
+        if (navigator.vibrate) { try { navigator.vibrate(row.status === 'retake' ? [90, 70, 90] : 45); } catch (e) {} }
+        location.href = row.glance + (row.glance.indexOf('?') < 0 ? '?' : '&') + 'back=camera';
+      })
+      .catch(function () { qcToast("The photo couldn't be sent. Try again.", 'bad'); location.href = cfg.scanUrl; });
+  }
 
   // ---- retake: a new photo takes this paper's place --------------------------------
   $('retakeBtn').addEventListener('keydown', function (e) {
@@ -305,7 +364,8 @@
       .then(function (res) {
         if (res.ok && res.d.added && res.d.added[0]) {
           if (navigator.vibrate) { try { navigator.vibrate(45); } catch (e) {} }
-          location.href = res.d.added[0].glance;
+          var url = res.d.added[0].glance;
+          location.href = cfg.camera ? url + (url.indexOf('?') < 0 ? '?' : '&') + 'back=camera' : url;
         } else {
           qcToast((res.d && res.d.error) || "The new photo couldn't be added. Try again.", 'bad');
         }

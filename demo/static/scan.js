@@ -257,6 +257,13 @@
     pill.textContent = 'Paper ' + row.n + (row.status === 'retake' ? ' ✗' : ' ✓');
     pill.className = 'fx-pill' + (row.status === 'retake' ? ' is-bad' : '');
     if (bulk.total) return;                     // a whole gallery: the list says it all
+    // On a phone, one paper at a time: a photo that was read opens its checked view —
+    // the marks, the score, whose it is, anything to decide — with Save & next paper.
+    // A photo that couldn't be read still says "Take it again" right here.
+    if (!onComputer && row.status !== 'retake' && row.glance) {
+      location.href = row.glance + (row.glance.indexOf('?') < 0 ? '?' : '&') + 'back=camera';
+      return;
+    }
     showCheck(row);
   }
 

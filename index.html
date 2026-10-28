@@ -295,21 +295,26 @@
   <div class="wrap">
     <section class="hero">
       <div>
-        <p class="eyebrow">For Filipino teachers · Windows PC</p>
+        <p class="eyebrow">For Filipino teachers · Windows PC and Android</p>
         <h1>A class of papers, checked <span class="hl">before you leave the room</span>.</h1>
         <p class="lead">Photograph the answer sheets with your phone. QuickCheck scores every paper, writes the marks
           into your DepEd class record, and tells you which competencies your learners missed.</p>
         <div class="cta-row">
           <a class="btn primary big js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.1/QuickCheckPro-2.11.1-portable.zip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download — free for 7 days
+            Download for Windows
+          </a>
+          <a class="btn primary big js-apk" href="https://github.com/homearvin/QUICK.CHECK/releases/download/mobile/QuickCheck-Mobile.apk">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3M12 7v6M9.5 10.5 12 13l2.5-2.5"/></svg>
+            Download for Android
           </a>
           <a class="btn ghost big js-demo" href="#demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Try the live demo</a>
         </div>
         <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.11.1</b> · <b class="js-dl-size">87 MB</b> ·
           <b>no key needed</b> for the first 7 days ·
-          <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.1/QuickCheckPro-2.11.1-setup.exe">or get the installer</a> ·
-          <a href="android.html"><b>Android phone app</b></a></p>
+          <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.1/QuickCheckPro-2.11.1-setup.exe">or get the installer</a></p>
+        <p class="dl-facts">Android phone app: Android 7 or newer · about <b>73 MB</b> · same key as your laptop ·
+          <a href="android.html#install">how to install it</a></p>
         <div class="hero-trust">
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Works offline</span>
           <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> One-time payment</span>
@@ -573,7 +578,10 @@
           <p style="margin:6px 0 0; font-size:15.5px">Check papers with the camera and see the score at once. Classes, tests and
             scores sync with your laptop by your key — no password, no account.</p>
         </div>
-        <a class="btn light big" href="android.html" style="flex:none">Get the Android app</a>
+        <div style="display:flex; flex-direction:column; gap:8px; flex:none">
+          <a class="btn light big js-apk" href="https://github.com/homearvin/QUICK.CHECK/releases/download/mobile/QuickCheck-Mobile.apk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3M12 7v6M9.5 10.5 12 13l2.5-2.5"/></svg>Download the app (APK)</a>
+          <a href="android.html#install" style="color:#e3f6f2; font-weight:700; text-align:center">How to install it</a>
+        </div>
       </div>
     </div>
   </section>
@@ -685,7 +693,7 @@
     }).then(function (data) {
       var pack = data && data.packages && data.packages.pro;
       if (!pack || !pack.url || pack.url.indexOf('https://') !== 0) return;
-      links.forEach(function (a) { a.href = pack.url; });
+      links.forEach(function (a) { if (a.classList.contains('js-download')) a.href = pack.url; });
       if (data.latest) {
         document.querySelectorAll('.js-dl-version').forEach(function (el) { el.textContent = data.latest; });
       }
@@ -781,6 +789,21 @@
     setTimeout(function () {
       if (document.visibilityState === 'visible') open(); else float.classList.add('show');
     }, FIRST_OPEN_MS);
+  }());
+</script>
+<script>
+  // On an Android phone, the top bar's download button gives the phone app, not the Windows zip.
+  (function () {
+    if (!/Android/i.test(navigator.userAgent)) return;
+    var top = document.querySelector('.topbar a.js-download');
+    if (!top) return;
+    top.classList.remove('js-download');          // version.json must not turn it back into the zip
+    top.classList.add('js-apk');
+    top.href = "https://github.com/homearvin/QUICK.CHECK/releases/download/mobile/QuickCheck-Mobile.apk";
+    top.lastChild.textContent = ' Download the app';
+    // ...and the Android button comes first in the hero.
+    var apk = document.querySelector('.hero .cta-row a.js-apk');
+    if (apk) apk.parentNode.insertBefore(apk, apk.parentNode.firstElementChild);
   }());
 </script>
 <script src="promo.js"></script>

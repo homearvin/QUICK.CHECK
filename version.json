@@ -1,28 +1,28 @@
 {
-  "latest": "2.11.1",
-  "released": "2026-10-27",
+  "latest": "2.12.0",
+  "released": "2026-10-29",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "New Home: \"Needs you\" lists everything waiting, most urgent first — papers to save, phone scores to put into the class record, sheets to print, a backup that is due — each with the one button that does it. When nothing is waiting it says \"All caught up\".",
+    "New on Home: \"Go straight to\" — Results, Item analysis, Reteach and the class record of your latest test in one click. Classes are listed weakest first against your passing %.",
+    "Search works again, and now finds learners too: type a name and open their scores.",
+    "The left menu: click anywhere on it to show the names, then click where to go.",
+    "After the answer key (and the TOS) comes the answer sheet: choose it and download it, then check. Until a test's sheets are made, its next step is Print.",
+    "Faster phone: before each sync, this laptop shares what it read from your Excel class records, so the phone app does not read them again. Excel classes are changed on the laptop (on the phone they are view-only — the laptop's copy is the official one).",
+    "Answer-sheet PDFs for a whole class are made a page at a time, using far less memory.",
     "New: Settings → Photos → After a paper is saved. Keep the photo (as before), or delete it and keep only the score and answers — the paper itself is the original. Each laptop and phone keeps its own choice.",
     "A saved paper without its photo (deleted, or checked on your other device) is now shown as its answer sheet drawn from the saved answers, with the same green and red marks — never a broken picture.",
     "Excel class records open much faster: each class page is prepared once and remembered.",
     "New: QuickCheck for Android. The same QuickCheck on your phone — check papers with the camera and see the score at once. Get it from the QuickCheck website (Android app); your key works on one laptop and one phone.",
-    "New: Sync. A laptop and a phone with the same key share classes, tests, answer keys and scores when both are online — no password, no account. Settings → Sync → Sync now; it also syncs by itself every few minutes.",
-    "Scores checked on the phone for an Excel class record wait on the laptop: a bar says how many, and Put them in writes them into the record. Your laptop's record stays the official one.",
-    "Faster: class lists from DepEd Excel records are remembered, so QuickCheck opens without reading every workbook again.",
-    "Fixed: correcting a learner's name in a simple class list now saves. Before, the old name came back after pressing Save.",
-    "If a change to a class list cannot be saved, the message now shows in red, so it is never mistaken for a saved change.",
-    "Fixed phone checking on ordinary home and school Wi-Fi: QuickCheck can now check and repair the Windows Firewall permission for both the installed app and the desktop source copy.",
-    "The firewall repair now allows only QuickCheck's current port and devices on the same local network, across Windows Domain, Private and Public network profiles.",
-    "The Phone page now explains the same-Wi-Fi requirement without naming a particular school network. If a guest or managed Wi-Fi keeps devices apart, it clearly suggests a phone hotspot."
+    "New: Sync. A laptop and a phone with the same key share classes, tests, answer keys and scores when both are online — no password, no account. Settings → Sync → Sync now; it also syncs by itself every few minutes."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.11.1/QuickCheckPro-2.11.1-portable.zip",
-      "sha256": "04a4852ed9b1389bb882a77b6924add6ab470477fc93daa420af8b9e40c553ea",
-      "signature": "9fjS6i8Mhh2M0VblWEGHGMCwzhLuR6ObZV/T4TeXsuihJ+OpUfQ1g6QtbpYGjkmCoW/EiCpY5wLZOeiV3DQrBA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.12.0/QuickCheckPro-2.12.0-portable.zip",
+      "sha256": "bd6fef250a15e00d2db78b0121df7fdfe4ff2eadd12723dad285682355d84398",
+      "signature": "5ogqAoCPOdn/lFRkei/WfZJGx0/xxhNKezia3PVMB14WqKLdZA6ZLKRncMPJNeofprnLiryziV0GBir33G+pAg==",
       "exe": "QuickCheckPro.exe",
-      "size": 95326262
+      "size": 95345659
     }
   }
 }

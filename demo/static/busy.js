@@ -117,6 +117,15 @@
       link.removeAttribute('aria-disabled');
     }
 
+    // QuickCheck Mobile: the phone app fetches the file and streams it into Downloads itself
+    // (MainActivity.PageBridge.download) — its saver can't open a page's in-memory blob:, and
+    // a big PDF held in the page too could use up an older phone's memory. It calls back when done.
+    if (window.QuickCheckApp && window.QuickCheckApp.download) {
+      window.__qcDownloadDone = done;
+      window.QuickCheckApp.download(link.href);
+      return;
+    }
+
     // A redirect means the server answered with a page instead of the file (for example
     // "no Edge or Chrome to make the PDF"): open the link normally so its message shows.
     fetch(link.href, { credentials: 'same-origin', redirect: 'manual' }).then(function (response) {

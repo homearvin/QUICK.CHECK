@@ -86,7 +86,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.11.1">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.12.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,10 +99,8 @@
 
 
 <div class="il-rail-shade" id="ilRailShade" aria-hidden="true"></div>
-<nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.11.1"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg><span class="ui-sr">QuickCheck home</span></a>
-  <button class="il-rail-toggle" id="ilRailToggle" type="button" aria-expanded="false" aria-controls="ilRail" title="Show the names (M)">
-    <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-menu"/></svg></span><span class="il-rail-word">Menu</span></button>
+<nav class="il-rail" id="ilRail" aria-label="Main navigation" title="Click to show the names (M)">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.12.0"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg><span class="ui-sr">QuickCheck home</span></a>
   <div class="il-rail-main">
     
     <a href="index.html" data-key="1" title="Home (1)" aria-current=page>
@@ -140,7 +138,7 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="6BoQBcbpWz5Bs4Q1RhpPMczq2GE8KMm3MemKqTi-XOI"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="m_UWlg2-L9SQ-IiWVnCs5EXKeBw3O-EExfYolIGcD-k"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
@@ -153,8 +151,8 @@
     
 <div class="ui-head hm-head">
   <div>
-    <h1>Good evening, Demo</h1>
-    <p class="ui-subline">Tuesday, 27 October · S.Y. 2026–2027</p>
+    <h1>Good afternoon, Demo</h1>
+    <p class="ui-subline">Thursday, 29 October · S.Y. 2026–2027</p>
   </div>
   <div class="ui-head-actions">
     
@@ -188,7 +186,7 @@
   <div class="qc-tip-acts">
     <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p3" target="_blank" rel="noopener">Details</a>
     <form method="post" action="#" data-demo-action="/guide/tip/home/hide" data-guide-hide data-busy="off">
-      <input type="hidden" name="_csrf" value="6BoQBcbpWz5Bs4Q1RhpPMczq2GE8KMm3MemKqTi-XOI"><input type="hidden" name="next" value="/?">
+      <input type="hidden" name="_csrf" value="m_UWlg2-L9SQ-IiWVnCs5EXKeBw3O-EExfYolIGcD-k"><input type="hidden" name="next" value="/?">
       <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
     </form>
   </div>
@@ -198,72 +196,84 @@
 
 
 
-
-
-
-
 <div class="il-home">
 
   
 
   
-  <section class="il-next-strip" aria-labelledby="il-next-h">
+  <section class="il-card" aria-labelledby="hm-todo-h">
     
-      <span class="il-ico il-c-go"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg></span>
-      <div class="il-next-body">
-        <small class="il-tpage">Next</small>
-        <h2 id="il-next-h">Science 7 – Quarter 1 Quiz</h2>
-        <div class="il-row">
-          
-            
-            <span class="il-chip il-c-go"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg>6 to save</span>
-          
-          <span class="il-sub">Grade 7 – Sampaguita · 2 / 10 saved</span>
-        </div>
-        <div class="il-bar"><i style="width:20%"></i></div>
+    <div class="il-card-h hm-todo-h"><h2 id="hm-todo-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-alert"/></svg> Needs you
+      <span class="il-sub">2 things waiting · most urgent first</span></h2>
       </div>
-      <a class="btn primary il-next il-next-go" href="tests_sample-science-quiz_check.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg>Continue</a>
+    <ul class="hm-todo">
+      
+      <li>
+        <span class="il-ico il-c-sun" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg></span>
+        <span><b>Save the checked papers · Science 7 – Quarter 1 Quiz</b><span class="il-sub">6 ready to save</span></span>
+        <a class="btn primary il-next" href="tests_sample-science-quiz_check.html"
+           ><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg>Save</a>
+      </li>
+      
+      <li>
+        <span class="il-ico il-c-rose" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg></span>
+        <span><b>Back up your work</b><span class="il-sub">No backup yet</span></span>
+        <a class="btn ghost" href="#" data-demo-missing="/settings/export"
+           data-download="Making backup…"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg>Back up</a>
+      </li>
+      
+    </ul>
+    
     
   </section>
 
   
-  
-  
-  
-  
-  <div class="hm-nums" role="list">
-    <a class="il-card hm-num" role="listitem" href="tests_sample-science-quiz_check.html">
-      <span class="hm-lbl">Papers waiting</span><b>6</b>
-      <span class="il-sub">0 need a look · 6 ready to save</span></a>
-    <a class="il-card hm-num" role="listitem" href="results.html">
-      <span class="hm-lbl">Checked this week</span>
-      <b>2 <span class="hm-up">▲ 2</span></b>
-      <span class="hm-spark" aria-label="Papers checked in each of the last 8 weeks: 0, 0, 0, 0, 0, 0, 0, 2">
-        
-        <i style="height:8%"></i><i style="height:8%"></i><i style="height:8%"></i><i style="height:8%"></i><i style="height:8%"></i><i style="height:8%"></i><i style="height:8%"></i><i style="height:100%"></i></span></a>
-    <a class="il-card hm-num" role="listitem" href="classes.html">
-      <span class="hm-lbl">Classes below 75%</span>
-      <b>0 <span class="il-sub">of 1</span></b>
-      <span class="il-sub">Every class is at or above it</span></a>
-    <a class="il-card hm-num" role="listitem" href="results.html">
-      <span class="hm-lbl">Learners to help</span><b>0</b>
-      <span class="il-sub">below 75% on the latest test</span></a>
-  </div>
-  
+  <section class="il-card" aria-labelledby="hm-go-h">
+    <div class="il-card-h"><h2 id="hm-go-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-arrow"/></svg> Go straight to</h2></div>
+    <nav class="hm-go" aria-labelledby="hm-go-h">
+      
+      <a href="tests_new.html" title="Create test">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg></span>
+        <span><b>Create test</b></span></a>
+      
+      <a href="sheets.html" title="Answer sheets">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-print"/></svg></span>
+        <span><b>Answer sheets</b></span></a>
+      
+      <a href="tests_sample-science-quiz_check.html" title="Check papers">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span>
+        <span><b>Check papers</b></span></a>
+      
+      <a href="results_sample-science-quiz.html" title="Results · Science 7 – Quarter 1 Quiz">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span>
+        <span><b>Results</b><small>Science 7 – Quarter 1 Quiz</small></span></a>
+      
+      <a href="tests_sample-science-quiz_analysis.html" title="Item analysis · Science 7 – Quarter 1 Quiz">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-list"/></svg></span>
+        <span><b>Item analysis</b><small>Science 7 – Quarter 1 Quiz</small></span></a>
+      
+      <a href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_interventions.html" title="Reteach · Grade 7 – Sampaguita">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg></span>
+        <span><b>Reteach</b><small>Grade 7 – Sampaguita</small></span></a>
+      
+      <a href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_preview.html" title="Class record · Grade 7 – Sampaguita">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span>
+        <span><b>Class record</b><small>Grade 7 – Sampaguita</small></span></a>
+      
+      <a href="search.html" title="Search">
+        <span class="il-ico il-c-go" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span>
+        <span><b>Search</b></span></a>
+      
+    </nav>
+  </section>
 
-  <div class="hm-two">
-    
-    
-
-    
-    
-  </div>
-
+  
   
   <div class="hm-two">
     
     <section class="il-card" aria-labelledby="hm-cls-h">
-      <div class="il-card-h"><h2 id="hm-cls-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Classes at a glance <span class="il-sub">latest test · change since the one before</span></h2></div>
+      <div class="il-card-h"><h2 id="hm-cls-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Classes
+        <span class="il-sub">all at or above 75% · weakest first</span></h2></div>
       <ul class="hm-cls">
         
         <li><a href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_progress.html">
@@ -276,42 +286,43 @@
         
       </ul>
       
+      <p class="il-sub">Latest test of each class · ▲▼ change since the test before · the dashed line is your passing % (75%).</p>
     </section>
+    
 
-    
-    
-    
-    <section class="il-card" aria-labelledby="hm-skill-h">
-      <div class="il-card-h"><h2 id="hm-skill-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg> Skills to reteach <span class="il-sub">weakest first</span></h2></div>
-      <ul class="hm-skill">
-        
-        <li><span><b>Pure substances and mixtures</b><span class="il-sub"><code>S7MT-Ic-3</code> · 1 class</span></span>
-          <span class="il-chip il-c-go">83% · Moving Towards Mastery</span></li>
-        
-        <li><span><b>Scientific investigation</b><span class="il-sub"><code>S7MT-Ia-1</code> · 1 class</span></span>
-          <span class="il-chip il-c-go">100% · Mastered</span></li>
-        
-        <li><span><b>Properties of solutions</b><span class="il-sub"><code>S7MT-Ib-2</code> · 1 class</span></span>
-          <span class="il-chip il-c-go">100% · Mastered</span></li>
-        
-        <li><span><b>Acids and bases</b><span class="il-sub"><code>S7MT-Id-4</code> · 1 class</span></span>
-          <span class="il-chip il-c-go">100% · Mastered</span></li>
-        
-      </ul>
-    </section>
     
   </div>
   
 
   
   
-  <section class="il-card hm-safe" aria-labelledby="hm-safe-h">
-    <span class="il-ico il-c-sun"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg></span>
-    <div><h2 id="hm-safe-h">No backup yet</h2>
-      <p class="il-sub">Back up once a week, so a broken laptop never costs you your scores.</p></div>
-    <a class="btn ghost" href="#" data-demo-missing="/settings/export" data-download="Making backup…"><svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>Back up now</a>
+  <section class="il-card" aria-labelledby="hm-skill-h">
+    <div class="il-card-h"><h2 id="hm-skill-h"><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg> Skills to reteach <span class="il-sub">least learned first, from your TOS</span></h2></div>
+    <ul class="hm-skill">
+      
+      <li><span><b>Pure substances and mixtures</b><span class="il-sub"><code>S7MT-Ic-3</code> · 1 class</span></span>
+        <span class="il-chip il-c-go">83% · Moving Towards Mastery</span></li>
+      
+      <li><span><b>Scientific investigation</b><span class="il-sub"><code>S7MT-Ia-1</code> · 1 class</span></span>
+        <span class="il-chip il-c-go">100% · Mastered</span></li>
+      
+      <li><span><b>Properties of solutions</b><span class="il-sub"><code>S7MT-Ib-2</code> · 1 class</span></span>
+        <span class="il-chip il-c-go">100% · Mastered</span></li>
+      
+      <li><span><b>Acids and bases</b><span class="il-sub"><code>S7MT-Id-4</code> · 1 class</span></span>
+        <span class="il-chip il-c-go">100% · Mastered</span></li>
+      
+    </ul>
   </section>
   
+
+  
+  <section class="il-card hm-safe-line" aria-label="Keep your work safe">
+    <span class="is-due"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg>No backup yet</span>
+    <span><svg class="ui-i " aria-hidden="true"><use href="#ui-phone"/></svg>Last sync not yet</span>
+    
+    <a class="ui-link" href="#" data-demo-missing="/settings/export" data-download="Making backup…"><svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>Back up now</a>
+  </section>
 
   
 </div>
@@ -363,13 +374,13 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="6BoQBcbpWz5Bs4Q1RhpPMczq2GE8KMm3MemKqTi-XOI"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="m_UWlg2-L9SQ-IiWVnCs5EXKeBw3O-EExfYolIGcD-k"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
 
 
-<script type="application/json" id="qcTourData">{"csrf": "6BoQBcbpWz5Bs4Q1RhpPMczq2GE8KMm3MemKqTi-XOI", "done": "/guide/tour/done", "steps": [{"targets": [], "text": "A one-minute look around. Use Next, or the arrow keys.", "title": "Welcome to QuickCheck"}, {"targets": [".il-rail-main a[data-key=\u00271\u0027]", ".il-tabbar a:nth-child(1)"], "text": "Home tells you what to do next.", "title": "Home"}, {"targets": [".il-rail-main a[data-key=\u00272\u0027]", ".il-tabbar a:nth-child(2)"], "text": "Make a test here, type its answer key and print the answer sheets.", "title": "Tests"}, {"targets": [".il-rail-main a[data-key=\u00273\u0027]", ".il-tabbar a:nth-child(3)"], "text": "Upload photos of the papers, or use your phone. QuickCheck reads the circles.", "title": "Check"}, {"targets": [".il-rail-main a[data-key=\u00274\u0027]", ".il-tabbar a:nth-child(4)"], "text": "Your class lists. Add a class once and every test reuses it.", "title": "Classes"}, {"targets": [".il-rail-main a[data-key=\u00275\u0027]", ".il-tabbar a:nth-child(5)"], "text": "Scores, the hard items, the skills to reteach and a report for your principal.", "title": "Results"}, {"targets": [".il-rail-foot a[data-guide=\u0027help\u0027]", ".il-top a[data-guide=\u0027help\u0027]"], "text": "Every page shows a short tip. Help opens the full step-by-step guide.", "title": "Help"}, {"targets": [".il-rail-me", ".il-top .il-me"], "text": "Turn the tips off, or watch this walkthrough again, in Settings.", "title": "Settings"}, {"targets": [".main a.il-next", ".main a.btn.primary"], "text": "The green button always shows your next step. That\u0027s it: you\u0027re ready.", "title": "Start here"}]}</script>
+<script type="application/json" id="qcTourData">{"csrf": "m_UWlg2-L9SQ-IiWVnCs5EXKeBw3O-EExfYolIGcD-k", "done": "/guide/tour/done", "steps": [{"targets": [], "text": "A one-minute look around. Use Next, or the arrow keys.", "title": "Welcome to QuickCheck"}, {"targets": [".il-rail-main a[data-key=\u00271\u0027]", ".il-tabbar a:nth-child(1)"], "text": "Home tells you what to do next.", "title": "Home"}, {"targets": [".il-rail-main a[data-key=\u00272\u0027]", ".il-tabbar a:nth-child(2)"], "text": "Make a test here, type its answer key and print the answer sheets.", "title": "Tests"}, {"targets": [".il-rail-main a[data-key=\u00273\u0027]", ".il-tabbar a:nth-child(3)"], "text": "Upload photos of the papers, or use your phone. QuickCheck reads the circles.", "title": "Check"}, {"targets": [".il-rail-main a[data-key=\u00274\u0027]", ".il-tabbar a:nth-child(4)"], "text": "Your class lists. Add a class once and every test reuses it.", "title": "Classes"}, {"targets": [".il-rail-main a[data-key=\u00275\u0027]", ".il-tabbar a:nth-child(5)"], "text": "Scores, the hard items, the skills to reteach and a report for your principal.", "title": "Results"}, {"targets": [".il-rail-foot a[data-guide=\u0027help\u0027]", ".il-top a[data-guide=\u0027help\u0027]"], "text": "Every page shows a short tip. Help opens the full step-by-step guide.", "title": "Help"}, {"targets": [".il-rail-me", ".il-top .il-me"], "text": "Turn the tips off, or watch this walkthrough again, in Settings.", "title": "Settings"}, {"targets": [".main a.il-next", ".main a.btn.primary"], "text": "The green button always shows your next step. That\u0027s it: you\u0027re ready.", "title": "Start here"}]}</script>
 
 
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
@@ -402,7 +413,7 @@
 </script>
 <script>
   (function () {
-    var token = "6BoQBcbpWz5Bs4Q1RhpPMczq2GE8KMm3MemKqTi-XOI";
+    var token = "m_UWlg2-L9SQ-IiWVnCs5EXKeBw3O-EExfYolIGcD-k";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');

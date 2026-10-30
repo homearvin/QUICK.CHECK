@@ -122,6 +122,7 @@
   /* Callouts */
   .note{border-radius:14px; padding:15px 18px; margin:16px 0 0; font-size:16.5px;}
   .note b{display:block; margin-bottom:3px;}
+  .note b.in{display:inline; margin:0;}   /* bold words inside a note, not its heading */
   .tip{background:var(--mint-bg); color:var(--mint-ink); border:1px solid var(--mint-line);}
   .tip b, .important b{color:inherit;}
   .important{background:var(--cream-bg); color:var(--cream-ink); border:1px solid var(--cream-line);}
@@ -186,19 +187,40 @@
 
   <section class="part" id="install">
     <div class="part-head"><span class="num">1</span><div><h2>Install it</h2>
-      <p class="sub">About two minutes. The app is not from the Play Store, so Android asks twice.</p></div></div>
+      <p class="sub">About three minutes. The app is not from the Play Store, so your phone asks a few times.</p></div></div>
+    <div class="note tip"><b>Your phone will warn you. That is normal.</b>
+      QuickCheck is installed from this website, not from the Play Store, and Android warns about
+      <b class="in">every</b> app installed this way, even safe ones. That is why you see words like
+      “harmful” or “unknown app”. QuickCheck does not read your contacts, messages or location; your
+      classes and scores stay on your phone.</div>
     <ol class="steps">
-      <li>On the phone, press <span class="btnname">Download for Android</span> above. Wait until the
-        download finishes (about 73 MB — Wi-Fi is best).</li>
-      <li>Tap the downloaded file <b>QuickCheck-Mobile.apk</b> (in the notification, or in
-        <b>Files → Downloads</b>).</li>
+      <li>Open this page in <b>Chrome</b>. Got the link in <b>Messenger</b> or <b>Facebook</b>? Their own
+        browser often blocks downloads: tap <span class="btnname">⋮</span> at the top →
+        <span class="btnname">Open in Chrome</span> (or “Open in browser”).</li>
+      <li>Press <span class="btnname">Download for Android</span> above. If Chrome says <b>“File might be
+        harmful”</b> or <b>“This type of file can harm your device”</b>, tap
+        <span class="btnname">Download anyway</span>. Wait until the download finishes (about 73 MB — Wi-Fi is best).</li>
+      <li>Tap <span class="btnname">Open</span>, or tap the downloaded file <b>QuickCheck-Mobile.apk</b> (in the
+        notification, or in <b>Files → Downloads</b>).</li>
       <li>If Android says <b>“your phone is not allowed to install unknown apps”</b>, tap
         <span class="btnname">Settings</span>, switch on <b>Allow from this source</b>, and go back.</li>
-      <li>Tap <span class="btnname">Install</span>. If <b>Play Protect</b> warns about the app, tap
-        <span class="btnname">More details</span> → <span class="btnname">Install anyway</span>. That warning
+      <li>Tap <span class="btnname">Install</span>. If <b>Play Protect</b> says <b>“Unsafe app blocked”</b> or
+        <b>“App scan recommended”</b>, tap <span class="btnname">More details</span> →
+        <span class="btnname">Install anyway</span> (or <b>Scan app</b>, then <b>Install</b>). That warning
         appears for any app that is not from the Play Store.</li>
       <li>Open <b>QuickCheck</b>. The very first start takes about 20 seconds; after that it opens quickly.</li>
     </ol>
+    <div class="note important"><b>Still blocked? Some phones have one more lock</b>
+      <b class="in">Samsung</b> (newer Galaxy): if nothing happens or it says “blocked by Auto Blocker”,
+      go to Settings → Security and privacy → <b class="in">Auto Blocker</b> → turn it off, install
+      QuickCheck, then turn it back on.<br>
+      <b class="in">Huawei / Honor</b>: if it says the app is not verified, turn off
+      <b class="in">Pure mode</b> (Settings → System &amp; updates → Pure mode), or tap
+      <b class="in">Continue installation</b>.<br>
+      <b class="in">Xiaomi / Redmi / POCO, Oppo, Vivo, Realme</b>: after the security scan, tap
+      <b class="in">Install anyway</b> or <b class="in">Continue</b>; some ask for your
+      phone's password first.<br>
+      Menu names can differ a little by phone model and Android version — message us and we'll help.</div>
   </section>
 
   <section class="part" id="key">

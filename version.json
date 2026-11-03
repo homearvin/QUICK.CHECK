@@ -1,28 +1,28 @@
 {
-  "latest": "2.12.1",
-  "released": "2026-11-01",
+  "latest": "2.13.0",
+  "released": "2026-11-03",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Correct the answer key after checking: if the key was wrong for an item, open the test's Key, change the answer and press Check the changes. Before this, the key locked once papers were saved.",
+    "Nothing changes until you have seen it: QuickCheck lists whose score changes, old to new, then marks every paper again from the answers it already read — no paper is photographed twice.",
+    "The new scores go into your class record, the results and the reports. A score you typed by hand on a paper, or changed by hand in the class record, is kept as it is and listed.",
+    "Each correction is remembered: the Key page lists them, and the printed report notes the date and the items that changed. Points can be corrected the same way.",
+    "On the phone app, correct the key on the laptop; the phone gets the new scores at the next sync.",
     "Sync is safer between different versions: if your phone (or laptop) sends something this copy of QuickCheck does not know yet, it is left aside and everything else still syncs — instead of the whole sync stopping. It is picked up after you update.",
     "Phones: update the QuickCheck app to 1.0.37 or newer so Sync works with this laptop. The app offers the update by itself when it opens.",
     "New Home: \"Needs you\" lists everything waiting, most urgent first — papers to save, phone scores to put into the class record, sheets to print, a backup that is due — each with the one button that does it. When nothing is waiting it says \"All caught up\".",
     "New on Home: \"Go straight to\" — Results, Item analysis, Reteach and the class record of your latest test in one click. Classes are listed weakest first against your passing %.",
     "Search works again, and now finds learners too: type a name and open their scores.",
     "The left menu: click anywhere on it to show the names, then click where to go.",
-    "After the answer key (and the TOS) comes the answer sheet: choose it and download it, then check. Until a test's sheets are made, its next step is Print.",
-    "Faster phone: before each sync, this laptop shares what it read from your Excel class records, so the phone app does not read them again. Excel classes are changed on the laptop (on the phone they are view-only — the laptop's copy is the official one).",
-    "Answer-sheet PDFs for a whole class are made a page at a time, using far less memory.",
-    "New: Settings → Photos → After a paper is saved. Keep the photo (as before), or delete it and keep only the score and answers — the paper itself is the original. Each laptop and phone keeps its own choice.",
-    "A saved paper without its photo (deleted, or checked on your other device) is now shown as its answer sheet drawn from the saved answers, with the same green and red marks — never a broken picture.",
-    "Excel class records open much faster: each class page is prepared once and remembered."
+    "After the answer key (and the TOS) comes the answer sheet: choose it and download it, then check. Until a test's sheets are made, its next step is Print."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.12.1/QuickCheckPro-2.12.1-portable.zip",
-      "sha256": "2397e82cd01a1f752fef66c54861d9d73282cf4da37ed34ab815b52715e53466",
-      "signature": "JNaOohqsqAkmLgLdwF2bfTxHEus8lR8Heui+RTOXtbACz2bcn/KpUczPwkjuX+/vLawrvbm2YjUSSBJa0jjRCA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-portable.zip",
+      "sha256": "2700c7f404c9ad4aaaf2c5870084369c6b7bd817c190f97b625cfe1d39343f00",
+      "signature": "3tfbR3FZhHkv2BCTEaxELRGMC0xwoEzTKQGZHm24Ff+xYTFmraklMtEVhRxtKsJbjH74Ly3IOdX3vAS4hWJ3Dw==",
       "exe": "QuickCheckPro.exe",
-      "size": 95347796
+      "size": 95360926
     }
   }
 }

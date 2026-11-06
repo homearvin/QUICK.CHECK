@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>QuickCheck — check a class of papers from your phone</title>
-<meta name="description" content="QuickCheck scores your paper tests from photos, writes the marks into your DepEd class record, and shows which competencies your learners missed. Works offline on your own Windows PC. One-time payment, from ₱300 per teacher.">
+<meta name="description" content="QuickCheck scores your paper tests from photos, writes the marks into your DepEd class record, and shows which competencies your learners missed. Works offline on your own Windows PC. Free for good; Pro from ₱49 a month.">
 <link rel="canonical" href="https://homearvin.github.io/QUICK.CHECK/">
 
 <!-- What Facebook and Messenger show when the link is shared -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://homearvin.github.io/QUICK.CHECK/">
 <meta property="og:title" content="QuickCheck — a class of papers, checked before you leave the room">
-<meta property="og:description" content="Photograph the answer sheets. QuickCheck scores every paper, fills your class record, and names the competencies your learners missed. Works offline. From ₱300 per teacher, one-time.">
+<meta property="og:description" content="Photograph the answer sheets. QuickCheck scores every paper, fills your class record, and names the competencies your learners missed. Works offline. Free for good; Pro from ₱49 a month.">
 <meta property="og:image" content="https://homearvin.github.io/QUICK.CHECK/images/og-cover.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -264,6 +264,9 @@
   body.demo-locked{overflow:hidden}
   @media (max-width:600px){ .demo-float{right:12px; left:12px; bottom:12px; justify-content:center} .demo-box{padding:24px 18px 18px} }
   @media (prefers-reduced-motion:reduce){ .demo-pop, .demo-float{transition:none} }
+  .plans.plans-4{grid-template-columns:repeat(4,minmax(0,1fr));}
+  @media (max-width:1000px){ .plans.plans-4{grid-template-columns:repeat(2,minmax(0,1fr));} }
+  @media (max-width:600px){ .plans.plans-4{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -282,7 +285,7 @@
       <a href="guide.html">Teacher guide</a>
       <a href="android.html">Android app</a>
     </nav>
-    <a class="btn primary sm js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-portable.zip">
+    <a class="btn primary sm js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-portable.zip">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
       Download free
     </a>
@@ -300,7 +303,7 @@
         <p class="lead">Photograph the answer sheets with your phone. QuickCheck scores every paper, writes the marks
           into your DepEd class record, and tells you which competencies your learners missed.</p>
         <div class="cta-row">
-          <a class="btn primary big js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-portable.zip">
+          <a class="btn primary big js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-portable.zip">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Download for Windows
           </a>
@@ -310,9 +313,9 @@
           </a>
           <a class="btn ghost big js-demo" href="#demo"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.5-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>Try the live demo</a>
         </div>
-        <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.13.0</b> · <b class="js-dl-size">87 MB</b> ·
+        <p class="dl-facts">Windows 10 or 11 · version <b class="js-dl-version">2.14.0</b> · <b class="js-dl-size">87 MB</b> ·
           <b>no key needed</b> for the first 7 days ·
-          <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-setup.exe">or get the installer</a></p>
+          <a href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-setup.exe">or get the installer</a></p>
         <p class="dl-facts">Android phone app: Android 7 or newer · about <b>73 MB</b> · same key as your laptop ·
           <a href="android.html#install">how to install it</a></p>
         <div class="hero-trust">
@@ -334,7 +337,7 @@
       <div><b>Minutes</b><span>to check a whole class</span></div>
       <div><b>Offline</b><span>no internet while you work</span></div>
       <div><b>DepEd</b><span>e-class record and MPS reports</span></div>
-      <div><b>From ₱300</b><span>per teacher, one-time</span></div>
+      <div><b>Free</b><span>for good · Pro from ₱49</span></div>
     </div>
   </div>
 
@@ -449,53 +452,72 @@
       </div>
       <div class="section-head">
         <p class="eyebrow">Pricing</p>
-        <h2>Cheaper together — the way teachers already work.</h2>
-        <p class="lead">One app, nothing held back, whichever you choose. Pay once and it is yours for good.
-          Bring your grade level or department and the price per teacher drops.</p>
+        <h2>Free for good. Pro when you need it.</h2>
+        <p class="lead">QuickCheck Free keeps checking simple tests after the trial, for as long as you like.
+          QuickCheck Pro unlocks everything: monthly, yearly or once for good — and cheaper as a grade level.</p>
       </div>
 
-      <div class="plans">
+      <div class="plans plans-4">
         <div class="plan">
-          <span class="who">Solo</span>
-          <h3>Just me</h3>
-          <div class="price"><b>₱499</b><span>one-time</span></div>
-          <span class="each">₱499 per teacher</span>
+          
+          <span class="who">Free</span>
+          <h3>QuickCheck Free</h3>
+          <div class="price"><b>₱0</b><span>for good</span></div>
+          <span class="each">after the 7-day trial</span>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 1 licence, for 1 computer</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> The complete app, every feature</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Lifetime — nothing renews</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Up to 3 classes</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Any number of tests: 1–50 items, A–D</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Blank answer sheets</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Check with your phone or photos</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Scores and item analysis</li>
           </ul>
-          <a class="btn ghost" href="#buy">Get 1 licence</a>
-          <p class="note">7-day money-back guarantee</p>
+          <a class="btn ghost" href="#top">Download free</a>
+          <p class="note">Every Pro feature is yours for the first 7 days.</p>
+        </div>
+
+        <div class="plan">
+          
+          <span class="who">Monthly</span>
+          <h3>Pro for a month</h3>
+          <div class="price"><b>₱49</b><span>per month</span></div>
+          <span class="each">try Pro on a busy month</span>
+          <ul>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Everything in QuickCheck Pro</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 1 computer and 1 phone</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Back to Free when it ends — nothing lost</li>
+          </ul>
+          <a class="btn ghost" href="#buy">Get a month</a>
+          <p class="note">Good for the quarter's periodical tests.</p>
         </div>
 
         <div class="plan best">
           <span class="tag">Most teachers pick this</span>
-          <span class="who">Duo</span>
-          <h3>Me and a co-teacher</h3>
-          <div class="price"><b>₱699</b><span>one-time, for 2</span></div>
-          <span class="each">₱350 each — save ₱299</span>
+          <span class="who">Yearly</span>
+          <h3>Pro for a year</h3>
+          <div class="price"><b>₱199</b><span>per year</span></div>
+          <span class="each">₱17 a month</span>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 2 licences, 1 computer each</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> The complete app for both of you</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> One payment, two keys sent together</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Everything in QuickCheck Pro</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 1 computer and 1 phone</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 12 months from the day you activate</li>
           </ul>
-          <a class="btn primary" href="#buy">Get 2 licences</a>
-          <p class="note">Kumpletuhin lang ng ₱200 — dalawa na kayo.</p>
+          <a class="btn primary" href="#buy">Get a year</a>
+          <p class="note">Isang taon — ₱199 lang.</p>
         </div>
 
         <div class="plan">
-          <span class="who">Squad</span>
-          <h3>Our grade level</h3>
-          <div class="price"><b>₱1,499</b><span>one-time, for 5</span></div>
-          <span class="each">₱300 each — save ₱996</span>
+          
+          <span class="who">Lifetime</span>
+          <h3>Pro for good</h3>
+          <div class="price"><b>₱499</b><span>one-time</span></div>
+          <span class="each">pay once, never renew</span>
           <ul>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 5 licences, 1 computer each</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> The complete app for the whole team</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> One payment, five keys, one contact person</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Everything in QuickCheck Pro</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> 1 computer and 1 phone</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6L9 17l-5-5"/></svg> Every update, for good</li>
           </ul>
-          <a class="btn ghost" href="#buy">Get 5 licences</a>
-          <p class="note">Buong grade level — ₱300 lang bawat isa.</p>
+          <a class="btn ghost" href="#buy">Get lifetime</a>
+          <p class="note">7-day money-back guarantee</p>
         </div>
       </div>
 
@@ -555,7 +577,7 @@
           <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="M3 6.5l9 6.5 9-6.5"/></svg><span><b>Email (best)</b><br><a href="mailto:azmarketingservicesbicol@gmail.com">azmarketingservicesbicol@gmail.com</a></span></div>
           <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 10-10.4 8.9v-6.3H8.2V12h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.6.7-1.6 1.5V12h2.7l-.4 2.6h-2.3v6.3A9 9 0 0021 12z"/></svg><span><b>Facebook</b><br><a href="https://www.facebook.com/AZDigitalMarketingOfficial" target="_blank" rel="noopener">AZ Digital Marketing</a></span></div>
           <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg><span><b>Message</b><br>0912 068 8399</span></div>
-          <p class="lead" style="font-size:14px">Send your <b>full name</b> — and your teammates' names for Duo or Squad — with a
+          <p class="lead" style="font-size:14px">Send your <b>full name</b> — and your teammates' names for a grade level — with a
             screenshot of the payment. Keys are usually sent within a few hours, and every purchase has the
             7-day money-back guarantee.</p>
         </div>
@@ -594,12 +616,12 @@
       </div>
       <div class="faq">
         <details open><summary>Do I need internet?</summary><p>Only twice: to download QuickCheck, and once when you activate your key. Checking papers, printing sheets and every report work with no internet at all, and your learners' data stays on your computer.</p></details>
-        <details><summary>Is this a subscription?</summary><p>No. You pay once and the app is yours, updates included. There is no account to make and nothing renews.</p></details>
+        <details><summary>Is this a subscription?</summary><p>Only if you want it to be. QuickCheck Free costs nothing, for good. QuickCheck Pro is ₱49 a month, ₱199 a year, or ₱499 once for good. When a month or a year ends, QuickCheck goes back to Free — nothing you saved is lost — until you renew. There is no account to make.</p></details>
         <details><summary>Can it use our own class record?</summary><p>Yes. Upload your DepEd e-class record and QuickCheck writes the scores into that same file, in the term and column you pick. You can also build a record inside QuickCheck, or keep a simple list of names.</p></details>
         <details><summary>What if my laptop breaks or is replaced?</summary><p>Message us and your key is moved to the new computer, free. A key works on one computer at a time, which is also why one key cannot cover a whole department — that is what the Duo and Squad prices are for.</p></details>
         <details><summary>Do I need a scanner or special paper?</summary><p>No. Any printer that prints plain A4 at 100%, and a phone camera. No OMR machine, no special forms, no particular ink.</p></details>
         <details><summary>Is there a phone app?</summary><p>Yes — <a href="android.html">QuickCheck for Android</a>. It is the same QuickCheck, checks papers with the phone camera, and uses the same key as your laptop: one key covers one laptop and one phone. When both are online they sync your classes, tests and scores.</p></details>
-        <details><summary>How big a test can it check?</summary><p>Up to 100 items — true/false, A–C, A–D, A–E or matching type, and different types mixed as parts on one sheet. A whole class at a time, for as many classes as you teach.</p></details>
+        <details><summary>How big a test can it check?</summary><p>Up to 100 items — true/false, A–C, A–D, A–E or matching type, and different types mixed as parts on one sheet. A whole class at a time, for as many classes as you teach. On QuickCheck Free: up to 50 items, A–D; the rest is QuickCheck Pro.</p></details>
       </div>
     </div>
   </section>
@@ -610,7 +632,7 @@
       <h2>Give your evenings back.</h2>
       <p>Free for 7 days, no key needed. Then ₱499 on your own — or ₱300 each when your grade level comes with you.</p>
       <div class="cta-row">
-        <a class="btn light big js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-portable.zip">
+        <a class="btn light big js-download" href="https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-portable.zip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Download QuickCheck
         </a>

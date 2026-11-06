@@ -1,28 +1,28 @@
 {
-  "latest": "2.13.0",
-  "released": "2026-11-03",
+  "latest": "2.14.0",
+  "released": "2026-11-06",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "New: QuickCheck Free. After the 7-day trial QuickCheck keeps working, for good: up to 3 classes, any number of tests of 1 to 50 items with choices A to D, blank answer sheets, checking with your phone or photos, the scores and the item analysis.",
+    "QuickCheck Pro unlocks the rest: more classes, True/False, A to E, matching and parts, up to 100 items, points per item, answer sheets with names, the DepEd class record, the reports for your principal, skills to reteach, laptop and phone sync, and scanned PDF or ZIP uploads.",
+    "A gold ★ Pro tag marks each Pro feature. Tap it to see what it does and how to unlock it.",
+    "Pro is now monthly (₱49), yearly (₱199) or lifetime (₱499). Five teachers together: ₱1,499 lifetime.",
+    "A key that ends no longer locks QuickCheck: it goes back to QuickCheck Free, and everything you saved stays where it is.",
+    "Home is tidier: Go straight to comes first, then what needs you, with backup and sync beside it.",
     "Correct the answer key after checking: if the key was wrong for an item, open the test's Key, change the answer and press Check the changes. Before this, the key locked once papers were saved.",
     "Nothing changes until you have seen it: QuickCheck lists whose score changes, old to new, then marks every paper again from the answers it already read — no paper is photographed twice.",
     "The new scores go into your class record, the results and the reports. A score you typed by hand on a paper, or changed by hand in the class record, is kept as it is and listed.",
     "Each correction is remembered: the Key page lists them, and the printed report notes the date and the items that changed. Points can be corrected the same way.",
     "On the phone app, correct the key on the laptop; the phone gets the new scores at the next sync.",
-    "Sync is safer between different versions: if your phone (or laptop) sends something this copy of QuickCheck does not know yet, it is left aside and everything else still syncs — instead of the whole sync stopping. It is picked up after you update.",
-    "Phones: update the QuickCheck app to 1.0.37 or newer so Sync works with this laptop. The app offers the update by itself when it opens.",
-    "New Home: \"Needs you\" lists everything waiting, most urgent first — papers to save, phone scores to put into the class record, sheets to print, a backup that is due — each with the one button that does it. When nothing is waiting it says \"All caught up\".",
-    "New on Home: \"Go straight to\" — Results, Item analysis, Reteach and the class record of your latest test in one click. Classes are listed weakest first against your passing %.",
-    "Search works again, and now finds learners too: type a name and open their scores.",
-    "The left menu: click anywhere on it to show the names, then click where to go.",
-    "After the answer key (and the TOS) comes the answer sheet: choose it and download it, then check. Until a test's sheets are made, its next step is Print."
+    "Sync is safer between different versions: if your phone (or laptop) sends something this copy of QuickCheck does not know yet, it is left aside and everything else still syncs — instead of the whole sync stopping. It is picked up after you update."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.13.0/QuickCheckPro-2.13.0-portable.zip",
-      "sha256": "2700c7f404c9ad4aaaf2c5870084369c6b7bd817c190f97b625cfe1d39343f00",
-      "signature": "3tfbR3FZhHkv2BCTEaxELRGMC0xwoEzTKQGZHm24Ff+xYTFmraklMtEVhRxtKsJbjH74Ly3IOdX3vAS4hWJ3Dw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-portable.zip",
+      "sha256": "9819a7aafac3a5fbf343ebf5fcb2b2d41e1dfe2561e58d49db18b69a057305ea",
+      "signature": "RjsVo+urZTdJYU6I/21cyc4jeCFtzKEcJK6Cld4NQmjyjL0ZdyO0GNDSlBE8FXoHH19EHWfQojz+7uK2jg51CA==",
       "exe": "QuickCheckPro.exe",
-      "size": 95360926
+      "size": 95367450
     }
   }
 }

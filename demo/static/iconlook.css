@@ -12,7 +12,7 @@
   --il-go: #0f6b4f;
   --il-go-hi: #18a374;
   --il-go-soft: #dcf4ea;
-  --il-r: 18px;
+  --il-r: 8px;
   --ui-ground: var(--il-ground);
   --ui-r: var(--il-r);
   --ui-top-h: 68px;
@@ -90,7 +90,7 @@ body { background: var(--il-ground); }
 .il-trow b { display: block; }
 .il-trow a.il-name { color: inherit; text-decoration: none; min-width: 0; }
 .il-trow a.il-name small { color: var(--ui-muted); font-size: 13px; }
-@media (max-width: 860px) { .il-trow a.il-name { display: grid; align-content: center; min-height: 44px; } }
+@media (max-width: 860px) { .il-trow a.il-name { display: grid; align-content: center; min-height: 48px; } }
 .il-prog { display: grid; gap: 4px; font-size: 13px; font-variant-numeric: tabular-nums; }
 .il-prog .il-bar { margin: 0; background: #eef2f1; box-shadow: none; height: 8px; max-width: none; }
 .il-steps4 { display: flex; gap: 6px; }
@@ -405,7 +405,7 @@ body { background: var(--il-ground); }
    ========================================================================== */
 :root {
   --il-s1: 4px; --il-s2: 8px; --il-s3: 12px; --il-s4: 16px; --il-s5: 24px; --il-s6: 32px;
-  --il-r-ctl: 10px; --il-r-card: 14px;
+  --il-r-ctl: 8px; --il-r-card: 8px;
   --il-coral-ink: #b42a44;
 }
 .ui-date:empty { display: none; }
@@ -424,14 +424,14 @@ body { background: var(--il-ground); }
 :root {
   --il-go-dark: #0b5a42;                 /* primary hover / pressed */
   --il-btn-lg-h: 48px; --il-r-lg: 14px;  /* large buttons: sign-in pages and phone Scan / Review */
-  --il-btn-h: 46px;  --il-btn-pad: 18px;  --il-btn-fs: 15px;  --il-btn-ico: 20px;
-  --il-btn-sm-h: 44px; --il-btn-sm-pad: 12px; --il-btn-sm-fs: 14px; --il-btn-sm-ico: 18px;
+  --il-btn-h: 48px;  --il-btn-pad: 18px;  --il-btn-fs: 15px;  --il-btn-ico: 20px;
+  --il-btn-sm-h: 48px; --il-btn-sm-pad: 12px; --il-btn-sm-fs: 14px; --il-btn-sm-ico: 18px;
   --il-btn-ease: var(--il-dur-fade) var(--il-ease);   /* alias of the motion tokens */
 }
 @media (min-width: 861px) and (pointer: fine) {
   :root {
-    --il-btn-h: 38px;  --il-btn-pad: 14px;  --il-btn-fs: 14px;  --il-btn-ico: 18px;
-    --il-btn-sm-h: 32px; --il-btn-sm-pad: 10px; --il-btn-sm-fs: 13px; --il-btn-sm-ico: 16px;
+    --il-btn-h: 48px;  --il-btn-pad: 14px;  --il-btn-fs: 14px;  --il-btn-ico: 18px;
+    --il-btn-sm-h: 48px; --il-btn-sm-pad: 10px; --il-btn-sm-fs: 13px; --il-btn-sm-ico: 16px;
   }
 }
 
@@ -487,12 +487,12 @@ body { background: var(--il-ground); }
    text-align) never has to fight it.
    ========================================================================== */
 :root {
-  --il-field-h: 46px; --il-field-fs: 16px;   /* touch: 16px stops iPhone zooming the page on tap */
+  --il-field-h: 48px; --il-field-fs: 16px;   /* touch: 16px stops iPhone zooming the page on tap */
   --il-field-line: #c9d6d2;                  /* field edge: clearer than the card hairline */
   --il-field-pad: 12px;
 }
 @media (min-width: 861px) and (pointer: fine) {
-  :root { --il-field-h: 40px; --il-field-fs: 15px; }   /* 40px sits level with the 38px buttons */
+  :root { --il-field-h: 48px; --il-field-fs: 15px; }
 }
 :where(input:not([type=checkbox], [type=radio], [type=file], [type=hidden], [type=range], [type=color],
                  [type=submit], [type=button], [type=reset], [type=image]), select, textarea) {
@@ -573,21 +573,21 @@ body { background: var(--il-ground); }
 .il-chip.il-c-grey, .pill.gray { background: #eef3f1; color: #566765; }
 /* A chip that opens something ("4 to fix") says so on hover */
 a.il-chip { text-decoration: none; }
-/* Target sizes (design/qa-crawl-audit.md): every fold-out toggle and small text link is at least
-   24px tall on a laptop (WCAG 2.5.8) and 44px on a phone. Zero weight (:where), so a toggle with its
+/* Target sizes: every fold-out toggle and small text link is at least
+   24px tall on a laptop (WCAG 2.5.8) and 48px on a phone. Zero weight (:where), so a toggle with its
    own padding keeps it; the padding centres one line of text. Menu buttons have their own size. */
 :where(summary:not(.btn, .il-dropmenu > summary)), :where(.ui-link) {
   min-height: 24px; padding-block: max(0px, calc((24px - 1lh) / 2)); }
 @media (max-width: 860px) {
   :where(summary:not(.btn, .il-dropmenu > summary)), :where(.ui-link) {
-    min-height: 44px; padding-block: max(0px, calc((44px - 1lh) / 2)); }
+    min-height: 48px; padding-block: max(0px, calc((48px - 1lh) / 2)); }
 }
-/* On touch screens a chip link and the logo get a 44px tap area, the same as the "?" hints (ui.css).
+/* On touch screens a chip link and the logo get a 48px tap area, the same as the "?" hints (ui.css).
    The look does not change. */
 @media (pointer: coarse) {
   a.il-chip { position: relative; }
-  a.il-chip::before { content: ""; position: absolute; inset: -10px 0; }
-  .il-top .ui-brand { min-height: 44px; }
+  a.il-chip::before { content: ""; position: absolute; inset: -12px 0; }
+  .il-top .ui-brand { min-height: 48px; }
 }
 a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
 
@@ -601,8 +601,8 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
    brand green with white text (6.5:1). Pill toggles say aria-pressed; the key
    letters are real radio buttons.
    ========================================================================== */
-:root { --il-tog-h: 44px; --il-key-d: 44px; }
-@media (min-width: 861px) and (pointer: fine) { :root { --il-tog-h: 32px; --il-key-d: 38px; } }
+:root { --il-tog-h: 48px; --il-key-d: 48px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-tog-h: 48px; --il-key-d: 48px; } }
 :is(.il-toggle, .il-filters button, .ui-quick button) {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: var(--il-tog-h); padding: 0 14px;
   border: 1px solid var(--il-field-line); border-radius: 99px; background: #fff; color: var(--ui-ink);
@@ -612,7 +612,7 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
 :is(.il-toggle, .il-filters button, .ui-quick button)[aria-pressed=true] { background: var(--il-go); border-color: var(--il-go); color: #fff; }
 :is(.il-toggle, .il-filters button, .ui-quick button):active { transform: translateY(1px); }
 /* Phone: a short label ("10") still gets a 44px-wide target. */
-@media (max-width: 860px) { .ui-quick button { min-width: 44px; } }
+@media (max-width: 860px) { .ui-quick button { min-width: 48px; } }
 /* Answer-key letters: circles, same colours */
 .ky-choices label { width: var(--il-key-d); height: var(--il-key-d); border-radius: 50%; border: 2px solid var(--il-field-line);
   display: grid; place-items: center; background: #fff; color: var(--ui-muted); font-size: 15px; font-weight: 700; cursor: pointer; }
@@ -663,14 +663,14 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
    Menus — every ⋯ and Download menu (menus.js): opening one closes the
    others; outside click, Escape and choosing close it.
    ========================================================================== */
-:root { --il-menu-item: 44px; }
-@media (min-width: 861px) and (pointer: fine) { :root { --il-menu-item: 38px; } }
+:root { --il-menu-item: 48px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-menu-item: 48px; } }
 .il-dropmenu { position: relative; }
 .il-dropmenu > summary { list-style: none; cursor: pointer; }
 .il-dropmenu > summary::-webkit-details-marker { display: none; }
 .il-dropmenu > summary:not(.btn) { display: grid; place-items: center; width: var(--il-menu-trigger, 40px); height: var(--il-menu-trigger, 40px);
   border: 1px solid var(--il-field-line); border-radius: var(--il-r-ctl); background: #fff; color: var(--ui-muted); }
-@media (pointer: coarse) { .il-dropmenu > summary:not(.btn) { --il-menu-trigger: 44px; } }
+@media (pointer: coarse) { .il-dropmenu > summary:not(.btn) { --il-menu-trigger: 48px; } }
 .il-dropmenu > summary:not(.btn):hover, .il-dropmenu[open] > summary:not(.btn) { background: var(--il-go-soft); border-color: #bfe3d6; color: var(--ui-ink); }
 .il-dropmenu-panel { position: absolute; right: 0; top: calc(100% + 6px); z-index: 30; min-width: 200px; padding: 6px;
   background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); box-shadow: var(--il-pop-shadow); }
@@ -713,8 +713,8 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
    tabs, the test's Details / Key / TOS row, Settings sections) share one size
    and one "here" look; back buttons share one size.
    ========================================================================== */
-:root { --il-tab-h: 44px; --il-back: 44px; }
-@media (min-width: 861px) and (pointer: fine) { :root { --il-tab-h: 38px; --il-back: 40px; } }
+:root { --il-tab-h: 48px; --il-back: 48px; }
+@media (min-width: 861px) and (pointer: fine) { :root { --il-tab-h: 48px; --il-back: 48px; } }
 :is(.rview, .il-subnav a, .st-sections a) {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: var(--il-tab-h); padding: 0 14px;
   border-radius: var(--il-r-ctl); background: transparent; color: var(--ui-muted); box-shadow: none;
@@ -739,7 +739,7 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
    .card-head, .card-title-row, .ui-card-h, .empty, .ui-empty) are aliases.
    ========================================================================== */
 :root { --il-card-pad: 16px; --il-gap: 16px; }
-@media (min-width: 861px) { :root { --il-card-pad: 20px; } }
+@media (min-width: 861px) { :root { --il-card-pad: 24px; --il-gap: 24px; } }
 :is(.il-card, .card, .ui-card, .mini) {
   min-width: 0; padding: var(--il-card-pad); margin: 0 0 var(--il-gap);
   background: #fff; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); box-shadow: none; }
@@ -1085,6 +1085,14 @@ form.is-dirty .il-savestate .il-dirty { display: inline; }
 .il-wizard-step.is-here .il-wizard-dot { background: #fff; color: var(--il-go); }
 
 /* ---------------------------------------------------------------------------
+   QuickCheck Free and Pro (plans.py): the ★ Pro tag on a feature Free does not have.
+   --------------------------------------------------------------------------- */
+.ui-tag.pro-tag, a.pro-tag { background: #f4c84a; color: #2b2300; border-color: #e7b93a; font-weight: 800;
+  text-decoration: none; white-space: nowrap; }
+a.pro-tag:hover { background: #f0bb26; }
+.nt-free { margin: 8px 0 0; font-size: 13px; color: var(--ui-muted); }
+
+/* ---------------------------------------------------------------------------
    Guidance (guidance.py, _guide.html, guide.js)
    The tip on each page: one quiet line under the page header, never a pop-up over
    the work. The walkthrough: the page dims, one place is lit, a small card beside it.
@@ -1129,7 +1137,7 @@ form.is-dirty .il-savestate .il-dirty { display: inline; }
 .qc-tour-dots { display: flex; gap: 4px; margin-right: var(--il-s2); }
 .qc-tour-dots i { width: 6px; height: 6px; border-radius: 50%; background: var(--ui-line); }
 .qc-tour-dots i.is-on { background: var(--il-go); }
-@media (pointer: coarse) { .qc-tour-skip { min-height: 44px; } }
+@media (pointer: coarse) { .qc-tour-skip { min-height: 48px; } }
 
 .qc-demo-bar { display: flex; align-items: center; gap: var(--il-s3); flex-wrap: wrap; margin: 0 0 var(--il-s4); padding: 8px 10px 8px 12px;
   border-radius: var(--il-r-card); background: var(--il-bar); color: #e8f5f0; font-size: 13.5px; }
@@ -1140,7 +1148,7 @@ form.is-dirty .il-savestate .il-dirty { display: inline; }
 
 .qc-demo-guide { position: fixed; right: 16px; bottom: 16px; z-index: 40; width: min(320px, calc(100vw - 32px)); max-height: calc(100vh - 32px);
   overflow: auto; border: 1px solid var(--ui-line); border-radius: var(--il-r-card); background: #fff; box-shadow: 0 12px 32px rgba(8, 28, 25, .18); }
-.qc-demo-guide > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--il-s2); min-height: 44px;
+.qc-demo-guide > summary { display: flex; align-items: center; justify-content: space-between; gap: var(--il-s2); min-height: 48px;
   padding: 0 var(--il-s4); font-weight: 700; cursor: pointer; list-style: none; }
 .qc-demo-guide > summary::-webkit-details-marker { display: none; }
 .qc-demo-guide > summary > span { display: flex; align-items: center; gap: var(--il-s2); color: var(--il-go); }
@@ -1188,6 +1196,172 @@ form.is-dirty .il-savestate .il-dirty { display: inline; }
    setup), so a teacher who turned animations off in Windows gets none anywhere. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ==========================================================================
+   Design 07 global implementation (UI/UX Master v1.3.0)
+   The approved structure changes measurements and grouping while retaining
+   QuickCheck's established colour palette and real product behavior.
+   ========================================================================== */
+:root {
+  --qc-sidebar-width: 216px;
+  --qc-page-inset-desktop: 32px;
+  --qc-page-inset-mobile: 16px;
+  --qc-group-gap-desktop: 24px;
+  --qc-group-gap-mobile: 16px;
+  --qc-card-pad-desktop: 24px;
+  --qc-card-pad-mobile: 16px;
+  --qc-target-min: 48px;
+  --il-r-ctl: 8px;
+  --il-r-card: 8px;
+  --il-btn-h: 48px;
+  --il-btn-sm-h: 48px;
+  --il-field-h: 48px;
+  --il-tog-h: 48px;
+  --il-menu-item: 48px;
+  --il-tab-h: 48px;
+  --il-back: 48px;
+  --il-card-pad: var(--qc-card-pad-mobile);
+  --il-gap: var(--qc-group-gap-mobile);
+  --ui-top-h: 56px;
+}
+
+/* One 48px baseline for actions and fields. A compact visual icon can still use
+   an invisible target ring, but the operable area follows the same baseline. */
+.btn, .ui-btn-dark, .ui-btn-ghost, .ui-btn-danger, .ui-btn-big { min-height: var(--qc-target-min); }
+.btn.il-mini { min-height: var(--qc-target-min); min-width: var(--qc-target-min); }
+:where(input:not([type=hidden], [type=checkbox], [type=radio]), select, textarea), .il-find { min-height: var(--qc-target-min); }
+:focus-visible { outline-width: 2px; outline-offset: 2px; }
+
+/* Approved desktop shell: labelled and persistent, with the grid calculated in
+   the page region after the 216px sidebar. */
+@media (min-width: 1024px) {
+  :root {
+    --il-rail-w: var(--qc-sidebar-width);
+    --il-page-max: 1280px;
+    --ui-top-h: 0px;
+    --il-card-pad: var(--qc-card-pad-desktop);
+    --il-gap: var(--qc-group-gap-desktop);
+  }
+  .il-top { display: none; }
+  .il-rail {
+    display: flex; flex-direction: column; gap: 8px; position: fixed; z-index: 50;
+    inset: 0 auto 0 0; width: var(--qc-sidebar-width); padding: 16px 12px 20px;
+    background: var(--il-bar); overflow-y: auto; overflow-x: hidden; box-shadow: none;
+  }
+  .il-rail.is-open { width: var(--qc-sidebar-width); box-shadow: none; }
+  .il-rail:not(.is-open) { cursor: default; }
+  .il-rail-logo {
+    width: 100%; height: 56px; margin: 0 0 8px; padding: 0 12px; border-radius: var(--il-r-card);
+    display: flex; align-items: center; gap: 12px; background: transparent; color: #fff !important;
+  }
+  .il-rail-mark { width: 40px; height: 40px; border-radius: var(--il-r-card); display: grid; place-items: center;
+    background: #fff; color: var(--il-go); flex: none; }
+  .il-rail-mark .ui-i { width: 22px; height: 22px; stroke-width: 3; }
+  .il-rail-brand { font-size: 18px; font-weight: 700; letter-spacing: -.01em; }
+  .il-rail-main, .il-rail-foot { gap: 8px; }
+  .il-rail-main a, .il-rail-foot a {
+    min-height: 48px; height: auto; padding: 8px 12px; gap: 12px; border-radius: var(--il-r-ctl);
+  }
+  .il-rail-foot a { min-height: 48px; }
+  .il-rail-word { opacity: 1; transform: none; transition: none; }
+  .il-rail-shade { display: none !important; }
+  .app { margin-left: var(--qc-sidebar-width); min-height: 100vh; }
+  .main, .app > .main {
+    width: 100%; max-width: calc(var(--il-page-max) + (2 * var(--qc-page-inset-desktop)));
+    margin: 0 auto; padding: 24px var(--qc-page-inset-desktop) 64px;
+  }
+  .ui-head { min-height: 72px; margin-bottom: var(--qc-group-gap-desktop); align-items: flex-start; }
+  .ui-head h1 { font-size: 28px; line-height: 36px; }
+  .il-trow { min-height: 72px; }
+}
+
+/* 600–1023 keeps the current compact navigation behavior. At phone width the
+   approved Android shell takes over with one scroll column and five tabs. */
+@media (max-width: 599px) {
+  .il-top { height: 56px; padding-inline: max(var(--qc-page-inset-mobile), env(safe-area-inset-left, 0px)); }
+  .il-top .ui-brand { min-height: var(--qc-target-min); }
+  .il-round, .il-me { width: var(--qc-target-min); height: var(--qc-target-min); }
+  .main {
+    padding: 16px max(var(--qc-page-inset-mobile), env(safe-area-inset-right, 0px))
+      calc(88px + env(safe-area-inset-bottom, 0px)) max(var(--qc-page-inset-mobile), env(safe-area-inset-left, 0px));
+  }
+  .ui-head { min-height: 56px; margin-bottom: var(--qc-group-gap-mobile); }
+  .ui-head h1 { font-size: 24px; line-height: 32px; }
+  .il-tabbar {
+    min-height: calc(64px + env(safe-area-inset-bottom, 0px));
+    padding: 4px max(0px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(0px, env(safe-area-inset-left, 0px));
+  }
+  .il-tabbar a { min-width: 0; min-height: 64px; align-content: center; border-radius: var(--il-r-ctl); }
+  .il-tabbar a span { font-size: 11px; }
+  :where(summary:not(.btn, .il-dropmenu > summary)), :where(.ui-link) { min-height: var(--qc-target-min); }
+  .il-dropmenu > summary:not(.btn) { width: var(--qc-target-min); height: var(--qc-target-min); }
+  .ui-hint::before { inset: -12px; }
+  a.il-chip::before { inset: -12px 0; }
+  .il-trow a.il-name { min-height: var(--qc-target-min); }
+}
+@media (max-width: 340px) {
+  .il-top .ui-brand > span:last-child { display: none; }
+  .il-top .ui-brand { gap: 0; }
+  .il-right { gap: 4px; }
+}
+
+/* Home 07: action cluster first, then equal attention and teaching pairs. */
+.hm-go { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.hm-go a { min-height: 72px; padding: 16px; border-radius: var(--il-r-card); }
+.hm-two { grid-template-columns: repeat(2, minmax(320px, 1fr)); gap: var(--il-gap); }
+.hm-safe-card { display: flex; flex-direction: column; }
+.hm-safe-status { display: grid; gap: 12px; margin-bottom: 16px; }
+.hm-safe-status p { display: flex; align-items: flex-start; gap: 8px; margin: 0; }
+.hm-safe-status p:first-child { display: grid; gap: 2px; }
+.hm-safe-status span { display: grid; gap: 2px; }
+.hm-safe-status small, .hm-safe-status p > span { color: var(--ui-muted); font-size: 13px; }
+.hm-safe-status .ui-i { width: 18px; height: 18px; margin-top: 2px; color: var(--il-go); }
+.hm-safe-status .is-due { color: var(--il-coral-ink); }
+.hm-safe-card > .btn { margin-top: auto; align-self: flex-start; }
+@media (max-width: 900px) {
+  .hm-go { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hm-two { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 599px) {
+  .hm-go { gap: 12px; }
+  .hm-go a { min-height: 72px; padding: 12px; }
+}
+
+/* T-01: exactly one control group and a readable list; phone records become
+   full-width cards rather than a compressed desktop row. */
+.il-filters button { min-height: var(--qc-target-min); }
+.il-tlist { display: grid; }
+@media (max-width: 599px) {
+  .il-tlist { gap: 16px; }
+  .il-trow {
+    min-height: 120px; padding: 16px !important; border: 1px solid var(--ui-line) !important;
+    border-radius: var(--il-r-card); background: #fff;
+  }
+}
+
+/* C-10: an 8/4 working grid on desktop, intake/status/attendance stacked beside
+   the queue, and the same groups in action-first order on Android. */
+.check-c10-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(320px, 1fr); gap: var(--il-gap); align-items: start; }
+.check-c10-work, .check-c10-side { min-width: 0; }
+.check-c10-side { display: grid; gap: var(--il-gap); }
+.check-c10-side > .il-card, .check-c10-work > .il-card { margin: 0; }
+.check-intake-card form { margin: 0 0 8px; }
+.check-intake-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.check-phone-connect { margin-top: 16px; border-top: 1px solid var(--ui-line-2); }
+.check-phone-connect > summary { display: flex; align-items: center; gap: 8px; min-height: 48px; font-weight: 700; cursor: pointer; }
+.check-phone-connect-in { display: flex; align-items: center; gap: 16px; padding-top: 8px; }
+.check-session .il-stats { gap: 12px; }
+.check-session .il-stat { padding: 12px; }
+@media (max-width: 1023px) {
+  .check-c10-grid { grid-template-columns: minmax(0, 1fr); }
+  .check-c10-side { order: -1; }
+}
+@media (max-width: 599px) {
+  .check-intake-actions > .btn { flex: 1 1 120px; }
+  .check-session .il-stats-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .check-session .il-stat { min-width: 0; padding: 8px; }
+  .check-session .il-stat .il-ico { width: 36px; height: 36px; }
 }
 
 /* ---------------------------------------------------------------------------

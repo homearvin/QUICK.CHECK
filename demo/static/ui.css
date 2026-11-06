@@ -310,13 +310,13 @@ a.ui-kpi:hover { border-color: var(--ui-teal-edge); }
    explain a step live behind these instead of on the page. hint.js opens and
    closes them; the macro is `hint` in _ui.html. */
 .ui-hintwrap { position: relative; display: inline-flex; vertical-align: middle; }
-/* 24px is the smallest target WCAG 2.5.8 allows; on touch screens an invisible ring
-   widens the tap area to 44px without changing the look. */
+/* 24px is the visible circle; on touch screens an invisible ring widens the
+   operable area to the Design 07 48px baseline without changing the look. */
 .ui-hint { position: relative; display: grid; place-items: center; width: 24px; height: 24px; padding: 0; margin: 0 0 0 6px;
   border: 1px solid var(--ui-line); border-radius: 50%; background: var(--ui-panel); color: var(--ui-muted);
   cursor: pointer; flex: 0 0 auto; }
 .ui-hint .ui-i { width: 14px; height: 14px; }
-@media (pointer: coarse) { .ui-hint::before { content: ""; position: absolute; inset: -10px; border-radius: 50%; } }
+@media (pointer: coarse) { .ui-hint::before { content: ""; position: absolute; inset: -12px; border-radius: 50%; } }
 .ui-hint:hover { border-color: var(--ui-teal); color: var(--ui-teal-deep); background: var(--ui-teal-wash); }
 .ui-hintwrap.is-open .ui-hint { border-color: var(--ui-teal-deep); background: var(--ui-teal-deep); color: #fff; }
 .ui-pop { position: absolute; top: calc(100% + 8px); left: -8px; z-index: 70; width: max-content; max-width: 280px;

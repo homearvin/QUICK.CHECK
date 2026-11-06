@@ -137,8 +137,8 @@
 .doc-edit-hint { font-size: 12px !important; color: var(--doc-muted); text-align: left !important; margin: 6px 0 8px !important; }
 .doc-edit-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 
-/* Phone and tablet: "Edit wording" is a 44px-tall target (24px line + 10px above and below). */
-@media (max-width: 860px) { .doc-edit summary { padding: 10px 0; } }
+/* Phone and tablet: "Edit wording" keeps the Design 07 48px target. */
+@media (max-width: 860px) { .doc-edit summary { padding: 12px 0; } }
 
 @media (max-width: 640px) {
   .doc-paper { padding: 22px 16px; border-radius: 10px; }

@@ -619,6 +619,98 @@ a.il-chip:hover { text-decoration: underline; text-underline-offset: 2px; }
 .ky-choices label:hover { background: var(--il-go-soft); border-color: #bfe3d6; color: var(--ui-ink); }
 .ky-choices input:checked + label { background: var(--il-go); border-color: var(--il-go); color: #fff; }
 .ky-choices input:focus-visible + label { outline: 3px solid var(--il-go); outline-offset: 2px; }
+/* The Android app's Answer key (Arvin, 8 Nov 2026): bubbles like the printed sheet, dark letters
+   on white, and a tapped one shaded dark like a pencil mark. */
+body.qc-new .ky-choices label { font-size: 17px; font-weight: 800; color: #2f3532; border-color: #7d8581; }
+body.qc-new .ky-choices input:checked + label { background: #2f3532; border-color: #2f3532; color: #fff; }
+/* The Android app's result tabs read as words (Scores · Items · Skills · Report · Papers), like the
+   reference app's segmented switch, and the numbers are one strip of three: Checked · MPS · Below. */
+body.qc-new .il-rnav .rviews { grid-auto-columns: max-content; }
+body.qc-new .il-rnav .rview span { display: inline; }
+body.qc-new .il-rnav .rview .ui-i { display: none; }
+body.qc-new .il-rstats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; padding: 14px 4px;
+  background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; }
+body.qc-new .il-rstats .il-stat { background: none; border: 0; box-shadow: none; padding: 0 12px; border-left: 1px solid var(--ui-line); min-height: 0; }
+body.qc-new .il-rstats .il-stat:first-child { border-left: 0; }
+body.qc-new .il-rstats .il-stat:nth-child(3), body.qc-new .il-rstats .il-stat:nth-child(4) { display: none; }
+body.qc-new .il-rstats .il-stat:nth-child(5) { border-left: 1px solid var(--ui-line); }
+/* The phone's Save bar rides above the five-place bar and its raised Check button, not on it. */
+body.qc-new .il-savebar { bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+/* The phone's test form: plain section words, no 3a / 3b badges. */
+body.nt-phone .nt-subhead span { display: none; }
+body.nt-phone .nt-sub { border-top: 0; padding-top: 4px; }
+body.nt-phone .qc-paper img:not([src]) { visibility: hidden; }
+/* A learner's report on the phone screen: long mastery words and scores wrap to fit. */
+@media screen {
+  body.qc-new .ctable .pill { white-space: normal; text-align: center; }
+  body.qc-new .ctable td.num { white-space: normal; }
+  body.qc-new .ctable tbody th[scope=row] { min-width: 0; }
+}
+/* The TOS editor on the phone: each competency row is a small card of labelled boxes
+   (the same table and fields underneath, so the page's script and the save are unchanged). */
+body.tos-phone .tos-table { min-width: 0; }
+body.tos-phone .tos-table thead { display: none; }
+body.tos-phone .tos-table, body.tos-phone .tos-table tbody { display: block; }
+body.tos-phone .tos-table tr { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px;
+  padding: 14px 0; border-bottom: 1px solid var(--ui-line); }
+body.tos-phone .tos-table td { display: block; padding: 0; border: 0; text-align: left; }
+body.tos-phone .tos-table td[data-label]::before { content: attr(data-label); display: block; font-size: 12px;
+  font-weight: 700; color: var(--ui-muted); margin-bottom: 3px; }
+body.tos-phone .tos-table td[data-label="Competency"] { grid-column: 1 / -1; }
+body.tos-phone .tos-table td[data-label="Competency"] { padding-right: 48px; }
+body.tos-phone .tos-table td.calc { text-align: left; }
+body.tos-phone .tos-table td.tos-x { position: absolute; top: 14px; right: 0; }
+/* The class book on the phone: one score column at a time (the picker names its category). */
+body.book-phone .book-grid thead .book-cat { display: none; }
+body.book-phone .book-grid .book-name { min-width: 0; width: 100%; }
+/* A class book's Edit page on the phone: each learner is a card - Name across, then Boy or
+   girl and Status, the score count, Save and Delete; "Date left" shows only for a leaver. */
+body.cbe-phone .edit-table { min-width: 0; }
+body.cbe-phone .edit-table thead { display: none; }
+body.cbe-phone .edit-table, body.cbe-phone .edit-table tbody { display: block; }
+body.cbe-phone .edit-table tr { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 10px; padding: 12px 0;
+  border-bottom: 1px solid var(--ui-line); }
+body.cbe-phone .edit-table tr.left { padding: 12px 8px; }
+body.cbe-phone .edit-table td { display: block; padding: 0; border: 0; text-align: left; }
+body.cbe-phone .edit-table td[colspan], body.cbe-phone .edit-table td[data-label="Name"],
+body.cbe-phone .edit-table td.leave-cell, body.cbe-phone .edit-table td.cbe-do { grid-column: 1 / -1; }
+body.cbe-phone .edit-table td.num { display: none; }
+body.cbe-phone .edit-table td[data-label]::before { content: attr(data-label); display: block; font-size: 12px;
+  font-weight: 700; color: var(--ui-muted); margin-bottom: 3px; }
+body.cbe-phone .edit-table td.leave-cell { display: none; }
+body.cbe-phone .edit-table tr.left td.leave-cell { display: block; }
+body.cbe-phone .edit-table input[name="learner_name"], body.cbe-phone .edit-table select { min-width: 0; }
+body.cbe-phone .edit-table td.count { display: none; }   /* Delete's warning says how many scores go */
+body.cbe-phone .edit-table .row-actions { justify-content: flex-end; }
+body.cbe-phone .edit-table tr:not(.is-changed) .row-actions form:first-child { display: none; }
+/* Search on the phone: room on the left for the magnifier. */
+.qc-search input { width: 100%; padding-left: 44px; }
+/* The phone's Papers tab: a tick on each row, shown only after Select. */
+.qc-pick input { display: none; flex: none; width: 22px; height: 22px; margin: 0 0 0 14px; accent-color: var(--il-go); }
+.qc-picking .qc-pick input { display: block; }   /* no broken-picture flash before it loads */
+body.qc-new .il-rstats .il-ico { display: none; }
+/* The Android app's class header, like the reference app's class page: no box, a round back button,
+   a small label over the class name, the page's buttons, then Scores · Progress · Reteach as one switch. */
+body.qc-new .il-classbar { background: none; border: 0; box-shadow: none; padding: 0; gap: 12px; }
+body.qc-new .il-classbar .il-back { border-radius: 50%; }
+body.qc-new .il-classbar .il-tid > .il-ico { display: none; }
+body.qc-new .il-classbar .il-tname h1 { font-size: 26px; line-height: 1.2; }
+body.qc-new .il-classtabs { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); width: 100%; margin: 0;
+  padding: 4px; gap: 4px; border-radius: 14px; background: var(--ui-paper); border: 1px solid var(--ui-line); }
+body.qc-new .il-classtabs .rview { justify-content: center; min-height: 44px; }
+body.qc-new .il-classtabs .rview .ui-i { display: none; }
+body.qc-new .il-classtabs .rview span { display: inline; }
+/* The Android app's segmented switch (One | Two, With names | Blank), as in Arvin's reference app. */
+.qc-seg { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 14px;
+  background: var(--ui-paper); border: 1px solid var(--ui-line); }
+.qc-seg-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.qc-seg-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.qc-seg label { position: relative; }
+.qc-seg input { position: absolute; opacity: 0; inset: 0; margin: 0; }
+.qc-seg span { display: grid; place-items: center; min-height: 44px; border-radius: 10px; font-weight: 700; color: var(--ui-muted); cursor: pointer; }
+.qc-seg input:checked + span { background: var(--il-go); color: #fff; }
+.qc-seg input:disabled + span { opacity: .45; cursor: not-allowed; }
+.qc-seg input:focus-visible + span { outline: 3px solid var(--il-go-hi); outline-offset: 2px; }
 :is(.il-toggle, .il-filters button, .ui-quick button, .ky-choices label) {
   transition: background-color var(--il-dur-fade) var(--il-ease), border-color var(--il-dur-fade) var(--il-ease),
               color var(--il-dur-fade) var(--il-ease), transform var(--il-dur-press) var(--il-ease); }
@@ -1392,4 +1484,8 @@ a.pro-tag:hover { background: #f0bb26; }
   :is(.pill, .il-chip, .rep-tiles > div, .best, .worst, .il-stat, .bar, .bar i, .code, .status-gap, .status-up) {
     -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   a { color: inherit !important; text-decoration: none !important; }
+
+  /* The phone shows some printed pages as rows; the paper gets the full tables. */
+  .qc-print-only { display: block !important; }
+  .qc-screen-only { display: none !important; }
 }

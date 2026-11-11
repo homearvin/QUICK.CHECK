@@ -1,0 +1,362 @@
+/* The new look, the same on the Android app and the laptop (base.html loads it when new_look). Organised like Arvin's
+   reference app (8 Nov 2026), in QuickCheck's own colours: a bottom bar of five places whose
+   middle one is a big round camera button, a small grey label over a big title, Home's
+   banner / three numbers / Menu tiles, and the same rows, chips, pills and empty states on
+   every page. Colours come from the tokens in ui.css and iconlook.css. Motion uses the
+   --il-dur-* tokens; iconlook.css holds the one reduce-motion rule. */
+
+/* ---------- Colours: Emerald Canopy (Arvin, 11 Nov 2026) ----------
+   Four colours, set here once for the phone and the laptop: emerald #00A86B, mint #A2E4B8,
+   deep teal #0A504A, white #F7F7F2 for the background, and black for the words.
+   White words go only on the deep teal (9.5:1); emerald carries what is lit (the active
+   place, progress, the focus ring, the Check button) because white on emerald is only 3:1.
+   Every page uses these through the tokens the app already has (--il-*, --ui-*). */
+body.qc-new {
+  --qc-emerald: #00A86B; --qc-mint: #A2E4B8; --qc-deep: #0A504A; --qc-white: #F7F7F2; --qc-black: #111111;
+  --il-go: var(--qc-deep); --il-go-dark: #073b36; --il-go-hi: var(--qc-emerald);
+  --il-go-soft: #e3f6ea;                   /* mint, lightened, behind a selected row or a soft chip */
+  --il-ground: var(--qc-white); --ui-ground: var(--qc-white); --ui-paper: #ffffff; --ui-panel: #fbfbf8;
+  --il-bar: var(--qc-deep); --il-pill: #0e655d;
+  --ui-ink: var(--qc-black); --ui-muted: #55605d; --ui-faint: #5f6865;
+  --ui-line: #e4e6df; --ui-line-2: #eeefe9;
+  --ui-teal: var(--qc-emerald); --ui-teal-strong: var(--qc-deep); --ui-teal-deep: var(--qc-deep);
+  --ui-teal-soft: #e3f6ea; --ui-teal-wash: #f1faf4; --ui-teal-edge: var(--qc-mint); --ui-teal-bright: var(--qc-emerald);
+}
+
+/* ---------- Bottom bar: Home · Tests · ● Check · Results · Settings ---------- */
+body.qc-new .qc-bar { display: grid !important; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: end;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; background: var(--il-bar);
+  padding: 4px max(0px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(0px, env(safe-area-inset-left, 0px)); }
+body.qc-new .qc-bar a { position: relative; display: grid; justify-items: center; gap: 3px; min-height: 60px; align-content: center;
+  padding: 6px 2px; color: #cfe2de; text-decoration: none; border-radius: var(--il-r-ctl); background: none; }
+body.qc-new .qc-bar a span { font-size: 12px; font-weight: 600; color: currentColor; }
+body.qc-new .qc-bar .qc-bar-ico .ui-i { width: 23px; height: 23px; color: currentColor; }
+body.qc-new .qc-bar a.on { color: var(--il-go-hi); background: none; }
+/* The round Check button rises above the bar. */
+body.qc-new .qc-bar a.qc-bar-check { align-content: end; }
+body.qc-new .qc-bar a.qc-bar-check .qc-bar-ico { width: 62px; height: 62px; margin-top: -26px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--il-go-hi); color: #fff; box-shadow: 0 6px 18px rgba(24, 163, 116, .45), 0 0 0 5px var(--il-bar); }
+body.qc-new .qc-bar a.qc-bar-check .qc-bar-ico .ui-i { width: 28px; height: 28px; }
+body.qc-new .qc-bar a.qc-bar-check.on { color: #fff; }
+body.qc-new .qc-bar .il-dot { top: -20px; right: 18%; }
+body.qc-new .main { padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px)); }
+
+/* ---------- Headers: a small grey label over a big title ---------- */
+body.qc-new .ui-head .ui-date { font-size: 13px; font-weight: 500; letter-spacing: 0; text-transform: none; color: var(--ui-muted); }
+body.qc-new .ui-head h1 { font-size: 26px; line-height: 1.2; font-weight: 800; }
+body.qc-new .ui-head .ui-subline { font-size: 14px; }
+body.qc-new .il-back { border-radius: 50%; }
+body.qc-new .ui-head h1 .ui-hintwrap { display: none; }
+body.qc-new .ui-head { flex-wrap: nowrap; align-items: flex-start; gap: 12px; }   /* round buttons stay beside the title */
+body.qc-new .ui-head > :first-child { min-width: 0; }
+body.qc-new .ui-head-actions { flex: none; display: flex; gap: 8px; }   /* the header's round ? button does this job */
+
+/* ---------- Pieces every phone page shares ---------- */
+.qc-chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+  text-decoration: none; background: var(--ui-paper); color: var(--ui-ink); border: 1px solid var(--ui-line); }
+.qc-chip::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--ui-muted); }
+.qc-chip.is-warn { background: var(--ui-amber-bg); border-color: var(--ui-amber-line); color: var(--ui-amber); }
+.qc-chip.is-warn::before { background: var(--ui-amber); }
+.qc-chip.is-ok::before { background: var(--il-go-hi); }
+.qc-chip * { font: inherit; }
+.qc-pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px; border-radius: 999px;
+  border: 0; font: inherit; font-weight: 800; font-size: 16px; cursor: pointer; text-decoration: none; background: var(--il-go); color: #fff; width: 100%; }
+.qc-pill .ui-i { width: 18px; height: 18px; }
+.qc-pill.is-quiet { background: var(--ui-paper); color: var(--ui-ink); border: 1px solid var(--ui-line); }
+.qc-card { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; padding: 16px; display: grid; gap: 8px; }
+.qc-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.qc-two form { margin: 0; }
+.qc-sec { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin: 10px 2px 2px; color: var(--ui-muted); font-size: 13px; }
+.qc-sec b { color: var(--ui-ink); font-size: 16px; }
+
+/* Rows grouped in one card, each with a round icon, two lines and a › (lists and pickers). */
+.qc-list { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; overflow: hidden; }
+.qc-row { display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 10px 14px; text-decoration: none; color: var(--ui-ink);
+  border-top: 1px solid var(--ui-line); }
+.qc-list .qc-row:first-child { border-top: 0; }
+.qc-row:active { background: var(--il-go-soft); }
+.qc-row-ico { width: 40px; height: 40px; border-radius: 50%; flex: none; display: grid; place-items: center; background: var(--il-go-soft); color: var(--il-go); }
+.qc-row-ico.is-quiet { background: var(--ui-panel); color: var(--ui-muted); }
+.qc-row-ico .ui-i { width: 20px; height: 20px; }
+.qc-row-t { flex: 1; min-width: 0; display: grid; gap: 2px; }
+.qc-row-t b { font-size: 16px; }
+.qc-row-t small { font-size: 13px; color: var(--ui-muted); overflow-wrap: anywhere; }
+.qc-row-go { font-size: 26px; line-height: 1; color: var(--ui-muted); }
+
+/* An empty list: round icon, bold title, one line, one button. */
+.qc-empty { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; padding: 28px 20px; display: grid; gap: 8px;
+  justify-items: center; text-align: center; }
+.qc-empty-ico { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; background: var(--il-go-soft); color: var(--il-go); }
+.qc-empty-ico .ui-i { width: 26px; height: 26px; }
+.qc-empty b { font-size: 18px; }
+.qc-empty p { margin: 0; color: var(--ui-muted); font-size: 14px; max-width: 32ch; }
+.qc-empty .qc-pill { width: auto; margin-top: 6px; }
+
+/* Round buttons in a page header (? help, + add), as in the reference app. */
+.qc-round { width: 44px; height: 44px; border-radius: 50%; display: inline-grid; place-items: center; border: 1px solid var(--ui-line);
+  background: var(--ui-paper); color: var(--ui-ink); cursor: pointer; text-decoration: none; padding: 0; }
+.qc-round .ui-i { width: 20px; height: 20px; }
+.qc-round.is-go { background: var(--il-go); border-color: var(--il-go); color: #fff; }
+.qc-link { background: none; border: 0; padding: 6px 0; font: inherit; font-weight: 800; color: var(--il-go); cursor: pointer; text-decoration: none; }
+button.qc-row { width: 100%; font: inherit; text-align: left; background: none; border-left: 0; border-right: 0; border-bottom: 0; cursor: pointer; }
+.qc-status { font-weight: 700; }
+.qc-status.is-warn { color: var(--ui-amber); }
+.qc-status.is-go { color: var(--il-go); }
+.qc-status.is-ok { color: var(--ui-muted); }
+.qc-none { text-align: center; color: var(--ui-muted); padding: 18px 0; }
+
+/* Filter buttons over a list; each opens a short list from the bottom. */
+.qc-filterbar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; }
+.qc-filter { min-height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--ui-line); background: var(--ui-paper);
+  font: inherit; font-weight: 700; color: var(--ui-ink); cursor: pointer; }
+
+/* A sheet that slides up from the bottom over a dimmed page. */
+.qc-sheet { position: fixed; inset: 0; z-index: 80; background: rgba(9, 24, 21, .48); display: flex; align-items: flex-end; margin: 0; }
+.qc-sheet[hidden] { display: none; }
+.qc-sheet-in { width: 100%; max-height: calc(100% - 48px); overflow-y: auto; background: var(--ui-ground, #f1f5f4); border-radius: 22px 22px 0 0;
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(18px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  display: grid; gap: 10px; animation: qc-up var(--il-dur-enter) var(--il-ease); }
+@keyframes qc-up { from { transform: translateY(24px); opacity: .6; } }
+body.qc-sheet-open { overflow: hidden; }
+.qc-grab { justify-self: center; width: 40px; height: 5px; border-radius: 3px; background: var(--ui-line); }
+.qc-sheet-h { display: flex; justify-content: space-between; align-items: center; }
+.qc-sheet-h b { font-size: 19px; }
+.qc-opt .qc-tick { color: var(--il-go); font-weight: 800; visibility: hidden; }
+.qc-opt.is-on .qc-tick { visibility: visible; }
+.qc-opt.is-on { background: var(--il-go-soft); }
+.qc-count { color: var(--ui-muted); font-variant-numeric: tabular-nums; }
+.qc-scroll { max-height: 56vh; overflow-y: auto; }
+.qc-label { font-size: 13px; color: var(--ui-muted); margin: 4px 2px -4px; }
+.qc-field { width: 100%; min-height: 50px; padding: 0 14px; border-radius: 14px; border: 1.5px solid var(--ui-line); background: var(--ui-paper);
+  font: inherit; font-size: 16px; color: var(--ui-ink); }
+.qc-field:focus { outline: none; border-color: var(--il-go); }
+.qc-pickrow { border: 1px solid var(--ui-line) !important; border-radius: 14px; background: var(--ui-paper); }
+.qc-three { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.qc-three .qc-field { padding: 0 8px; font-size: 14px; }
+.qc-hint { margin: 0 2px; font-size: 13px; color: var(--ui-muted); }
+.qc-more { justify-self: center; font-size: 14px; }
+
+/* ---------- A test's page: the steps as a numbered list ---------- */
+.qc-stack { display: grid; gap: 14px; }
+.qc-num { width: 32px; height: 32px; border-radius: 50%; flex: none; display: grid; place-items: center; font-weight: 800; font-size: 14px;
+  background: var(--ui-panel); color: var(--ui-muted); }
+.qc-step.is-done .qc-num { background: var(--il-go); color: #fff; }
+.qc-step.is-next { background: var(--il-go-soft); }
+.qc-step.is-next .qc-num { background: #fff; color: var(--il-go); box-shadow: 0 0 0 2px var(--il-go); }
+.qc-next { font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: var(--il-go); color: #fff; }
+.qc-val { color: var(--ui-muted); font-variant-numeric: tabular-nums; font-size: 14px; }
+.qc-center { text-align: center; }
+.qc-pill.is-danger { background: var(--ui-paper); color: var(--ui-coral-ink, #8d2f22); border: 1px solid var(--ui-coral-line, #eec4b6); }
+.qc-gap-top { margin-top: 18px; }
+.qc-gap-bottom { margin-bottom: 16px; }
+.qc-lead { margin: 4px 2px 12px; font-size: 16px; line-height: 1.45; color: var(--ui-ink); }
+.qc-box > summary { cursor: pointer; }
+/* A folded section on a long phone page: one tappable line, opens in place. */
+.qc-fold { margin: 14px 0 0; }
+.qc-fold > summary { cursor: pointer; display: grid; gap: 2px; padding: 10px 0; list-style: none; }
+.qc-fold > summary::-webkit-details-marker { display: none; }
+.qc-fold > summary b { font-size: 16px; }
+.qc-fold > summary b::after { content: " ›"; color: var(--ui-muted); }
+.qc-fold[open] > summary b::after { content: " ⌄"; }
+.qc-fold > summary span { font-size: 13px; color: var(--ui-muted); }
+.card > .qc-fold:first-child { margin-top: 0; }
+.card > .qc-fold:first-child > summary { padding: 0; }
+.qc-box ul { margin: 10px 0 0; padding-left: 18px; display: grid; gap: 6px; }
+/* Search on the phone: one wide box with the magnifier inside it (the box itself: iconlook.css). */
+.qc-search { position: relative; margin-bottom: 6px; }
+.qc-search-ico { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--ui-muted); pointer-events: none; }
+.qc-search-ico .ui-i { width: 20px; height: 20px; }
+/* Edit class on the phone: one row per learner - number, name, bin; Save once changed. */
+body.qc-new .learner-list { gap: 0; }
+body.qc-new .learner-row { grid-template-columns: 34px minmax(0, 1fr) auto auto; gap: 8px; padding: 8px 0; border: 0;
+  border-bottom: 1px solid var(--ui-line); border-radius: 0; }
+body.qc-new .learner-row:last-child { border-bottom: 0; }
+body.qc-new .learner-row:not(.is-changed) button[value=save] { display: none; }
+body.qc-new .learner-row button[value=delete] { padding: 0 12px; }
+/* A page that is also printed: rows on the phone screen, the full table on paper
+   (the paper half is in iconlook.css's one print block). */
+.qc-print-only { display: none; }
+.qc-box { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; padding: 14px; overflow: hidden; }
+/* A learner's report on the phone screen: the skill table drops its Items and bar columns
+   (the score already says both); on paper it prints whole. */
+@media screen {
+  body.qc-new .ctable :is(th, td):nth-child(2), body.qc-new .ctable :is(th, td):nth-child(4) { display: none; }
+  body.qc-new .rep-head .verdict { text-align: left; }
+}
+/* A test's Papers tab: rows that open the paper; "Select" shows a tick on each row. */
+.qc-pick { display: flex; align-items: center; }
+.qc-pick + .qc-pick { border-top: 1px solid var(--ui-line); }
+.qc-pick .qc-row { flex: 1; min-width: 0; border-top: 0; }
+.qc-picking .qc-row-go { visibility: hidden; }   /* the tick on each row: iconlook.css */
+/* A test's Items tab: one row per item, its bar and what the class chose. */
+.qc-item { align-items: flex-start; }
+.qc-item .qc-num { margin-top: 2px; }
+.qc-num.is-hard { background: var(--ui-coral-bg); color: var(--ui-coral-ink); }
+.qc-num.is-top { background: var(--il-go); color: #fff; }
+.qc-item-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.qc-item-lvl { font-size: 12.5px; font-weight: 700; color: var(--ui-muted); }
+.qc-item-lvl.lvl-Hard { color: var(--ui-coral-ink); }
+.qc-item-bar { display: flex; align-items: center; gap: 10px; }
+.qc-item-bar .bar { flex: 1; min-width: 0; }
+.qc-item-bar .lvl-Moderate > span { background: var(--ui-amber); }   /* grey on grey could not be seen */
+.qc-item-lvl.lvl-Moderate { color: var(--ui-amber); }
+.qc-item .bar { margin: 2px 0; }
+.qc-item.is-reteach { background: var(--ui-coral-bg); }
+.qc-mps { font-weight: 800; font-size: 16px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.qc-stats b small { font-size: 14px; color: var(--ui-muted); font-weight: 700; }
+.qc-item-bar b { width: 44px; text-align: right; font-size: 14px; font-variant-numeric: tabular-nums; }
+/* One checked paper: the answers sit on white like the paper above them. */
+.qc-answers { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; padding: 14px; }
+.qc-answers .qc-sec { margin-top: 0; }
+.qc-answers .qc-pill { width: 100%; margin-top: 14px; }
+
+/* The segmented switch's styles live in iconlook.css (the app keeps every control there). */
+.qc-paper { background: var(--ui-paper); border: 1px solid var(--ui-line); border-radius: 18px; padding: 14px; display: grid; place-items: center; }
+.qc-paper img { width: 100%; max-width: 300px; border-radius: 4px; box-shadow: 0 1px 4px rgba(0, 0, 0, .16); background: #fff; }
+.qc-hint.is-warn { color: var(--ui-amber); font-weight: 700; }
+a.qc-hint { color: var(--il-go); font-weight: 700; }
+
+/* The Answer key in the phone app: bubbles like the printed sheet, a tapped one shaded dark. */
+body.qc-new .ky-row { padding: 9px 2px; }
+body.qc-new .ky-qn { font-size: 16px; }
+body.qc-new .ui-steps-list .ui-step-no { display: none; }
+/* The key's progress ("3 / 20") goes to the top as one compact card, like the reference app's
+   "Answers set"; the facts it repeats (items, choices) stay off the phone. */
+body.qc-new .ky-layout > aside { order: -1 !important; }
+body.qc-new .ky-layout > aside .ui-card-h p,
+body.qc-new .ky-layout > aside .ui-facts { display: none; }
+body.qc-new .ky-layout > aside .ui-card-h h2 { font-size: 14px; color: var(--ui-muted); }
+
+/* ---------- Checking (the full-screen camera page, _focus.html) ---------- */
+body.qc-new .qc-fxhead { display: flex; align-items: center; gap: 12px; }
+.qc-fxtitle { display: grid; min-width: 0; }
+.qc-fxtitle small { font-size: 13px; color: var(--ui-muted); }
+.qc-fxtitle b { font-size: 22px; font-weight: 800; line-height: 1.2; overflow-wrap: anywhere; }
+body.qc-new .qc-fxsub b { display: none; }               /* the name is the title already */
+body.qc-new .fx-counter { font-size: 14px; }
+body.qc-new .fx-counter b { font: 800 17px var(--il-font, inherit); color: var(--il-go); }
+
+/* ---------- Classes and Settings ---------- */
+.qc-badge-sm { flex: none; min-width: 34px; padding: 4px 8px; border-radius: 999px; font-size: 12px; font-weight: 800; text-align: center;
+  background: var(--il-go-soft); color: var(--il-go); }
+.qc-avatar { width: 52px; height: 52px; border-radius: 50%; flex: none; display: grid; place-items: center; font-weight: 800; font-size: 18px;
+  background: var(--il-go); color: #fff; }
+.qc-avatar .ui-i { width: 24px; height: 24px; }
+.qc-profile { background: var(--ui-paper); border: 1px solid var(--ui-line) !important; border-radius: 18px; }
+.qc-settings { margin-bottom: 8px; }
+body.qc-new .st-sections { display: none; }
+
+/* ---------- Home ---------- */
+.qc-head { align-items: center; }
+.qc-phome { display: grid; gap: 14px; }
+.qc-banner { display: grid; grid-auto-flow: column; grid-auto-columns: 100%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scrollbar-width: none; border-radius: 20px; }
+.qc-banner::-webkit-scrollbar { display: none; }
+.qc-slide { scroll-snap-align: start; display: grid; justify-items: center; gap: 6px; text-align: center; padding: 20px 18px; border-radius: 20px;
+  text-decoration: none; color: var(--ui-ink); background: var(--ui-paper); border: 1px solid var(--ui-line); min-width: 0; }
+.qc-slide b { font-size: 19px; line-height: 1.25; }
+.qc-slide > span:not(.qc-slide-ico):not(.qc-slide-btn) { font-size: 14px; color: var(--ui-muted); }
+.qc-slide-ico { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--il-go-soft); color: var(--il-go); }
+.qc-slide-ico .ui-i { width: 26px; height: 26px; }
+.qc-slide-btn { margin-top: 6px; width: 100%; min-height: 46px; border-radius: 999px; display: grid; place-items: center; font-weight: 800;
+  background: var(--il-go); color: #fff; }
+.qc-dots { display: flex; justify-content: center; gap: 6px; min-height: 7px; }
+/* The feature slides (Arvin, 11 Nov 2026): deep green, a soft light drifting behind, the words
+   rising in as their slide arrives. Moves only with the --il-dur-* tokens; iconlook.css's one
+   reduce-motion rule stops all of it. */
+.qc-banner-box { display: grid; gap: 10px; }
+.qc-feat { position: relative; overflow: hidden; isolation: isolate; min-height: 212px; align-content: center;
+  border: 0; color: #fff; background: linear-gradient(120deg, var(--qc-deep) 0%, #0b6a5c 48%, var(--qc-emerald) 100%); }
+.qc-feat > span:not(.qc-slide-ico):not(.qc-slide-btn):not(.qc-feat-art) { color: rgba(255, 255, 255, .84); }
+.qc-feat .qc-slide-ico { background: rgba(255, 255, 255, .14); color: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .22); }
+.qc-feat .qc-slide-btn { background: #fff; color: var(--il-go); width: auto; min-width: 180px; padding: 0 22px; }
+.qc-feat .qc-feat-tag { font-size: 11.5px !important; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--qc-mint) !important; }
+.qc-feat b { font-size: 21px; }
+/* The words are always there; once banner.js runs (.is-live) the slides out of view lower
+   theirs, so they rise in as their slide arrives. */
+.qc-feat :is(.qc-slide-ico, .qc-feat-tag, b, .qc-feat-gives, .qc-slide-btn) { position: relative; z-index: 1;
+  transition: opacity var(--il-dur-slow) var(--il-ease), transform var(--il-dur-slow) var(--il-ease); }
+.qc-banner-box.is-live .qc-feat:not(.is-in) :is(.qc-slide-ico, .qc-feat-tag, b, .qc-feat-gives, .qc-slide-btn) { opacity: 0; transform: translateY(10px); }
+.qc-feat.is-in b { transition-delay: 60ms; }
+.qc-feat.is-in .qc-feat-gives { transition-delay: 120ms; }
+.qc-feat.is-in .qc-slide-btn { transition-delay: 180ms; }
+.qc-feat:focus-visible { outline: 3px solid var(--il-go-hi); outline-offset: 3px; }
+/* Behind the words: three soft rings of light that drift slowly. */
+.qc-feat-art { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.qc-feat-art i { position: absolute; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, .22), rgba(255, 255, 255, 0) 70%); }
+.qc-feat-art i:nth-child(1) { width: 260px; height: 260px; right: -60px; top: -90px; animation: qc-drift calc(var(--il-dur-slow) * 40) var(--il-ease) infinite alternate; }
+.qc-feat-art i:nth-child(2) { width: 180px; height: 180px; left: -50px; bottom: -70px; animation: qc-drift calc(var(--il-dur-slow) * 52) var(--il-ease) infinite alternate-reverse; }
+.qc-feat-art i:nth-child(3) { width: 110px; height: 110px; right: 22%; bottom: -40px; opacity: .7; animation: qc-drift calc(var(--il-dur-slow) * 33) var(--il-ease) infinite alternate; }
+@keyframes qc-drift { from { transform: translate(0, 0) scale(1); } to { transform: translate(-28px, 18px) scale(1.12); } }
+.qc-dots button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 4px; background: var(--ui-line); cursor: pointer;
+  transition: width var(--il-dur-move) var(--il-ease), background-color var(--il-dur-fade) var(--il-ease); }
+.qc-dots button.on { width: 22px; background: var(--il-go-hi); }
+.qc-dots button:focus-visible { outline: 2px solid var(--il-go-hi); outline-offset: 2px; }
+.qc-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--ui-paper); border: 1px solid var(--ui-line);
+  border-radius: 18px; padding: 14px 4px; }
+.qc-stats div { display: grid; gap: 2px; padding: 0 12px; border-left: 1px solid var(--ui-line); min-width: 0; }
+.qc-stats div:first-child { border-left: 0; }
+.qc-stats b { font-size: 24px; font-variant-numeric: tabular-nums; }
+.qc-stats span { font-size: 12.5px; color: var(--ui-muted); }
+.qc-newhere p { margin: 0; color: var(--ui-muted); }
+.qc-newhere b { font-size: 17px; }
+.qc-tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.qc-tile { position: relative; display: grid; align-content: start; gap: 4px; min-height: 118px; padding: 16px 14px; border-radius: 18px;
+  background: var(--ui-paper); border: 1px solid var(--ui-line); text-decoration: none; color: var(--ui-ink); min-width: 0; }
+.qc-tile:active { background: var(--il-go-soft); }
+.qc-tile-ico { color: var(--il-go); margin-bottom: 8px; }
+.qc-tile-ico .ui-i { width: 28px; height: 28px; }
+.qc-tile b { font-size: 16px; }
+.qc-tile small { font-size: 12.5px; color: var(--ui-muted); }
+.qc-badge { position: absolute; top: 14px; right: 14px; min-width: 26px; height: 26px; padding: 0 7px; border-radius: 999px; display: grid;
+  place-items: center; font-size: 13px; font-weight: 800; background: var(--il-go); color: #fff; font-variant-numeric: tabular-nums; }
+body.qc-new .il-home, body.qc-new .main > .qc-banner { margin-top: 0; }
+
+/* ---------- Results, by class (results.html, Arvin 11 Nov 2026) ----------
+   The tools (find, class, sort), then one section per class: its name and average over its
+   tests as short rows, each with a bar of its class average. */
+.qc-rtools { display: grid; gap: 10px; margin-bottom: 4px; }
+.qc-rtools .qc-search { margin: 0; }
+.qc-rtools .qc-field { width: 100%; min-height: 46px; }
+.qc-rtools .qc-search .qc-field { padding-left: 44px; }
+.qc-rgroups { display: grid; gap: 22px; }
+.qc-rgroup { display: grid; gap: 8px; }
+.qc-rgroup[hidden], .qc-rrow[hidden] { display: none; }
+.qc-rgroup-h { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; padding: 0 4px; }
+.qc-rgroup-h h2 { margin: 0; font-size: 18px; font-weight: 800; color: var(--ui-ink); }
+.qc-rgroup-h span { font-size: 13.5px; color: var(--ui-muted); }
+.qc-rgroup-h .is-warn { color: var(--ui-amber); }
+.qc-rrow { min-height: 60px; }
+.qc-rrow .qc-row-t b { overflow-wrap: anywhere; }
+.qc-rmeter { display: none; flex: none; width: 120px; height: 8px; border-radius: 99px; background: var(--ui-line-2); overflow: hidden; }
+.qc-rmeter i { display: block; height: 100%; border-radius: inherit; background: var(--il-go-hi); }
+.qc-rmeter.is-warn i { background: var(--ui-amber); }
+.qc-rrow .qc-chip { flex: none; min-width: 72px; justify-content: center; font-variant-numeric: tabular-nums; }
+.qc-empty-find { margin: 0; padding: 18px; text-align: center; color: var(--ui-muted); }
+
+/* ---------- Loading skeleton (skeleton.js, Arvin 11 Nov 2026) ----------
+   The new look's pages drawn as grey shapes with the page's own parts, so each shape sits where
+   the real one will. Here: the tone (the palette's white, a shade darker) and the few shapes
+   with no real part to borrow (the banner, a round button, a field, a chip, a tab). */
+body.qc-new .skel { background: linear-gradient(100deg, #eceee7 35%, #f6f7f2 50%, #eceee7 65%); background-size: 250% 100%; }
+body.qc-new .skel-line { margin: 6px 0; border-radius: 6px; }
+body.qc-new .skel-root .qc-row, body.qc-new .skel-root .qc-tile { pointer-events: none; }
+.qc-skel-head { display: flex; align-items: center; gap: 12px; }
+.qc-skel-round { flex: none; width: 40px; height: 40px; border-radius: 50%; }
+.qc-skel-banner { height: 212px; border-radius: 20px; }
+.qc-skel-ico { flex: none; width: 40px; height: 40px; border-radius: 50%; }
+.qc-skel-chip { flex: none; width: 72px; height: 28px; border-radius: 999px; }
+.qc-skel-field { height: 46px; border-radius: 12px; }
+.qc-skel-filter { width: 120px; height: 40px; border-radius: 999px; }
+.qc-skel-tabs { display: flex; gap: 8px; overflow: hidden; }
+.qc-skel-tab { flex: none; width: 92px; height: 40px; border-radius: 999px; }
+.qc-skel-form { display: grid; gap: 6px; padding: 22px; }
+/* The frame's shapes on the startup screen (opening.html): soft white on the dark bars. */
+body.qc-new :is(.il-top, .qc-bar) .skel { background: rgba(255, 255, 255, .16); animation: none; }
+.qc-skel-baritem { display: grid; justify-items: center; align-content: center; gap: 4px; min-height: 60px; }
+.qc-skel-baritem.is-check .skel-chip { margin-top: -26px; border-radius: 50%; background: var(--il-go-hi) !important; }
+.qc-skel-navi { flex: none; width: 48px; height: 44px; border-radius: 10px; }
+.qc-skel-navi.is-brand { width: 30px; height: 30px; margin: 9px 0 18px 9px; border-radius: 9px; }
+.qc-skel-navi.is-check { height: 48px; margin-bottom: 12px; }
+.qc-skel-navfoot { display: grid; gap: 4px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--ui-line); }

@@ -6,12 +6,18 @@
   <title>QuickCheck</title>
   <!--
     The first screen of the desktop app. It opens instantly (it is a plain
-    file), shows the QuickCheck logo, then the grey template of the dashboard
-    while the class records finish loading — and hands over to the real
-    dashboard the moment it is ready. No spinning circle anywhere.
+    file), shows the QuickCheck logo, then the grey template of Home while the
+    class records finish loading — and hands over to the real Home the moment it
+    is ready. No spinning circle anywhere.
+    The template is the new look's (Arvin, 11 Nov 2026): the same style sheets as
+    the app, so on a laptop it is the icon sidebar, the centred Home and the status
+    bar, and on the phone the top bar, Home and the bottom bar (skeleton.js).
   -->
   <link rel="stylesheet" href="app.css">
   <link rel="stylesheet" href="ui.css">
+  <link rel="stylesheet" href="iconlook.css">
+  <link rel="stylesheet" href="phone.css">
+  <link rel="stylesheet" href="desktop.css">
   <style>
     /* The same green as the logo design, so the logo's own background
        disappears into the screen around it. */
@@ -35,20 +41,16 @@
     }
   </style>
 </head>
-<body>
-  <!-- Behind the logo: the dashboard's shape, drawn by skeleton.js. The classes
-       are the real app's (ui.css), so the shape the teacher sees here is the
-       shape that arrives. -->
-  <header class="ui-top" aria-hidden="true">
-    <span class="skel skel-chip" style="width:34px;height:34px"></span>
-    <span class="skel skel-line" style="width:150px;height:14px"></span>
-    <span class="ui-spacer"></span>
-    <span class="skel skel-pill"></span>
-  </header>
+<body class="qc-new">
+  <!-- Behind the logo: Home's shape, drawn by skeleton.js with the real app's parts
+       and style sheets, so the shape the teacher sees here is the shape that arrives. -->
+  <header class="ui-top il-top" id="skelTop" aria-hidden="true"></header>
+  <nav class="qc-pane" id="skelPane" aria-hidden="true"></nav>
   <div class="app" aria-hidden="true">
-    <aside class="ui-side" id="skelSidebar"></aside>
     <main class="main" id="skelMain"></main>
   </div>
+  <footer class="qc-status" aria-hidden="true"><span class="skel skel-line" style="width:220px;height:10px"></span></footer>
+  <nav class="tabbar il-tabbar qc-bar" id="skelBar" aria-hidden="true"></nav>
 
   <div class="qc-splash" id="splash" role="status" aria-label="QuickCheck is opening">
     <img class="qc-logo" src="brand/quickcheck-logo.png" width="1420" height="377"
@@ -65,8 +67,10 @@
       var GIVE_UP_MS = 20000;      // open the dashboard anyway, even if still loading
       var started = Date.now();
 
-      document.getElementById("skelSidebar").innerHTML = QCSkeleton.sidebar();
-      document.getElementById("skelMain").innerHTML = QCSkeleton.dashboard();
+      document.getElementById("skelTop").innerHTML = QCSkeleton.phoneTop();
+      document.getElementById("skelPane").innerHTML = QCSkeleton.pane();
+      document.getElementById("skelBar").innerHTML = QCSkeleton.phoneBar();
+      document.getElementById("skelMain").innerHTML = QCSkeleton.home();
 
       setTimeout(function () {
         document.getElementById("splash").classList.add("gone");

@@ -16,6 +16,9 @@
   
   <link rel="stylesheet" href="../static/iconlook.css">
   
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
+  
   
   <style media="print">
     @page {
@@ -31,7 +34,7 @@
 
 
 
-<body class="">
+<body class="qc-new  ">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -86,7 +89,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,7 +102,7 @@
 
 
 <nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="il-rail-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="il-rail-brand">QuickCheck</span></a>
   <div class="il-rail-main">
     
@@ -109,7 +112,7 @@
     <a href="tests.html" data-key="2" title="Tests (2)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
     
-    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+    <a href="tests_sample-science-quiz_scan.html" data-key="3" title="Check (3)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="il-rail-word">Check</span></a>
     
     <a href="classes.html" data-key="4" title="Classes (4)" aria-current=page>
@@ -128,7 +131,8 @@
     <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
   </div>
 </nav>
-<div class="app">
+<div class="app ">
+  
 
 
   <!-- Main -->
@@ -138,10 +142,12 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
+    
+    
     
     
     
@@ -154,15 +160,19 @@
       
       <div class="il-headback">
         
+        
         <div>
-          <div class="ui-date"></div>
+          <div class="ui-date">Your learners</div>
           <h1>Classes<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
   aria-label="What is this? — this page"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Start with your learners. Add a class once and every test afterwards reuses the same list.</span></span></h1>
           
         </div>
       </div>
       
-      <div class="ui-head-actions"><a class="btn primary " href="classes_new.html" title="Add a class"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg>Add</a></div>
+      <div class="ui-head-actions">
+<a class="qc-round" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p4" target="_blank" rel="noopener" title="How classes work"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg><span class="ui-sr">How classes work</span></a>
+<a class="qc-round is-go" href="classes_new.html" title="Add a class"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg><span class="ui-sr">Add a class</span></a>
+</div>
     </div>
     
     
@@ -186,120 +196,51 @@
     </div>
     
     
-<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="classes">
-  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
-  <p class="qc-tip-words"><b id="qcTipTitle">Classes</b> Add a class once. Every test you make reuses its list of learners.</p>
-  <div class="qc-tip-acts">
-    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p4" target="_blank" rel="noopener">Details</a>
-    <form method="post" action="#" data-demo-action="/guide/tip/classes/hide" data-guide-hide data-busy="off">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><input type="hidden" name="next" value="/classes?">
-      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
-    </form>
-  </div>
-</aside>
-
     
 
 
 
 
-
-<div class="cl-bar">
-  <label class="il-find"><span class="ui-sr">Find a class</span><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg><input id="classSearch" type="search" placeholder="Search" data-filter-list=".cl-card"></label>
-  <span class="ui-spacer"></span>
-  <div class="ui-legend"><span><i class="is-p1"></i>Highly Proficient</span><span><i class="is-p2"></i>Proficient</span><span><i class="is-p3"></i>Nearly Proficient</span><span><i class="is-p4"></i>Low Proficient</span><span><i class="is-p5"></i>Not Proficient</span></div>
-</div>
-
-<div class="cl-grid">
+<input class="qc-field" type="search" id="classFind" placeholder="Search" aria-label="Find a class" style="margin-bottom:12px">
+<p class="qc-sec"><b>Classes</b><span>10 learners</span></p>
+<div class="qc-list" id="classRows">
   
-  
-  
-  
-  <article class="ui-card cl-card" data-search="grade 7 – sampaguita (simple scorebook)" aria-labelledby="cl-1">
-    <header class="cl-top">
-      <span class="il-ico il-c-go cl-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span>
-      <span class="cl-title">
-        <a id="cl-1" href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_preview.html"><b>Grade 7 – Sampaguita</b></a>
-        <small title="10 learners · Simple scorebook"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> 10 · List</small>
-      </span>
-      <details class="cl-more il-dropmenu">
-        <summary title="More"><svg class="ui-i " aria-hidden="true"><use href="#ui-dots"/></svg><span class="ui-sr">More for Grade 7 – Sampaguita (Simple scorebook)</span></summary>
-        <div class="cl-menu il-dropmenu-panel">
-          <a href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_edit.html" title="Edit class and learners"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg> Edit</a>
-          <a href="../files/f38a4de07e5867f4.xlsx" data-download="Making Excel…" title="Download list (Excel)"><svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg> Excel</a>
-          
-          <form method="post" action="#" data-demo-action="/classes/Grade%207%20%E2%80%93%20Sampaguita%20(Simple%20scorebook)/delete"
-                data-confirm="Delete Grade 7 – Sampaguita (Simple scorebook)?" data-confirm-action="Delete class">
-            <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw">
-            <button type="submit" class="is-danger"><svg class="ui-i " aria-hidden="true"><use href="#ui-trash"/></svg> Delete</button>
-          </form>
-        </div>
-      </details>
-    </header>
-
-    
-    <div class="cl-perf is-empty" title="Check the papers of its test to see how the class did.">
-      <span class="il-chip il-c-sky"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg>Not checked</span>
-    </div>
-    
-
-    <div class="cl-links">
-      <a class="btn ghost il-mini is-todo" href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_preview.html" title="Open class"><svg class="ui-i " aria-hidden="true"><use href="#ui-list"/></svg>Open</a>
-      <a class="btn ghost il-mini" href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_progress.html" title="Learning progress"><svg class="ui-i " aria-hidden="true"><use href="#ui-trend"/></svg>Progress</a>
-      <a class="btn ghost il-mini" href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_interventions.html" title="Interventions: reteaching and reassessment"><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg>Reteach</a>
-    </div>
-  </article>
+  <a class="qc-row" href="classes_Grade_207_20_E2_80_93_20Sampaguita_20_Simple_20scorebook_preview.html" data-find="grade 7 – sampaguita">
+    <span class="qc-row-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span>
+    <span class="qc-row-t"><b>Grade 7 – Sampaguita</b><small>10 learners · List · 1 test</small></span>
+    <span class="qc-badge-sm" aria-hidden="true">G7S</span>
+  </a>
   
 </div>
-<div class="ui-empty" id="filterEmpty" role="status" hidden><b>—</b></div>
+<script>
+  // The search box shows only the classes whose name matches.
+  document.getElementById('classFind').addEventListener('input', function () {
+    var q = this.value.trim().toLowerCase();
+    document.querySelectorAll('#classRows .qc-row').forEach(function (r) { r.hidden = q && r.dataset.find.indexOf(q) < 0; });
+  });
+</script>
+
+
+
 
 
 <section class="ui-card cl-connect" aria-labelledby="cl-connect-h">
   <div class="ui-card-h"><div><h2 id="cl-connect-h" title="Already have a DepEd Excel class record?"><svg class="ui-i " aria-hidden="true"><use href="#ui-xls"/></svg> DepEd Excel<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
   aria-label="What is this? — deped excel class record"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Already have a DepEd Excel class record? Connect the .xlsx file and checked scores are written straight into it.</span></span></h2></div></div>
   <form method="post" action="#" data-demo-action="/classes/upload" enctype="multipart/form-data" class="cl-upload">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw">
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M">
     <label class="cl-file" for="classes-field-1"><span class="ui-sr">Excel file (.xlsx)</span>
       <input id="classes-field-1" type="file" name="record" accept=".xlsx" required></label>
     <button class="btn ghost" type="submit" title="Connect class record"><svg class="ui-i " aria-hidden="true"><use href="#ui-upload"/></svg>Connect</button>
   </form>
 </section>
-
 <style>
-  .cl-bar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
-  .cl-count { font-size: 13px; color: var(--ui-muted); font-weight: 600; }
-
-  .cl-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); margin-bottom: var(--il-gap); }
-  .cl-card { gap: 14px; }
-  .cl-top { display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; gap: 12px; align-items: center; }
-  .cl-ini { width: 42px; height: 42px; border-radius: 11px; background: var(--ui-teal-soft); color: var(--ui-teal-deep);
-    display: grid; place-items: center; font-weight: 800; font-size: 14px; }
-  .cl-title { min-width: 0; }
-  .cl-title b { display: block; font-size: 15.5px; font-weight: 700; overflow-wrap: anywhere; }
-  .cl-title a:hover b { color: var(--ui-teal); }
-  .cl-title small { display: block; font-size: 12.5px; color: var(--ui-muted); }
-
-  .cl-perf { display: grid; gap: 8px; padding: 14px; border-radius: 12px; background: var(--ui-panel); border: 1px solid var(--ui-line-2); }
-  .cl-perf-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
-  .cl-perf-top > span:first-child { min-width: 0; }
-  .cl-perf-top small { display: block; font-size: 11.5px; color: var(--ui-muted); }
-  .cl-perf-top b { display: block; font-size: 13px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .cl-mps { text-align: right; flex: none; }
-  .cl-mps b { font-size: 24px; font-weight: 800; letter-spacing: -.03em; line-height: 1; }
-  .cl-mps.is-low b { color: var(--ui-coral-ink); }
-  .cl-perf .ui-track { margin: 4px 0 2px; }
-  .cl-sub { font-size: 11.5px; color: var(--ui-muted); }
-  .cl-perf.is-empty b { font-size: 13px; }
-  .cl-perf.is-empty small { font-size: 12px; color: var(--ui-muted); }
-  .cl-links { justify-content: flex-start; gap: 8px 18px; }
-  .cl-links .ui-i { width: 15px; height: 15px; }
-
-
   .cl-upload { display: flex; gap: 12px; align-items: flex-end; flex-wrap: wrap; }
   .cl-file { display: grid; gap: 6px; flex: 1; min-width: 240px; margin: 0; }
   .cl-file span { font-size: 12.5px; font-weight: 600; }
-  @media (max-width: 640px) { .cl-grid { grid-template-columns: minmax(0, 1fr); } }
+  .cl-connect { margin-top: var(--il-gap); }
 </style>
+
 
   </main>
 </div>
@@ -348,7 +289,7 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
@@ -358,19 +299,70 @@
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
      get around, so the five things teachers use sit within thumb reach and
      everything else lives behind "More". -->
-<nav class="tabbar il-tabbar" aria-label="Main navigation">
+<nav class="tabbar il-tabbar qc-bar" aria-label="Main navigation">
   
-  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
   
-  <a href="tests.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
   
-  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span></a>
   
-  <a href="classes.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  <a href="index.html" class="on " aria-current=page>
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span>Home</span></a>
   
-  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  <a href="tests.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_scan.html" class=" qc-bar-check" >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span>Check</span></a>
+  
+  <a href="results.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span>Results</span></a>
+  
+  <a href="settings.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-gear"/></svg></span><span>Settings</span></a>
+  
   
 </nav>
+
+
+
+
+<nav class="qc-pane" aria-label="Main navigation" title="Click to show the names">
+  <a class="qc-pane-brand" href="index.html" title="QuickCheck Pro 2.15.0">
+    <span class="qc-pane-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="qc-pane-word">QuickCheck</span></a>
+  <a class="qc-pane-check " href="tests_sample-science-quiz_scan.html" data-key="3" title="Check papers (3)" >
+    <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="qc-pane-word">Check papers</span></a>
+  <div class="qc-pane-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="qc-pane-word">Home</span><kbd class="qc-pane-key">1</kbd></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="qc-pane-word">Tests</span><kbd class="qc-pane-key">2</kbd></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" class="on" aria-current=page>
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="qc-pane-word">Classes</span><kbd class="qc-pane-key">4</kbd></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="qc-pane-word">Results</span><kbd class="qc-pane-key">5</kbd></a>
+    
+  </div>
+  <div class="qc-pane-foot">
+    <a href="search.html" data-search title="Search (Ctrl K)" class=""><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="qc-pane-word">Search</span><kbd class="qc-pane-key">Ctrl K</kbd></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="qc-pane-word">Help</span></a>
+    
+    
+    <a href="settings.html" title="Settings · Demo Teacher" class="" >
+      <span class="qc-pane-ico qc-pane-me">DT</span><span class="qc-pane-word">Settings</span></a>
+  </div>
+</nav>
+<footer class="qc-status" aria-label="Phone and sync">
+  
+  
+  <span class="qc-status-keys">Ctrl K search · 1–5 places</span>
+</footer>
+<div class="qc-pane-shade" aria-hidden="true"></div>
+<script src="../static/pane.js"></script>
+
 
 <script>
   // Folding sections start closed on a phone and open on a bigger screen, so
@@ -385,7 +377,7 @@
 </script>
 <script>
   (function () {
-    var token = "VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw";
+    var token = "63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');
@@ -397,14 +389,24 @@
   }());
 </script>
 <script>
-  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  // Keys 1–5 open the five places; "/" or Ctrl K opens search. Never while typing in a field
+  // (Ctrl K works there too, as in other Windows apps). The laptop's left pane, when it is
+  // on screen, decides which key is which; otherwise the classic rail does.
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.defaultPrevented || e.altKey) return;
+    var pane = document.querySelector('.qc-pane');
+    var inPane = pane && pane.offsetParent !== null;
+    var search = inPane ? pane.querySelector('a[data-search]') : document.querySelector('.il-rail-foot a[href$="search"]');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      if (search) { e.preventDefault(); location.href = search.href; }
+      return;
+    }
+    if (e.ctrlKey || e.metaKey) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     if (document.querySelector('dialog[open]')) return;
-    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
-                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    var go = e.key === '/' ? search
+                           : (inPane ? pane : document.querySelector('.il-rail-main')).querySelector('a[data-key="' + e.key + '"]');
     if (go) { e.preventDefault(); location.href = go.href; }
   });
 </script>

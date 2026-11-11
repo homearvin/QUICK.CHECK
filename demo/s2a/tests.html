@@ -16,6 +16,9 @@
   
   <link rel="stylesheet" href="../static/iconlook.css">
   
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
+  
   
   <style media="print">
     @page {
@@ -31,7 +34,7 @@
 
 
 
-<body class="">
+<body class="qc-new  ">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -86,7 +89,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,7 +102,7 @@
 
 
 <nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="il-rail-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="il-rail-brand">QuickCheck</span></a>
   <div class="il-rail-main">
     
@@ -109,7 +112,7 @@
     <a href="tests.html" data-key="2" title="Tests (2)" aria-current=page>
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
     
-    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+    <a href="tests_sample-science-quiz_scan.html" data-key="3" title="Check (3)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">7<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
     
     <a href="classes.html" data-key="4" title="Classes (4)" >
@@ -128,7 +131,8 @@
     <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
   </div>
 </nav>
-<div class="app">
+<div class="app ">
+  
 
 
   <!-- Main -->
@@ -138,10 +142,12 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
+    
+    
     
     
     
@@ -154,15 +160,20 @@
       
       <div class="il-headback">
         
+        
         <div>
-          <div class="ui-date"></div>
+          <div class="ui-date">Your tests</div>
           <h1>Tests<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
   aria-label="What is this? — this page"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Every test you have made. Open one to prepare it, carry on checking papers, or look at what has been saved.</span></span></h1>
-          <p class="ui-subline">1 test · 1 checked</p>
+          
         </div>
       </div>
       
-      <div class="ui-head-actions"><a class="btn primary " href="tests_new.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg>Create</a></div>
+      <div class="ui-head-actions">
+<a class="qc-round" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p5" target="_blank" rel="noopener" title="How tests work"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg><span class="ui-sr">How tests work</span></a>
+<button type="button" class="qc-round is-go" data-open="sheetNew" title="New test"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg><span class="ui-sr">New test</span></button>
+
+</div>
     </div>
     
     
@@ -186,91 +197,248 @@
     </div>
     
     
-<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="tests">
-  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
-  <p class="qc-tip-words"><b id="qcTipTitle">Tests</b> Every test you made. Open one to type its key, print sheets, check papers or see results.</p>
-  <div class="qc-tip-acts">
-    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p5" target="_blank" rel="noopener">Details</a>
-    <form method="post" action="#" data-demo-action="/guide/tip/tests/hide" data-guide-hide data-busy="off">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><input type="hidden" name="next" value="/tests?">
-      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
-    </form>
-  </div>
-</aside>
-
     
 
-<section class="il-card" aria-label="All tests">
+<div class="qc-filterbar">
+  <button type="button" class="qc-filter" data-open="sheetFilter"><span id="filterWord">All tests</span> ▾</button>
   
-  <div class="il-card-h">
-    
-    <div class="il-filters" role="group" aria-label="Show tests">
-      <button type="button" data-phase="all" aria-pressed="true">All 1</button>
-      <button type="button" data-phase="review ready progress" aria-pressed="false"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg>Check 1</button>
-    </div>
-    <label class="il-find"><span class="ui-sr">Search tests</span><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg>
-      <input id="testSearch" type="search" placeholder="Search"></label>
-  </div>
-  <div class="il-tlist">
-  <div class="il-trow" data-phase="review" data-class="Grade 7 – Sampaguita (Simple scorebook)" data-name="science 7 – quarter 1 quiz">
-    <span class="il-ico il-c-go"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span>
-    <a class="il-name" href="tests_sample-science-quiz_check.html"><b>Science 7 – Quarter 1 Quiz</b><small>Grade 7 – Sampaguita · 20</small></a>
-    <div class="il-prog"><span>1 / 10</span><div class="il-bar"><i style="width:10%"></i></div></div>
-    <span class="il-chipcell"><span class="il-chip il-c-sun"><svg class="ui-i " aria-hidden="true"><use href="#ui-q"/></svg>1 to fix</span></span>
-    <div class="il-row" style="flex-wrap:nowrap">
-      <a class="btn ghost il-act is-todo" href="tests_sample-science-quiz_check.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg>Review</a>
+</div>
+
+
+<div class="qc-list" id="testRows">
+  
+  <a class="qc-row" href="tests_sample-science-quiz.html" data-filter="check" data-class="Grade 7 – Sampaguita (Simple scorebook)">
+    <span class="qc-row-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span>
+    <span class="qc-row-t"><b>Science 7 – Quarter 1 Quiz</b>
+      <small>Grade 7 – Sampaguita · 20 items</small>
+      <small class="qc-status is-warn">→ 1 to fix · 6 to save</small></span>
+    <span class="qc-row-go" aria-hidden="true">›</span>
+  </a>
+  
+</div>
+<p class="qc-none" id="noneLeft" hidden>No tests here.</p>
+
+
+
+<div class="qc-sheet" id="sheetFilter" role="dialog" aria-modal="true" aria-labelledby="sheetFilterH" hidden>
+  <div class="qc-sheet-in"><span class="qc-grab"></span>
+    <div class="qc-sheet-h"><b id="sheetFilterH">Tests</b><button type="button" class="qc-link" data-close>Done</button></div>
+    <div class="qc-list">
       
-      <details class="cp-more il-dropmenu">
-        <summary title="More"><svg class="ui-i " aria-hidden="true"><use href="#ui-dots"/></svg><span class="ui-sr">More for Science 7 – Quarter 1 Quiz</span></summary>
-        <div class="cp-menu il-dropmenu-panel">
-          <a href="results_sample-science-quiz.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg> Results</a>
-          <a href="sheets--test-sample-science-quiz.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-print"/></svg> Print</a>
-          <a href="tests_sample-science-quiz_key.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-key"/></svg> Key</a>
-          <a href="tests_sample-science-quiz_edit.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-edit"/></svg> Edit</a>
-          <a href="#" data-demo-missing="/tests/sample-science-quiz/copy"><svg class="ui-i " aria-hidden="true"><use href="#ui-copy"/></svg> Copy</a>
-          <a href="tests_sample-science-quiz_tos.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-target"/></svg> TOS</a>
-          <a href="tests_sample-science-quiz_saved.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg> Papers</a>
-          <form method="post" action="#" data-demo-action="/tests/sample-science-quiz/delete"
-                data-confirm="Delete “Science 7 – Quarter 1 Quiz”? Its answer key, checked papers and photos will be removed. Download your scores first. Scores already written to a separate class record stay there." data-confirm-action="Delete test">
-            <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw">
-            <button type="submit" class="is-danger"><svg class="ui-i " aria-hidden="true"><use href="#ui-trash"/></svg> Delete</button>
-          </form>
-        </div>
-      </details>
+      <button type="button" class="qc-row qc-opt is-on" data-pick-filter="all" data-word="All tests">
+        <span class="qc-row-t"><b>All tests</b></span><span class="qc-count">1</span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      <button type="button" class="qc-row qc-opt " data-pick-filter="check" data-word="Ready to check">
+        <span class="qc-row-t"><b>Ready to check</b></span><span class="qc-count">1</span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      <button type="button" class="qc-row qc-opt " data-pick-filter="setup" data-word="Needs setup">
+        <span class="qc-row-t"><b>Needs setup</b></span><span class="qc-count">0</span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      <button type="button" class="qc-row qc-opt " data-pick-filter="done" data-word="Finished">
+        <span class="qc-row-t"><b>Finished</b></span><span class="qc-count">0</span><span class="qc-tick" aria-hidden="true">✓</span></button>
       
     </div>
   </div>
 </div>
-  <p class="il-sub" id="noneleft" hidden style="padding:16px 4px">—</p>
-  
-</section>
+
+
+
+
+
+<form class="qc-sheet" id="sheetNew" role="dialog" aria-modal="true" aria-labelledby="sheetNewH" hidden
+      method="post" action="#" data-demo-action="/tests/new">
+  <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M">
+  <input type="hidden" name="answer_layout" value="single">
+  <input type="hidden" name="num_items" id="ntItems" value="20">
+  <input type="hidden" name="choice_set" id="ntChoices" value="A-D">
+  <input type="hidden" name="class_file" id="ntClass" value="Grade 7 – Sampaguita (Simple scorebook)">
+  <div class="qc-sheet-in"><span class="qc-grab"></span>
+    <div class="qc-sheet-h"><b id="sheetNewH">New test</b><button type="button" class="qc-link" data-close>Cancel</button></div>
+    <label class="qc-label" for="ntName">Name</label>
+    <input class="qc-field" id="ntName" name="name" value="Quiz 2" required maxlength="80">
+    <span class="qc-label">Class</span>
+    <button type="button" class="qc-row qc-pickrow" data-open="sheetNtClass">
+      <span class="qc-row-t"><b id="ntClassWord">Grade 7 – Sampaguita</b>
+        <small id="ntClassSub">10 learners</small></span><span class="qc-row-go">›</span></button>
+    <span class="qc-label">Answer sheet</span>
+    <button type="button" class="qc-row qc-pickrow" data-open="sheetNtSheet">
+      <span class="qc-row-t"><b id="ntSheetWord">20 items</b><small id="ntSheetSub">A B C D</small></span><span class="qc-row-go">›</span></button>
+    
+    <div id="ntRecord" hidden>
+      <span class="qc-label">Where the scores go</span>
+      <div class="qc-three">
+        <select class="qc-field" name="term" id="ntTerm" aria-label="Term"><option>TERM1</option><option>TERM2</option><option>TERM3</option></select>
+        <select class="qc-field" name="category" id="ntCat" aria-label="Type"><option>Written Works</option><option>Performance Task</option><option>Summative / Exam</option></select>
+        <select class="qc-field" name="slot" id="ntSlot" aria-label="Column"></select>
+      </div>
+    </div>
+    <p class="qc-hint" id="ntHint">Scores go into this class's list in QuickCheck.</p>
+    <button type="submit" class="qc-pill">Create</button>
+    <a class="qc-link qc-more" href="tests_new.html">An exam with parts, or more options</a>
+  </div>
+</form>
+
+<div class="qc-sheet" id="sheetNtClass" role="dialog" aria-modal="true" aria-labelledby="sheetNtClassH" hidden>
+  <div class="qc-sheet-in"><span class="qc-grab"></span>
+    <div class="qc-sheet-h"><b id="sheetNtClassH">Class</b><button type="button" class="qc-link" data-back="sheetNew">Done</button></div>
+    <div class="qc-list">
+      
+      <button type="button" class="qc-row qc-opt is-on" data-nt-class="Grade 7 – Sampaguita (Simple scorebook)" data-learners="10"
+              data-mode="simple" data-name="Quiz 2">
+        <span class="qc-row-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span>
+        <span class="qc-row-t"><b>Grade 7 – Sampaguita</b><small>10 learners · Simple scorebook</small></span>
+        <span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+    </div>
+    <a class="qc-pill is-quiet" href="classes_new.html"><svg class="ui-i " aria-hidden="true"><use href="#ui-plus"/></svg>Add a class</a>
+  </div>
+</div>
+
+<div class="qc-sheet" id="sheetNtSheet" role="dialog" aria-modal="true" aria-labelledby="sheetNtSheetH" hidden>
+  <div class="qc-sheet-in"><span class="qc-grab"></span>
+    <div class="qc-sheet-h"><b id="sheetNtSheetH">Answer sheet</b><button type="button" class="qc-link" data-back="sheetNew">Done</button></div>
+    <p class="qc-hint">Every sheet prints the way it is named here.</p>
+    <div class="qc-list qc-scroll">
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="10" data-choices="A-D" data-label="A B C D">
+        <span class="qc-row-t"><b>10 items</b><small>A B C D</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt is-on" data-nt-sheet
+              data-items="20" data-choices="A-D" data-label="A B C D · most used">
+        <span class="qc-row-t"><b>20 items</b><small>A B C D · most used</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="30" data-choices="A-D" data-label="A B C D">
+        <span class="qc-row-t"><b>30 items</b><small>A B C D</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="40" data-choices="A-D" data-label="A B C D">
+        <span class="qc-row-t"><b>40 items</b><small>A B C D</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="50" data-choices="A-D" data-label="A B C D · long test">
+        <span class="qc-row-t"><b>50 items</b><small>A B C D · long test</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="20" data-choices="True/False" data-label="True or False">
+        <span class="qc-row-t"><b>20 items</b><small>True or False</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="25" data-choices="A-E" data-label="A B C D E">
+        <span class="qc-row-t"><b>25 items</b><small>A B C D E</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      
+      <button type="button" class="qc-row qc-opt " data-nt-sheet
+              data-items="10" data-choices="A-F" data-label="Matching type · A to F">
+        <span class="qc-row-t"><b>10 items</b><small>Matching type · A to F</small></span><span class="qc-tick" aria-hidden="true">✓</span></button>
+      
+      
+      <a class="qc-row qc-opt" href="tests_new.html"><span class="qc-row-t"><b>Other or with parts</b><small>Choose the number, the choices, or Test I and Test II</small></span><span class="qc-row-go">›</span></a>
+    </div>
+  </div>
+</div>
+
 
 <script>
-(function () {
-  var rows = Array.from(document.querySelectorAll('.il-trow'));
-  var phase = 'all';
-  function apply() {
-    var q = (document.getElementById('testSearch') || {}).value || '';
-    q = q.trim().toLowerCase();
-    var shown = 0;
-    rows.forEach(function (r) {
-      var ok = (phase === 'all' || phase.split(' ').indexOf(r.dataset.phase) >= 0)
-        && (!q || r.dataset.name.indexOf(q) >= 0 || r.dataset.class.toLowerCase().indexOf(q) >= 0);
-      r.hidden = !ok; if (ok) shown++;
+  // Sheets: open from data-open, close on Done / Cancel / the dim area; a list sheet opened from
+  // the New test sheet goes back to it. Filters show only the matching rows.
+  (function () {
+    // Sheets sit at the top level of the page, above the bottom bar (main has its own layer).
+    document.querySelectorAll('.qc-sheet').forEach(function (s) { document.body.appendChild(s); });
+    var open = null;
+    function show(id) {
+      if (open) open.hidden = true;
+      open = document.getElementById(id);
+      if (open) { open.hidden = false; document.body.classList.add('qc-sheet-open'); }
+    }
+    function hide() { if (open) open.hidden = true; open = null; document.body.classList.remove('qc-sheet-open'); }
+    document.addEventListener('click', function (e) {
+      var o = e.target.closest('[data-open]'); if (o) { e.preventDefault(); show(o.dataset.open); return; }
+      var b = e.target.closest('[data-back]'); if (b) { show(b.dataset.back); return; }
+      if (e.target.closest('[data-close]') || e.target.classList.contains('qc-sheet')) hide();
     });
-    var none = document.getElementById('noneleft'); if (none) none.hidden = shown > 0;
-  }
-  document.querySelectorAll('.il-filters button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      document.querySelectorAll('.il-filters button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
-      b.setAttribute('aria-pressed', 'true'); phase = b.dataset.phase; apply();
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hide(); });
+    if (location.hash === '#new') show('sheetNew');
+
+    var want = { filter: 'all', cls: '' };
+    function apply() {
+      var shown = 0;
+      document.querySelectorAll('#testRows .qc-row').forEach(function (r) {
+        var ok = (want.filter === 'all' || r.dataset.filter === want.filter) && (!want.cls || r.dataset.class === want.cls);
+        r.hidden = !ok; if (ok) shown++;
+      });
+      var none = document.getElementById('noneLeft'); if (none) none.hidden = shown > 0;
+    }
+    function pickIn(list, btn) { list.querySelectorAll('.qc-opt').forEach(function (x) { x.classList.toggle('is-on', x === btn); }); }
+    document.querySelectorAll('[data-pick-filter]').forEach(function (btn) {
+      btn.addEventListener('click', function () { want.filter = btn.dataset.pickFilter; pickIn(btn.parentNode, btn);
+        document.getElementById('filterWord').textContent = btn.dataset.word; apply(); hide(); });
     });
-  });
-  var s = document.getElementById('testSearch'); if (s) s.addEventListener('input', apply);
-  var want = new URLSearchParams(location.search).get('show');
-  var start = Array.from(document.querySelectorAll('.il-filters button')).find(function (b) { return b.dataset.phase.split(' ').indexOf(want) >= 0; });
-  if (start) start.click();
-}());
+    document.querySelectorAll('[data-pick-class]').forEach(function (btn) {
+      btn.addEventListener('click', function () { want.cls = btn.dataset.pickClass; pickIn(btn.parentNode, btn);
+        document.getElementById('classWord').textContent = btn.dataset.word; apply(); hide(); });
+    });
+
+    // New test: the class and sheet rows fill the hidden fields the full form would send.
+    var SLOTS = {"Performance Task": {"PT1": "N", "PT2": "O", "PT3": "P"}, "Summative / Exam": {"ST1": "T", "ST2": "U", "TE": "V"}, "Written Works": {"WW1": "F", "WW2": "G", "WW3": "H", "WW4": "I", "WW5": "J"}};
+    var STRUCTURES = {};
+    var name = document.getElementById('ntName');
+    var named = false;
+    if (name) name.addEventListener('input', function () { named = true; });
+    function fill(select, values) { if (!select) return; select.innerHTML = ''; values.forEach(function (v) { var o = document.createElement('option'); o.textContent = v; select.appendChild(o); }); }
+    function recordFor(cls, mode) {
+      var box = document.getElementById('ntRecord'); if (!box) return;
+      var deped = mode !== 'simple';
+      box.hidden = !deped;
+      box.querySelectorAll('select').forEach(function (s) { s.disabled = !deped; });
+      document.getElementById('ntHint').textContent = deped ? 'Pick the column of the class record this test fills in.' : "Scores go into this class's list in QuickCheck.";
+      var st = STRUCTURES[cls];
+      if (st) { fill(document.getElementById('ntTerm'), st.terms); fill(document.getElementById('ntCat'), Object.keys(st.categories)); }
+      slotsFor(cls);
+    }
+    function slotsFor(cls) {
+      var cat = document.getElementById('ntCat'); if (!cat) return;
+      var st = STRUCTURES[cls];
+      fill(document.getElementById('ntSlot'), st ? (st.categories[cat.value] || []) : Object.keys(SLOTS[cat.value] || {}));
+    }
+    var cat = document.getElementById('ntCat');
+    if (cat) cat.addEventListener('change', function () { slotsFor(document.getElementById('ntClass').value); });
+    document.querySelectorAll('[data-nt-class]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.getElementById('ntClass').value = btn.dataset.ntClass;
+        document.getElementById('ntClassWord').textContent = btn.querySelector('b').textContent;
+        document.getElementById('ntClassSub').textContent = btn.dataset.learners + ' learners';
+        if (!named) name.value = btn.dataset.name;
+        pickIn(btn.parentNode, btn); recordFor(btn.dataset.ntClass, btn.dataset.mode); show('sheetNew');
+      });
+    });
+    document.querySelectorAll('[data-nt-sheet]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        document.getElementById('ntItems').value = btn.dataset.items;
+        document.getElementById('ntChoices').value = btn.dataset.choices;
+        document.getElementById('ntSheetWord').textContent = btn.dataset.items + ' items';
+        document.getElementById('ntSheetSub').textContent = btn.dataset.label;
+        pickIn(btn.parentNode, btn); show('sheetNew');
+      });
+    });
+    var first = document.querySelector('[data-nt-class].is-on');
+    if (first) recordFor(first.dataset.ntClass, first.dataset.mode);
+  }());
 </script>
 
   </main>
@@ -320,7 +488,7 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
@@ -330,19 +498,70 @@
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
      get around, so the five things teachers use sit within thumb reach and
      everything else lives behind "More". -->
-<nav class="tabbar il-tabbar" aria-label="Main navigation">
+<nav class="tabbar il-tabbar qc-bar" aria-label="Main navigation">
   
-  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
   
-  <a href="tests.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
   
-  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">7<span class="ui-sr"> papers waiting</span></em></a>
   
-  <a href="classes.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  <a href="index.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span>Home</span></a>
   
-  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  <a href="tests.html" class="on " aria-current=page>
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_scan.html" class=" qc-bar-check" >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span>Check</span><em class="il-dot">7<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="results.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span>Results</span></a>
+  
+  <a href="settings.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-gear"/></svg></span><span>Settings</span></a>
+  
   
 </nav>
+
+
+
+
+<nav class="qc-pane" aria-label="Main navigation" title="Click to show the names">
+  <a class="qc-pane-brand" href="index.html" title="QuickCheck Pro 2.15.0">
+    <span class="qc-pane-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="qc-pane-word">QuickCheck</span></a>
+  <a class="qc-pane-check " href="tests_sample-science-quiz_scan.html" data-key="3" title="Check papers (3)" >
+    <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="qc-pane-word">Check papers</span><em class="qc-pane-count">7<span class="ui-sr"> papers waiting</span></em></a>
+  <div class="qc-pane-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="qc-pane-word">Home</span><kbd class="qc-pane-key">1</kbd></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" class="on" aria-current=page>
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="qc-pane-word">Tests</span><kbd class="qc-pane-key">2</kbd></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="qc-pane-word">Classes</span><kbd class="qc-pane-key">4</kbd></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="qc-pane-word">Results</span><kbd class="qc-pane-key">5</kbd></a>
+    
+  </div>
+  <div class="qc-pane-foot">
+    <a href="search.html" data-search title="Search (Ctrl K)" class=""><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="qc-pane-word">Search</span><kbd class="qc-pane-key">Ctrl K</kbd></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="qc-pane-word">Help</span></a>
+    
+    
+    <a href="settings.html" title="Settings · Demo Teacher" class="" >
+      <span class="qc-pane-ico qc-pane-me">DT</span><span class="qc-pane-word">Settings</span></a>
+  </div>
+</nav>
+<footer class="qc-status" aria-label="Phone and sync">
+  
+  <a href="tests_sample-science-quiz_scan.html">7 papers waiting to be checked</a>
+  <span class="qc-status-keys">Ctrl K search · 1–5 places</span>
+</footer>
+<div class="qc-pane-shade" aria-hidden="true"></div>
+<script src="../static/pane.js"></script>
+
 
 <script>
   // Folding sections start closed on a phone and open on a bigger screen, so
@@ -357,7 +576,7 @@
 </script>
 <script>
   (function () {
-    var token = "VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw";
+    var token = "63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');
@@ -369,14 +588,24 @@
   }());
 </script>
 <script>
-  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  // Keys 1–5 open the five places; "/" or Ctrl K opens search. Never while typing in a field
+  // (Ctrl K works there too, as in other Windows apps). The laptop's left pane, when it is
+  // on screen, decides which key is which; otherwise the classic rail does.
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.defaultPrevented || e.altKey) return;
+    var pane = document.querySelector('.qc-pane');
+    var inPane = pane && pane.offsetParent !== null;
+    var search = inPane ? pane.querySelector('a[data-search]') : document.querySelector('.il-rail-foot a[href$="search"]');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      if (search) { e.preventDefault(); location.href = search.href; }
+      return;
+    }
+    if (e.ctrlKey || e.metaKey) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     if (document.querySelector('dialog[open]')) return;
-    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
-                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    var go = e.key === '/' ? search
+                           : (inPane ? pane : document.querySelector('.il-rail-main')).querySelector('a[data-key="' + e.key + '"]');
     if (go) { e.preventDefault(); location.href = go.href; }
   });
 </script>

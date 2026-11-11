@@ -11,8 +11,12 @@
   <link rel="stylesheet" href="../static/ui.css">
   <link rel="stylesheet" href="../static/focus.css">
   <link rel="stylesheet" href="../static/iconlook.css">
+  
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
 </head>
-<body class="fx ">
+
+<body class="fx qc-new  qc-desk ">
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="ui-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
@@ -58,15 +62,38 @@
   <symbol id="ui-q" viewBox="0 0 24 24"><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6v.6M12 17v.3"/></symbol>
   <symbol id="ui-school" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5"/></symbol>
 </svg>
-<form id="fxCsrf" hidden><input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"></form>
+
+
+
+<nav class="qc-steps" aria-label="Checking Science 7 – Quarter 1 Quiz">
+  <a class="qc-steps-close" href="tests_sample-science-quiz.html" title="Close (back to the test)"><svg class="ui-i " aria-hidden="true"><use href="#ui-x"/></svg><span>Close</span></a>
+  <span class="qc-steps-name"><b>Science 7 – Quarter 1 Quiz</b><small>Grade 7 – Sampaguita</small></span>
+  <ol class="qc-steps-list">
+    
+    <li class=" is-done">
+      <a href="tests_sample-science-quiz_scan.html" ><span class="qc-steps-n">✓</span>Get papers</a></li>
+    
+    <li class=" is-done">
+      <a href="tests_sample-science-quiz_done.html" ><span class="qc-steps-n">✓</span>Fix names &amp; answers</a></li>
+    
+    <li class="is-on ">
+      <a href="tests_sample-science-quiz_done.html" aria-current=step><span class="qc-steps-n">3</span>Save to class record</a></li>
+    
+  </ol>
+</nav>
+
+<form id="fxCsrf" hidden><input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"></form>
 
 
 <h1 class="ui-sr">Save papers · Science 7 – Quarter 1 Quiz</h1>
 <main class="fx-page">
-  <header class="fx-bar">
-    <a href="tests_sample-science-quiz_check.html" aria-label="Back to Science 7 – Quarter 1 Quiz">
-      <span class="fx-dot"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="fx-title">Science 7 – Quarter 1 Quiz</span></a>
+  
+  
+  <header class="fx-bar qc-fxhead">
+    <a class="qc-round" href="tests_sample-science-quiz_scan.html" aria-label="Back to the camera"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
+    <span class="qc-fxtitle"><small>Save papers</small><b>Science 7 – Quarter 1 Quiz</b></span>
   </header>
+  
 
   
     <div class="fx-empty"><b><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg> All saved</b>8 / 10</div>
@@ -78,19 +105,7 @@
 
 
 
-<div class="qc-tip-float">
-<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="review">
-  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
-  <p class="qc-tip-words"><b id="qcTipTitle">Review</b> Green marks are sure. Look only at the yellow and red ones, then Save.</p>
-  <div class="qc-tip-acts">
-    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p12" target="_blank" rel="noopener">Details</a>
-    <form method="post" action="#" data-demo-action="/guide/tip/review/hide" data-guide-hide data-busy="off">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><input type="hidden" name="next" value="/tests/sample-science-quiz/done?">
-      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
-    </form>
-  </div>
-</aside>
-</div>
+
 
 <div class="fx-toast" id="fxToast" role="status" aria-live="polite" hidden></div>
 

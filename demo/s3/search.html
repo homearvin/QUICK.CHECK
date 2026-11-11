@@ -16,6 +16,9 @@
   
   <link rel="stylesheet" href="../static/iconlook.css">
   
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
+  
   
   <style media="print">
     @page {
@@ -31,7 +34,7 @@
 
 
 
-<body class="">
+<body class="qc-new  ">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -86,7 +89,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,7 +102,7 @@
 
 
 <nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="il-rail-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="il-rail-brand">QuickCheck</span></a>
   <div class="il-rail-main">
     
@@ -109,7 +112,7 @@
     <a href="tests.html" data-key="2" title="Tests (2)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
     
-    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+    <a href="tests_sample-science-quiz_scan.html" data-key="3" title="Check (3)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">6<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
     
     <a href="classes.html" data-key="4" title="Classes (4)" >
@@ -128,7 +131,8 @@
     <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
   </div>
 </nav>
-<div class="app">
+<div class="app ">
+  
 
 
   <!-- Main -->
@@ -138,10 +142,12 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
+    
+    
     
     
     
@@ -154,8 +160,9 @@
       
       <div class="il-headback">
         
+        
         <div>
-          <div class="ui-date">Search</div>
+          <div class="ui-date"></div>
           <h1>Search</h1>
           
         </div>
@@ -186,19 +193,16 @@
     
     
     
-<div class="card">
-  <form method="get" action="#" data-demo-action="/search" class="search-box" role="search">
-    <label for="search-q" class="ui-sr">Search tests, classes and learners</label>
-    <svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg>
-    <input id="search-q" type="search" name="q" value="" autofocus autocomplete="off"
-           placeholder="A test, a class or a learner's name">
-    <button class="btn primary" type="submit">Search</button>
-  </form>
+<form method="get" action="#" data-demo-action="/search" class="qc-search" role="search">
+  <label for="search-q" class="ui-sr">Search tests, classes and learners</label>
+  <span class="qc-search-ico" aria-hidden="true"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span>
+  <input id="search-q" class="ui-input" type="search" name="q" value="" autofocus autocomplete="off"
+         enterkeyhint="search" placeholder="A test, a class or a learner">
+</form>
 
-  
-    <p class="search-count">Find a test, a class, or a learner — then open it in one click.</p>
-  
-</div>
+  <p class="qc-hint">Find a test, a class or a learner, then open it with one tap.</p>
+
+
 <style>
   .search-box { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
   .search-box .ui-i { flex: none; opacity: .6; }
@@ -253,7 +257,7 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
@@ -263,19 +267,70 @@
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
      get around, so the five things teachers use sit within thumb reach and
      everything else lives behind "More". -->
-<nav class="tabbar il-tabbar" aria-label="Main navigation">
+<nav class="tabbar il-tabbar qc-bar" aria-label="Main navigation">
   
-  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
   
-  <a href="tests.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
   
-  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">6<span class="ui-sr"> papers waiting</span></em></a>
   
-  <a href="classes.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  <a href="index.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span>Home</span></a>
   
-  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  <a href="tests.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_scan.html" class=" qc-bar-check" >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span>Check</span><em class="il-dot">6<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="results.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span>Results</span></a>
+  
+  <a href="settings.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-gear"/></svg></span><span>Settings</span></a>
+  
   
 </nav>
+
+
+
+
+<nav class="qc-pane" aria-label="Main navigation" title="Click to show the names">
+  <a class="qc-pane-brand" href="index.html" title="QuickCheck Pro 2.15.0">
+    <span class="qc-pane-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="qc-pane-word">QuickCheck</span></a>
+  <a class="qc-pane-check " href="tests_sample-science-quiz_scan.html" data-key="3" title="Check papers (3)" >
+    <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="qc-pane-word">Check papers</span><em class="qc-pane-count">6<span class="ui-sr"> papers waiting</span></em></a>
+  <div class="qc-pane-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="qc-pane-word">Home</span><kbd class="qc-pane-key">1</kbd></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="qc-pane-word">Tests</span><kbd class="qc-pane-key">2</kbd></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="qc-pane-word">Classes</span><kbd class="qc-pane-key">4</kbd></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="qc-pane-word">Results</span><kbd class="qc-pane-key">5</kbd></a>
+    
+  </div>
+  <div class="qc-pane-foot">
+    <a href="search.html" data-search title="Search (Ctrl K)" class="on"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="qc-pane-word">Search</span><kbd class="qc-pane-key">Ctrl K</kbd></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="qc-pane-word">Help</span></a>
+    
+    
+    <a href="settings.html" title="Settings · Demo Teacher" class="" >
+      <span class="qc-pane-ico qc-pane-me">DT</span><span class="qc-pane-word">Settings</span></a>
+  </div>
+</nav>
+<footer class="qc-status" aria-label="Phone and sync">
+  
+  <a href="tests_sample-science-quiz_scan.html">6 papers waiting to be checked</a>
+  <span class="qc-status-keys">Ctrl K search · 1–5 places</span>
+</footer>
+<div class="qc-pane-shade" aria-hidden="true"></div>
+<script src="../static/pane.js"></script>
+
 
 <script>
   // Folding sections start closed on a phone and open on a bigger screen, so
@@ -290,7 +345,7 @@
 </script>
 <script>
   (function () {
-    var token = "VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw";
+    var token = "63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');
@@ -302,14 +357,24 @@
   }());
 </script>
 <script>
-  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  // Keys 1–5 open the five places; "/" or Ctrl K opens search. Never while typing in a field
+  // (Ctrl K works there too, as in other Windows apps). The laptop's left pane, when it is
+  // on screen, decides which key is which; otherwise the classic rail does.
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.defaultPrevented || e.altKey) return;
+    var pane = document.querySelector('.qc-pane');
+    var inPane = pane && pane.offsetParent !== null;
+    var search = inPane ? pane.querySelector('a[data-search]') : document.querySelector('.il-rail-foot a[href$="search"]');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      if (search) { e.preventDefault(); location.href = search.href; }
+      return;
+    }
+    if (e.ctrlKey || e.metaKey) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     if (document.querySelector('dialog[open]')) return;
-    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
-                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    var go = e.key === '/' ? search
+                           : (inPane ? pane : document.querySelector('.il-rail-main')).querySelector('a[data-key="' + e.key + '"]');
     if (go) { e.preventDefault(); location.href = go.href; }
   });
 </script>

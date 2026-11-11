@@ -16,6 +16,9 @@
   
   <link rel="stylesheet" href="../static/iconlook.css">
   
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
+  
   
   <style media="print">
     @page {
@@ -31,7 +34,7 @@
 
 
 
-<body class="">
+<body class="qc-new  ">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -86,7 +89,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,7 +102,7 @@
 
 
 <nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="il-rail-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="il-rail-brand">QuickCheck</span></a>
   <div class="il-rail-main">
     
@@ -109,7 +112,7 @@
     <a href="tests.html" data-key="2" title="Tests (2)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
     
-    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" >
+    <a href="tests_sample-science-quiz_scan.html" data-key="3" title="Check (3)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">8<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
     
     <a href="classes.html" data-key="4" title="Classes (4)" aria-current=page>
@@ -128,7 +131,8 @@
     <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
   </div>
 </nav>
-<div class="app">
+<div class="app ">
+  
 
 
   <!-- Main -->
@@ -138,7 +142,7 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
@@ -150,9 +154,12 @@
     
     
     
+    
+    
     <div class="ui-head">
       
       <div class="il-headback">
+        
         <a class="il-back" href="classes.html" title="Back to Classes" aria-label="Back to Classes"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
         <div>
           <div class="ui-date">Classes</div>
@@ -186,18 +193,6 @@
     </div>
     
     
-<aside class="qc-tip" role="note" aria-labelledby="qcTipTitle" data-guide-tip="new_class">
-  <span class="qc-tip-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span>
-  <p class="qc-tip-words"><b id="qcTipTitle">Add a class</b> Give the class a name, then add learners one at a time. You can change the list later.</p>
-  <div class="qc-tip-acts">
-    <a class="qc-tip-more" href="https://homearvin.github.io/QUICK.CHECK/guide.html#p4" target="_blank" rel="noopener">Details</a>
-    <form method="post" action="#" data-demo-action="/guide/tip/new_class/hide" data-guide-hide data-busy="off">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><input type="hidden" name="next" value="/classes/new?">
-      <button class="btn ghost il-mini" type="submit" title="Hide this tip. Settings brings tips back.">Got it</button>
-    </form>
-  </div>
-</aside>
-
     
 
 <style>
@@ -216,10 +211,12 @@
   #subjChips .il-chip { margin: 0 8px 8px 0; }
   .subhead { display:flex; align-items:center; gap:10px; margin:6px 0 2px; }
   .hidden { display:none; }
+  .stu-list li button.sx { width:auto; padding:0 12px; background:var(--panel); color:var(--teal-d);
+                           border:1px solid var(--line); font-size:13px; font-weight:700; }
 </style>
 
 <form method="post" id="wiz">
-<input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw">
+<input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M">
   <input type="hidden" name="simple_students" id="h_simple_students">
   <input type="hidden" name="subjects" id="h_subjects">
   <input type="hidden" name="terms" id="h_terms">
@@ -232,13 +229,162 @@
     <div class="il-wizard-step" data-dot="2" title="Add students"><span class="il-wizard-dot">2</span> Learners</div>
     <div class="il-wizard-step" data-dot="3" title="Review &amp; create"><span class="il-wizard-dot">3</span> Save</div>
   </div>
+  
+  
 
   <!-- STEP 1 — DETAILS ---------------------------------------------------- -->
   <div class="card panel" data-step="1">
-    <div class="card-head"><div>
-      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg> Scores go to<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — where scores are kept"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Pick what you want to end up with. You can download any of them as Excel. QuickCheck records the scores; it does not compute final grades.</span></span></h2></div></div>
+    
+    <div class="card-head"><div><h2><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Class</h2></div></div>
+    
 
+    <div class="form-row" style="gap:14px; flex-wrap:wrap">
+      <div class="field" style="flex:1; min-width:110px"><label for="new_class-field-1">Grade</label>
+        <input id="new_class-field-1" type="text" name="grade" placeholder="e.g. 8"></div>
+      <div class="field" style="flex:1; min-width:160px"><label for="new_class-field-2">Section</label>
+        <input id="new_class-field-2" type="text" name="section" placeholder="e.g. Mabini"></div>
+    </div>
+    
+    <div class="field"><label for="new_class-field-4">School</label>
+      <input id="new_class-field-4" type="text" name="school" value="Sample National High School" placeholder="School name"></div>
+    
+
+    <style>
+      .nc-advanced { margin: 4px 0 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+      .nc-advanced > summary { cursor: pointer; font-size: 14px; }
+      .nc-advanced > summary span { color: var(--muted); font-size: 13px; }
+      .nc-advanced[open] > summary { margin-bottom: 12px; }
+    </style>
+    <div style="text-align:right; margin-top:8px">
+      <button type="button" class="btn primary il-next" onclick="goStep(2)" title="Next: add students">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 2 — STUDENTS --------------------------------------------------- -->
+  <div class="card panel hidden" data-step="2">
+    <div class="card-head"><div>
+      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Learners<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — adding learners"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Add the learners for this class. Simple scorebooks accept one plain name per line; DepEd records keep the male and female sections. Type a name and press Enter.</span></span></h2></div></div>
+
+    <details style="margin:0 0 16px">
+      <summary style="cursor:pointer; color:var(--teal-d); font-weight:650">
+        <span title="Import a class list — Excel, CSV, a DepEd record, pasted cells, or another class"><svg class="ui-i " aria-hidden="true"><use href="#ui-upload"/></svg> Import</span></summary>
+      <div style="margin-top:10px">
+        
+          
+<style>
+  .imp { border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:var(--panel); }
+  .imp-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .imp-tab { border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 12px;
+             font:inherit; font-size:13.5px; font-weight:600; color:var(--muted); cursor:pointer; }
+  .imp-tab.on { background:var(--teal-soft); color:var(--teal-d); border-color:transparent; }
+  .imp textarea, .imp select, .imp input[type=text] { width:100%; }
+  .imp-hint { color:var(--muted); font-size:12.5px; margin:6px 0 10px; }
+  .imp-error { background:var(--red-bg); color:var(--bad); border-radius:10px; padding:9px 12px; margin:10px 0 0; font-size:13.5px; }
+  .imp-result { margin-top:14px; }
+  .imp-summary { font-weight:650; margin:0 0 8px; }
+  .imp-map { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:8px 12px; margin:0 0 10px; }
+  .imp-map label { font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:3px; }
+  .imp-bulk { display:flex; gap:6px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); margin:6px 0 8px; }
+  .imp-scroll { max-height:340px; overflow:auto; border:1px solid var(--line); border-radius:10px; background:var(--card); }
+  .imp-table input[type=text] { min-width:200px; }
+  .imp-table select { min-width:96px; }
+  .imp-exists { font-size:11.5px; color:var(--cream-i); font-weight:600; white-space:nowrap; }
+  .imp-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+</style>
+
+<div class="imp" data-import-panel data-mode="wizard"
+     data-preview-url="classes.html" data-apply-url=""
+     data-target="" data-csrf="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M">
+  <div class="imp-tabs" role="tablist">
+    <button type="button" class="imp-tab on" data-source="file">Excel or CSV file</button>
+    <button type="button" class="imp-tab" data-source="paste">Paste from Excel</button>
+    <button type="button" class="imp-tab" data-source="class">Copy from another class</button>
+  </div>
+
+  <div data-pane="file">
+    <input type="file" accept=".xlsx,.xlsm,.csv,.txt" data-file aria-label="Class list file">
+    <p class="imp-hint">A list with learner names<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
+  aria-label="What is this? — the file to use"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>An Excel or CSV file with learner names and either a sex column (M or F) or separate MALE and FEMALE parts. A DepEd class record works as it is.</span></span></p>
+  </div>
+  <div data-pane="paste" hidden>
+    <textarea rows="6" data-text aria-label="Paste the class list" placeholder="In Excel or Google Sheets, select the names (and the sex column if you have one), copy, and paste here."></textarea>
+    <p class="imp-hint">Copied cells keep their columns, so a name and its M/F stay together.</p>
+  </div>
+  
+  <div data-pane="class" hidden>
+    <select data-class aria-label="Class to copy from">
+      <option value="Grade 7 – Sampaguita (Simple scorebook)">Grade 7 – Sampaguita (Simple scorebook)</option>
+    </select>
+    <p class="imp-hint">Copies the learner names. Scores are not copied.</p>
+  </div>
+  
+
+  <div class="imp-actions"><button type="button" class="btn primary" data-read>Read the list</button></div>
+  <p class="imp-error" data-error hidden></p>
+
+  <div class="imp-result" data-result hidden>
+    <p class="imp-summary" data-summary></p>
+    <div class="imp-map" data-map></div>
+    <div class="imp-bulk" data-bulk-row hidden>Learners without a section:
+      <button type="button" class="btn ghost il-mini" data-bulk="M">Set as boys</button>
+      <button type="button" class="btn ghost il-mini" data-bulk="F">Set as girls</button>
+    </div>
+    <div class="imp-scroll">
+      <table class="imp-table">
+        <caption class="ui-sr">Learners read from the list</caption>
+        <thead><tr><th scope="col" style="width:34px"><input type="checkbox" data-all checked aria-label="Select all"></th>
+          <th scope="col">Name</th><th scope="col" style="width:120px">Section</th><th scope="col" style="width:130px"></th></tr></thead>
+        <tbody data-rows></tbody>
+      </table>
+    </div>
+    <div class="imp-actions">
+      <button type="button" class="btn primary" data-add>Add learners</button>
+      <span class="imp-hint" style="margin:0" data-chosen></span>
+    </div>
+  </div>
+</div>
+<script src="../static/import.js"></script>
+        
+      </div>
+    </details>
+
+    <div id="phoneStudentPanel">
+      <div class="field">
+        <label for="p_name">Name</label>
+        <input id="p_name" onkeydown="keyAddPhone(event)" placeholder="e.g. Dela Cruz, Juan P.">
+      </div>
+      <div class="stu-row">
+        <div class="qc-seg" role="radiogroup" aria-label="Boy or girl" style="flex:1">
+          <label><input type="radio" name="p_sex" value="M" checked><span>Boy</span></label>
+          <label><input type="radio" name="p_sex" value="F"><span>Girl</span></label>
+        </div>
+        <button type="button" class="btn ghost is-todo" onclick="addPhone()">+ Add</button>
+      </div>
+      <p class="nc-note" id="phoneCount"></p>
+      <ol class="stu-list" id="phoneList"></ol>
+      <details style="margin-top:12px">
+        <summary style="cursor:pointer; color:var(--muted); font-weight:600; font-size:13px">
+          <span title="Already have a list? Paste many names at once"><svg class="ui-i " aria-hidden="true"><use href="#ui-copy"/></svg> Paste</span></summary>
+        <div class="field" style="margin-top:10px">
+          <textarea id="phonePaste" rows="6" aria-label="Learner names, one per line" placeholder="One name per line&#10;Dela Cruz, Juan P.&#10;Santos, Maria L."></textarea>
+          <button type="button" class="btn ghost" style="margin-top:8px" onclick="addPastedPhone()" title="Add these names, marked with the Boy or Girl picked above">+ Add</button>
+        </div>
+      </details>
+    </div>
+    
+
+    <div style="display:flex; justify-content:space-between; margin-top:16px">
+      <button type="button" class="btn ghost" onclick="goStep(1)">← Back</button>
+      <button type="button" class="btn primary il-next" onclick="goStep(3)" title="Next: review">Next →</button>
+    </div>
+  </div>
+
+  <!-- STEP 3 — REVIEW ----------------------------------------------------- -->
+  <div class="card panel hidden" data-step="3">
+    
+    <div class="card-head"><div><h2><svg class="ui-i " aria-hidden="true"><use href="#ui-save"/></svg> Scores go to</h2></div></div>
+    
     <div class="nc-type">
       <div class="ui-label ui-sr">Keep the scores in</div>
       <div class="ui-choices" role="radiogroup" aria-label="Record type">
@@ -261,20 +407,14 @@
         </label>
       </div>
     </div>
-
-    <div class="form-row" style="gap:14px; flex-wrap:wrap">
-      <div class="field" style="flex:1; min-width:110px"><label for="new_class-field-1">Grade</label>
-        <input id="new_class-field-1" type="text" name="grade" placeholder="e.g. 8"></div>
-      <div class="field" style="flex:1; min-width:160px"><label for="new_class-field-2">Section</label>
-        <input id="new_class-field-2" type="text" name="section" placeholder="e.g. Mabini"></div>
-    </div>
+  
+    
     <div class="field" id="simpleNameField">
       <label for="new_class-field-3">Name</label>
       <input id="new_class-field-3" type="text" name="simple_name" placeholder="e.g. Grade 8 Mabini - Science">
     </div>
-    <div class="field"><label for="new_class-field-4">School</label>
-      <input id="new_class-field-4" type="text" name="school" value="Sample National High School" placeholder="School name"></div>
-
+  
+    
     <div class="book-only">
       <div class="form-row" style="gap:14px; flex-wrap:wrap">
         <div class="field" style="flex:1; min-width:180px"><label for="new_class-field-5">Subject</label>
@@ -338,166 +478,9 @@
         
       </select>
     </div>
-
-    <style>
-      .nc-advanced { margin: 4px 0 16px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
-      .nc-advanced > summary { cursor: pointer; font-size: 14px; }
-      .nc-advanced > summary span { color: var(--muted); font-size: 13px; }
-      .nc-advanced[open] > summary { margin-bottom: 12px; }
-    </style>
-    <div style="text-align:right; margin-top:8px">
-      <button type="button" class="btn primary il-next" onclick="goStep(2)" title="Next: add students">Next →</button>
-    </div>
-  </div>
-
-  <!-- STEP 2 — STUDENTS --------------------------------------------------- -->
-  <div class="card panel hidden" data-step="2">
-    <div class="card-head"><div>
-      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg> Learners<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — adding learners"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Add the learners for this class. Simple scorebooks accept one plain name per line; DepEd records keep the male and female sections. Type a name and press Enter.</span></span></h2></div></div>
-
-    <details style="margin:0 0 16px">
-      <summary style="cursor:pointer; color:var(--teal-d); font-weight:650">
-        <span title="Import a class list — Excel, CSV, a DepEd record, pasted cells, or another class"><svg class="ui-i " aria-hidden="true"><use href="#ui-upload"/></svg> Import</span></summary>
-      <div style="margin-top:10px">
-        
-          
-<style>
-  .imp { border:1px solid var(--line); border-radius:14px; padding:14px 16px; background:var(--panel); }
-  .imp-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
-  .imp-tab { border:1px solid var(--line); background:var(--card); border-radius:10px; padding:8px 12px;
-             font:inherit; font-size:13.5px; font-weight:600; color:var(--muted); cursor:pointer; }
-  .imp-tab.on { background:var(--teal-soft); color:var(--teal-d); border-color:transparent; }
-  .imp textarea, .imp select, .imp input[type=text] { width:100%; }
-  .imp-hint { color:var(--muted); font-size:12.5px; margin:6px 0 10px; }
-  .imp-error { background:var(--red-bg); color:var(--bad); border-radius:10px; padding:9px 12px; margin:10px 0 0; font-size:13.5px; }
-  .imp-result { margin-top:14px; }
-  .imp-summary { font-weight:650; margin:0 0 8px; }
-  .imp-map { display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:8px 12px; margin:0 0 10px; }
-  .imp-map label { font-size:12px; font-weight:600; color:var(--muted); display:block; margin-bottom:3px; }
-  .imp-bulk { display:flex; gap:6px; align-items:center; flex-wrap:wrap; font-size:13px; color:var(--muted); margin:6px 0 8px; }
-  .imp-scroll { max-height:340px; overflow:auto; border:1px solid var(--line); border-radius:10px; background:var(--card); }
-  .imp-table input[type=text] { min-width:200px; }
-  .imp-table select { min-width:96px; }
-  .imp-exists { font-size:11.5px; color:var(--cream-i); font-weight:600; white-space:nowrap; }
-  .imp-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-top:10px; }
-</style>
-
-<div class="imp" data-import-panel data-mode="wizard"
-     data-preview-url="classes.html" data-apply-url=""
-     data-target="" data-csrf="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw">
-  <div class="imp-tabs" role="tablist">
-    <button type="button" class="imp-tab on" data-source="file">Excel or CSV file</button>
-    <button type="button" class="imp-tab" data-source="paste">Paste from Excel</button>
-    <button type="button" class="imp-tab" data-source="class">Copy from another class</button>
-  </div>
-
-  <div data-pane="file">
-    <input type="file" accept=".xlsx,.xlsm,.csv,.txt" data-file aria-label="Class list file">
-    <p class="imp-hint">A list with learner names<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — the file to use"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>An Excel or CSV file with learner names and either a sex column (M or F) or separate MALE and FEMALE parts. A DepEd class record works as it is.</span></span></p>
-  </div>
-  <div data-pane="paste" hidden>
-    <textarea rows="6" data-text aria-label="Paste the class list" placeholder="In Excel or Google Sheets, select the names (and the sex column if you have one), copy, and paste here."></textarea>
-    <p class="imp-hint">Copied cells keep their columns, so a name and its M/F stay together.</p>
-  </div>
   
-  <div data-pane="class" hidden>
-    <select data-class aria-label="Class to copy from">
-      <option value="Grade 7 – Sampaguita (Simple scorebook)">Grade 7 – Sampaguita (Simple scorebook)</option>
-    </select>
-    <p class="imp-hint">Copies the learner names. Scores are not copied.</p>
-  </div>
-  
-
-  <div class="imp-actions"><button type="button" class="btn primary" data-read>Read the list</button></div>
-  <p class="imp-error" data-error hidden></p>
-
-  <div class="imp-result" data-result hidden>
-    <p class="imp-summary" data-summary></p>
-    <div class="imp-map" data-map></div>
-    <div class="imp-bulk" data-bulk-row hidden>Learners without a section:
-      <button type="button" class="btn ghost il-mini" data-bulk="M">Set as boys</button>
-      <button type="button" class="btn ghost il-mini" data-bulk="F">Set as girls</button>
-    </div>
-    <div class="imp-scroll">
-      <table class="imp-table">
-        <caption class="ui-sr">Learners read from the list</caption>
-        <thead><tr><th scope="col" style="width:34px"><input type="checkbox" data-all checked aria-label="Select all"></th>
-          <th scope="col">Name</th><th scope="col" style="width:120px">Section</th><th scope="col" style="width:130px"></th></tr></thead>
-        <tbody data-rows></tbody>
-      </table>
-    </div>
-    <div class="imp-actions">
-      <button type="button" class="btn primary" data-add>Add learners</button>
-      <span class="imp-hint" style="margin:0" data-chosen></span>
-    </div>
-  </div>
-</div>
-<script src="../static/import.js"></script>
-        
-      </div>
-    </details>
-
-    <div id="simpleStudentPanel">
-      <div class="stu-row">
-        <div class="field" style="flex:1; min-width:220px">
-          <label for="s_name">Name</label>
-          <input id="s_name" onkeydown="keyAddSimple(event)" placeholder="e.g. Dela Cruz, Juan P.">
-        </div>
-        <button type="button" class="btn ghost is-todo" onclick="addSimple()">+ Add</button>
-      </div>
-      <ol class="stu-list" id="simpleList"></ol>
-      <details style="margin-top:12px">
-        <summary style="cursor:pointer; color:var(--muted); font-weight:600; font-size:13px">
-          <span title="Already have a list? Paste many names at once"><svg class="ui-i " aria-hidden="true"><use href="#ui-copy"/></svg> Paste</span></summary>
-        <div class="field" style="margin-top:10px">
-          <textarea id="simplePaste" rows="6" aria-label="Student names, one per line" placeholder="One name per line&#10;Dela Cruz, Juan P.&#10;Santos, Maria L."></textarea>
-          <button type="button" class="btn ghost" style="margin-top:8px" onclick="addPasted()" title="Add these names">+ Add</button>
-        </div>
-      </details>
-    </div>
-
-    <div id="depedStudentPanel">
-
-    <div class="subhead"><h4 style="margin:0">Male</h4>
-      <span class="pill teal" id="maleCount">0</span></div>
-    <div class="stu-row">
-      <div class="field" style="flex:2; min-width:150px"><label for="m_surname">Surname</label>
-        <input id="m_surname" onkeydown="keyAdd(event,'M')" placeholder="Dela Cruz"></div>
-      <div class="field" style="flex:2; min-width:150px"><label for="m_first">First name</label>
-        <input id="m_first" onkeydown="keyAdd(event,'M')" placeholder="Juan"></div>
-      <div class="field" style="flex:1; min-width:80px"><label for="m_mi">M.I.</label>
-        <input id="m_mi" maxlength="6" onkeydown="keyAdd(event,'M')" placeholder="P."></div>
-      <button type="button" class="btn ghost is-todo" onclick="addStudent('M')">+ Add</button>
-    </div>
-    <ol class="stu-list" id="maleList"></ol>
-
-    <div class="subhead" style="margin-top:24px"><h4 style="margin:0">Female</h4>
-      <span class="pill teal" id="femaleCount">0</span></div>
-    <div class="stu-row">
-      <div class="field" style="flex:2; min-width:150px"><label for="f_surname">Surname</label>
-        <input id="f_surname" onkeydown="keyAdd(event,'F')" placeholder="Santos"></div>
-      <div class="field" style="flex:2; min-width:150px"><label for="f_first">First name</label>
-        <input id="f_first" onkeydown="keyAdd(event,'F')" placeholder="Maria"></div>
-      <div class="field" style="flex:1; min-width:80px"><label for="f_mi">M.I.</label>
-        <input id="f_mi" maxlength="6" onkeydown="keyAdd(event,'F')" placeholder="L."></div>
-      <button type="button" class="btn ghost is-todo" onclick="addStudent('F')">+ Add</button>
-    </div>
-    <ol class="stu-list" id="femaleList"></ol>
-    </div>
-
-    <div style="display:flex; justify-content:space-between; margin-top:16px">
-      <button type="button" class="btn ghost" onclick="goStep(1)">← Back</button>
-      <button type="button" class="btn primary il-next" onclick="goStep(3)" title="Next: review">Next →</button>
-    </div>
-  </div>
-
-  <!-- STEP 3 — REVIEW ----------------------------------------------------- -->
-  <div class="card panel hidden" data-step="3">
-    <div class="card-head"><div>
-      <h2><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg> Check<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — reviewing"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Check the details, then create the record(s).</span></span></h2></div></div>
+    <div class="qc-sec"><b>Check</b></div>
+    
     <div id="reviewBox" style="line-height:2"></div>
     <div style="display:flex; justify-content:space-between; margin-top:16px">
       <button type="button" class="btn ghost" onclick="goStep(2)">← Back</button>
@@ -510,7 +493,9 @@
 </form>
 
 <script>
-  const S = { subjects: [], M: [], F: [], simple: [] };
+  const S = { subjects: [], M: [], F: [], simple: [], list: [] };
+  // The phone keeps one learner list ({name, sex}) and asks where the scores go last.
+  const PHONE = true;
 
   function val(id) { return (document.getElementById(id).value || "").trim(); }
   function fieldVal(name) { const el = document.querySelector('[name=' + name + ']'); return el ? el.value.trim() : ""; }
@@ -518,7 +503,52 @@
     const picked = document.querySelector('input[name="record_mode"]:checked');
     return picked ? picked.value : "simple";
   }
-  function simpleNames() { return S.simple.slice(); }
+  function simpleNames() { return PHONE ? S.list.map(l => l.name) : S.simple.slice(); }
+  function learnerCount() { return PHONE ? S.list.length : S.M.length + S.F.length; }
+  // A class book or My Excel keeps boys and girls apart; the phone's one list splits here.
+  function namesBySex(sex) {
+    return PHONE ? S.list.filter(l => l.sex === sex).map(l => l.name.toUpperCase())
+                 : S[sex].map(fullName);
+  }
+
+  // ---- the phone's one learner list ----------------------------------------
+  function pickedSex() {
+    const el = document.querySelector('input[name="p_sex"]:checked');
+    return el ? el.value : "M";
+  }
+  function renderPhone() {
+    const ol = document.getElementById("phoneList"); ol.innerHTML = "";
+    S.list.forEach((l, i) => {
+      const li = document.createElement("li");
+      const n = document.createElement("span"); n.className = "n"; n.textContent = (i + 1);
+      const t = document.createElement("span"); t.className = "nm"; t.textContent = l.name;
+      const sx = document.createElement("button"); sx.type = "button"; sx.className = "sx";
+      sx.textContent = l.sex === "F" ? "Girl" : "Boy";
+      sx.title = "Tap to change"; sx.setAttribute("aria-label", l.name + ": " + sx.textContent + ". Tap to change.");
+      sx.onclick = () => { l.sex = l.sex === "F" ? "M" : "F"; renderPhone(); };
+      const d = document.createElement("button"); d.type = "button"; d.textContent = "×"; d.title = "Remove";
+      d.setAttribute("aria-label", "Remove " + l.name);
+      d.onclick = () => { S.list.splice(i, 1); renderPhone(); };
+      li.appendChild(n); li.appendChild(t); li.appendChild(sx); li.appendChild(d); ol.appendChild(li);
+    });
+    const boys = S.list.filter(l => l.sex === "M").length, girls = S.list.length - boys;
+    const many = (k, word) => k + " " + word + (k === 1 ? "" : "s");
+    document.getElementById("phoneCount").textContent = S.list.length
+      ? many(S.list.length, "learner") + ": " + many(boys, "boy") + ", " + many(girls, "girl")
+      : "";
+  }
+  function addPhone() {
+    const v = val("p_name"); if (!v) return;
+    S.list.push({ name: v, sex: pickedSex() });
+    document.getElementById("p_name").value = "";
+    document.getElementById("p_name").focus(); renderPhone();
+  }
+  function keyAddPhone(e) { if (e.key === "Enter") { e.preventDefault(); addPhone(); } }
+  function addPastedPhone() {
+    const sex = pickedSex();
+    val("phonePaste").split(/\r?\n/).map(s => s.trim()).filter(Boolean).forEach(name => S.list.push({ name, sex }));
+    document.getElementById("phonePaste").value = ""; renderPhone();
+  }
   function renderSimple() {
     const ol = document.getElementById("simpleList"); ol.innerHTML = "";
     S.simple.forEach((nm, i) => {
@@ -548,6 +578,7 @@
     document.querySelectorAll(".deped-only").forEach(el => el.style.display = m === "deped" ? "" : "none");
     document.querySelectorAll(".book-only").forEach(el => el.style.display = m === "book" ? "" : "none");
     document.getElementById("simpleNameField").style.display = simple ? "" : "none";
+    if (PHONE) { buildReview(); return; }      // one learner list whatever the choice
     document.getElementById("simpleStudentPanel").style.display = simple ? "" : "none";
     document.getElementById("depedStudentPanel").style.display = simple ? "none" : "";
   }
@@ -694,8 +725,9 @@
 
   // Add anything typed but not yet "Added", so nothing is lost.
   function flushPending() {
-    if (val("s_name")) addSimple();
     if (val("subjInput")) addSubject();
+    if (PHONE) { if (val("p_name")) addPhone(); return; }
+    if (val("s_name")) addSimple();
     ["M", "F"].forEach(sex => {
       const p = sex === "M" ? "m_" : "f_";
       if (val(p + "surname") && val(p + "first")) addStudent(sex);
@@ -730,8 +762,8 @@
       "<div><b>Grade &amp; Section:</b> " + gs + "</div>" +
       "<div><b>School:</b> " + (school || "—") + "</div>" +
       "<div><b>Subjects / records:</b> " + subs + "</div>" +
-      "<div><b>Students:</b> " + S.M.length + " male, " + S.F.length + " female (" +
-        (S.M.length + S.F.length) + " total)</div>";
+      "<div><b>Students:</b> " + namesBySex("M").length + " male, " + namesBySex("F").length + " female (" +
+        learnerCount() + " total)</div>";
   }
 
   // Ask QuickCheck whether a class with this name already exists BEFORE sending, so a clash
@@ -750,8 +782,10 @@
       .then(answer => {
         if (answer.ok) { form.submit(); return; }
         sending = false;
-        goStep(1);
-        qcFieldError(form.elements[answer.field], answer.message);
+        const field = form.elements[answer.field];
+        const panel = field && field.closest ? field.closest(".panel") : null;
+        goStep(panel ? +panel.dataset.step : 1);   // the name is on step 1, or on Save on the phone
+        qcFieldError(field, answer.message);
       })
       .catch(() => form.submit());             // offline check failed: the save still checks
   }
@@ -760,7 +794,7 @@
     flushPending();
     if (mode() === "simple") {
       const names = simpleNames();
-      if (!names.length) { goStep(2); qcFieldError(document.getElementById("s_name"), "Add at least one student name."); return; }
+      if (!names.length) { goStep(2); qcFieldError(document.getElementById(PHONE ? "p_name" : "s_name"), "Add at least one student name."); return; }
       if (!fieldVal("simple_name")) {
         const fallbackName = [fieldVal("grade"), fieldVal("section")].filter(Boolean).join(" - ");
         document.querySelector('[name=simple_name]').value = fallbackName || "Simple Scorebook";
@@ -769,18 +803,29 @@
       sendIfNameFree();
       return;
     }
-    if (S.M.length + S.F.length === 0) { goStep(2); qcFieldError(document.getElementById("m_surname"), "Add at least one student."); return; }
+    if (learnerCount() === 0) { goStep(2); qcFieldError(document.getElementById(PHONE ? "p_name" : "m_surname"), "Add at least one student."); return; }
     collectStructure();          // terms + categories, for the built-here record
     document.getElementById("h_subjects").value = S.subjects.join("\n");
-    document.getElementById("h_males").value = S.M.map(fullName).join("\n");
-    document.getElementById("h_females").value = S.F.map(fullName).join("\n");
+    document.getElementById("h_males").value = namesBySex("M").join("\n");
+    document.getElementById("h_females").value = namesBySex("F").join("\n");
     sendIfNameFree();
   }
   // The import panel (_import_panel.html) hands its learners here.
   // A simple scorebook has no boys/girls sections, so names alone are fine there.
-  window.qcImportAllowsNoSex = () => mode() === "simple";
+  // On the phone a learner without one gets the Boy/Girl picked on the switch (tap to change).
+  window.qcImportAllowsNoSex = () => PHONE || mode() === "simple";
   window.qcImportAdd = function (learners) {
     let added = 0;
+    if (PHONE) {
+      const have = new Set(S.list.map(l => l.name.toUpperCase()));
+      learners.forEach(l => {
+        if (have.has(l.name.toUpperCase())) return;
+        S.list.push({ name: l.name, sex: l.sex === "M" || l.sex === "F" ? l.sex : pickedSex() });
+        have.add(l.name.toUpperCase()); added++;
+      });
+      renderPhone();
+      return added;
+    }
     if (mode() === "simple") {
       const have = new Set(S.simple.map(n => n.toUpperCase()));
       learners.forEach(l => { if (!have.has(l.name.toUpperCase())) { S.simple.push(l.name); have.add(l.name.toUpperCase()); added++; } });
@@ -849,7 +894,7 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
@@ -859,19 +904,70 @@
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
      get around, so the five things teachers use sit within thumb reach and
      everything else lives behind "More". -->
-<nav class="tabbar il-tabbar" aria-label="Main navigation">
+<nav class="tabbar il-tabbar qc-bar" aria-label="Main navigation">
   
-  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
   
-  <a href="tests.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
   
-  <a href="tests_sample-science-quiz_check.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">8<span class="ui-sr"> papers waiting</span></em></a>
   
-  <a href="classes.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  <a href="index.html" class="on " aria-current=page>
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span>Home</span></a>
   
-  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  <a href="tests.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_scan.html" class=" qc-bar-check" >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span>Check</span><em class="il-dot">8<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="results.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span>Results</span></a>
+  
+  <a href="settings.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-gear"/></svg></span><span>Settings</span></a>
+  
   
 </nav>
+
+
+
+
+<nav class="qc-pane" aria-label="Main navigation" title="Click to show the names">
+  <a class="qc-pane-brand" href="index.html" title="QuickCheck Pro 2.15.0">
+    <span class="qc-pane-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="qc-pane-word">QuickCheck</span></a>
+  <a class="qc-pane-check " href="tests_sample-science-quiz_scan.html" data-key="3" title="Check papers (3)" >
+    <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="qc-pane-word">Check papers</span><em class="qc-pane-count">8<span class="ui-sr"> papers waiting</span></em></a>
+  <div class="qc-pane-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="qc-pane-word">Home</span><kbd class="qc-pane-key">1</kbd></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="qc-pane-word">Tests</span><kbd class="qc-pane-key">2</kbd></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" class="on" aria-current=page>
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="qc-pane-word">Classes</span><kbd class="qc-pane-key">4</kbd></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="qc-pane-word">Results</span><kbd class="qc-pane-key">5</kbd></a>
+    
+  </div>
+  <div class="qc-pane-foot">
+    <a href="search.html" data-search title="Search (Ctrl K)" class=""><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="qc-pane-word">Search</span><kbd class="qc-pane-key">Ctrl K</kbd></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="qc-pane-word">Help</span></a>
+    
+    
+    <a href="settings.html" title="Settings · Demo Teacher" class="" >
+      <span class="qc-pane-ico qc-pane-me">DT</span><span class="qc-pane-word">Settings</span></a>
+  </div>
+</nav>
+<footer class="qc-status" aria-label="Phone and sync">
+  
+  <a href="tests_sample-science-quiz_scan.html">8 papers waiting to be checked</a>
+  <span class="qc-status-keys">Ctrl K search · 1–5 places</span>
+</footer>
+<div class="qc-pane-shade" aria-hidden="true"></div>
+<script src="../static/pane.js"></script>
+
 
 <script>
   // Folding sections start closed on a phone and open on a bigger screen, so
@@ -886,7 +982,7 @@
 </script>
 <script>
   (function () {
-    var token = "VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw";
+    var token = "63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');
@@ -898,14 +994,24 @@
   }());
 </script>
 <script>
-  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  // Keys 1–5 open the five places; "/" or Ctrl K opens search. Never while typing in a field
+  // (Ctrl K works there too, as in other Windows apps). The laptop's left pane, when it is
+  // on screen, decides which key is which; otherwise the classic rail does.
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.defaultPrevented || e.altKey) return;
+    var pane = document.querySelector('.qc-pane');
+    var inPane = pane && pane.offsetParent !== null;
+    var search = inPane ? pane.querySelector('a[data-search]') : document.querySelector('.il-rail-foot a[href$="search"]');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      if (search) { e.preventDefault(); location.href = search.href; }
+      return;
+    }
+    if (e.ctrlKey || e.metaKey) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     if (document.querySelector('dialog[open]')) return;
-    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
-                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    var go = e.key === '/' ? search
+                           : (inPane ? pane : document.querySelector('.il-rail-main')).querySelector('a[data-key="' + e.key + '"]');
     if (go) { e.preventDefault(); location.href = go.href; }
   });
 </script>

@@ -363,7 +363,10 @@
     var reading = bulk.total > 0;
     document.body.classList.toggle('is-reading', reading);
     $('scanMode').hidden = reading && !onComputer;     // a computer keeps its drop area in view
-    $('barTitle').textContent = reading ? 'Reading your papers' : 'QuickCheck';
+    // Back to the page's own title afterwards (the test's name in the Android app).
+    var bar = $('barTitle');
+    if (!bar.dataset.title) bar.dataset.title = bar.textContent;
+    bar.textContent = reading ? 'Reading your papers' : bar.dataset.title;
     if (reading) {
       $('barPill').hidden = false;
       $('barPill').className = 'fx-pill';

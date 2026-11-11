@@ -1,28 +1,28 @@
 {
-  "latest": "2.14.0",
-  "released": "2026-11-06",
+  "latest": "2.15.0",
+  "released": "2026-11-11",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "A new look, the same on the laptop and the phone: Home, Tests, Check, Results and Settings in the same places, in new emerald colours on a white background, with larger words and numbers.",
+    "On the laptop: a slim bar of icons on the left. Click it and it opens with every name. Each page sits in the middle of the screen with room on both sides, and keys 1 to 5 still open the five places.",
+    "The bottom of the laptop window shows your phone: linked and when it last synced, syncing, or why it is not, plus how many papers wait to be checked. Ctrl K opens Search from any page.",
+    "A test, a result or a class now has the list of the others beside it, so you can open the next one without going back.",
+    "Checking papers shows three steps across the top: Get papers, Fix names and answers, Save to the class record.",
+    "Results are grouped by class, with a box to find a test, a class picker, and a sort that can put the lowest class average first.",
+    "The class record works like a spreadsheet on the laptop: Enter and the arrow keys move between boxes, Ctrl S saves.",
+    "Home shows what QuickCheck can do in a banner that slides by itself, and what is waiting for you in a To do list. Reports download as PDF on both the laptop and the phone.",
     "New: QuickCheck Free. After the 7-day trial QuickCheck keeps working, for good: up to 3 classes, any number of tests of 1 to 50 items with choices A to D, blank answer sheets, checking with your phone or photos, the scores and the item analysis.",
     "QuickCheck Pro unlocks the rest: more classes, True/False, A to E, matching and parts, up to 100 items, points per item, answer sheets with names, the DepEd class record, the reports for your principal, skills to reteach, laptop and phone sync, and scanned PDF or ZIP uploads.",
     "A gold ★ Pro tag marks each Pro feature. Tap it to see what it does and how to unlock it.",
-    "Pro is now monthly (₱49), yearly (₱199) or lifetime (₱499). Five teachers together: ₱1,499 lifetime.",
-    "A key that ends no longer locks QuickCheck: it goes back to QuickCheck Free, and everything you saved stays where it is.",
-    "Home is tidier: Go straight to comes first, then what needs you, with backup and sync beside it.",
-    "Correct the answer key after checking: if the key was wrong for an item, open the test's Key, change the answer and press Check the changes. Before this, the key locked once papers were saved.",
-    "Nothing changes until you have seen it: QuickCheck lists whose score changes, old to new, then marks every paper again from the answers it already read — no paper is photographed twice.",
-    "The new scores go into your class record, the results and the reports. A score you typed by hand on a paper, or changed by hand in the class record, is kept as it is and listed.",
-    "Each correction is remembered: the Key page lists them, and the printed report notes the date and the items that changed. Points can be corrected the same way.",
-    "On the phone app, correct the key on the laptop; the phone gets the new scores at the next sync.",
-    "Sync is safer between different versions: if your phone (or laptop) sends something this copy of QuickCheck does not know yet, it is left aside and everything else still syncs — instead of the whole sync stopping. It is picked up after you update."
+    "Pro is now monthly (₱49), yearly (₱199) or lifetime (₱499). Five teachers together: ₱1,499 lifetime."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.14.0/QuickCheckPro-2.14.0-portable.zip",
-      "sha256": "9819a7aafac3a5fbf343ebf5fcb2b2d41e1dfe2561e58d49db18b69a057305ea",
-      "signature": "RjsVo+urZTdJYU6I/21cyc4jeCFtzKEcJK6Cld4NQmjyjL0ZdyO0GNDSlBE8FXoHH19EHWfQojz+7uK2jg51CA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.15.0/QuickCheckPro-2.15.0-portable.zip",
+      "sha256": "55aab1716a18faab302e5b556a3db538c2c82b0b49d995842fd160c0da2450a5",
+      "signature": "tAYjRvpIOtG1X7eua7Kn8KviR5nBI9WpQGQkEymJWA4WirsQ/DjfkB5NQi1+IJBTLZDUvOJ1ZRNtwPyo3ufiBA==",
       "exe": "QuickCheckPro.exe",
-      "size": 95367450
+      "size": 95431653
     }
   }
 }

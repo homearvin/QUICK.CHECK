@@ -16,6 +16,9 @@
   
   <link rel="stylesheet" href="../static/iconlook.css">
   
+  <link rel="stylesheet" href="../static/phone.css">
+  <link rel="stylesheet" href="../static/desktop.css">
+  
   
   <style media="print">
     @page {
@@ -31,7 +34,7 @@
 
 
 
-<body class="">
+<body class="qc-new  ">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -86,7 +89,7 @@
 
 
 <header class="ui-top il-top">
-  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="ui-brand" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="ui-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span>
     <span><b>QuickCheck</b></span>
   </a>
@@ -99,7 +102,7 @@
 
 
 <nav class="il-rail" id="ilRail" aria-label="Main navigation">
-  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.14.0">
+  <a class="il-rail-logo" href="index.html" title="QuickCheck Pro 2.15.0">
     <span class="il-rail-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="il-rail-brand">QuickCheck</span></a>
   <div class="il-rail-main">
     
@@ -109,7 +112,7 @@
     <a href="tests.html" data-key="2" title="Tests (2)" >
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="il-rail-word">Tests</span></a>
     
-    <a href="tests_sample-science-quiz_check.html" data-key="3" title="Check (3)" aria-current=page>
+    <a href="tests_sample-science-quiz_scan.html" data-key="3" title="Check (3)" aria-current=page>
       <span class="il-rail-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><em class="il-dot" title="Papers waiting">6<span class="ui-sr"> papers waiting</span></em></span><span class="il-rail-word">Check</span></a>
     
     <a href="classes.html" data-key="4" title="Classes (4)" >
@@ -128,7 +131,23 @@
     <a class="il-rail-me" href="settings.html" title="Settings · Demo Teacher" ><span class="il-rail-ico il-rail-avatar">DT</span><span class="il-rail-word">Settings</span></a>
   </div>
 </nav>
-<div class="app">
+<div class="app has-list">
+  
+  
+  <aside class="qc-side" aria-label="Results">
+    <div class="qc-side-head">
+      <a class="qc-side-title" href="results.html">Results</a>
+      
+    </div>
+    <div class="qc-side-rows">
+      
+      <a class="qc-side-row on" href="tests_sample-science-quiz_accuracy.html" aria-current=page>
+        <b class="qc-side-t" title="Science 7 – Quarter 1 Quiz">Science 7 – Quarter 1 Quiz</b>
+        <span class="qc-side-sub"><small>Grade 7 – Sampaguita</small><span class="qc-side-s is-ok">MPS 95</span></span></a>
+      
+    </div>
+  </aside>
+  
 
 
   <!-- Main -->
@@ -138,7 +157,7 @@
   <span class="qc-demo-tag">Demo</span>
   <span class="qc-demo-note">Sample data only. Try anything: nothing you do is saved.</span>
   <form method="post" action="#" data-demo-action="/demo/end" data-confirm="End the demo? Everything you did here will be deleted, and you go back to the QuickCheck page." data-confirm-action="End demo">
-    <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
+    <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn il-mini qc-demo-end" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo</button>
   </form>
 </div>
 
@@ -150,54 +169,22 @@
     
     
     
+    
+    
+    <div class="ui-head">
       
+      <div class="il-headback">
+        
+        <a class="il-back" href="tests_sample-science-quiz_saved.html" title="Back to Papers" aria-label="Back to Papers"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
+        <div>
+          <div class="ui-date">Science 7 – Quarter 1 Quiz</div>
+          <h1>Reader accuracy</h1>
+          
+        </div>
+      </div>
       
-      
-
-
-
-
-
-
-
-
-<section class="tbar il-tbar" aria-label="This test">
-  <div class="il-tid">
-    <a class="il-back" href="results.html" title="Back to Results" aria-label="Back to Results"><svg class="ui-i " aria-hidden="true"><use href="#ui-back"/></svg></a>
-    <div class="il-tname">
-      <small class="il-tpage">Reader accuracy</small>
-      <h1>Science 7 – Quarter 1 Quiz</h1>
-      <small>Grade 7 – Sampaguita · 20</small>
+      <div class="ui-head-actions"></div>
     </div>
-    <span class="il-chip il-c-sun"><svg class="ui-i " aria-hidden="true"><use href="#ui-q"/></svg>6 to save</span>
-  </div>
-  <nav class="il-tsteps" aria-label="Steps of this test">
-    
-      
-      
-      <a href="tests_sample-science-quiz_key.html" class="done" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></i>Key<span class="ui-sr">, done</span></a>
-      
-    
-      <span class="il-ln done" aria-hidden="true"></span>
-      
-      <a href="sheets--test-sample-science-quiz.html" class="done" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></i>Print<span class="ui-sr">, done</span></a>
-      
-    
-      <span class="il-ln done" aria-hidden="true"></span>
-      
-      <a href="tests_sample-science-quiz_check.html" class="" ><i><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></i>Check</a>
-      
-    
-      <span class="il-ln " aria-hidden="true"></span>
-      
-      <a href="results_sample-science-quiz.html" class="" aria-current=page><i><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></i>Results</a>
-      
-    
-  </nav>
-  
-  
-</section>
-
     
     
 
@@ -252,8 +239,7 @@
         <div class="il-dl-row" title="Summary, learner list, score distribution and item analysis, plus competencies — with your school&#39;s header and the “Noted by” line.">
           <b>Report for your principal</b>
           <span>
-            
-            <a class="btn ghost il-mini" href="../files/110e23413cd16962.pdf" title="Download PDF" data-download="Making PDF…">
+            <a class="btn ghost il-mini" href="../files/dac6e73bf234a752.pdf" title="Download PDF" data-download="Making PDF…">
               <svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>PDF</a>
             
             <a class="btn ghost il-mini" href="tests_sample-science-quiz_report.html" title="Choose parts or change the wording">
@@ -265,8 +251,7 @@
         <div class="il-dl-row" title="Each learner&#39;s score and percent, one row each.">
           <b>Score list (Excel)</b>
           <span>
-            
-            <a class="btn ghost il-mini" href="../files/ab1f91465251793e.xlsx" title="Download" data-download="Making Excel…">
+            <a class="btn ghost il-mini" href="../files/f19ece934e96e721.xlsx" title="Download" data-download="Making Excel…">
               <svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>Excel</a>
             
           </span>
@@ -275,8 +260,7 @@
         <div class="il-dl-row" title="Every part of the report, one sheet each, to keep or edit.">
           <b>Whole report (Excel)</b>
           <span>
-            
-            <a class="btn ghost il-mini" href="../files/d234561136b1afac.xlsx" title="Download" data-download="Making Excel…">
+            <a class="btn ghost il-mini" href="../files/d0e85524a17a775a.xlsx" title="Download" data-download="Making Excel…">
               <svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>Excel</a>
             
           </span>
@@ -285,8 +269,7 @@
         <div class="il-dl-row" title="The learners below the cutoff in each competency, for remediation.">
           <b>Who needs help (Excel)</b>
           <span>
-            
-            <a class="btn ghost il-mini" href="../files/0bf6e5aa02151cea.xlsx" title="Download" data-download="Making Excel…">
+            <a class="btn ghost il-mini" href="../files/3916116489c261cc.xlsx" title="Download" data-download="Making Excel…">
               <svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg>Excel</a>
             
           </span>
@@ -308,60 +291,32 @@
   <div class="il-stat" title="Learners below the 75% cutoff"><span class="il-ico il-c-go"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><div><b>0</b><small>Below 75%</small></div></div>
 </section>
 
-<div class="card">
-  <div class="card-head">
-    <div>
-      <h2>Science 7 – Quarter 1 Quiz — how well is the camera reading?</h2>
-      <p>How well the camera is reading<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — this number"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>Every answer you changed while reviewing is counted as a place the reader was wrong. The more sheets you review, the truer this number is.</span></span></p>
-    </div>
+
+  <p class="qc-lead">The camera read <b>95.0%</b> of the answers by itself
+    (2 fixed out of 40).</p>
+  <div class="qc-stats" aria-label="Reader accuracy">
+    <div><b>95.0%</b><span>answers right</span></div>
+    <div><b>0<small>/2</small></b><span>sheets, no fix</span></div>
+    <div><b>2<small>/2</small></b><span>names found</span></div>
   </div>
-</div>
-
-
-  <div class="stat-grid">
-    <div class="stat mint">
-      <div class="row"><div class="label">Answer accuracy</div></div>
-      <div class="value">95.0%</div>
-      <div class="sub">2 corrections in 40 answers</div>
-    </div>
-    <div class="stat lav">
-      <div class="row"><div class="label">Perfect sheets</div></div>
-      <div class="value">0.0%</div>
-      <div class="sub">0 of 2 needed no fix</div>
-    </div>
-    <div class="stat cream">
-      <div class="row"><div class="label">Student ID read</div></div>
-      <div class="value">100.0%</div>
-      <div class="sub">2 of 2 identified correctly</div>
-    </div>
-    <div class="stat peach">
-      <div class="row"><div class="label">Couldn't read</div></div>
-      <div class="value">0</div>
-      <div class="sub">sheets the camera failed on (retake)</div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-head">
-      <div>
-        <h2>What these numbers mean</h2>
-        <p>Based on 2 reviewed sheet(s).</p>
-      </div>
-      <a class="btn primary" href="#" data-demo-missing="/tests/sample-science-quiz/accuracy.csv"><svg class="ui-i" aria-hidden="true"><use href="#ui-download"/></svg>Download details (CSV)</a>
-    </div>
-    <ul style="color:var(--muted); line-height:1.9; margin:0; padding-left:20px">
-      <li><b>Answer accuracy</b> is the headline: out of every 100 bubbles, how many the reader got right on its own.
-          For a graded tool you want this very high (≈99%+).</li>
-      <li><b>Perfect sheets</b> — how often a whole sheet came through with nothing to fix. This is what “feels
-          effortless” to a teacher.</li>
-      <li><b>Student ID</b> — how often it matched the right student automatically.</li>
-      <li><b>Couldn't read</b> — sheets that failed entirely (usually a photo problem). A few is normal; many means
-          the printing or photos need work.</li>
+  <p class="qc-hint ">Every sheet could be read. Based on 2 reviewed sheets.</p>
+  <details class="qc-box qc-gap-top">
+    <summary><b>What these numbers mean</b></summary>
+    <ul class="qc-hint">
+      <li><b>Answers right</b>: out of every 100 bubbles, how many the camera read correctly on its own. You want this very high (about 99%).</li>
+      <li><b>Sheets, no fix</b>: whole sheets that needed nothing changed.</li>
+      <li><b>Names found</b>: sheets matched to the right learner by themselves.</li>
+      <li>A few sheets that could not be read is normal. Many means the printing or the photos need work.</li>
     </ul>
-    <p style="color:var(--muted); margin:16px 0 0">Download the details<span class="ui-hintwrap"><button class="ui-hint" type="button" aria-expanded="false"
-  aria-label="What is this? — the CSV"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></button><span class="ui-pop" role="tooltip" hidden>The CSV lists every sheet with a breakdown of the reader&#39;s misses — blanks it missed, doubles, and wrong letters — so the kind of mistake can be seen.</span></span></p>
+  </details>
+  <div class="qc-list qc-gap-top">
+    <a class="qc-row" href="#" data-demo-missing="/tests/sample-science-quiz/accuracy.csv" data-download="Making CSV…">
+      <span class="qc-row-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-download"/></svg></span>
+      <span class="qc-row-t"><b>Every sheet, in detail</b><small>A CSV file of what the camera missed on each sheet</small></span>
+      <span class="qc-row-go" aria-hidden="true">›</span>
+    </a>
   </div>
+
 
 
   </main>
@@ -411,7 +366,7 @@
   <div class="qc-demo-foot">
     
     <form method="post" action="#" data-demo-action="/demo/end">
-      <input type="hidden" name="_csrf" value="VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
+      <input type="hidden" name="_csrf" value="63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M"><button class="btn ghost il-mini" type="submit"><svg class="ui-i " aria-hidden="true"><use href="#ui-logout"/></svg>End demo · see prices</button>
     </form>
   </div>
 </details>
@@ -421,19 +376,70 @@
 <!-- Phone navigation. Hidden on a desktop by CSS; on a phone this is how you
      get around, so the five things teachers use sit within thumb reach and
      everything else lives behind "More". -->
-<nav class="tabbar il-tabbar" aria-label="Main navigation">
+<nav class="tabbar il-tabbar qc-bar" aria-label="Main navigation">
   
-  <a href="index.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg><span>Home</span></a>
   
-  <a href="tests.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg><span>Tests</span></a>
   
-  <a href="tests_sample-science-quiz_check.html" class="on" aria-current=page><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg><span>Check</span><em class="il-dot">6<span class="ui-sr"> papers waiting</span></em></a>
   
-  <a href="classes.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg><span>Classes</span></a>
+  <a href="index.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span>Home</span></a>
   
-  <a href="results.html" class="" ><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg><span>Results</span></a>
+  <a href="tests.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span>Tests</span></a>
+  
+  <a href="tests_sample-science-quiz_scan.html" class="on qc-bar-check" aria-current=page>
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span>Check</span><em class="il-dot">6<span class="ui-sr"> papers waiting</span></em></a>
+  
+  <a href="results.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span>Results</span></a>
+  
+  <a href="settings.html" class=" " >
+    <span class="qc-bar-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-gear"/></svg></span><span>Settings</span></a>
+  
   
 </nav>
+
+
+
+
+<nav class="qc-pane" aria-label="Main navigation" title="Click to show the names">
+  <a class="qc-pane-brand" href="index.html" title="QuickCheck Pro 2.15.0">
+    <span class="qc-pane-mark"><svg class="ui-i " aria-hidden="true"><use href="#ui-check"/></svg></span><span class="qc-pane-word">QuickCheck</span></a>
+  <a class="qc-pane-check on" href="tests_sample-science-quiz_scan.html" data-key="3" title="Check papers (3)" aria-current=page>
+    <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-camera"/></svg></span><span class="qc-pane-word">Check papers</span><em class="qc-pane-count">6<span class="ui-sr"> papers waiting</span></em></a>
+  <div class="qc-pane-main">
+    
+    <a href="index.html" data-key="1" title="Home (1)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-home"/></svg></span><span class="qc-pane-word">Home</span><kbd class="qc-pane-key">1</kbd></a>
+    
+    <a href="tests.html" data-key="2" title="Tests (2)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-file"/></svg></span><span class="qc-pane-word">Tests</span><kbd class="qc-pane-key">2</kbd></a>
+    
+    <a href="classes.html" data-key="4" title="Classes (4)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-users"/></svg></span><span class="qc-pane-word">Classes</span><kbd class="qc-pane-key">4</kbd></a>
+    
+    <a href="results.html" data-key="5" title="Results (5)" class="" >
+      <span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-chart"/></svg></span><span class="qc-pane-word">Results</span><kbd class="qc-pane-key">5</kbd></a>
+    
+  </div>
+  <div class="qc-pane-foot">
+    <a href="search.html" data-search title="Search (Ctrl K)" class=""><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-search"/></svg></span><span class="qc-pane-word">Search</span><kbd class="qc-pane-key">Ctrl K</kbd></a>
+    
+    <a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener" title="Help" data-guide="help"><span class="qc-pane-ico"><svg class="ui-i " aria-hidden="true"><use href="#ui-help"/></svg></span><span class="qc-pane-word">Help</span></a>
+    
+    
+    <a href="settings.html" title="Settings · Demo Teacher" class="" >
+      <span class="qc-pane-ico qc-pane-me">DT</span><span class="qc-pane-word">Settings</span></a>
+  </div>
+</nav>
+<footer class="qc-status" aria-label="Phone and sync">
+  
+  <a href="tests_sample-science-quiz_scan.html">6 papers waiting to be checked</a>
+  <span class="qc-status-keys">Ctrl K search · 1–5 places</span>
+</footer>
+<div class="qc-pane-shade" aria-hidden="true"></div>
+<script src="../static/pane.js"></script>
+
 
 <script>
   // Folding sections start closed on a phone and open on a bigger screen, so
@@ -448,7 +454,7 @@
 </script>
 <script>
   (function () {
-    var token = "VxbtpN07820juXmJcSdCllB9Y24ahZ--1JUir-w9LSw";
+    var token = "63XO_r0NXThyIzsFAQ82NEFu55lQhKu2fUXK65CFq9M";
     document.querySelectorAll('form[method="post"], form[method="POST"]').forEach(function (form) {
       if (form.querySelector('input[name="_csrf"]')) return;
       var input = document.createElement('input');
@@ -460,14 +466,24 @@
   }());
 </script>
 <script>
-  // Keys 1–5 open the five places; "/" opens search. Never while typing in a field.
+  // Keys 1–5 open the five places; "/" or Ctrl K opens search. Never while typing in a field
+  // (Ctrl K works there too, as in other Windows apps). The laptop's left pane, when it is
+  // on screen, decides which key is which; otherwise the classic rail does.
   document.addEventListener('keydown', function (e) {
-    if (e.ctrlKey || e.metaKey || e.altKey || e.defaultPrevented) return;
+    if (e.defaultPrevented || e.altKey) return;
+    var pane = document.querySelector('.qc-pane');
+    var inPane = pane && pane.offsetParent !== null;
+    var search = inPane ? pane.querySelector('a[data-search]') : document.querySelector('.il-rail-foot a[href$="search"]');
+    if ((e.ctrlKey || e.metaKey) && (e.key === 'k' || e.key === 'K')) {
+      if (search) { e.preventDefault(); location.href = search.href; }
+      return;
+    }
+    if (e.ctrlKey || e.metaKey) return;
     var t = e.target;
     if (t && (t.isContentEditable || /^(INPUT|SELECT|TEXTAREA)$/.test(t.tagName))) return;
     if (document.querySelector('dialog[open]')) return;
-    var go = e.key === '/' ? document.querySelector('.il-rail-foot a[href$="search"]')
-                           : document.querySelector('.il-rail-main a[data-key="' + e.key + '"]');
+    var go = e.key === '/' ? search
+                           : (inPane ? pane : document.querySelector('.il-rail-main')).querySelector('a[data-key="' + e.key + '"]');
     if (go) { e.preventDefault(); location.href = go.href; }
   });
 </script>

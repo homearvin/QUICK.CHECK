@@ -1,0 +1,240 @@
+/* Public website controls: readable at every breakpoint, visible before animation. */
+:root { --muted: #52604f; }
+body { font-size: 16px; }
+
+.button,
+.button.small,
+.hero-actions > .button,
+.mobile-copy > .button,
+.price-card > .button,
+.download-actions > .button {
+  min-height: 54px;
+  font-size: 16px;
+  line-height: 1.4;
+  padding: 14px 24px;
+}
+.button.outlined { border-color: #7b9271; border-width: 1.5px; }
+.button.transparent { background: #29523f; border-color: #b5cba5; }
+.button.transparent:hover { background: #38634e; }
+.button:hover { transform: translateY(-1px); }
+.button svg { width: 21px; height: 21px; }
+.nav-links a { font-size: 15px; min-height: 48px; display: inline-flex; align-items: center; }
+.nav-links a::after { bottom: 5px; }
+.nav-wrap { gap: 24px; }
+.nav-links { gap: 24px; }
+.nav-cta { flex-shrink: 0; }
+.text-button {
+  min-height: 54px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background: #fff;
+  border: 1.5px solid #8ea582;
+  border-radius: 99px;
+  color: var(--forest);
+}
+.text-button:hover { background: #e8f2e1; }
+.play-circle { width: 30px; height: 30px; border-color: #6e865f; }
+.text-link,
+.subtle-link,
+.portable-link,
+.theatre-caption a,
+.pricing-note a,
+.faq-heading > p a,
+.footer-bottom a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 44px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--forest);
+  font-weight: 600;
+}
+.text-link,
+.subtle-link { padding-block: 8px; }
+.workflow-heading > .text-link,
+.buy-copy > .text-link { font-size: 15px; }
+.subtle-link { text-decoration: underline; text-underline-offset: 4px; }
+.portable-link { color: #e2f4d3; padding: 10px 14px; border: 1px solid #829e70; border-radius: 10px; }
+.portable-link:hover { background: #2e5944; }
+.back-top { width: 48px; height: 48px; border-color: #7b9271; color: var(--forest); }
+
+/* These are real controls, separate from the non-interactive product screenshots. */
+.theatre-bottom { position: relative; z-index: 6; display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.scene-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.scene-controls button {
+  min-height: 48px;
+  min-width: 100px;
+  padding: 10px 16px;
+  border: 1px solid #7c9470;
+  color: #27482b;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.scene-controls button > span { font-size: 12px; opacity: 1; color: inherit; }
+.scene-controls button[aria-pressed=true] { border-color: var(--forest); background: var(--forest); color: #fff; }
+.scene-controls button:hover { box-shadow: 0 0 0 2px #7c947055; }
+.theatre-tools { display: flex; gap: 8px; flex-wrap: wrap; }
+.motion-control {
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #7c9470;
+  border-radius: 12px;
+  background: #fff;
+  color: #27482b;
+  font-size: 14px;
+  font-weight: 600;
+  gap: 8px;
+}
+.motion-control:hover { background: #edf5e6; }
+.motion-control svg { width: 19px; height: 19px; }
+.theatre-caption { align-items: center; gap: 16px; font-size: 13px; color: #52654a; }
+.theatre-caption > span { flex: 1; }
+.theatre-caption a { flex-shrink: 0; min-height: 50px; padding: 12px 22px; justify-content: center; gap: 12px; }
+.theatre-caption a svg { width: 18px; height: 18px; }
+.theatre-label { font-size: 11px; gap: 8px; flex-wrap: wrap; }
+.theatre-demo-label { font-size: 10px; opacity: 1; }
+
+.billing-options { max-width: none; width: 100%; background: #d5e1ca; padding: 4px; border: 1px solid #a2b68e; }
+.billing-options > button { min-height: 46px; font-size: 14px; line-height: 1.3; padding: 9px 7px; color: #334b29; font-weight: 600; }
+.billing-options > button[aria-pressed=true] { background: var(--forest); color: #fff; }
+.billing-options > button:hover { box-shadow: inset 0 0 0 1px #719159; }
+.pro-corner { position: static; display: inline-block; vertical-align: middle; font-size: 10px; letter-spacing: .06em; margin-left: 10px; max-width: calc(100% - 55px); color: #426036; }
+.faq-list summary { min-height: 60px; font-size: 16px; }
+.faq-list summary > svg { width: 21px; height: 21px; color: #456537; }
+.footer-bottom { font-size: 13px; align-items: center; flex-wrap: wrap; }
+.footer-bottom > div { gap: 20px; flex-wrap: wrap; }
+.footer-bottom a { font-size: 14px; }
+
+/* Body and supporting text stay readable too. Tiny lettering remains only inside screenshots. */
+.hero-description,
+.section-intro > p:last-child,
+.story-grid article > p,
+.workflow-card > p,
+.mobile-copy > p:not(.eyebrow),
+.buy-copy > p:not(.eyebrow),
+.price-card > p,
+.price-card > .plain-checks li,
+.mobile-copy .plain-checks li,
+.faq-list details p { font-size: 16px; }
+.hero-note,
+.price-card > small,
+.price > span,
+.pricing-note,
+.buy-copy > small,
+.payment-panel > p,
+.download-inner > p.download-notes,
+.footer-top p { font-size: 14px; color: #52634b; }
+.download-inner > p.download-notes { color: #c6dcb5; }
+.payment-methods b { font-size: 16px; }
+.payment-methods span,
+.bank-transfer { font-size: 14px; }
+.bank-transfer { flex-wrap: wrap; }
+.real-feature-preview figcaption { font-size: 12px; }
+.eyebrow,
+.feature-kicker { font-size: 11px; }
+.section-intro > p:last-child { max-width: 650px; margin-inline: auto; }
+
+/* Motion must never make a card, download button or other action transparent. */
+.has-motion .reveal { opacity: 1; transform: none; transition: none; }
+.has-motion .reveal.is-visible { animation: content-arrive .4s var(--ease) both; }
+@keyframes content-arrive { from { transform: translateY(12px); } to { transform: translateY(0); } }
+
+/* Full-size inspection preserves the exact application UI and fictional sample data. */
+.preview-dialog {
+  width: min(96vw, 1540px);
+  max-width: none;
+  max-height: 94dvh;
+  padding: 20px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid #819a72;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 30px 100px #061d1555;
+}
+.preview-dialog[open] { display: flex; flex-direction: column; gap: 14px; }
+.preview-dialog::backdrop { background: #061d15c9; }
+.preview-dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.preview-dialog-header h2 { font-size: 24px; letter-spacing: -.035em; }
+.preview-dialog-header p { font-size: 13px; margin-top: 6px; color: var(--muted); }
+.preview-dialog-header .button { min-height: 46px; padding: 10px 16px; font-size: 15px; flex-shrink: 0; }
+.preview-canvas { flex: 1; min-height: 0; overflow: auto; border: 1px solid var(--line); background: #e8eee0; border-radius: 8px; }
+.preview-canvas img { display: block; width: 1440px; max-width: none; height: auto; }
+.preview-dialog-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #52634b; }
+.preview-dialog-footer .text-link { font-size: 14px; }
+body.preview-open { overflow: hidden; }
+
+@media (max-width: 1050px) {
+  .nav-wrap { position: relative; display: grid; grid-template-columns: 1fr auto auto; gap: 12px; height: 84px; }
+  .wordmark { font-size: 23px; }
+  .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 40; background: var(--paper); border: 1px solid #c7d3be; border-radius: 0 0 14px 14px; box-shadow: 0 12px 25px #193f321a; padding: 10px 18px; gap: 0; }
+  .nav-links.is-open { display: flex; flex-direction: column; align-items: stretch; }
+  .nav-links a { font-size: 16px; min-height: 48px; padding: 10px 5px; }
+  .nav-links a::after { display: none; }
+  .nav-cta { grid-column: 2; min-height: 48px !important; font-size: 15px !important; padding: 12px 18px !important; }
+  .menu-toggle { display: inline-flex; align-items: center; justify-content: center; grid-column: 3; min-height: 48px; min-width: 48px; padding: 10px; border: 1px solid #8ca27d; border-radius: 12px; background: #fff; }
+  .menu-toggle svg { width: 23px; height: 23px; }
+  .theatre-bottom { justify-content: center; }
+  .theatre-tools { justify-content: center; }
+}
+
+@media (max-width: 640px) {
+  html { scroll-padding-top: 165px; }
+  .container { width: calc(100% - 32px); }
+  .nav-wrap { grid-template-columns: 1fr auto; height: auto; gap: 8px 12px; padding-block: 10px; }
+  .wordmark { font-size: 22px; min-height: 44px; }
+  .menu-toggle { grid-column: 2; grid-row: 1; }
+  .nav-cta { grid-column: 1 / -1; grid-row: 2; width: 100%; margin: 0; min-height: 48px !important; font-size: 16px !important; }
+  .nav-cta svg { width: 20px; height: 20px; }
+  .hero { padding-top: 32px; }
+  .hero-description { max-width: 100%; line-height: 1.75; }
+  .hero-actions { display: grid; grid-template-columns: 1fr; gap: 12px; width: min(100%, 360px); margin-inline: auto; }
+  .hero-actions > .button,
+  .hero-actions > .text-button { width: 100%; justify-content: center; }
+  .hero-note { line-height: 1.8; }
+  .product-theatre { scroll-margin-top: 165px; padding-inline: 14px; }
+  .floating-note { display: none; }
+  .theatre-label { font-size: 10px; }
+  .theatre-demo-label { margin-left: 0; }
+  .theatre-bottom { display: grid; grid-template-columns: 1fr; padding-top: 16px; gap: 12px; }
+  .scene-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .scene-controls button { min-width: 0; min-height: 48px; padding: 10px 7px; font-size: 14px; }
+  .scene-controls button > span { font-size: 11px; margin-right: 3px; }
+  .theatre-tools { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .motion-control { justify-content: center; font-size: 15px; }
+  .theatre-caption { display: flex; flex-direction: column; align-items: stretch; font-size: 13px; gap: 12px; line-height: 1.6; }
+  .theatre-caption a { max-width: none; text-align: center; width: 100%; font-size: 16px; }
+  .workflow-heading > a { font-size: 15px; }
+  .subtle-link { margin-top: 12px; }
+  .price-card { padding: 24px; }
+  .price-card > .button { font-size: 16px; }
+  .billing-options > button { font-size: 14px; min-height: 48px; }
+  .plain-checks { line-height: 1.6; }
+  .plain-checks svg { width: 18px; height: 18px; }
+  .faq-list summary { min-height: 60px; font-size: 16px; line-height: 1.6; }
+  .faq-list details:first-child summary { padding-top: 16px; }
+  .faq-heading > p:last-child { font-size: 15px; }
+  .download-actions { width: 100%; }
+  .download-actions > .button { width: 100%; max-width: 360px; min-height: 56px; font-size: 16px; gap: 10px; padding: 14px 16px; }
+  .download-inner > p:not(.eyebrow) { font-size: 16px; }
+  .download-inner > p.download-notes { font-size: 14px; }
+  .portable-link { font-size: 14px; text-align: center; justify-content: center; }
+  .footer-top p { font-size: 14px; }
+  .footer-bottom { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; font-size: 13px; }
+  .footer-bottom > div { gap: 14px; }
+  .footer-bottom a { font-size: 14px; }
+  .proposal-label { font-size: 10px; margin-left: 0; }
+  .preview-dialog { width: calc(100vw - 16px); max-height: 96dvh; padding: 12px; }
+  .preview-dialog-header h2 { font-size: 20px; }
+  .preview-dialog-header p { font-size: 12px; }
+  .preview-dialog-header .button { min-height: 46px; padding: 10px 12px; font-size: 14px; }
+  .preview-dialog-footer { font-size: 13px; gap: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .has-motion .reveal.is-visible { animation: none; }
+}
+@media (max-width: 360px) { .title-spark { right: 0; } }
+@media print { .preview-dialog { display: none !important; } }

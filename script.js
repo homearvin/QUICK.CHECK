@@ -72,7 +72,36 @@ stageObserver.observe(stage);
 document.addEventListener('visibilitychange', () => { if (document.hidden && playing) stopAnimation(); });
 reduceMotion.addEventListener('change', () => { if (reduceMotion.matches) stopAnimation(); });
 
-// Reveal each block once, with the full content available when motion is reduced.
+// Inspect the selected real app screen at its original size.
+const previewDialog = document.querySelector('#preview-dialog');
+const previewOpen = document.querySelector('#preview-open');
+const previewClose = document.querySelector('#preview-close');
+const previewImage = document.querySelector('#preview-image');
+const previewOriginal = document.querySelector('#preview-original');
+previewOpen.addEventListener('click', () => {
+  stopAnimation();
+  pausedByVisibility = false;
+  hasAutoplayed = true;
+  const screen = document.querySelector('.actual-screen.is-active');
+  previewImage.src = screen.src;
+  previewImage.alt = screen.alt;
+  previewOriginal.href = screen.src;
+  previewDialog.showModal();
+  document.body.classList.add('preview-open');
+  document.querySelector('.preview-canvas').scrollTo(0, 0);
+});
+previewClose.addEventListener('click', () => previewDialog.close());
+previewDialog.addEventListener('click', event => {
+  if (event.target !== previewDialog) return;
+  const bounds = previewDialog.getBoundingClientRect();
+  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) previewDialog.close();
+});
+previewDialog.addEventListener('close', () => {
+  document.body.classList.remove('preview-open');
+  previewOpen.focus({preventScroll: true});
+});
+
+// Add a short movement on entry; controls remain visible before it runs.
 if (!reduceMotion.matches && 'IntersectionObserver' in window) {
   document.documentElement.classList.add('has-motion');
   const reveals = new IntersectionObserver(entries => entries.forEach(entry => {

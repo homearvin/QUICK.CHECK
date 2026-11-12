@@ -18,7 +18,8 @@
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="preload" href="assets/Manrope-Extrabold.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css?v=20261112">
-  <script src="script.js?v=20261112" defer></script>
+  <link rel="stylesheet" href="readability.css?v=20261112-2">
+  <script src="script.js?v=20261112-2" defer></script>
   <script src="meta-events.js" defer></script>
 <!-- Meta Pixel Code -->
 <script>
@@ -92,9 +93,9 @@ src="https://www.facebook.com/tr?id=638814851803925&ev=PageView&noscript=1"
     <div class="phone-device actual-phone"><div class="phone-speaker"></div><img src="assets/screens/mobile-home.webp" width="390" height="844" alt="QuickCheck's actual phone layout, including the five-button bottom bar and round Check button"></div>
     <div class="floating-note"><svg><use href="#i-check"/></svg><div><b>Your classroom.<br>A little lighter.</b><span>Actual QuickCheck UI · sample data</span></div></div>
    </div>
-   <div class="theatre-bottom"><div class="scene-controls" aria-label="Product demonstration steps"><button data-scene-button="scan" aria-pressed="true"><span>01</span> Home</button><button data-scene-button="review" aria-pressed="false"><span>02</span> Review</button><button data-scene-button="save" aria-pressed="false"><span>03</span> Results</button></div><button class="motion-control" id="motion-toggle" aria-label="Play product animation"><svg><use href="#i-play"/></svg><span>Play demo</span></button></div>
+   <div class="theatre-bottom"><div class="scene-controls" aria-label="Product demonstration steps"><button data-scene-button="scan" aria-pressed="true"><span>01</span> Home</button><button data-scene-button="review" aria-pressed="false"><span>02</span> Review</button><button data-scene-button="save" aria-pressed="false"><span>03</span> Results</button></div><div class="theatre-tools"><button class="motion-control" id="motion-toggle" aria-label="Play product animation"><svg><use href="#i-play"/></svg><span>Play demo</span></button><button class="motion-control" id="preview-open" aria-haspopup="dialog" aria-controls="preview-dialog"><svg><use href="#i-scan"/></svg><span>Enlarge preview</span></button></div></div>
   </div>
-  <div class="theatre-caption"><span>Actual QuickCheck 2.15 UI · all teacher and learner names are fictional</span><a href="https://homearvin.github.io/QUICK.CHECK/demo/" target="_blank" rel="noopener">Try the real browser demo<svg><use href="#i-arrow"/></svg></a></div>
+  <div class="theatre-caption"><span>Actual QuickCheck 2.15 UI · all teacher and learner names are fictional</span><a class="button outlined" href="https://homearvin.github.io/QUICK.CHECK/demo/" target="_blank" rel="noopener">Try live demo<svg><use href="#i-arrow"/></svg></a></div>
  </section>
 
  <div class="principles container" aria-label="Made for the way teachers work"><p>Made for the way<br><b>teachers actually work.</b></p><span><svg><use href="#i-phone"/></svg>Your phone is the scanner</span><span><svg><use href="#i-lock"/></svg>Offline on your PC</span><span><svg><use href="#i-paper"/></svg>Your own class record</span></div>
@@ -124,5 +125,10 @@ src="https://www.facebook.com/tr?id=638814851803925&ev=PageView&noscript=1"
 </main>
 
 <footer class="container"><div class="footer-top"><a class="wordmark" href="#top"><span class="brand-mark"><svg><use href="#i-check"/></svg></span>QuickCheck</a><p>Built around your classroom.</p><a class="back-top" href="#top" aria-label="Back to top">↑</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> QuickCheck · AZ Digital Marketing</span><div><a href="https://homearvin.github.io/QUICK.CHECK/guide.html" target="_blank" rel="noopener">Teacher guide</a><a href="mailto:azmarketingservicesbicol@gmail.com">Contact</a><a href="https://github.com/homearvin/QUICK.CHECK/releases" target="_blank" rel="noopener">Releases ↗</a></div><span class="proposal-label">MADE FOR TEACHERS</span></div></footer>
+<dialog class="preview-dialog" id="preview-dialog" aria-labelledby="preview-title">
+ <div class="preview-dialog-header"><div><h2 id="preview-title">QuickCheck preview</h2><p>Actual app screens · fictional names and scores</p></div><button class="button outlined" id="preview-close" autofocus>Close <span aria-hidden="true">×</span></button></div>
+ <div class="preview-canvas" tabindex="0" role="region" aria-label="Full-size screenshot. Scroll to inspect the screen."><img id="preview-image" src="assets/screens/desktop-home.webp" alt="QuickCheck Home with fictional demonstration data" width="1440" height="900" loading="lazy"></div>
+ <div class="preview-dialog-footer"><span>Scroll inside the image to inspect the controls.</span><a class="text-link" id="preview-original" href="assets/screens/desktop-home.webp" target="_blank" rel="noopener">Open original image ↗</a></div>
+</dialog>
 </body>
 </html>

@@ -132,6 +132,10 @@ body { font-size: 16px; }
 .bank-transfer { font-size: 14px; }
 .bank-transfer { flex-wrap: wrap; }
 .real-feature-preview figcaption { font-size: 12px; }
+.real-feature-preview figcaption { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.feature-preview-open { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 8px 12px; font-size: 14px; font-weight: 600; color: var(--forest); border: 1px solid #8ca27d; border-radius: 9px; background: #fff; }
+.feature-preview-open svg { width: 17px; height: 17px; }
+.feature-preview-open:hover { background: #e8f2e1; }
 .eyebrow,
 .feature-kicker { font-size: 11px; }
 .section-intro > p:last-child { max-width: 650px; margin-inline: auto; }
@@ -161,7 +165,12 @@ body { font-size: 16px; }
 .preview-dialog-header p { font-size: 13px; margin-top: 6px; color: var(--muted); }
 .preview-dialog-header .button { min-height: 46px; padding: 10px 16px; font-size: 15px; flex-shrink: 0; }
 .preview-canvas { flex: 1; min-height: 0; overflow: auto; border: 1px solid var(--line); background: #e8eee0; border-radius: 8px; }
-.preview-canvas img { display: block; width: 1440px; max-width: none; height: auto; }
+.preview-canvas img { display: block; width: 1440px; max-width: none; height: auto; margin-inline: auto; }
+.actual-screen { object-fit: contain; transition: none; }
+.actual-screen,
+.actual-phone img,
+.actual-mobile-product img,
+.real-feature-preview img { image-rendering: auto; }
 .preview-dialog-footer { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; font-size: 14px; color: #52634b; }
 .preview-dialog-footer .text-link { font-size: 14px; }
 body.preview-open { overflow: hidden; }

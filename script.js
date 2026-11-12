@@ -78,18 +78,24 @@ const previewOpen = document.querySelector('#preview-open');
 const previewClose = document.querySelector('#preview-close');
 const previewImage = document.querySelector('#preview-image');
 const previewOriginal = document.querySelector('#preview-original');
-previewOpen.addEventListener('click', () => {
+let previewTrigger = previewOpen;
+function openPreview(screen, trigger) {
+  previewTrigger = trigger;
   stopAnimation();
   pausedByVisibility = false;
   hasAutoplayed = true;
-  const screen = document.querySelector('.actual-screen.is-active');
   previewImage.src = screen.src;
   previewImage.alt = screen.alt;
+  previewImage.style.width = `${screen.naturalWidth || 1440}px`;
   previewOriginal.href = screen.src;
   previewDialog.showModal();
   document.body.classList.add('preview-open');
   document.querySelector('.preview-canvas').scrollTo(0, 0);
-});
+}
+previewOpen.addEventListener('click', () => openPreview(document.querySelector('.actual-screen.is-active'), previewOpen));
+document.querySelectorAll('.feature-preview-open').forEach(button => button.addEventListener('click', () => {
+  openPreview(button.closest('figure').querySelector('img'), button);
+}));
 previewClose.addEventListener('click', () => previewDialog.close());
 previewDialog.addEventListener('click', event => {
   if (event.target !== previewDialog) return;
@@ -98,7 +104,7 @@ previewDialog.addEventListener('click', event => {
 });
 previewDialog.addEventListener('close', () => {
   document.body.classList.remove('preview-open');
-  previewOpen.focus({preventScroll: true});
+  previewTrigger.focus({preventScroll: true});
 });
 
 // Add a short movement on entry; controls remain visible before it runs.

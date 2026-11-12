@@ -86,7 +86,7 @@ function openPreview(screen, trigger) {
   hasAutoplayed = true;
   previewImage.src = screen.src;
   previewImage.alt = screen.alt;
-  previewImage.style.width = `${screen.naturalWidth || 1440}px`;
+  previewImage.style.width = `${screen.naturalWidth || Number(screen.getAttribute('width')) || 1440}px`;
   previewOriginal.href = screen.src;
   previewDialog.showModal();
   document.body.classList.add('preview-open');

@@ -15,14 +15,14 @@
   "/tests/sample-science-quiz/check/samples": "../s1/tests_sample-science-quiz_check.html"
  },
  "s1": {
-  "/tests/sample-science-quiz/glance/p564edfafcbb8b11f": "../s2a/tests_sample-science-quiz_glance_pe97f977a3e1c77dc--back-check.html",
-  "/tests/sample-science-quiz/glance/pe97f977a3e1c77dc": "../s2b/tests_sample-science-quiz_glance_p564edfafcbb8b11f--back-check.html"
+  "/tests/sample-science-quiz/glance/p175404e30f3d041a": "../s2a/tests_sample-science-quiz_glance_pbdfbc215783014b0--back-check.html",
+  "/tests/sample-science-quiz/glance/pbdfbc215783014b0": "../s2b/tests_sample-science-quiz_glance_p175404e30f3d041a--back-check.html"
  },
  "s2a": {
-  "/tests/sample-science-quiz/glance/pe97f977a3e1c77dc": "../s3/tests_sample-science-quiz_check.html"
+  "/tests/sample-science-quiz/glance/pbdfbc215783014b0": "../s3/tests_sample-science-quiz_check.html"
  },
  "s2b": {
-  "/tests/sample-science-quiz/glance/p564edfafcbb8b11f": "../s3/tests_sample-science-quiz_check.html"
+  "/tests/sample-science-quiz/glance/p175404e30f3d041a": "../s3/tests_sample-science-quiz_check.html"
  },
  "s3": {
   "/tests/sample-science-quiz/done/save": "../s4/tests_sample-science-quiz_check.html"

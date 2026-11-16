@@ -360,3 +360,81 @@ body.qc-new :is(.il-top, .qc-bar) .skel { background: rgba(255, 255, 255, .16); 
 .qc-skel-navi.is-brand { width: 30px; height: 30px; margin: 9px 0 18px 9px; border-radius: 9px; }
 .qc-skel-navi.is-check { height: 48px; margin-bottom: 12px; }
 .qc-skel-navfoot { display: grid; gap: 4px; margin-top: auto; padding-top: 12px; border-top: 1px solid var(--ui-line); }
+
+/* "Choose your plan" (pro.html): a deep-green header with three reasons, the plans as cards to
+   pick (Yearly first, tagged), one big button, "I already have a key", then the small print.
+   One column on the phone; a centred column on the laptop. */
+.qc-pay { display: grid; gap: 14px; max-width: 560px; margin: 0 auto; }
+.qc-pay-hero { border-radius: 24px; padding: 24px 22px 20px; color: #fff;
+  background: linear-gradient(140deg, var(--qc-deep, #0A504A) 0%, #0b6a5c 55%, var(--qc-emerald, #00A86B) 100%); }
+.qc-pay-kicker { margin: 0 0 6px; font-size: 13px; font-weight: 800; color: var(--qc-mint, #A2E4B8); }
+.qc-pay-hero h2 { margin: 0 0 12px; font-size: 30px; line-height: 1.12; font-weight: 800; color: #fff; }
+.qc-pay-why { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.qc-pay-why li { display: flex; gap: 10px; align-items: baseline; font-size: 15.5px; }
+.qc-pay-why span { color: var(--qc-mint, #A2E4B8); font-size: 14px; }
+.qc-plans { display: grid; gap: 10px; }
+.qc-plan { position: relative; display: grid; gap: 8px; padding: 16px 16px 14px; border-radius: 18px; cursor: pointer;
+  background: var(--ui-paper, #fff); border: 1.5px solid var(--ui-line); }
+.qc-plan input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.qc-plan:has(input:checked) { border: 2px solid var(--qc-deep, #0A504A); box-shadow: 0 6px 18px rgba(10, 80, 74, .12); }
+.qc-plan:has(input:focus-visible) { outline: 3px solid var(--il-go-hi); outline-offset: 2px; }
+.qc-plan-tag { position: absolute; top: -11px; left: 14px; padding: 2px 10px; border-radius: 999px; font-size: 12px;
+  font-weight: 800; background: var(--qc-mint, #A2E4B8); color: var(--qc-deep, #0A504A); }
+.qc-plan-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.qc-plan-top b { font-size: 18px; }
+.qc-plan-tick { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--ui-line); flex: none; }
+.qc-plan:has(input:checked) .qc-plan-tick { border: 0; background: var(--qc-deep, #0A504A)
+  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 12.5l4 4 8-9'/%3E%3C/svg%3E") center / 15px no-repeat; }
+.qc-plan-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+.qc-plan-price, .qc-plan-side { display: grid; gap: 1px; }
+.qc-plan-price b { font-size: 22px; font-variant-numeric: tabular-nums; }
+.qc-plan-side { text-align: right; }
+.qc-plan-side b { font-size: 16px; }
+.qc-plan small { font-size: 12.5px; color: var(--ui-muted); }
+.qc-pay-go { min-height: 56px; font-size: 17px; }
+.qc-pay-key { justify-self: center; font-weight: 800; font-size: 13.5px; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--ui-ink); text-decoration: none; padding: 6px 10px; }
+.qc-pay-group { margin: 0; padding: 12px 14px; border-radius: 14px; background: var(--il-go-soft); font-size: 14px; line-height: 1.45; }
+.qc-pay-group a { color: var(--il-go); font-weight: 700; }
+.qc-pay-fine { margin: 0; text-align: center; font-size: 12px; line-height: 1.5; color: var(--ui-muted); }
+.qc-pay-all .pro-list { margin-top: 10px; }
+/* On the laptop the plans stand side by side, as on the website's pricing cards. */
+@media (min-width: 900px) {
+  body:not(.qc-phone) .qc-pay { max-width: 940px; }
+  body:not(.qc-phone) .qc-plans { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; margin-top: 8px; }
+  body:not(.qc-phone) .qc-plan-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+  body:not(.qc-phone) .qc-plan-side { text-align: left; }
+  body:not(.qc-phone) .qc-pay-go { justify-self: center; width: min(440px, 100%); }
+}
+
+/* ---------- A verse for the teacher (_verse.html, verses.py; Arvin, 16 Nov 2026) ---------- */
+/* Home's banner: the verse is the first slide, deep green, the words in the middle. */
+.qc-slide.qc-verse { color: #fff; border: 0; gap: 8px; align-content: center;
+  background: linear-gradient(140deg, var(--qc-deep, #0A504A) 0%, #0b6a5c 55%, var(--qc-emerald, #00A86B) 100%); }
+.qc-slide.qc-verse > span.qc-verse-tag { font-size: 12.5px; font-weight: 800; color: var(--qc-mint, #A2E4B8); }
+.qc-verse-text { font-size: 17px; line-height: 1.45; font-style: italic; color: #fff; max-width: 34ch; }
+.qc-slide.qc-verse b.qc-verse-ref { font-size: 15px; color: #fff; }
+.qc-slide.qc-verse > .qc-verse-nkjv { font-size: 11px; color: rgba(255, 255, 255, .72); }
+
+/* The line at the bottom: the verse moving slowly right to left (verse.js sets its speed). */
+.qc-verse-line { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.qc-verse-mark { flex: none; font-size: 20px; line-height: 1; color: var(--qc-emerald, #00A86B); }
+.qc-verse-run { flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; cursor: pointer; }
+.qc-verse-run > span { display: inline-block; padding-right: 3em; }
+.qc-verse-run b { color: var(--qc-deep, #0A504A); }
+.qc-verse-run small { font-size: .8em; color: var(--ui-muted); }
+.qc-verse-line.is-moving .qc-verse-run > span { animation: qc-verse-run var(--qc-verse-secs, 40s) linear infinite; }
+.qc-verse-line.is-paused .qc-verse-run > span, .qc-verse-run:hover > span { animation-play-state: paused; }
+@keyframes qc-verse-run { from { transform: translateX(var(--qc-verse-from, 100%)); } to { transform: translateX(-100%); } }
+.qc-verse-line.is-still .qc-verse-run { white-space: normal; cursor: default; }
+.qc-verse-line.is-still .qc-verse-run > span { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; padding: 0; }
+.qc-verse-x { flex: none; width: 30px; height: 30px; border: 0; border-radius: 50%; background: none; cursor: pointer;
+  font: 700 18px/1 var(--ui-font, inherit); color: var(--ui-muted); }
+.qc-verse-x:hover { background: var(--il-go-soft); color: var(--ui-ink); }
+/* Phone: a slim strip floating just above the bar and its raised Check button. */
+.qc-verse-line.is-phone { position: fixed; z-index: 58; left: 10px; right: 10px; bottom: calc(104px + env(safe-area-inset-bottom, 0px));
+  padding: 5px 4px 5px 12px; border-radius: 14px; background: var(--ui-paper, #fff); border: 1px solid var(--qc-mint, #A2E4B8);
+  box-shadow: 0 4px 14px rgba(10, 80, 74, .14); font-size: 14.5px; color: var(--ui-ink); }
+body.qc-new.has-verse-line .main { padding-bottom: calc(150px + env(safe-area-inset-bottom, 0px)); }
+/* Laptop: inside the status bar along the bottom, between the sync light and the keys. */
+.qc-verse-line.is-laptop { flex: 1; font-size: 13.5px; color: var(--ui-ink); }

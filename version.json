@@ -1,8 +1,10 @@
 {
-  "latest": "2.15.0",
-  "released": "2026-11-11",
+  "latest": "2.15.1",
+  "released": "2026-11-16",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "A Bible verse to encourage you, morning and afternoon, on Home and along the bottom of every page (Settings → A verse for you: twice a day, once a day or off).",
+    "Go Pro: a new Choose your plan page with the same plans as the website.",
     "A new look, the same on the laptop and the phone: Home, Tests, Check, Results and Settings in the same places, in new emerald colours on a white background, with larger words and numbers.",
     "On the laptop: a slim bar of icons on the left. Click it and it opens with every name. Each page sits in the middle of the screen with room on both sides, and keys 1 to 5 still open the five places.",
     "The bottom of the laptop window shows your phone: linked and when it last synced, syncing, or why it is not, plus how many papers wait to be checked. Ctrl K opens Search from any page.",
@@ -12,17 +14,15 @@
     "The class record works like a spreadsheet on the laptop: Enter and the arrow keys move between boxes, Ctrl S saves.",
     "Home shows what QuickCheck can do in a banner that slides by itself, and what is waiting for you in a To do list. Reports download as PDF on both the laptop and the phone.",
     "New: QuickCheck Free. After the 7-day trial QuickCheck keeps working, for good: up to 3 classes, any number of tests of 1 to 50 items with choices A to D, blank answer sheets, checking with your phone or photos, the scores and the item analysis.",
-    "QuickCheck Pro unlocks the rest: more classes, True/False, A to E, matching and parts, up to 100 items, points per item, answer sheets with names, the DepEd class record, the reports for your principal, skills to reteach, laptop and phone sync, and scanned PDF or ZIP uploads.",
-    "A gold ★ Pro tag marks each Pro feature. Tap it to see what it does and how to unlock it.",
-    "Pro is now monthly (₱49), yearly (₱199) or lifetime (₱499). Five teachers together: ₱1,499 lifetime."
+    "QuickCheck Pro unlocks the rest: more classes, True/False, A to E, matching and parts, up to 100 items, points per item, answer sheets with names, the DepEd class record, the reports for your principal, skills to reteach, laptop and phone sync, and scanned PDF or ZIP uploads."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.15.0/QuickCheckPro-2.15.0-portable.zip",
-      "sha256": "55aab1716a18faab302e5b556a3db538c2c82b0b49d995842fd160c0da2450a5",
-      "signature": "tAYjRvpIOtG1X7eua7Kn8KviR5nBI9WpQGQkEymJWA4WirsQ/DjfkB5NQi1+IJBTLZDUvOJ1ZRNtwPyo3ufiBA==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.15.1/QuickCheckPro-2.15.1-portable.zip",
+      "sha256": "2981893d35ce7959b0eb58e96e8050da522d94f05b0358e3f6023ef41db355e5",
+      "signature": "bAddEf7wolItVROq5F9ViXktwOMgnDSXhLFLtb6j3qdPcNK5ZFgxnN0rYct0WSMcwrJiT36IhmDb6ur4FW8yBw==",
       "exe": "QuickCheckPro.exe",
-      "size": 95431653
+      "size": 95442677
     }
   }
 }

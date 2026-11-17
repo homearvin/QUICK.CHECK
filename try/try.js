@@ -8,8 +8,9 @@
 
   // ---------- settings (single source of truth) ----------
   const SEEN_KEY = "qc_try_seen";
-  // Anonymous logger (Google Apps Script web app). Empty = nothing is sent.
-  const LOG_URL = "";
+  // Anonymous logger: Google Apps Script web app bound to Arvin's "QuickCheck Visitors (website Try-it)" Sheet.
+  // One row per visitor; no names. Empty string = nothing is sent.
+  const LOG_URL = "https://script.google.com/macros/s/AKfycby_4xn6PZjIFZy6SzrTg4JOKU8pLot1Egriq6sBI9ZlLpckztwdDIjMR0v8G0DgBq_rRA/exec";
   const ASSUME = { secondsPerPaper: 3, classSize: 35, mastery: 75, section: "Sampaguita" };
   const LETTERS = ["A", "B", "C", "D"];
 

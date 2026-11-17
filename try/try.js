@@ -1,6 +1,7 @@
 /* QuickCheck "Try it before you install it" — first-visit overlay.
-   Flow: Welcome -> About you (client form) -> TOS (teacher) -> test on two papers (student)
-         -> checking with a made-up class -> Score / Analysis / Record / Install.
+   Flow: Welcome -> grade + subject (2 taps) -> TOS (teacher) -> test on two papers (student)
+         -> checking with a made-up class -> Score (+ 4 optional About-you taps) / Analysis / Record / Install
+         (install help fitted to Android, iPhone, computer, and Facebook's in-app browser).
    Needs: try/test-sets.js (TEST_SETS) loaded first, try/try.css, and the inline gate in index.html's <head>
           that adds html.qct-open on a first visit. */
 (function () {
@@ -11,19 +12,35 @@
   // Anonymous logger: Google Apps Script web app bound to Arvin's "QuickCheck Visitors (website Try-it)" Sheet.
   // One row per visitor; no names. Empty string = nothing is sent.
   const LOG_URL = "https://script.google.com/macros/s/AKfycby_4xn6PZjIFZy6SzrTg4JOKU8pLot1Egriq6sBI9ZlLpckztwdDIjMR0v8G0DgBq_rRA/exec";
-  const ASSUME = { secondsPerPaper: 3, classSize: 35, mastery: 75, section: "Sampaguita" };
+  // handSecondsPerPaper: a teacher checking one 10-item paper by hand and writing the score (for "time saved").
+  const ASSUME = { secondsPerPaper: 3, handSecondsPerPaper: 90, classSize: 35, mastery: 75, section: "Sampaguita" };
   const LETTERS = ["A", "B", "C", "D"];
+  // The Android install guide; the QR code on computers (images/android-qr.svg) points here too.
+  const ANDROID_GUIDE = "android.html#install";
+  const SITE_DOWNLOAD = "https://homearvin.github.io/QUICK.CHECK/#download";
 
   // The About-you client form. NOT part of the test: it tells Arvin who his visitors are.
-  // Anonymous: no names, no typing. Grade and subject also pick the test set.
+  // Anonymous: no names, no typing.
+  //   when "start": asked before the test (grade + subject pick the test set) — kept to 2 taps so nobody quits early.
+  //   when "after": asked on the results screen, optional, once the visitor has seen what QuickCheck does.
   const ABOUT = [
-    { id: "where",   q: "Where do you teach?", c: { A: "Public school (DepEd)", B: "Private school", C: "College or other", D: "I'm not a teacher" } },
-    { id: "age",     q: "How old are you?", c: { A: "20–29", B: "30–39", C: "40–49", D: "50 or older" } },
-    { id: "years",   q: "How long have you been teaching?", c: { A: "Less than 3 years", B: "3–10 years", C: "11–20 years", D: "More than 20 years" } },
-    { id: "apps",    q: "Have you used an app to check papers before?", c: { A: "No, never", B: "Yes, ZipGrade", C: "Yes, another checker app", D: "Only Google Forms or online quizzes" } },
-    { id: "grade",   q: "Which grade do you teach?", c: { A: "Grades 1–3", B: "Grades 4–6", C: "Grades 7–10", D: "Senior High" } },
-    { id: "subject", q: "What subject do you teach most?", c: { A: "Math", B: "Science", C: "English", D: "Filipino", E: "AP", F: "ESP", G: "MAPEH", H: "TLE" } },
+    { id: "grade",   when: "start", q: "Which grade do you teach?", c: { A: "Grades 1–3", B: "Grades 4–6", C: "Grades 7–10", D: "Senior High" } },
+    { id: "subject", when: "start", q: "What subject do you teach most?", c: { A: "Math", B: "Science", C: "English", D: "Filipino", E: "AP", F: "ESP", G: "MAPEH", H: "TLE" } },
+    { id: "where",   when: "after", q: "Where do you teach?", c: { A: "Public school (DepEd)", B: "Private school", C: "College or other", D: "I'm not a teacher" } },
+    { id: "age",     when: "after", q: "How old are you?", c: { A: "20–29", B: "30–39", C: "40–49", D: "50 or older" } },
+    { id: "years",   when: "after", q: "How long have you been teaching?", c: { A: "Less than 3 years", B: "3–10 years", C: "11–20 years", D: "More than 20 years" } },
+    { id: "apps",    when: "after", q: "Have you used an app to check papers before?", c: { A: "No, never", B: "Yes, ZipGrade", C: "Yes, another checker app", D: "Only Google Forms or online quizzes" } },
   ];
+  const aboutFor = when => ABOUT.filter(it => it.when === when);
+
+  // Where the visitor is, for the Sheet ("Last step" shows where people stop).
+  const STEPS = ["", "Opened", "Picking subject", "Set up the test (TOS)", "Answering the test", "Watching the check", "Results", "Install screen"];
+
+  // Which install help to show. In-app browsers (Facebook, Messenger, Instagram, TikTok) often block downloads.
+  const UA = navigator.userAgent;
+  const DEVICE = /Android/i.test(UA) ? "android"
+    : /iPhone|iPad|iPod/i.test(UA) || (/Macintosh/.test(UA) && navigator.maxTouchPoints > 1) ? "iphone" : "computer";
+  const IN_APP = /FBAN|FBAV|FB_IAB|Instagram|Messenger|musical_ly|TikTok|Line\//i.test(UA);
   const BAND_KEY = { A: "ELEM", B: "ELEM", C: "JHS", D: "SHS" };
   const BAND_NAME = { A: "Elementary", B: "Elementary", C: "Junior High", D: "Senior High" };
   const GRADE_FOR_BAND = { A: "Grade 3", B: "Grade 5", C: "Grade 7", D: "Grade 11" };
@@ -38,19 +55,25 @@
   const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
   const isWide = () => matchMedia("(min-width: 900px)").matches;
   const reducedMotion = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const isAndroid = () => /Android/i.test(navigator.userAgent);
   const seen = {
     set() { try { localStorage.setItem(SEEN_KEY, "1"); } catch (e) { /* private mode: fine */ } },
   };
-  const freshState = () => ({ id: Math.random().toString(36).slice(2, 10), about: {}, test: {}, set: null, subject: "", tosMap: null, moved: new Set(), cls: null, logged: false });
+  const freshState = () => ({ id: Math.random().toString(36).slice(2, 10), about: {}, test: {}, set: null, subject: "", tosMap: null, moved: new Set(), cls: null, logged: false, aboutLogged: false, step: 0 });
   const className = () => `${GRADE_FOR_BAND[S.about.grade] || "Grade 7"} – ${ASSUME.section}`;
   // Download links come from the page's own #download section, so each release updates one place only.
   const downloadUrl = kind => (document.querySelector(`#download a[href$="${kind === "android" ? ".apk" : ".exe"}"]`) || {}).href || "#download";
 
   function log(event, extra) {
     if (!LOG_URL || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;   // local tests never reach the Sheet
-    const a = S.about, row = Object.assign({ id: S.id, event, where: a.where, age: a.age, years: a.years, apps: a.apps, grade: a.grade, subject: a.subject }, extra || {});
+    const a = S.about, device = { android: "Android", iphone: "iPhone", computer: "Computer" }[DEVICE] + (IN_APP ? " · in-app browser" : "");
+    const row = Object.assign({ id: S.id, event, device, where: a.where, age: a.age, years: a.years, apps: a.apps, grade: a.grade, subject: a.subject }, extra || {});
     try { fetch(LOG_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(row), keepalive: true }); } catch (e) { /* never block the visitor */ }
+  }
+  // Records the furthest step reached. `leaving` notes how they left ("closed", "skipped to prices").
+  function step(n, leaving) {
+    if (n <= S.step && !leaving) return;   // only new progress is sent (switching result tabs sends nothing)
+    S.step = Math.max(n, S.step);
+    log("step", { step: `${S.step} · ${STEPS[S.step]}${leaving ? " → " + leaving : ""}` });
   }
 
   // ---------- markup ----------
@@ -71,7 +94,7 @@
           <div class="dots">${"f,,,,,,f,,,f,,,,,,f,f,,,".split(",").slice(0, 20).map(x => `<span class="${x}"></span>`).join("")}</div></div>
         <h2>Ma'am, Sir, try QuickCheck right here.</h2>
         <p>Take a 10-item test in your subject. Watch it get checked in seconds, with a whole class. No install yet.</p>
-        <div class="chips"><span>About you (6 taps)</span><span>1 · You set the test</span><span>2 · You answer like a student</span><span>3 · QuickCheck scans the class</span><span>4 · You see the results</span></div>
+        <div class="chips"><span>Pick your subject (2 taps)</span><span>1 · You set the test</span><span>2 · You answer like a student</span><span>3 · QuickCheck scans the class</span><span>4 · You see the results</span></div>
         <button class="btn light" id="qct-start">Tara, let's start →</button>
         <button class="linkish" data-goto="#pricing">Skip, show me the prices</button>
       </div>
@@ -80,9 +103,9 @@
     <div class="qv" id="qct-about"><div class="pad">
       <button class="close" data-close aria-label="Close">×</button>${SKIP}
       <div class="card">
-        <p class="eyebrow">Before the test · about you</p>
-        <h2>Quick question muna, Ma'am / Sir.</h2>
-        <p class="sub">6 taps. No name, no typing. This helps us make QuickCheck better for teachers like you.</p>
+        <p class="eyebrow">Before the test · 2 taps</p>
+        <h2>What do you teach, Ma'am / Sir?</h2>
+        <p class="sub">We'll make a 10-item quiz in your subject. No name, no typing.</p>
         <div id="qct-form"></div>
       </div>
       <div class="bar"><div class="left" id="qct-form-left"></div><button class="btn" id="qct-form-go" disabled>Next: my test</button></div>
@@ -153,6 +176,7 @@
       </div>
       <div class="rskip">${SKIP}</div>
       <div class="rbody"><div class="res" id="qct-res"></div></div>
+      <div class="bar rget" id="qct-rget"><div class="left">Free · ${DEVICE === "android" ? "for your phone" : "Windows &amp; Android"}</div><button class="btn" data-tab="get">Get the app →</button></div>
     </div>`;
     document.body.appendChild(root);
   }
@@ -167,16 +191,31 @@
   }
 
   // ---------- About you ----------
-  function renderForm() {
-    $("qct-form").innerHTML = ABOUT.map((it, i) => `<fieldset class="fq" id="qct-fq-${it.id}"><legend><b>${i + 1}.</b> ${it.q}</legend>
+  const questionsHtml = list => list.map((it, i) => `<fieldset class="fq" id="qct-fq-${it.id}"><legend><b>${i + 1}.</b> ${it.q}</legend>
       <div class="opts-grid">${Object.entries(it.c).map(([k, v]) =>
         `<button type="button" class="opt" data-q="${it.id}" data-k="${k}" aria-pressed="${S.about[it.id] === k}">${v}</button>`).join("")}</div></fieldset>`).join("");
+  const unanswered = when => aboutFor(when).filter(it => !S.about[it.id]);
+
+  function renderForm() {
+    $("qct-form").innerHTML = questionsHtml(aboutFor("start"));
     updateForm();
   }
   function updateForm() {
-    const left = ABOUT.filter(it => !S.about[it.id]).length;
+    const left = unanswered("start").length;
     $("qct-form-left").textContent = left ? `${left} to go` : "Salamat! Next, your test.";
     $("qct-form-go").disabled = left > 0;
+  }
+  // The other client questions, on the results screen: optional, after the visitor has seen the value.
+  function laterHtml() {
+    if (!unanswered("after").length) return `<div class="later done"><b>Salamat po!</b> Your answers help us make QuickCheck better for teachers.</div>`;
+    return `<div class="later" id="qct-later"><p class="eyebrow">Help us · 4 taps · optional</p>
+      <h3>One more thing: who are you, Ma'am / Sir?</h3><p class="sub">Anonymous. It tells us which teachers QuickCheck helps.</p>
+      ${questionsHtml(aboutFor("after"))}</div>`;
+  }
+  function updateLater() {
+    if (unanswered("after").length) return;
+    if (!S.aboutLogged) { S.aboutLogged = true; log("about"); }
+    $("qct-later").outerHTML = laterHtml();
   }
 
   // ---------- TOS (teacher) ----------
@@ -192,6 +231,7 @@
     $("qct-tos-title").textContent = `${BAND_NAME[S.about.grade]} ${S.subject} quiz · 10 items`;
     renderTos();
     show("qct-tos");
+    step(3);
   }
   function renderTos() {
     let h = `<div class="tos-row"><span>COMPETENCY</span><span style="text-align:center">ITEMS</span></div>`;
@@ -264,7 +304,7 @@
   const timeText = sec => (sec < 60 ? `${sec} s` : `${Math.floor(sec / 60)} min ${sec % 60} s`);
 
   function runCheck() {
-    show("qct-check"); clearTimers();
+    show("qct-check"); clearTimers(); step(5);
     S.cls = makeClass();
     const mine = S.set.items.map((_, i) => S.test["t" + (i + 1)]);
     const myScore = scoreOf(mine), total = S.cls.length + 1, totalSec = total * ASSUME.secondsPerPaper;
@@ -320,17 +360,80 @@
     const mps = Math.round((100 * scores.reduce((s, x) => s + x.s, 0)) / (scores.length * 10));
     return { mine, myScore: scoreOf(mine), items, comps, scores, mps, n: all.length };
   }
+  // "By hand ≈ 54 min · QuickCheck 1 min 48 s" for the whole class.
+  function savedHtml(A) {
+    const hand = Math.round((A.n * ASSUME.handSecondsPerPaper) / 60);
+    return `<div class="saved"><div><span>Checking ${A.n} papers by hand</span><b>about ${hand} min</b></div>
+      <div class="qc"><span>With QuickCheck</span><b>${timeText(A.n * ASSUME.secondsPerPaper)}</b></div></div>`;
+  }
+
+  // ---------- install screen: help for this visitor's device ----------
+  const INSTALL_STEPS = {
+    android: [
+      `Tap <b>Get it on Android</b>. If Chrome says “File might be harmful”, tap <b>Download anyway</b>. About 73 MB, so Wi-Fi is best.`,
+      `Open the downloaded file. If it says “not allowed to install unknown apps”, tap <b>Settings</b>, turn on <b>Allow from this source</b>, then go back.`,
+      `Tap <b>Install</b>. If Play Protect warns you, tap <b>More details</b> → <b>Install anyway</b>.`,
+    ],
+    computer: [
+      `Click <b>Download for Windows</b>, then open the file when it finishes.`,
+      `If a blue box says “Windows protected your PC”, click <b>More info</b> → <b>Run anyway</b>.`,
+      `Click <b>Next</b> → <b>Install</b> → <b>Finish</b>. QuickCheck is now in your Start menu.`,
+    ],
+  };
+  const dlButton = (label, kind, main) => `<a class="btn${main ? "" : " soft"}" href="${downloadUrl(kind)}" data-install="${kind}">${label}</a>`;
+  const stepsHtml = list => `<ol class="isteps">${list.map(s => `<li>${s}</li>`).join("")}</ol>`;
+
+  function installHtml(A) {
+    const notTeacher = S.about.where === "D";
+    let help;
+    if (DEVICE === "android") {
+      help = (IN_APP ? `<div class="inapp"><b>First, open this page in Chrome.</b> Facebook and Messenger often block downloads.
+          Tap <b>⋮</b> or <b>···</b> at the top → <b>Open in Chrome</b> (or “Open in browser”). Chrome opens right at the download, no need to take the test again.</div>` : "")
+        + `<div class="row1">${dlButton("Get it on Android", "android", true)}</div>
+        <p class="calm"><b>Your phone will warn you. That's normal</b> for apps not from the Play Store. QuickCheck doesn't read your contacts, messages or location.</p>
+        ${stepsHtml(INSTALL_STEPS.android)}
+        <a class="linkish" href="${ANDROID_GUIDE}">Still blocked? Full install guide (Samsung, Huawei…)</a>`;
+    } else if (DEVICE === "iphone") {
+      help = `<div class="inapp"><b>QuickCheck works on Android phones and Windows computers.</b> There's no iPhone app yet.
+          Send this link to yourself and open it on your laptop.</div>
+        <div class="row1"><button class="btn" id="qct-copy">Copy the download link</button></div>`;
+    } else {
+      help = `<div class="row1">${dlButton("Download for Windows", "windows", true)}</div>
+        ${stepsHtml(INSTALL_STEPS.computer)}
+        <div class="qrcard"><img src="images/android-qr.svg" width="132" height="132" alt="QR code for the QuickCheck Android app">
+          <div><b>Check papers with your phone's camera</b><p>Scan this with your Android phone to get the phone app. It syncs with your laptop.</p></div></div>`;
+    }
+    return `<div class="install">
+        <span class="logo" style="color:#0A504A"><i>✓</i>QuickCheck</span>
+        <h2>${notTeacher ? "Share QuickCheck with your teacher." : "That was QuickCheck. Now do it with your real papers."}</h2>
+        ${savedHtml(A)}
+        ${help}
+        <small>Free · no account · your first 7 days include Pro (TOS and competency reports)</small>
+        <div class="tryprint"><b>Try it for real:</b> after installing, print an answer sheet from the app, shade it, and scan it with your phone.</div>
+        <div class="links"><a class="linkish" href="guide.html">Teacher guide</a><a class="linkish" href="demo/">Live demo</a><button class="linkish" data-goto="#pricing">See the prices</button><button class="linkish" data-goto="#buy">How to pay for Pro</button></div>
+      </div>`;
+  }
+
   function showResults(tab) {
     clearTimers(); seen.set();
     const A = analysis();
-    if (!S.logged) { S.logged = true; log("finished", { set: `${BAND_KEY[S.about.grade]}/${SUBJECT_KEY[S.about.subject]}`, score: A.myScore }); }
+    if (!S.logged) {
+      S.logged = true;
+      log("finished", { set: `${BAND_KEY[S.about.grade]}/${SUBJECT_KEY[S.about.subject]}`, score: A.myScore });
+      // For Facebook ads: lets an ad set aim for teachers who finish the try-it test. No personal details.
+      if (typeof window.fbq === "function") window.fbq("trackCustom", "TryFinished", { subject: S.subject });
+    }
+    step(tab === "get" ? 7 : 6);
     $("qct-hb-score").textContent = `${A.myScore}/10`;
     document.querySelectorAll("#qct-rtabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
+    $("qct-rget").hidden = tab === "get";
     const M = ASSUME.mastery;
     let h = "";
     if (tab === "score") {
       h = `<p class="hello">Salamat, Ma'am / Sir. Checked in 0.9 seconds.</p>
         <div class="big"><span>Your score</span><span class="n">${A.myScore} / 10</span><small>${S.subject} quiz · ${BAND_NAME[S.about.grade]}</small></div>
+        ${savedHtml(A)}
+        ${laterHtml()}
         <div class="ans">${S.set.items.map((it, i) => { const ok = A.mine[i] === it.key;
           return `<div><b>${i + 1}</b><span>${it.q}<br><small>Answer: ${it.key}. ${it.c[LETTERS.indexOf(it.key)]}</small></span><span class="${ok ? "ok" : "no"}">${ok ? "✓" : "✗ " + A.mine[i]}</span></div>`; }).join("")}</div>
         <button class="linkish" id="qct-see-sheet" style="justify-self:start">See my checked answer sheet</button>
@@ -350,19 +453,9 @@
         <p class="sub">In the app, every score is saved to the class the moment it's checked.</p>
         <button class="btn" data-tab="get">Next: do this with your real papers →</button>`;
     } else {
-      const notTeacher = S.about.where === "D";
-      const dl = (label, kind, main) => `<a class="btn${main ? "" : " soft"}" href="${downloadUrl(kind)}" data-install="${kind}">${label}</a>`;
-      const buttons = isAndroid() ? dl("Get it on Android", "android", true) + dl("Download for Windows", "windows", false)
-                                  : dl("Download for Windows", "windows", true) + dl("Get it on Android", "android", false);
-      h = `<div class="install">
-        <span class="logo" style="color:#0A504A"><i>✓</i>QuickCheck</span>
-        <h2>${notTeacher ? "Share QuickCheck with your teacher." : "That was QuickCheck. Now do it with your real papers."}</h2>
-        <p>${A.n} papers checked, item analysis and class record. Same app, on your phone or laptop.</p>
-        <div class="row2">${buttons}</div>
-        <small>Free · no account · your first 7 days include Pro (TOS and competency reports)</small>
-        <div class="tryprint"><b>Try it for real:</b> after installing, print an answer sheet from the app, shade it, and scan it with your phone.</div>
-        <div class="links"><a class="linkish" href="guide.html">Teacher guide</a><a class="linkish" href="demo/">Live demo</a><button class="linkish" data-goto="#pricing">See the prices</button><button class="linkish" data-goto="#buy">How to pay for Pro</button></div>
-      </div>`;
+      h = installHtml(A);
+      // "Open in Chrome" copies this address: with #download, Chrome skips the test and opens at the download buttons.
+      if (IN_APP && !location.hash) try { history.replaceState(null, "", location.pathname + location.search + "#download"); } catch (e) { /* fine */ }
     }
     $("qct-res").innerHTML = h;
     show("qct-results");
@@ -381,8 +474,16 @@
     $("qct-sheet-go").disabled = false; $("qct-sheet-go").textContent = "Back to results";
   }
 
+  // iPhone visitors: copy the download page link to open it on a laptop.
+  function copyLink(button) {
+    const done = () => { button.textContent = "Link copied ✓ Paste it to yourself in Messenger"; };
+    if (navigator.clipboard) navigator.clipboard.writeText(SITE_DOWNLOAD).then(done, () => { button.textContent = SITE_DOWNLOAD; });
+    else button.textContent = SITE_DOWNLOAD;
+  }
+
   // ---------- open / close ----------
   function close(anchor) {
+    if (S.step) step(S.step, anchor === "#pricing" ? "skipped to prices" : anchor ? "went to " + anchor.slice(1) : "closed");
     clearTimers(); seen.set();
     document.documentElement.classList.remove("qct-open");
     if (anchor && anchor !== "#top") { const el = document.querySelector(anchor); if (el) el.scrollIntoView(); }
@@ -391,6 +492,7 @@
     clearTimers(); S = freshState();
     document.documentElement.classList.add("qct-open");
     show("qct-welcome");
+    step(1);
   }
 
   // ---------- wiring ----------
@@ -405,11 +507,13 @@
       if (opt) {
         S.about[opt.dataset.q] = opt.dataset.k;
         document.querySelectorAll(`#qct .opt[data-q="${opt.dataset.q}"]`).forEach(o => o.setAttribute("aria-pressed", o === opt));
+        if (opt.closest("#qct-later")) return updateLater();
         updateForm();
-        const next = ABOUT.find(it => !S.about[it.id]);
+        const next = unanswered("start")[0];
         if (next) later(250, () => scrollBox($("qct-about"), $("qct-fq-" + next.id)));
         return;
       }
+      if (t.closest("#qct-copy")) return copyLink(t.closest("#qct-copy"));
       const chip = t.closest(".tchip");
       if (chip) { const n = +chip.dataset.item; S.tosMap[n - 1] = (S.tosMap[n - 1] + 1) % S.set.comps.length; S.moved.add(n); return renderTos(); }
       const bub = t.closest(".abub");
@@ -417,9 +521,9 @@
       const tab = t.closest("[data-tab]"); if (tab) return showResults(tab.dataset.tab);
       if (t.closest("#qct-see-sheet")) return showCheckedSheet();
     });
-    $("qct-start").onclick = () => { renderForm(); show("qct-about"); };
+    $("qct-start").onclick = () => { renderForm(); show("qct-about"); step(2); };
     $("qct-form-go").onclick = startTos;
-    $("qct-tos-go").onclick = () => { renderSheet(); show("qct-sheet"); };
+    $("qct-tos-go").onclick = () => { renderSheet(); show("qct-sheet"); step(4); };
     $("qct-sheet-go").onclick = () => ($("qct-paper").classList.contains("checked") ? showResults("score") : runCheck());
     $("qct-ck-skip").onclick = () => showResults("score");
     document.addEventListener("keydown", e => {

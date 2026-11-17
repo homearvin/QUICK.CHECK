@@ -198,8 +198,32 @@ html.qct-open #qct{display:block}
 #qct .rec tr.you td{background:#e8f7ef;font-weight:800;color:var(--forest)}
 #qct .install{display:grid;gap:12px;text-align:center;justify-items:center;padding-top:8px}
 #qct .install h2{font-size:24px}
-#qct .install .row2{display:grid;gap:10px;width:100%;max-width:460px}
+#qct .install .row1{display:grid;width:100%;max-width:460px}
 #qct .install small{color:var(--muted)}
+/* Install help: numbered steps, a calm note about phone warnings, Facebook-browser / iPhone notice, laptop QR */
+#qct .isteps{text-align:left;max-width:460px;width:100%;margin:0;padding:0;list-style:none;counter-reset:s;display:grid;gap:8px}
+#qct .isteps li{counter-increment:s;position:relative;padding:10px 12px 10px 44px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:14px}
+#qct .isteps li::before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--emerald);color:#fff;font-weight:800;font-size:13px;display:grid;place-items:center}
+#qct .calm{font-size:13px;color:var(--muted);max-width:460px}
+#qct .inapp{background:var(--highlight);border:1px solid #f0d77a;border-radius:12px;padding:12px 14px;text-align:left;font-size:14px;max-width:460px}
+#qct .qrcard{display:flex;gap:14px;align-items:center;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px;max-width:460px}
+#qct .qrcard img{flex:none;width:112px;height:112px}
+#qct .qrcard p{font-size:13px;color:var(--muted);margin-top:4px}
+/* Time saved: by hand vs QuickCheck */
+#qct .saved{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:460px;text-align:left}
+#qct .saved>div{border-radius:12px;padding:10px 12px;background:#fdecea;display:grid;gap:2px}
+#qct .saved span{font-size:12px;font-weight:600;color:var(--muted)}
+#qct .saved b{font-size:20px;color:#a2412c}
+#qct .saved .qc{background:#e8f7ef}
+#qct .saved .qc b{color:var(--forest)}
+#qct .res>.saved{max-width:none}
+/* The 4 optional About-you questions on the results screen */
+#qct .later{background:#fff;border:2px solid var(--mint);border-radius:16px;padding:14px;display:grid;gap:10px}
+#qct .later h3{font-size:17px}
+#qct .later.done{border-style:dashed;font-size:14px;display:block}
+/* "Get the app" bar, on every results tab except Install */
+#qct .rget{margin:0}
+#qct .rget[hidden]{display:none}
 #qct .tryprint{background:#fff;border:2px dashed var(--mint);border-radius:12px;padding:12px;font-size:13px;max-width:460px}
 #qct .links{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 
@@ -208,6 +232,5 @@ html.qct-open #qct{display:block}
   #qct .opts-grid{grid-template-columns:repeat(4,1fr)}
   #qct .papers{grid-template-rows:1fr;grid-template-columns:1fr 1fr;gap:24px;padding:24px max(24px,calc((100% - 1200px)/2))}
   #qct .ck-wrap{grid-template-columns:auto 320px;align-items:center;justify-content:center;gap:48px}
-  #qct .install .row2{grid-template-columns:1fr 1fr}
 }
 @media (prefers-reduced-motion:reduce){#qct *{animation:none!important;transition:none!important}}

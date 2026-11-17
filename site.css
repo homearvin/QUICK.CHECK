@@ -85,6 +85,10 @@ body{margin:0;background:var(--cream);color:var(--text);font-family:Manrope,"Seg
 .page .dl-card .eyebrow{color:var(--mint)}
 .page .dl-card .row .btn{flex:1 1 220px}
 .page .dl-notes{color:#cfeee0;font-size:14px}
+.page .dl-qr{display:none;align-items:center;gap:14px;background:#fff;color:var(--text);border-radius:14px;padding:12px;max-width:420px}
+.page .dl-qr img{flex:none;width:96px;height:96px}
+.page .dl-qr p{font-size:14px;color:var(--text)}
+@media (hover:hover) and (min-width:760px){.page .dl-qr{display:flex}}
 .page .dl-links{display:flex;flex-wrap:wrap;gap:6px 18px}
 .page .dl-links a{color:#fff;font-weight:600;font-size:14px}
 

@@ -48,12 +48,14 @@
   const downloadUrl = kind => (document.querySelector(`#download a[href$="${kind === "android" ? ".apk" : ".exe"}"]`) || {}).href || "#download";
 
   function log(event, extra) {
-    if (!LOG_URL) return;
+    if (!LOG_URL || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;   // local tests never reach the Sheet
     const a = S.about, row = Object.assign({ id: S.id, event, where: a.where, age: a.age, years: a.years, apps: a.apps, grade: a.grade, subject: a.subject }, extra || {});
     try { fetch(LOG_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain" }, body: JSON.stringify(row), keepalive: true }); } catch (e) { /* never block the visitor */ }
   }
 
   // ---------- markup ----------
+  // On every step, for visitors who only came to buy: closes the flow at the price cards.
+  const SKIP = `<button class="toprice" data-goto="#pricing">Skip to prices</button>`;
   function build() {
     const root = document.createElement("div");
     root.id = "qct";
@@ -62,7 +64,7 @@
     root.setAttribute("aria-label", "Try QuickCheck");
     root.innerHTML = `
     <div class="qv welcome on" id="qct-welcome">
-      <button class="close dark" data-close aria-label="Close and show the website">×</button>
+      <button class="close dark" data-close aria-label="Close">×</button>
       <div class="inner">
         <span class="logo"><i>✓</i>QuickCheck</span>
         <div class="mini-sheet" aria-hidden="true"><span class="cm tl"></span><span class="cm tr"></span><span class="cm bl"></span><span class="cm br"></span>
@@ -71,12 +73,12 @@
         <p>Take a 10-item test in your subject. Watch it get checked in seconds, with a whole class. No install yet.</p>
         <div class="chips"><span>About you (6 taps)</span><span>1 · You set the test</span><span>2 · You answer like a student</span><span>3 · QuickCheck scans the class</span><span>4 · You see the results</span></div>
         <button class="btn light" id="qct-start">Tara, let's start →</button>
-        <button class="linkish" data-close>Skip, show me the website</button>
+        <button class="linkish" data-goto="#pricing">Skip, show me the prices</button>
       </div>
     </div>
 
     <div class="qv" id="qct-about"><div class="pad">
-      <button class="close" data-close aria-label="Close and show the website">×</button>
+      <button class="close" data-close aria-label="Close">×</button>${SKIP}
       <div class="card">
         <p class="eyebrow">Before the test · about you</p>
         <h2>Quick question muna, Ma'am / Sir.</h2>
@@ -87,7 +89,7 @@
     </div></div>
 
     <div class="qv" id="qct-tos"><div class="pad">
-      <button class="close" data-close aria-label="Close and show the website">×</button>
+      <button class="close" data-close aria-label="Close">×</button>${SKIP}
       <div class="card">
         <p class="eyebrow">You are the teacher · set up the test</p>
         <h2 id="qct-tos-title"></h2>
@@ -101,7 +103,7 @@
     <div class="qv sheetview" id="qct-sheet">
       <div class="papers">
         <div class="qpaper" id="qct-qpaper">
-          <p class="qp-tag">TEST PAPER · read here</p>
+          <p class="qp-tag"><span>TEST PAPER · read here</span>${SKIP}</p>
           <p class="qp-title" id="qct-qp-title"></p>
           <p class="sub">Now you're the student. Read here, shade on the answer sheet, like your learners do.</p>
           <ol class="qlist" id="qct-qlist"></ol>
@@ -125,7 +127,7 @@
     </div>
 
     <div class="qv checking" id="qct-check">
-      <button class="ck-skip" id="qct-ck-skip">Skip ▸</button>
+      <div class="ck-top">${SKIP}<button class="ck-skip" id="qct-ck-skip">Skip ▸</button></div>
       <div class="ck-wrap">
         <div class="phone" id="qct-ph"><div class="ph-screen">
           <span class="lock tl"></span><span class="lock tr"></span><span class="lock bl"></span><span class="lock br"></span>
@@ -145,10 +147,11 @@
     </div>
 
     <div class="qv" id="qct-results">
-      <button class="close" data-close aria-label="Close and show the website">×</button>
+      <button class="close" data-close aria-label="Close">×</button>
       <div class="rtabs" role="tablist" id="qct-rtabs">
         <button role="tab" data-tab="score">Score</button><button role="tab" data-tab="ia">Analysis</button><button role="tab" data-tab="rec">Record</button><button role="tab" data-tab="get">Install</button>
       </div>
+      <div class="rskip">${SKIP}</div>
       <div class="rbody"><div class="res" id="qct-res"></div></div>
     </div>`;
     document.body.appendChild(root);
@@ -358,7 +361,7 @@
         <div class="row2">${buttons}</div>
         <small>Free · no account · your first 7 days include Pro (TOS and competency reports)</small>
         <div class="tryprint"><b>Try it for real:</b> after installing, print an answer sheet from the app, shade it, and scan it with your phone.</div>
-        <div class="links"><a class="linkish" href="guide.html">Teacher guide</a><a class="linkish" href="demo/">Live demo</a><button class="linkish" data-goto="#pricing">See Pro plans</button><button class="linkish" data-goto="#top">Continue to the website</button></div>
+        <div class="links"><a class="linkish" href="guide.html">Teacher guide</a><a class="linkish" href="demo/">Live demo</a><button class="linkish" data-goto="#pricing">See the prices</button><button class="linkish" data-goto="#buy">How to pay for Pro</button></div>
       </div>`;
     }
     $("qct-res").innerHTML = h;

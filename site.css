@@ -1,0 +1,102 @@
+/* QuickCheck website: the short page behind the try-it flow (prices, how to pay, downloads).
+   Same look as the try-it flow (try/try.css): Emerald Canopy palette, Manrope. */
+
+@font-face{font-family:Manrope;src:url('assets/Manrope-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Manrope;src:url('assets/Manrope-Semibold.ttf') format('truetype');font-weight:500 600;font-display:swap}
+@font-face{font-family:Manrope;src:url('assets/Manrope-Extrabold.ttf') format('truetype');font-weight:700 900;font-display:swap}
+
+:root{--emerald:#00A86B;--mint:#A2E4B8;--forest:#0A504A;--cream:#F7F7F2;--text:#14322d;--muted:#53706a;--line:#d6e2dc;--soft:#e8f7ef}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Manrope,"Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.55}
+/* Everything below is scoped to .page (header, main, footer) so it never touches the try-it flow (#qct). */
+.page h1,.page h2,.page h3{margin:0;line-height:1.15;letter-spacing:-.015em;text-wrap:balance;color:var(--forest)}
+.page p{margin:0}
+.page a{color:var(--forest)}
+.page a:focus-visible,.page button:focus-visible{outline:3px solid var(--emerald);outline-offset:2px}
+.page .wrap{width:100%;max-width:1040px;margin:0 auto;padding:0 16px}
+.page .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--emerald)}
+.page .muted{color:var(--muted)}
+.page .row{display:flex;flex-wrap:wrap;gap:10px}
+
+/* Buttons: the same shapes as the try-it flow */
+.page .btn{font:inherit;font-weight:800;font-size:16px;border:0;border-radius:12px;padding:13px 20px;min-height:48px;cursor:pointer;background:var(--emerald);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
+.page .btn.soft{background:var(--soft);color:var(--forest)}
+.page .btn.light{background:#fff;color:var(--forest)}
+.page .btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+
+/* Top bar */
+.page .top{position:sticky;top:0;z-index:20;background:rgba(247,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.page .top-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.page .logo{display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:18px;color:var(--forest);text-decoration:none;flex:none}
+.page .logo i{width:28px;height:28px;border-radius:8px;background:var(--emerald);display:grid;place-items:center;font-style:normal;color:#fff}
+.page .top nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.page .top nav::-webkit-scrollbar{display:none}
+.page .top nav a{font-weight:600;font-size:14px;text-decoration:none;padding:8px 10px;border-radius:8px;white-space:nowrap}
+.page .top nav a:hover{background:var(--soft)}
+@media (max-width:479px){.page .top nav .wide-only{display:none}.page .top nav a{padding:8px 8px}}
+
+/* Intro card */
+.page .intro{padding-top:28px}
+.page .intro-card{background:linear-gradient(180deg,#0A504A,#063a35);color:#fff;border-radius:20px;padding:28px 20px;display:grid;gap:14px}
+.page .intro-card h1{color:#fff;font-size:clamp(30px,6vw,46px)}
+.page .intro-card p{color:#cfeee0;max-width:560px}
+.page .intro-card .eyebrow{color:var(--mint)}
+.page .intro-card .btn.soft{background:rgba(255,255,255,.12);color:#fff}
+.page .intro-card small{color:#a9d6c4}
+
+/* Sections */
+.page .block{padding-top:48px}
+.page .block>h2{font-size:clamp(24px,4.2vw,34px);margin:6px 0 20px}
+.page .note{margin-top:16px;color:var(--muted);font-size:14px}
+
+/* Price cards */
+.page .plans{display:grid;gap:16px}
+.page .plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 18px;display:grid;gap:12px;align-content:start}
+.page .plan h3{font-size:20px}
+.page .plan.pro{border:2px solid var(--emerald);box-shadow:0 10px 30px rgba(10,80,74,.08)}
+.page .plan .tag{position:absolute;top:16px;right:16px;background:var(--forest);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;padding:3px 8px;border-radius:999px}
+.page .plan small{color:var(--muted)}
+.page .price{display:flex;align-items:baseline;gap:8px}
+.page .price b{font-size:40px;font-weight:800;color:var(--forest);line-height:1}
+.page .price span{color:var(--muted);font-weight:600}
+.page .billing{display:flex;background:var(--soft);border-radius:10px;padding:3px;gap:3px}
+.page .billing button{flex:1;font:inherit;font-size:14px;font-weight:700;border:0;border-radius:8px;padding:8px 4px;background:transparent;color:var(--forest);cursor:pointer}
+.page .billing button[aria-pressed="true"]{background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.page .checks{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.page .checks li{padding-left:26px;position:relative}
+.page .checks li::before{content:"✓";position:absolute;left:0;top:0;width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--soft);color:var(--emerald);font-size:12px;font-weight:800;display:grid;place-items:center}
+
+/* How to pay */
+.page .steps{margin:0 0 18px;padding-left:22px;display:grid;gap:6px}
+.page .steps li::marker{font-weight:800;color:var(--emerald)}
+.page .pay{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.page .qr{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;gap:8px;justify-items:center;text-align:center;text-decoration:none;color:var(--text)}
+.page .qr b{color:var(--forest)}
+.page .qr img{width:100%;max-width:160px;height:auto;border-radius:8px}
+.page .qr span{font-weight:600;font-size:14px}
+.page .qr.bank{grid-column:1/-1;align-content:center}
+.page .qr.bank strong{font-size:22px;letter-spacing:.04em;color:var(--forest)}
+
+/* Download */
+.page .dl-card{background:linear-gradient(180deg,#0A504A,#063a35);color:#fff;border-radius:20px;padding:28px 20px;display:grid;gap:14px}
+.page .dl-card h2{color:#fff;font-size:clamp(24px,4.2vw,34px)}
+.page .dl-card .eyebrow{color:var(--mint)}
+.page .dl-card .row .btn{flex:1 1 220px}
+.page .dl-notes{color:#cfeee0;font-size:14px}
+.page .dl-links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.page .dl-links a{color:#fff;font-weight:600;font-size:14px}
+
+/* Footer */
+.page .foot{display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;padding-top:36px;padding-bottom:36px;color:var(--muted);font-size:14px}
+.page .foot-links{display:flex;flex-wrap:wrap;gap:6px 16px}
+
+@media (min-width:760px){
+  .page .intro{padding-top:40px}
+  .page .intro-card,.page .dl-card{padding:40px}
+  .page .plans{grid-template-columns:1fr 1fr}
+  .page .pay{grid-template-columns:1fr 1fr 1fr}
+  .page .qr.bank{grid-column:auto}
+  .page .block{padding-top:64px}
+}

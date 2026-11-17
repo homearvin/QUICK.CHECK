@@ -1,6 +1,6 @@
 /* QuickCheck "Try it before you install it" — first-visit overlay.
    Everything is scoped under #qct so it never touches the rest of the site.
-   Palette: Emerald Canopy (#00A86B, #A2E4B8, #0A504A, #F7F7F2). Font: Manrope (loaded by style.css). */
+   Palette: Emerald Canopy (#00A86B, #A2E4B8, #0A504A, #F7F7F2). Font: Manrope (loaded by site.css). */
 
 /* qct-want: first visit, overlay not built yet -> hide the page so it doesn't flash (the gate removes it after 4 s anyway) */
 html.qct-want body{visibility:hidden}
@@ -25,12 +25,21 @@ html.qct-open #qct{display:block}
 #qct .linkish{background:none;border:0;color:var(--forest);text-decoration:underline;cursor:pointer;font-weight:600;font-size:14px;padding:8px 0}
 #qct .close{position:fixed;top:calc(10px + env(safe-area-inset-top,0px));right:calc(12px + env(safe-area-inset-right,0px));z-index:5;width:40px;height:40px;border-radius:50%;border:0;background:rgba(10,80,74,.08);color:var(--forest);font-size:22px;line-height:1;cursor:pointer}
 #qct .close.dark{background:rgba(255,255,255,.14);color:#fff}
+/* "Skip to prices": on every step, beside the × on the light screens */
+#qct .toprice{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:calc(60px + env(safe-area-inset-right,0px));z-index:5;border:0;border-radius:999px;padding:7px 14px;background:#fff;color:var(--forest);box-shadow:inset 0 0 0 1.5px var(--line);font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+#qct .qp-tag .toprice,#qct .ck-top .toprice,#qct .rskip .toprice{position:static}
+#qct .qp-tag{display:flex;justify-content:space-between;align-items:center;gap:8px;position:sticky;top:-12px;z-index:1;margin:-12px -14px 0;padding:8px 14px;background:#fffef8}
+#qct .qp-tag .toprice{letter-spacing:normal;padding:5px 12px;font-size:12px}
+#qct .ck-top{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;display:flex;gap:8px;z-index:2}
+#qct .ck-top .ck-skip{position:static}
+#qct .ck-top .toprice{background:rgba(255,255,255,.14);color:#fff;box-shadow:none}
+#qct .rskip{display:flex;justify-content:flex-end;padding:10px 16px 0;max-width:760px;margin:0 auto}
 #qct .bar{position:sticky;bottom:0;margin:16px -16px 0;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:rgba(247,247,242,.97);border-top:1px solid var(--line);display:flex;align-items:center;gap:12px;justify-content:space-between;z-index:3}
 #qct .bar .left{font-size:13px;font-weight:600;color:var(--muted);min-width:0}
 #qct .progress{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
 #qct .progress i{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--forest)}
 #qct .progress i.f{background:var(--forest)}
-#qct .pad{padding:20px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:100%;display:flex;flex-direction:column}
+#qct .pad{padding:60px max(16px,env(safe-area-inset-right,0px)) 0 max(16px,env(safe-area-inset-left,0px));min-height:100%;display:flex;flex-direction:column}
 #qct .pad>.bar{margin-top:auto}
 #qct .card{max-width:760px;width:100%;margin:0 auto 16px;display:grid;gap:12px}
 #qct .sub{color:var(--muted);font-size:14px}

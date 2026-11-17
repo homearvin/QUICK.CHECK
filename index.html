@@ -20,6 +20,20 @@
   <link rel="stylesheet" href="style.css?v=20261112">
   <link rel="stylesheet" href="readability.css?v=20261112-4">
   <script src="script.js?v=20261112-5" defer></script>
+  <!-- Try-before-install overlay: first visits only. Skipped for returning visitors, links with a #section
+       (e.g. #pricing sent on Messenger), ?skip, and link-preview bots. Fails safe: shows the site after 4 s. -->
+  <script>
+  (function(){try{
+    var seen=false;try{seen=localStorage.getItem("qc_try_seen")==="1"}catch(e){}
+    var bot=/bot|crawl|spider|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent);
+    if(seen||bot||location.hash||/[?&]skip\b/.test(location.search))return;
+    var h=document.documentElement;h.classList.add("qct-want");
+    setTimeout(function(){h.classList.remove("qct-want")},4000);
+  }catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="try/try.css?v=20261117">
+  <script src="try/test-sets.js?v=20261117" defer></script>
+  <script src="try/try.js?v=20261117" defer></script>
   <script src="meta-events.js" defer></script>
 <!-- Meta Pixel Code -->
 <script>
@@ -77,6 +91,7 @@ src="https://www.facebook.com/tr?id=638814851803925&ev=PageView&noscript=1"
    <p class="hero-description">Turn a pile of answer sheets into scores, class records,<br class="desktop-break"> and a clearer picture of what to teach next.</p>
    <div class="hero-actions"><a href="#download" class="button">Start for free<svg><use href="#i-arrow"/></svg></a><a href="#how-it-works" class="text-button"><span class="play-circle"><svg><use href="#i-play"/></svg></span>See it in action</a></div>
    <p class="hero-note">Windows & Android <span>•</span> Free to start <span>•</span> No account needed</p>
+   <p class="hero-note"><a class="text-link" href="#" data-qct-open>Try QuickCheck right here, no install<svg><use href="#i-arrow"/></svg></a></p>
   </div>
 
   <div class="product-theatre" id="how-it-works" data-scene="scan">

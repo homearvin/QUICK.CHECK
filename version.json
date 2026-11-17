@@ -1,8 +1,10 @@
 {
-  "latest": "2.15.1",
+  "latest": "2.16.0",
   "released": "2026-11-16",
   "download_url": "https://homearvin.github.io/QUICK.CHECK/#buy",
   "changes": [
+    "Activate with a license code: paste the code you received, like QC-7KMP-2XRT-9HWA-4NBE, on the Activate screen and press Activate. Dashes and spaces don't matter. It works on the laptop and the phone, and the same code covers your one laptop and one phone.",
+    "Key files (.qckey) still work, under \"I have a key file\" on the same screen.",
     "A Bible verse to encourage you, morning and afternoon, on Home and along the bottom of every page (Settings → A verse for you: twice a day, once a day or off).",
     "Go Pro: a new Choose your plan page with the same plans as the website.",
     "A new look, the same on the laptop and the phone: Home, Tests, Check, Results and Settings in the same places, in new emerald colours on a white background, with larger words and numbers.",
@@ -12,17 +14,15 @@
     "Checking papers shows three steps across the top: Get papers, Fix names and answers, Save to the class record.",
     "Results are grouped by class, with a box to find a test, a class picker, and a sort that can put the lowest class average first.",
     "The class record works like a spreadsheet on the laptop: Enter and the arrow keys move between boxes, Ctrl S saves.",
-    "Home shows what QuickCheck can do in a banner that slides by itself, and what is waiting for you in a To do list. Reports download as PDF on both the laptop and the phone.",
-    "New: QuickCheck Free. After the 7-day trial QuickCheck keeps working, for good: up to 3 classes, any number of tests of 1 to 50 items with choices A to D, blank answer sheets, checking with your phone or photos, the scores and the item analysis.",
-    "QuickCheck Pro unlocks the rest: more classes, True/False, A to E, matching and parts, up to 100 items, points per item, answer sheets with names, the DepEd class record, the reports for your principal, skills to reteach, laptop and phone sync, and scanned PDF or ZIP uploads."
+    "Home shows what QuickCheck can do in a banner that slides by itself, and what is waiting for you in a To do list. Reports download as PDF on both the laptop and the phone."
   ],
   "packages": {
     "pro": {
-      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.15.1/QuickCheckPro-2.15.1-portable.zip",
-      "sha256": "2981893d35ce7959b0eb58e96e8050da522d94f05b0358e3f6023ef41db355e5",
-      "signature": "bAddEf7wolItVROq5F9ViXktwOMgnDSXhLFLtb6j3qdPcNK5ZFgxnN0rYct0WSMcwrJiT36IhmDb6ur4FW8yBw==",
+      "url": "https://github.com/homearvin/QUICK.CHECK/releases/download/v2.16.0/QuickCheckPro-2.16.0-portable.zip",
+      "sha256": "06368a6f08c2182209e09874a79648401aa9300351c6d1c59808894405577e86",
+      "signature": "oM+T6Gx7qUeAZpM2WEYKobkUQYVYoEsHDne0T34tiiDDImkw8NIYssBM1QFULR9zCcxpllqlONPjLxJJmZt1Bw==",
       "exe": "QuickCheckPro.exe",
-      "size": 95442677
+      "size": 95446050
     }
   }
 }
